@@ -1,0 +1,47 @@
+<?php
+global $conn;
+$stmt = $conn->prepare('select * from homepage_images');
+$stmt->execute();
+$result = $stmt->fetchAll();
+?>
+<div class="margin-top"></div>
+
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+  <ol class="carousel-indicators">
+    <?php foreach ($result as $key => $row) { ?>
+      <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $key; ?>"
+          class="<?php if ($key == 0) echo 'active'; ?>"></li>
+    <?php } ?>
+  </ol>
+  <div class="zoominbox">
+    <div class="zoomoutbox">
+      <div class="carousel-inner">
+        <?php foreach ($result as $key => $row) { ?>
+          <div class="carousel-item <?php if ($key == 0) echo 'active' ?>">
+            <div class="container">
+              <div class="header-text-absolute">
+                <div class="row">
+                  <div class="col-12" style='margin-left:80px'>
+                    <p class="header-topic">Malaysian Export Academy</p>
+                    <h1 class="header-topic"><?php echo $row['title']; ?></h1>
+                    <p><?php echo $row['description']; ?></p>
+                    <a href="<?php echo $row['url']; ?>" class="button">Read More</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <img src="<?php echo $row['path'] . $row['name']; ?>" class="d-block w-100" alt="image">
+          </div>
+        <?php } ?>
+      </div>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
