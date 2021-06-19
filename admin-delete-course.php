@@ -2,7 +2,7 @@
 
 
 // sql to delete a record
-global $conn;
+
 $sql = $conn->prepare("DELETE FROM $table WHERE sys_course_id = ?");
 $sql->execute([$id]);
 

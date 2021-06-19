@@ -1,15 +1,15 @@
 <?php
-require_once('header.php');
-require_once('nav.php');
+require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
+
 $id = $_GET['id'];
 ?>
-<div class="margin-top"></div>
+
 
 
 <?php
 $table = isset($_GET['t']) ? $_GET['t'] : 'sys_course';
 if ($table == 'sys_course') {
-  $sectionUrl = 'publictraining.php';
+  $sectionUrl = 'public-training.php';
   $section = 'Public Training';
 } else if ($table == 'sys_seminars') {
   $sectionUrl = 'seminar-conference.php';
@@ -24,7 +24,7 @@ if ($table == 'sys_course') {
   $sectionUrl = 'trade-missions.php';
   $section = 'Trade Missions';
 }
-global $conn;
+
 $sql = $conn->prepare("SELECT * FROM $table WHERE sys_course_id = ?");
 $sql->execute([$id]);
 if ($sql->rowCount() > 0) {
@@ -38,7 +38,7 @@ foreach ($sql->fetchAll() as $row) {
           <h1><? echo $section; ?> Enquiry</h1>
           <div class="breadcrumb-in">
             <p class="link"><a href="index.php"><i class="fas fa-home"></i> Home</a></p>
-            <p class="link"><a href="publictraining.php"><? echo $section; ?></a></p>
+            <p class="link"><a href="public-training.php"><? echo $section; ?></a></p>
             <p class="link"><?php echo $row['sys_course_topic']; ?></p>
             <p class="link-at">Registration</p>
           </div>
@@ -267,7 +267,7 @@ foreach ($sql->fetchAll() as $row) {
 
 
 <?php
-require_once('footer.php');
+  require_once($includes . 'footer.php');
 ?>
 
 

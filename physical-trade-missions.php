@@ -1,12 +1,12 @@
 <?php
-require_once('header.php');
-require_once('nav.php');
+require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
+
 
 $id = $_GET['id'];
 $cat_id = $_GET['cat_id'];
 ?>
 
-  <div class="margin-top"></div>
+
 
   <div class="padding-100">
 
@@ -84,5 +84,5 @@ $cat_id = $_GET['cat_id'];
   </style>
 
 <?php
-require_once('footer.php');
+  require_once($includes . 'footer.php');
 ?>

@@ -1,9 +1,9 @@
 <?php
-require_once('header.php');
-require_once('nav.php');
+require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
 
 
-//check if session
+
+
 if ($_SESSION['user']['level_id'] != 1) {
   echo '<script type="text/javascript">alert("Only MAXZ staffs are allowed to access this page.\n\nThank you.");location.href="login.php"</script>';
 }
@@ -13,7 +13,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "frm_add_channel")) 
   $cat = $_POST['cat'];
   $path = $_FILES['image']['name'];
 
-  global $conn;
+
   $sql = $conn->prepare("INSERT INTO sys_course_cat
 
 (sys_course_image, sys_course_name)
@@ -42,5 +42,5 @@ VALUES
 
 
 <?php
-require_once('footer.php');
+  require_once($includes . 'footer.php');
 ?>

@@ -2,10 +2,8 @@
 require_once('admin/adminheader.php');
 require_once('admin/adminnav.php');
 
-//check if session
-if ($_SESSION['user']['level_id'] != 1) {
-  echo '<script type="text/javascript">alert("Only MEA staffs are allowed to access this page.\n\nThank you.");location.href="login.php";</script>';
-}
+
+
 
 
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "frm_add_channel") && isset($_FILES['image']['tmp_name'])) {
@@ -22,7 +20,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "frm_add_channel") &
   $cat = $_POST['cat'];
   $path = $_FILES['image']['name'];
 
-  global $conn;
+
   $sql = $conn->prepare("INSERT INTO sys_album
 (sys_album_image, sys_album_name,
 sys_album_place, sys_album_owner,
@@ -52,13 +50,13 @@ VALUES(?, ?, ?, ?, 0, ?, ?)");
 </script>
 
 
-<div class="margin-top"></div>
+
 
 
 <div class="container-fluid">
   <div class="row">
     <?php
-    require_once('admin-sidebar.php');
+    require_once($includes.'admin-sidebar.php');
     ?>
 
     <div class="col-10">
@@ -135,5 +133,5 @@ VALUES(?, ?, ?, ?, 0, ?, ?)");
 
 
   <?php
-  require_once('footer.php');
+    require_once($includes . 'footer.php');
   ?>

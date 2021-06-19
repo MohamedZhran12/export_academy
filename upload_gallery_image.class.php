@@ -126,7 +126,7 @@ class Image
 
   public function storeImageInDatabase()
   {
-    global $conn;
+
     $stmt = $conn->prepare('insert into gallery_images (category,name,path,size,created_at) values(?,?,?,?,?)');
     return $stmt->execute([$this->categoryID, $this->name, $this->newPath, $this->size, date('Y-m-d H:i:s')]);
   }

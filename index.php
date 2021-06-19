@@ -1,9 +1,9 @@
 <?php
-require_once('header.php');
-require_once('nav.php');
+require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
+
 require_once('slider.php');
 
-global $conn;
+
 $stmt = $conn->prepare('SELECT partner_type,name,path from logos_images');
 $stmt->execute();
 $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
@@ -62,7 +62,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
               <div class="row">
                 <div class="col-sm-4">
                   <div class="bordering">
-                    <a href="publictraining.php">
+                    <a href="public-training.php">
                       <div class="icon-width-80">
                         <i class="fas fa-building"></i>
                       </div>
@@ -332,7 +332,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
         } ?>
       </div>
 
-      <a href="publictraining.php">
+      <a href="public-training.php">
         <p class="view-all">View All Courses <i class="fas fa-angle-right"></i></p>
       </a>
     </div>
@@ -513,5 +513,5 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
 
 
   <?php
-  require_once('footer.php');
+  require_once($includes . 'footer.php');
   ?>

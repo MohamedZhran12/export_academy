@@ -1,14 +1,14 @@
 <?php
-require_once('header.php');
-require_once('nav.php');
+require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
+
 
 $id = $_GET['id'];
-global $conn;
+
 $sql = $conn->prepare("UPDATE sys_article SET sys_view = sys_view + 1 WHERE sys_id = ?");
 $sql->execute([$id]);
 ?>
 
-<div class="margin-top"></div>
+
 
 
 <?php
@@ -94,7 +94,7 @@ foreach ($sql->fetchAll() as $row) {
 
         <div class="col-sm-3">
           <?php
-          require_once('sidebar.php');
+          require_once($rootDir . 'sidebar.php');
           ?>
 
           <br><br>
@@ -137,5 +137,5 @@ foreach ($sql->fetchAll() as $row) {
 
 
   <?php
-  require_once('footer.php');
+    require_once($includes . 'footer.php');
   ?>

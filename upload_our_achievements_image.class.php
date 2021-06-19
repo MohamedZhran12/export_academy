@@ -127,7 +127,7 @@ class Image
 
   public function storeImageInDatabase()
   {
-    global $conn;
+
     $table = self::table;
     $stmt = $conn->prepare("insert into $table (category,name,path,size,created_at) values(?,?,?,?,?)");
     return $stmt->execute([$this->categoryID, $this->name, $this->newPath, $this->size, date('Y-m-d H:i:s')]);

@@ -1,6 +1,6 @@
 <?php
-require_once('header.php');
-require_once('nav.php');
+require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
+
 
 
 ?>
@@ -63,18 +63,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 	                <b>Name:</b></br> ' . $_POST['name'] . '
 	                <br>
 	                <b>Email:</b> ' . $_POST['email'] . '
-	                <br> 
-	                <b>Mobile:</b> ' . $_POST['phone'] . '	                
+	                <br>
+	                <b>Mobile:</b> ' . $_POST['phone'] . '
                     <br>
-	                <b>Room:</b> ' . $_POST['room'] . '	                
-                    <br>                    
+	                <b>Room:</b> ' . $_POST['room'] . '
+                    <br>
 	                <b>Message:</b> ' . $_POST['msg'] . '
                 </p>';
       if (!$mail->send()) {
         echo "Message could not sent!";
       } else {
         echo "<script>
-             alert('We received your message! We will reply to your message as soon as possible.'); 
+             alert('We received your message! We will reply to your message as soon as possible.');
              window.history.go(-1);
      </script>";
       }
@@ -88,7 +88,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <?php } ?>
 
 
-  <div class="margin-top"></div>
+
 
   <div class="header-in-room">
     <div class="overlay-white">
@@ -200,5 +200,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 
 <?php
-require_once('footer.php');
+  require_once($includes . 'footer.php');
 ?>

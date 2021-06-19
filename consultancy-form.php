@@ -1,6 +1,6 @@
 <?php
-require_once('header.php');
-require_once('nav.php');
+require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
+
 
 $result = "";
 if (isset($_POST['submit'])) {
@@ -25,25 +25,25 @@ if (isset($_POST['submit'])) {
 	                <b>Apply for Consultant:
 	                <br>
 	                <b>Consultant Name:</b></br> ' . $_POST['consultant'] . '
-	                <br> 	                
+	                <br>
 	                <b>Areas of Expertise:</b></br> ' . $_POST['expertise'] . '
-	                <br> 
+	                <br>
 	                <hr>
 	                <b>Name:</b></br> ' . $_POST['name'] . '
 	                <br>
 	                <b>Email:</b> ' . $_POST['email'] . '
-	                <br> 
-	                <b>Mobile:</b> ' . $_POST['phone'] . '	                
+	                <br>
+	                <b>Mobile:</b> ' . $_POST['phone'] . '
                     <br>
-	                <b>Company Name:</b> ' . $_POST['company'] . '	                
-                    <br>                      
+	                <b>Company Name:</b> ' . $_POST['company'] . '
+                    <br>
 	                <b>Message:</b> ' . $_POST['msg'] . '
                 </p>';
   if (!$mail->send()) {
     echo "Message could not sent!";
   } else {
     echo "<script>
-             alert('We received your message! We will reply to your message as soon as possible.'); 
+             alert('We received your message! We will reply to your message as soon as possible.');
              window.history.go(-1);
      </script>";
   }
@@ -51,7 +51,7 @@ if (isset($_POST['submit'])) {
 ?>
 
 
-  <div class="margin-top"></div>
+
 
   <div class="header-in-about">
     <div class="overlay-white">
@@ -146,5 +146,5 @@ if (isset($_POST['submit'])) {
 
 
 <?php
-require_once('footer.php');
+  require_once($includes . 'footer.php');
 ?>

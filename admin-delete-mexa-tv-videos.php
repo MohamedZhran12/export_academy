@@ -1,10 +1,7 @@
 <?php
-require_once('adminheader.php');
-require_once('adminnav.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
 
-if ($_SESSION['user']['level_id'] != 1) {
-  echo '<script type="text/javascript">alert("Only MEA staffs are allowed to access this page.\n\nThank you.");location.href="login.php";</script>';
-}
+
 $table = 'mexa_tv_videos';
 $sectionName = 'MEXA TV';
 $stmt = $conn->prepare("select id,url from $table");
@@ -12,7 +9,7 @@ $stmt->execute();
 $result = $stmt->fetchAll();
 
 if ($_SESSION['user']['level_id'] == 1 && $_GET['delete'] == 'video') {
-  global $conn;
+
   $stmt = $conn->prepare("DELETE FROM $table WHERE id=?");
   $stmt->execute([$_GET['video_id']]);
   echo '
@@ -21,10 +18,10 @@ if ($_SESSION['user']['level_id'] == 1 && $_GET['delete'] == 'video') {
     '</script>';
 }
 ?>
-<div class="margin-top"></div>
+
 <div class="container-fluid">
   <div class="row">
-    <? require_once('admin-sidebar.php'); ?>
+    <? require_once($includes.'admin-sidebar.php'); ?>
     <div class="col-9 .bg-white">
       <div class="breadcrumb-main mt-5">
         <p class="current-link">Admin Dashboard</p>

@@ -1,0 +1,16 @@
+/includes/config.php
+/csr_images
+/awards
+/gallery_images
+/homepage_images
+/images
+/logo_images
+/our_achievements_images
+/our_management_images
+/pdf
+/uploads
+.htaccess
+.idea/
+.vscode/
+.user.ini
+php.ini

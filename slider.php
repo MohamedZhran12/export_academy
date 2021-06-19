@@ -1,10 +1,10 @@
 <?php
-global $conn;
+
 $stmt = $conn->prepare('select * from homepage_images');
 $stmt->execute();
 $result = $stmt->fetchAll();
 ?>
-<div class="margin-top"></div>
+
 
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">

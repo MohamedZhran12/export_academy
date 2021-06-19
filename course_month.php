@@ -1,16 +1,16 @@
 <?php
-require_once('header.php');
-require_once('nav.php');
+require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
+
 
 $id = $_GET['id'];
 $month = $_GET['month'];
 $table = isset($_GET['t']) ? $_GET['t'] : 'sys_course';
-global $conn;
+
 $sql = $conn->prepare("UPDATE $table SET sys_course_view = sys_course_view + 1 WHERE sys_course_id = ?");
 $sql->execute([$id]);
 ?>
 
-<div class="margin-top"></div>
+
 
 <div class="header-in">
   <div class="overlay-white">
@@ -19,7 +19,7 @@ $sql->execute([$id]);
         <h1>Public Training</h1>
         <div class="breadcrumb-in">
           <p class="link"><a href="index.php"><i class="fas fa-home"></i> HOME</a></p>
-          <p class="link"><a href="publictraining.php">Public Training</a></p>
+          <p class="link"><a href="public-training.php">Public Training</a></p>
           <p class="link-at"><?php
             $monthNum = $month;/*Here 1 is the month number*/
             $dateObj = DateTime::createFromFormat('!m', $monthNum);/*Convert the number into month name*/
@@ -45,7 +45,7 @@ $sql->execute([$id]);
       <div class="row">
         <div class="col-sm-3">
           <?php
-          require_once('sidebar.php');
+          require_once($rootDir . 'sidebar.php');
           ?>
         </div>
 
@@ -137,5 +137,5 @@ $sql->execute([$id]);
 
 
   <?php
-  require_once('footer.php');
+    require_once($includes . 'footer.php');
   ?>

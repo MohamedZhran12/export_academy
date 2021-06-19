@@ -1,8 +1,8 @@
 <?php
-require_once('header.php');
-require_once('nav.php');
+require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
 
-global $conn;
+
+
 $stmt = $conn->prepare('SELECT gallery_categories.title, gallery_categories.description , gallery_images.name , gallery_images.path
    from gallery_categories
    JOIN gallery_images on gallery_images.category = gallery_categories.id order by gallery_categories.id desc');
@@ -12,7 +12,7 @@ $headerStmt = $conn->prepare("select value from statics where name='csr page hea
 $headerStmt->execute();
 $header = $headerStmt->fetch();
 ?>
-  <div class="margin-top"></div>
+
   <div class="header-in-csr">
     <div class="overlay-white">
       <div class="container">
@@ -55,5 +55,5 @@ $header = $headerStmt->fetch();
   </div>
 
 <?php
-require_once('footer.php');
+  require_once($includes . 'footer.php');
 ?>

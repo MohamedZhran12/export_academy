@@ -1,6 +1,6 @@
 <?php
-require_once('header.php');
-require_once('nav.php');
+require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
+
 ?>
 
   <link rel="stylesheet" href="https://rawgit.com/LeshikJanz/libraries/master/Bootstrap/baguetteBox.min.css">
@@ -10,7 +10,7 @@ require_once('nav.php');
       }
   </style>
 
-  <div class="margin-top"></div>
+
 
   <div class="header-in">
     <div class="overlay-white">
@@ -155,5 +155,5 @@ require_once('nav.php');
 
 
 <?php
-require_once('footer.php');
+  require_once($includes . 'footer.php');
 ?>

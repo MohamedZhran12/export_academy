@@ -126,7 +126,7 @@ const sizeLimit = 3145728;
 
   public function storeImageInDatabase()
   {
-    global $conn;
+
     $stmt = $conn->prepare("insert into logos_images (name,path,size,partner_type,created_at) values(?,?,?,?,?)");
     return $stmt->execute([$this->name, $this->newPath, $this->size, $this->partnerType, date('Y-m-d H:i:s')]);
   }

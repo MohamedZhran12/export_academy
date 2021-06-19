@@ -1,17 +1,16 @@
 <?php
-require_once('adminheader.php');
-require_once('adminnav.php');
-global $conn;
+require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
+
 ?>
 
 
-<div class="margin-top"></div>
+
 
 <div class="background-gradient">
   <div class="container-fluid">
     <div class="row">
       <?php
-      require_once('admin-sidebar.php');
+      require_once($includes.'admin-sidebar.php');
       ?>
 
       <div class="col-9">
@@ -29,7 +28,7 @@ global $conn;
               <div class="row">
                 <div class="col-3">
                   <?php
-                  require_once('sidebar-admin.php');
+                  require_once('sidebar.php');
                   ?>
                 </div>
 

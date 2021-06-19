@@ -1,200 +1,29 @@
 <div class="side-bar-main">
   <div class="side-topic">
-    <p><b>Calendar <?php echo date("Y"); ?></b></p>
+    <strong>Calendar <?php echo date("Y"); ?></strong>
   </div>
   <div class="side-des">
-    <div class="row">
-      <div class="col-6">
-        <a href="course_month.php?t=<? echo $table; ?>&month=01">
-          <div class="row">
-            <p class="calendar">January</p> <span class="total-r">
-	              <?php
-                global $conn;
-                $result = $conn->prepare("select count(1) FROM $table WHERE sys_course_month= '01'");
-                $result->execute();
+    <div class="container">
+      <div class="row">
+        <?php
+        for ($i = 1; $i <= 12; $i++) {
+          $index = $i < 10 ? '0' . $i : $i;
+        ?>
+          <div class="col-6 p-0">
+            <a href="course_month.php?t=<? echo $table; ?>&month=<? echo $index; ?>">
+              <p class="calendar"><? echo DateTime::createFromFormat('!m', $index)->format('F'); ?></p>
+              <span class="total-r">
+                <?php
+                $result = $conn->prepare("select count(1) FROM $table WHERE sys_course_month= ?");
+                $result->execute([$index]);
                 $row = $result->fetch();
                 $total = $row[0];
                 echo " $total ";
                 ?>
-	            </span>
+              </span>
+            </a>
           </div>
-        </a>
-      </div>
-
-      <div class="col-6">
-        <a href="course_month.php?t=<? echo $table; ?>&month=02">
-          <div class="row">
-            <p class="calendar">February</p> <span class="total-l">
-	              <?php
-                $result = $conn->prepare("select count(1) FROM $table WHERE sys_course_month= '02'");
-                $result->execute();
-                $row = $result->fetch();
-                $total = $row[0];
-                echo " $total ";
-                ?>
-	            </span>
-          </div>
-        </a>
-      </div>
-
-      <div class="col-6">
-        <a href="course_month.php?t=<? echo $table; ?>&month=03">
-          <div class="row">
-            <p class="calendar">March</p><span class="total-r">
-	              <?php
-                $result = $conn->prepare("select count(1) FROM $table WHERE sys_course_month= '03'");
-                $result->execute();
-                $row = $result->fetch();
-                $total = $row[0];
-                echo " $total ";
-                ?>
-	            </span>
-          </div>
-        </a>
-      </div>
-
-      <div class="col-6">
-        <a href="course_month.php?t=<? echo $table; ?>&month=04">
-          <div class="row">
-            <p class="calendar">April</p><span class="total-l">
-	              <?php
-                $result = $conn->prepare("select count(1) FROM $table WHERE sys_course_month= '04'");
-                $result->execute();
-                $row = $result->fetch();
-                $total = $row[0];
-                echo " $total ";
-                ?>
-	            </span>
-          </div>
-        </a>
-      </div>
-
-      <div class="col-6">
-        <a href="course_month.php?t=<? echo $table; ?>&month=05">
-          <div class="row">
-            <p class="calendar">May</p><span class="total-r">
-	              <?php
-                $result = $conn->prepare("select count(1) FROM $table WHERE sys_course_month= '05'");
-                $result->execute();
-                $row = $result->fetch();
-                $total = $row[0];
-                echo " $total ";
-                ?>
-	            </span>
-          </div>
-        </a>
-      </div>
-
-      <div class="col-6">
-        <a href="course_month.php?t=<? echo $table; ?>&month=06">
-          <div class="row">
-            <p class="calendar">June</p><span class="total-l">
-	              <?php
-                $result = $conn->prepare("select count(1) FROM $table WHERE sys_course_month= '06'");
-                $result->execute();
-                $row = $result->fetch();
-                $total = $row[0];
-                echo " $total ";
-                ?>
-	            </span>
-          </div>
-        </a>
-      </div>
-
-      <div class="col-6">
-        <a href="course_month.php?t=<? echo $table; ?>&month=07">
-          <div class="row">
-            <p class="calendar">July</p><span class="total-r">
-	              <?php
-                $result = $conn->prepare("select count(1) FROM $table WHERE sys_course_month= '07'");
-                $result->execute();
-                $row = $result->fetch();
-                $total = $row[0];
-                echo " $total ";
-                ?>
-	            </span>
-          </div>
-        </a>
-      </div>
-
-      <div class="col-6">
-        <a href="course_month.php?t=<? echo $table; ?>&month=08">
-          <div class="row">
-            <p class="calendar">August</p><span class="total-l">
-	              <?php
-                $result = $conn->prepare("select count(1) FROM $table WHERE sys_course_month= '08'");
-                $result->execute();
-                $row = $result->fetch();
-                $total = $row[0];
-                echo " $total ";
-                ?>
-	            </span>
-          </div>
-        </a>
-      </div>
-
-      <div class="col-6">
-        <a href="course_month.php?t=<? echo $table; ?>&month=09">
-          <div class="row">
-            <p class="calendar">September</p><span class="total-r">
-	              <?php
-                $result = $conn->prepare("select count(1) FROM $table WHERE sys_course_month= '09'");
-                $result->execute();
-                $row = $result->fetch();
-                $total = $row[0];
-                echo " $total ";
-                ?>
-	            </span>
-          </div>
-        </a>
-      </div>
-
-      <div class="col-6">
-        <a href="course_month.php?t=<? echo $table; ?>&month=10">
-          <div class="row">
-            <p class="calendar">October</p><span class="total-l">
-	              <?php
-                $result = $conn->prepare("select count(1) FROM $table WHERE sys_course_month= '10'");
-                $result->execute();
-                $row = $result->fetch();
-                $total = $row[0];
-                echo " $total ";
-                ?>
-	            </span>
-          </div>
-        </a>
-      </div>
-
-      <div class="col-6">
-        <a href="course_month.php?t=<? echo $table; ?>&month=11">
-          <div class="row">
-            <p class="calendar-1">November</p><span class="total-r">
-	              <?php
-                $result = $conn->prepare("select count(1) FROM $table WHERE sys_course_month= '11'");
-                $result->execute();
-                $row = $result->fetch();
-                $total = $row[0];
-                echo " $total ";
-                ?>
-	            </span>
-          </div>
-        </a>
-      </div>
-
-      <div class="col-6">
-        <a href="course_month.php?t=<? echo $table; ?>&month=12">
-          <div class="row">
-            <p class="calendar-1">December</p><span class="total-l">
-	              <?php
-                $result = $conn->prepare("select count(1) FROM $table WHERE sys_course_month= '12'");
-                $result->execute();
-                $row = $result->fetch();
-                $total = $row[0];
-                echo " $total ";
-                ?>
-	            </span>
-          </div>
-        </a>
+        <?php } ?>
       </div>
     </div>
   </div>

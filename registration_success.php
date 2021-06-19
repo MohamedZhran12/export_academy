@@ -1,7 +1,7 @@
 <?
 require_once('verifyCaptcha.php');
 ?>
-  <div class="margin-top"></div>
+
   <div class="header-in-course">
     <div class="overlay-white">
       <div class="container">
@@ -21,11 +21,11 @@ require_once('verifyCaptcha.php');
     <div class="container">
       <div class="text-center">
         <h1>Thank You!</h1><br>
-        <h5><? echo isset($success_msg) ? $success_msg : 'Your Registration is submitted successfully.<br> 
+        <h5><? echo isset($success_msg) ? $success_msg : 'Your Registration is submitted successfully.<br>
         Our team will get back to you as soon as possible.'; ?></h5>
       </div>
     </div>
   </div>
 <?
-require_once('footer.php');
+  require_once($includes . 'footer.php');
 ?>

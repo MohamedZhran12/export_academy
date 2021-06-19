@@ -1,11 +1,8 @@
 <?php
-require_once('adminheader.php');
-require_once('adminnav.php');
-global $conn;
-//check if session
-if ($_SESSION['user']['level_id'] != 1) {
-  echo '<script type="text/javascript">alert("Only MEA staffs are allowed to access this page.\n\nThank you.");location.href="login.php";</script>';
-}
+require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
+
+
+
 
 
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "frm_add_channel")) {
@@ -32,13 +29,13 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "frm_add_channel")) 
 ?>
 
 
-<div class="margin-top"></div>
+
 
 
 <div class="container-fluid">
   <div class="row">
     <?php
-    require_once('admin-sidebar.php');
+    require_once($includes.'admin-sidebar.php');
     ?>
 
     <div class="col-10">

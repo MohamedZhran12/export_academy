@@ -1,19 +1,18 @@
 <?php
-require_once('adminheader.php');
-require_once('adminnav.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
 
 $id = $_GET['id'];
 $month = $_GET['month'];
 ?>
 
 
-<div class="margin-top"></div>
+
 
 <div class="background-gradient">
   <div class="container-fluid">
     <div class="row">
       <?php
-      require_once('admin-sidebar.php');
+      require_once($includes.'admin-sidebar.php');
       ?>
 
 
@@ -32,7 +31,7 @@ $month = $_GET['month'];
               <div class="row">
                 <div class="col-3">
                   <?php
-                  require_once('sidebar-admin.php');
+                  require_once('sidebar.php');
                   ?>
                 </div>
 
@@ -49,7 +48,7 @@ $month = $_GET['month'];
                         <div class="row">
 
                           <?php
-                          global $conn;
+
                           $sql = $conn->prepare("SELECT * FROM sys_course WHERE sys_course_month = ?");
                           $sql->execute([$month]);
                           if ($sql->rowCount() > 0) {

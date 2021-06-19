@@ -6,7 +6,7 @@
           <div class="row">
             <p class="calendar">January</p> <span class="total-r">
 	              <?php
-                global $conn;
+
                 $result = $conn->prepare("select count(1) FROM sys_course WHERE sys_course_month= '01'");
                 $result->execute();
                 $row = $result->fetch();

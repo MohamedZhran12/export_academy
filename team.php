@@ -1,11 +1,11 @@
 <?php
-require_once('header.php');
-require_once('nav.php');
+require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
+
 
 $id = $_GET['id'];
 $cat_id = $_GET['cat_id'];
 
-global $conn;
+
 $sql = $conn->prepare("UPDATE sys_course SET sys_course_view = sys_course_view + 1 WHERE sys_course_id = ?");
 $sql->execute([$id]);
 ?>
@@ -13,7 +13,7 @@ $sql->execute([$id]);
 <!-- Style -->
 <link rel="stylesheet" href="assets/style-team.css">
 
-<div class="margin-top"></div>
+
 
 <div class="header-in-team">
   <div class="overlay-white">
@@ -362,5 +362,5 @@ $sql->execute([$id]);
 
 
 <?php
-require_once('footer.php');
+  require_once($includes . 'footer.php');
 ?>

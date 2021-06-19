@@ -1,13 +1,8 @@
 <?php
-require_once('adminheader.php');
-require_once('adminnav.php');
-
-if ($_SESSION['user']['level_id'] != 1) {
-  echo '<script type="text/javascript">alert("Only MEA staffs are allowed to access this page.\n\nThank you.");location.href="login.php";</script>';
-}
+require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  global $conn;
+
   $isOrderExistQuery = $conn->prepare('select count(group_order) from courses_groups where group_order=?');
   $isOrderExistQuery->execute([$_POST['order']]);
   if ($isOrderExistQuery->fetch()[0] == 0) {
@@ -33,10 +28,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   }
 }
 ?>
-<div class="margin-top"></div>
+
 <div class="container-fluid">
   <div class="row">
-    <? require_once('admin-sidebar.php'); ?>
+    <? require_once($includes . 'admin-sidebar.php'); ?>
     <div class="col-9 .bg-white">
       <div class="breadcrumb-main mt-5">
         <p class="current-link">Admin Dashboard</p>

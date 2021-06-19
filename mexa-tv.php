@@ -1,16 +1,16 @@
 <?php
-require_once('header.php');
-require_once('nav.php');
+require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
+
 $categoryTable = 'mexa_tv_categories';
 $videosTable = 'mexa_tv_videos';
-global $conn;
+
 $stmt = $conn->prepare("SELECT $categoryTable.title, $categoryTable.description, $videosTable.url
    from $categoryTable
    JOIN $videosTable on $videosTable.category = $categoryTable.id order by $categoryTable.id desc");
 $stmt->execute();
 $categoriesVideos = $stmt->fetchAll(PDO::FETCH_GROUP);
 ?>
-  <div class="margin-top"></div>
+
   <div class="header-in-csr">
     <div class="overlay-white">
       <div class="container">
@@ -46,5 +46,5 @@ $categoriesVideos = $stmt->fetchAll(PDO::FETCH_GROUP);
     <? } ?>
   </div>
 <?php
-require_once('footer.php');
+  require_once($includes . 'footer.php');
 ?>

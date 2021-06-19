@@ -130,7 +130,7 @@ const sizeLimit = 3145728;
 
   public function storeImageInDatabase()
   {
-    global $conn;
+
     $stmt = $conn->prepare('insert into homepage_images (name,path,size,url,title,description,created_at) values(?,?,?,?,?,?,?)');
     return $stmt->execute([$this->name, $this->newPath, $this->size, $this->url, $this->title, $this->description, date('Y-m-d H:i:s')]);
   }

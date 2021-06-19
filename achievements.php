@@ -1,9 +1,9 @@
 <?php
-require_once('header.php');
-require_once('nav.php');
+require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
+
 $categoryTable = 'our_achievements_categories';
 $imagesTable = 'our_achievements_images';
-global $conn;
+
 $stmt = $conn->prepare("SELECT $categoryTable.title, $categoryTable.description , $imagesTable.name , $imagesTable.path
    from $categoryTable
    JOIN $imagesTable on $imagesTable.category = $categoryTable.id order by $categoryTable.id desc");
@@ -13,7 +13,7 @@ $categoriesImages = $stmt->fetchAll(PDO::FETCH_GROUP);
 //   $headerStmt->execute();
 //   $header=$headerStmt->fetch();
 ?>
-  <div class="margin-top"></div>
+
   <div class="header-in-csr">
     <div class="overlay-white">
       <div class="container">
@@ -55,5 +55,5 @@ $categoriesImages = $stmt->fetchAll(PDO::FETCH_GROUP);
     <? } ?>
   </div>
 <?php
-require_once('footer.php');
+  require_once($includes . 'footer.php');
 ?>
