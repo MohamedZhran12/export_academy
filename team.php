@@ -38,7 +38,7 @@ $sql->execute([$id]);
       <li>
         <div>
           <div class="org-img">
-            <img
+            <img alt='image'
                 src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png">
             <p>Chairman</p>
           </div>
@@ -54,7 +54,7 @@ $sql->execute([$id]);
         <div>
           <div class="org-img">
             <div class="team-imge">
-              <img
+              <img alt='image'
                   src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png">
             </div>
             <div class="team-desc">
@@ -73,7 +73,7 @@ $sql->execute([$id]);
             <div>
               <div class="org-img">
                 <div class="team-imge">
-                  <img
+                  <img alt='image'
                       src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png">
                 </div>
                 <div class="team-desc">
@@ -87,7 +87,7 @@ $sql->execute([$id]);
                 <div>
                   <div class="org-img">
                     <div class="team-imge">
-                      <img
+                      <img alt='image'
                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png">
                     </div>
                     <div class="team-desc">
@@ -101,7 +101,7 @@ $sql->execute([$id]);
                 <div>
                   <div class="org-img">
                     <div class="team-imge">
-                      <img
+                      <img alt='image'
                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png">
                     </div>
                     <div class="team-desc">
@@ -117,7 +117,7 @@ $sql->execute([$id]);
                 <div>
                   <div class="org-img">
                     <div class="team-imge">
-                      <img
+                      <img alt='image'
                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png">
                     </div>
                     <div class="team-desc">
@@ -132,7 +132,7 @@ $sql->execute([$id]);
                 <div>
                   <div class="org-img">
                     <div class="team-imge">
-                      <img
+                      <img alt='image'
                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png">
                     </div>
                     <div class="team-desc">
@@ -150,7 +150,7 @@ $sql->execute([$id]);
             <div>
               <div class="org-img">
                 <div class="team-imge">
-                  <img
+                  <img alt='image'
                       src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png">
                 </div>
                 <div class="team-desc">
@@ -165,7 +165,7 @@ $sql->execute([$id]);
                 <div>
                   <div class="org-img">
                     <div class="team-imge">
-                      <img
+                      <img alt='image'
                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png">
                     </div>
                     <div class="team-desc">
@@ -180,7 +180,7 @@ $sql->execute([$id]);
                 <div>
                   <div class="org-img">
                     <div class="team-imge">
-                      <img
+                      <img alt='image'
                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png">
                     </div>
                     <div class="team-desc">
@@ -198,7 +198,7 @@ $sql->execute([$id]);
             <div>
               <div class="org-img">
                 <div class="team-imge">
-                  <img
+                  <img alt='image'
                       src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png">
                 </div>
                 <div class="team-desc">
@@ -212,7 +212,7 @@ $sql->execute([$id]);
                 <div>
                   <div class="org-img">
                     <div class="team-imge">
-                      <img
+                      <img alt='image'
                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png">
                     </div>
                     <div class="team-desc">
@@ -226,7 +226,7 @@ $sql->execute([$id]);
                 <div>
                   <div class="org-img">
                     <div class="team-imge">
-                      <img
+                      <img alt='image'
                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png">
                     </div>
                     <div class="team-desc">
@@ -240,7 +240,7 @@ $sql->execute([$id]);
                 <div>
                   <div class="org-img">
                     <div class="team-imge">
-                      <img
+                      <img alt='image'
                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png">
                     </div>
                     <div class="team-desc">
@@ -258,7 +258,7 @@ $sql->execute([$id]);
             <div>
               <div class="org-img">
                 <div class="team-imge">
-                  <img
+                  <img alt='image'
                       src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png">
                 </div>
                 <div class="team-desc">
@@ -272,7 +272,7 @@ $sql->execute([$id]);
                 <div>
                   <div class="org-img">
                     <div class="team-imge">
-                      <img
+                      <img alt='image'
                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png">
                     </div>
                     <div class="team-desc">
@@ -286,7 +286,7 @@ $sql->execute([$id]);
                 <div>
                   <div class="org-img">
                     <div class="team-imge">
-                      <img
+                      <img alt='image'
                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png">
                     </div>
                     <div class="team-desc">
@@ -300,7 +300,7 @@ $sql->execute([$id]);
                 <div>
                   <div class="org-img">
                     <div class="team-imge">
-                      <img
+                      <img alt='image'
                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png">
                     </div>
                     <div class="team-desc">
@@ -314,7 +314,7 @@ $sql->execute([$id]);
                 <div>
                   <div class="org-img">
                     <div class="team-imge">
-                      <img
+                      <img alt='image'
                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png">
                     </div>
                     <div class="team-desc">
@@ -328,7 +328,7 @@ $sql->execute([$id]);
                 <div>
                   <div class="org-img">
                     <div class="team-imge">
-                      <img
+                      <img alt='image'
                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png">
                     </div>
                     <div class="team-desc">
@@ -342,7 +342,7 @@ $sql->execute([$id]);
                 <div>
                   <div class="org-img">
                     <div class="team-imge">
-                      <img
+                      <img alt='image'
                           src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Circle-icons-profile.svg/1024px-Circle-icons-profile.svg.png">
                     </div>
                     <div class="team-desc">

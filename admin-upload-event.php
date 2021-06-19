@@ -1,5 +1,5 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
 
 
 
@@ -46,25 +46,6 @@ VALUES
 }
 ?>
 
-
-<!-- image upload -->
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<script language="Javascript">
-    function showPreview(ele) {
-        $('#imgAvatar').attr('src', ele.value); // for IE
-        if (ele.files && ele.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                $('#imgAvatar').attr('src', e.target.result);
-            }
-            reader.readAsDataURL(ele.files[0]);
-        }
-    }
-</script>
-
-
-
-
 <div class="padding-100">
 
   <div class="container">
@@ -78,15 +59,14 @@ VALUES
         <h2>Course Upload</h2>
         <hr>
         <br>
-        <form name="frm_add_channel" method="post" enctype="multipart/form-data">
+        <form method="post" enctype="multipart/form-data">
           <div class="row">
             <div class="col-sm-6">
               <p class="form-text">Course Image</p>
-              <img src="https://testersdock.com/wp-content/uploads/2017/09/file-upload-1280x640.png" id="imgAvatar"
-                   alt="Course Image"/>
+              <img alt='image' src="https://testersdock.com/wp-content/uploads/2017/09/file-upload-1280x640.png" id="imgAvatar" alt="Course Image" />
               <span class="image-size">(<b>Width :</b> 200px) x (<b>Height :</b> 100px)</span>
               <br><br>
-              <p><input type="file" name="image" id="image" onChange="showPreview(this)" accept="images/course"/></p>
+              <p><input type="file" name="image" id="image" onchange="showPreview(this)" accept="images/course" /></p>
               <br>
             </div>
 
@@ -94,7 +74,7 @@ VALUES
               <div class="row">
                 <div class="col-sm-12">
                   <p class="form-text">Topic</p>
-                  <p><input type="text" class="form" name="topic" placeholder="eg: Accounts" size="30"/></p>
+                  <p><input type="text" class="form" name="topic" placeholder="eg: Accounts" size="30" /></p>
                   <br>
                 </div>
 
@@ -142,7 +122,7 @@ VALUES
                 <div class="col-sm-4">
                   <p class="form-text">Month</p>
                   <p>
-                    <select id="form" class="form" name="month">
+                    <select class="form" name="month">
                       <option value="01">January</option>
                       <option value="02">February</option>
                       <option value="03">March</option>
@@ -176,27 +156,27 @@ VALUES
 
                 <div class="col-sm-4">
                   <p class="form-text">Start Time</p>
-                  <p><input type="time" class="form" id="appt" name="timein"></p>
+                  <p><input type="time" class="form" name="timein"></p>
                   <br>
                 </div>
 
                 <div class="col-sm-4">
                   <p class="form-text">End Time</p>
-                  <p><input type="time" class="form" id="appt" name="timeout"></p>
+                  <p><input type="time" class="form" name="timeout"></p>
                   <br>
                 </div>
 
                 <div class="col-sm-12">
                   <p class="form-text">Venue</p>
                   <p class="side-by-side">Virtual Classroom
-                    <input type="radio" name="cat" value="1"/>
-                    VC<input type="radio" name="session" value="webinar"/>
-                    PC<input type="radio" name="session" value="class"/>
+                    <input type="radio" name="cat" value="1" />
+                    VC<input type="radio" name="session" value="webinar" />
+                    PC<input type="radio" name="session" value="class" />
                   </p>
                   <p class="side-by-side">Public Class
-                    <input type="radio" name="cat" value="2"/>
+                    <input type="radio" name="cat" value="2" />
                   </p><br><br>
-                  <input style="display:none;" class="form" type="text" name="venue" id="otherAnswer"/>
+                  <input style="display:none;" class="form" type="text" name="venue" id="otherAnswer" />
                   <br>
                 </div>
               </div>
@@ -216,7 +196,7 @@ VALUES
 
             <div class="col-sm-12">
               <p class="form-text">Trainer Name</p>
-              <p><input type="text" class="form" name="trainer" placeholder="eg: Ali" size="30"/></p>
+              <p><input type="text" class="form" name="trainer" placeholder="eg: Ali" size="30" /></p>
               <br>
             </div>
 
@@ -228,51 +208,55 @@ VALUES
 
             <div class="col-sm-4">
               <p class="form-text">Current Price</p>
-              <p><input type="number" min="0.01" step="0.01" value="25.67" class="form" name="fees" size="30"/></p>
+              <p><input type="number" min="0.01" step="0.01" value="25.67" class="form" name="fees" size="30" /></p>
               <br>
             </div>
 
             <div class="col-sm-4">
               <p class="form-text">Normal Price</p>
-              <p><input type="number" min="0.01" step="0.01" value="25.67" class="form" name="feesbefore" size="30"/>
+              <p><input type="number" min="0.01" step="0.01" value="25.67" class="form" name="feesbefore" size="30" />
               </p>
               <br>
             </div>
 
             <div class="col-sm-12">
-              <input type="submit" class="button" value="Add Course" onclick="return checking()"/>
-              <input type="hidden" name="MM_insert" value="frm_add_channel">
+              <input type="submit" class="button" value="Add Course" />
+            </div>
+          </div>
         </form>
       </div>
 
     </div>
   </div>
 </div>
-
-</div>
-</div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script>
-    $(document).ready(function () {
-        $("input[type='radio']").change(function () {
-            if ($(this).val() == "2") {
-                $("#otherAnswer").show();
-            } else {
-                $("#otherAnswer").hide();
-            }
-        });
-    });
-</script>
-
+<script src="<? echo $js; ?>jquery.min.js"></script>
 <script src="https://cdn.ckeditor.com/4.15.0/full/ckeditor.js"></script>
-
 <script>
-    CKEDITOR.replace('editor1');
-    CKEDITOR.replace('editor3');
-    CKEDITOR.replace('editor2');
+  $(document).ready(function() {
+    $("input[type='radio']").change(function() {
+      if ($(this).val() == "2") {
+        $("#otherAnswer").show();
+      } else {
+        $("#otherAnswer").hide();
+      }
+    });
+  });
+
+  function showPreview(ele) {
+    $('#imgAvatar').attr('src', ele.value); // for IE
+    if (ele.files && ele.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        $('#imgAvatar').attr('src', e.target.result);
+      }
+      reader.readAsDataURL(ele.files[0]);
+    }
+  }
+  CKEDITOR.replace('editor1');
+  CKEDITOR.replace('editor3');
+  CKEDITOR.replace('editor2');
 </script>
 
 <?php
-  require_once($includes . 'footer.php');
+require_once($includes . 'footer.php');
 ?>

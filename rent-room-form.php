@@ -120,25 +120,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               </ol>
               <div class="carousel-inner">
                 <div class="carousel-item active">
-                  <img src="images/rooms/bgrs.jpg" class="d-block w-100" alt="...">
+                  <img alt='image' src="images/rooms/bgrs.jpg" class="d-block w-100" alt="...">
                   <div class="carousel-caption d-none d-md-block">
                     <h5 class="slide">Big Room</h5>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img src="images/rooms/srs.jpg" class="d-block w-100" alt="...">
+                  <img alt='image' src="images/rooms/srs.jpg" class="d-block w-100" alt="...">
                   <div class="carousel-caption d-none d-md-block">
                     <h5 class="slide">Small Room</h5>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img src="images/rooms/brs.jpg" class="d-block w-100" alt="...">
+                  <img alt='image' src="images/rooms/brs.jpg" class="d-block w-100" alt="...">
                   <div class="carousel-caption d-none d-md-block">
                     <h5 class="slide">Board Room</h5>
                   </div>
                 </div>
                 <div class="carousel-item">
-                  <img src="images/rooms/cl.jpg" class="d-block w-100" alt="...">
+                  <img alt='image' src="images/rooms/cl.jpg" class="d-block w-100" alt="...">
                   <div class="carousel-caption d-none d-md-block">
                     <h5 class="slide">Computer Lab</h5>
                   </div>

@@ -27,7 +27,7 @@
 			return '';
 	}
 
-	
+
 	function func_dmy2ymd($str_date = '')
 	{
 		$str_date	=	trim($str_date);
@@ -40,7 +40,7 @@
 		else
 			return '';
 	}
-	
+
 	function func_mdy2ymd($str_date = '')
 	{
 		$str_date	=	trim($str_date);
@@ -53,7 +53,7 @@
 		else
 			return '';
 	}
-	
+
 
 
 	function func_ymd2dmytime($str_date = '')
@@ -69,7 +69,7 @@
 			return '';
 	}
 
-	
+
 	function func_ymd2timestamp($str_date = '', $int_hour = 0, $int_min = 0, $int_second = 0)
 	{
 		$str_date	=	trim($str_date);
@@ -91,16 +91,16 @@
 	function func_input_date($str_id_name = '', $str_cmd = '', $str_arr = '', $str_value = '', $int_default_empty = 0)
 	{
 		global $sys_config;
-		
+
 		$str_input = "
-		<input class=\"inputwb\" type=\"text\" name=\"".((!empty($str_id_name))? $str_id_name : 'txt_date')."\" 
+		<input class=\"inputwb\" type=\"text\" name=\"".((!empty($str_id_name))? $str_id_name : 'txt_date')."\"
 				 id=\"".((!empty($str_id_name))? $str_id_name : 'txt_date')."\"
 				 size=\"10\"
 				 value=\""
 				 .((!empty($str_value))? $str_value : (($int_default_empty == 0)? date("d-m-Y") : ''))
 				 ."\" readonly=\"true\" />\n
-									  &nbsp;<img src=\"".$sys_config['images_path']."calendar/cal.gif\"
-			id=\"".((!empty($str_cmd))? $str_cmd : 'cmd_date')."\" 
+									  &nbsp;<img alt='image' src=\"".$sys_config['images_path']."calendar/cal.gif\"
+			id=\"".((!empty($str_cmd))? $str_cmd : 'cmd_date')."\"
 			 width=\"16px\" height=\"16px\" style=\"cursor:pointer;\" />\n
     <script language=\"JavaScript\" type=\"text/javascript\">\n
 		<!--//\n
@@ -114,9 +114,9 @@
 		//-->\n
 		</script>\n
 		";
-		
+
 		return $str_input;
-								
+
 	}
-	
+
 ?>

@@ -6,7 +6,7 @@
         <div class="col-3">
           <div class="logo">
             <a href="/index.php">
-              <img src="<? echo $images; ?>logo/Malaysia Export Academy Logo.png">
+              <img alt='image' src="<? echo $images; ?>logo/Malaysia Export Academy Logo.png">
             </a>
           </div>
         </div>
@@ -24,15 +24,15 @@
                   <li><a href="#">Corporate Training</a>
                     <!-- Second Tier Drop Down -->
                     <ul>
-                      <li><a href="/courses/old_layout.php?t=sys_course"><i class="fas fa-graduation-cap"></i> Public Training</a></li>
-                      <li><a href="/courses/new_layout.php?t=sys_course"><i class="fas fa-graduation-cap"></i> In-house Training</a></li>
+                      <li><a href="/courses/old_courses_layout.php?t=sys_course"><i class="fas fa-graduation-cap"></i> Public Training</a></li>
+                      <li><a href="/courses/new_courses_layout.php?t=sys_course"><i class="fas fa-graduation-cap"></i> In-house Training</a></li>
                     </ul>
                   </li>
-                  <li><a href="/courses/old_layout.php?t=sys_sys_seminars">Seminar & Conferences</a></li>
-                  <li><a href="/courses/old_layout.php?t=sys_professional_cert">Professional Certification</a></li>
+                  <li><a href="/courses/old_courses_layout.php?t=sys_sys_seminars">Seminar & Conferences</a></li>
+                  <li><a href="/courses/old_courses_layout.php?t=sys_professional_cert">Professional Certification</a></li>
 
-                  <li><a href="/courses/old_layout.php?t=sys_special_programmes">Special Programmes</a></li>
-                  <li><a href="/online-training.php">Online Training</a>
+                  <li><a href="/courses/old_courses_layout.php?t=sys_special_programmes">Special Programmes</a></li>
+                  <li><a href="/coming-soon.php">Online Training</a>
                     <ul>
                       <li><a href="https://www.londonvschool.com" target="_blank"><i class="fas fa-graduation-cap"></i>Virtual
                           Learning</a></li>
@@ -47,7 +47,7 @@
                   <li><a href="/consulting.php">Export Coaching</a></li>
                   <li><a href="/online-training.php">Export Promotion</a>
                     <ul>
-                      <li><a href="/courses/old_layout.php?t=sys_trade_missions">Trade Missions</a></li>
+                      <li><a href="/courses/old_courses_layout.php?t=sys_trade_missions">Trade Missions</a></li>
                       <li><a href="#">Trade Shows</a></li>
                       <li><a href="#">Listing of Products</a></li>
                     </ul>
@@ -106,14 +106,14 @@
     <ul id="menu">
       <div style='margin-top: 50em;'></div>
       <li><a href="/index.php">Home</a></li>
-      <li><a href="/public-training.php">Public Training</a></li>
-      <li><a href="/inhouse.php">In-House Training</a></li>
-      <li><a href="/seminar-conference.php">Seminar & Conferences</a></li>
-      <li><a href="/professional-certifications.php">Professional Certification</a></li>
-      <li><a href="/special-programs.php">Special Programmes</a></li>
+      <li><a href="/courses/old_courses_layout.php?t=sys_course">Public Training</a></li>
+      <li><a href="/courses/new_courses_layout.php?t=sys_course">In-House Training</a></li>
+      <li><a href="/courses/old_courses_layout.php?t=sys_sys_seminars">Seminar & Conferences</a></li>
+      <li><a href="/courses/old_courses_layout.php?t=sys_professional_cert">Professional Certification</a></li>
+      <li><a href="/courses/old_courses_layout.php?t=sys_special_programmes">Special Programmes</a></li>
       <li><a href="/online-training.php">Online Training</a></li>
       <li><a href="/consulting.php">Export Coaching</a></li>
-      <li><a href="/trade-missions.php">Trade Missions</a></li>
+      <li><a href="/courses/old_courses_layout.php?t=sys_trade_missions">Trade Missions</a></li>
       <li><a href="#">Trade Shows</a></li>
       <li><a href="#">Listing of Products</a></li>
       <li><a href="/room.php">Hall Rental</a></li>

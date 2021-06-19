@@ -42,7 +42,7 @@ VALUES (?, ?, ?, ?, ?, ?, 0)");
 <div class="container-fluid">
   <div class="row">
     <?php
-    require_once($includes.'admin-sidebar.php');
+    require_once($includes . 'admin-sidebar.php');
     ?>
 
     <div class="col-9">
@@ -66,23 +66,6 @@ VALUES (?, ?, ?, ?, ?, ?, 0)");
                     </div>
                     <hr>
 
-
-                    <!-- image upload -->
-                    <script src="http://code.jquery.com/jquery-latest.js"></script>
-                    <script language="Javascript">
-                        function showPreview(ele) {
-                            $('#imgAvatar').attr('src', ele.value); // for IE
-                            if (ele.files && ele.files[0]) {
-                                var reader = new FileReader();
-                                reader.onload = function (e) {
-                                    $('#imgAvatar').attr('src', e.target.result);
-                                }
-                                reader.readAsDataURL(ele.files[0]);
-                            }
-                        }
-                    </script>
-
-
                     <div class="col-sm-12">
                       <div class="padding-30">
                         <div class="row">
@@ -90,12 +73,11 @@ VALUES (?, ?, ?, ?, ?, ?, 0)");
                             <div class="row">
                               <div class="col-sm-6">
                                 <p class="form-text">Course Image</p>
-                                <img src="../images/upload.jpg" id="imgAvatar" alt="Course Image"/>
+                                <img alt='image' src="../images/upload.jpg" id="imgAvatar" alt="Course Image" />
                                 <br><br>
                                 <span class="image-size">(<b>Width :</b> 600px) x (<b>Height :</b> 300px)</span>
                                 <br><br>
-                                <p><input type="file" name="image" id="image" onChange="showPreview(this)"
-                                          accept="images/course"/></p>
+                                <p><input type="file" name="image" id="image" onChange="showPreview(this)" accept="images/course" /></p>
                                 <br>
                               </div>
 
@@ -103,8 +85,7 @@ VALUES (?, ?, ?, ?, ?, ?, 0)");
                                 <div class="row">
                                   <div class="col-sm-12">
                                     <p class="form-text">Topic</p>
-                                    <p><input type="text" class="form" name="topic" placeholder="eg: Accounts"
-                                              size="30"/></p>
+                                    <p><input type="text" class="form" name="topic" placeholder="eg: Accounts" size="30" /></p>
                                     <br>
                                   </div>
 
@@ -192,7 +173,7 @@ VALUES (?, ?, ?, ?, ?, ?, 0)");
 
 
                               <div class="col-sm-12">
-                                <input type="submit" class="button" value="Add Article" onclick="return checking()"/>
+                                <input type="submit" class="button" value="Add Article" onclick="return checking()" />
                                 <input type="hidden" name="MM_insert" value="frm_add_channel">
                           </form>
                         </div>
@@ -208,7 +189,7 @@ VALUES (?, ?, ?, ?, ?, ?, 0)");
               <script src="https://cdn.ckeditor.com/4.15.0/full/ckeditor.js"></script>
 
               <script>
-                  CKEDITOR.replace('editor1');
+                CKEDITOR.replace('editor1');
               </script>
 
 
@@ -221,6 +202,16 @@ VALUES (?, ?, ?, ?, ?, ?, 0)");
     </div>
   </div>
 </div>
-</div>
-</div>
-</div>
+<script src="<? echo $js; ?>jquery.min.js"></script>
+<script language="Javascript">
+  function showPreview(ele) {
+    $('#imgAvatar').attr('src', ele.value); // for IE
+    if (ele.files && ele.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        $('#imgAvatar').attr('src', e.target.result);
+      }
+      reader.readAsDataURL(ele.files[0]);
+    }
+  }
+</script>

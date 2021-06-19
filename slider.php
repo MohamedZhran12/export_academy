@@ -30,7 +30,7 @@ $result = $stmt->fetchAll();
                 </div>
               </div>
             </div>
-            <img src="<?php echo $row['path'] . $row['name']; ?>" class="d-block w-100" alt="image">
+            <img alt='image' src="<?php echo $row['path'] . $row['name']; ?>" class="d-block w-100" alt="image">
           </div>
         <?php } ?>
       </div>

@@ -11,7 +11,7 @@ $cat_id = $_GET['cat_id'];
   <div class="padding-100">
 
     <div id=container-comingsoon>
-      <img src="images/logo/Malaysia Export Academy Logo.png"" id="avatar" width="250" draggable="false"/>
+      <img alt='image' src="images/logo/Malaysia Export Academy Logo.png"" id="avatar" width="250" draggable="false"/>
       <div id="text">
         <h1>Building…</h1>
         <p title="(I guess)">(coming soon)</p>

@@ -44,7 +44,7 @@ $header = $headerStmt->fetch();
           <div class="col-sm-4">
             <div class="margin-30">
               <div class="images-zoom">
-                <img src="<?php echo $images['path'] . $images['name'] ?>">
+                <img alt='image' src="<?php echo $images['path'] . $images['name'] ?>">
               </div>
             </div>
           </div>

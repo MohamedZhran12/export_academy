@@ -33,7 +33,7 @@ if ($_SESSION['user']['level_id'] == 1 && $_GET['delete'] == 'image') {
         <? foreach ($result as $row) { ?>
           <div class='col-3'>
             <a class='delete-image' data-fullpath='<? echo $row['path'] . $row['name']; ?>'
-               data-id='<? echo $row['id']; ?>' href='#'><img class='mt-3' src='<? echo $row['path'] . $row['name']; ?>'
+               data-id='<? echo $row['id']; ?>' href='#'><img alt='image' class='mt-3' src='<? echo $row['path'] . $row['name']; ?>'
                                                               alt='image'></a>
           </div>
         <? } ?>

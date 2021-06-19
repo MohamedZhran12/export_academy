@@ -61,7 +61,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
                         <div class="product__inner">
 
                           <section class="product__image">
-                            <img src="images/articles/<?php echo $row['sys_image']; ?>">
+                            <img alt='image' src="images/articles/<?php echo $row['sys_image']; ?>">
                           </section>
 
                           <div class="product__details">

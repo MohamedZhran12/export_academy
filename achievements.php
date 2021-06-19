@@ -45,7 +45,7 @@ $categoriesImages = $stmt->fetchAll(PDO::FETCH_GROUP);
           <div class="col-sm-4">
             <div class="margin-30">
               <div class="images-zoom">
-                <img src="<? echo $images['path'] . $images['name'] ?>">
+                <img alt='image' src="<? echo $images['path'] . $images['name'] ?>">
               </div>
             </div>
           </div>

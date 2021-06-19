@@ -31,7 +31,7 @@ if ($_SESSION['user']['level_id'] == 1 && $_GET['delete'] == 'video') {
       <div class='row'>
         <? foreach ($result as $row) { ?>
           <div class='col-3'>
-            <a class='delete-video' data-id='<? echo $row['id']; ?>' href='#'><img class='mt-3'
+            <a class='delete-video' data-id='<? echo $row['id']; ?>' href='#'><img alt='image' class='mt-3'
                                                                                    src='https://img.youtube.com/vi/<? echo substr($row['url'], strpos($row['url'], 'embed') + 6, 11); ?>/0.jpg'
                                                                                    alt='image'></a>
           </div>

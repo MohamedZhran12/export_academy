@@ -76,22 +76,22 @@ function func_list_paging_post($str_page_url = '', $str_url_opt = '', $int_page_
     if ($int_page_number <> 1) {
       $str_page .= "&nbsp;&nbsp;<a href=\"" . $str_page_url . "(1);"
         . $str_url_opt
-        . "\"><img src=\"" . $sys_config['images_path'] . "page-first.gif\" border=0 "
+        . "\"><img alt='image' src=\"" . $sys_config['images_path'] . "page-first.gif\" border=0 "
         . " title=\"Go To First Page\" /></a>";
       $str_page .= "&nbsp;&nbsp;<a href=\"" . $str_page_url . "(" . ($int_page_number - 1) . ");"
         . $str_url_opt
-        . "\"><img src=\"" . $sys_config['images_path'] . "page-prev.gif\" border=0 "
+        . "\"><img alt='image' src=\"" . $sys_config['images_path'] . "page-prev.gif\" border=0 "
         . " title=\"Go To Page " . ($int_page_number - 1) . "\" /></a>";
     }
     if ($int_page_number <> $int_max_page) {
       $str_page .= "&nbsp;&nbsp;<a href=\"" . $str_page_url . "(" . ($int_page_number + 1) . ");"
         . $str_url_opt
-        . "\"><img src=\"" . $sys_config['images_path'] . "page-next.gif\" border=0 "
+        . "\"><img alt='image' src=\"" . $sys_config['images_path'] . "page-next.gif\" border=0 "
         . " title=\"Go To Page " . ($int_page_number + 1) . "\" /></a>";
     }
     $str_page .= "&nbsp;&nbsp;<a href=\"" . $str_page_url . "(" . $int_max_page . ");"
       . $str_url_opt
-      . "\"><img src=\"" . $sys_config['images_path'] . "page-last.gif\" border=0 "
+      . "\"><img alt='image' src=\"" . $sys_config['images_path'] . "page-last.gif\" border=0 "
       . " title=\"Go To Last Page\" /></a>";
   }
   return $str_page;
@@ -133,25 +133,25 @@ function func_right_images() {
   global $con, $sys_config;
 
   $str_footer = "
-						<img src=\"./images/mobile_monday.jpg\" />
+						<img alt='image' src=\"./images/mobile_monday.jpg\" />
 						<br />
-						<a href=\"#\" onclick=\"javascript:func_popup_donate('donate.html','donate');\"><img borer=0 src=\"./images/donate.jpg\" /></a>
+						<a href=\"#\" onclick=\"javascript:func_popup_donate('donate.html','donate');\"><img alt='image' borer=0 src=\"./images/donate.jpg\" /></a>
 						<br />
 <div id=\"donate-form\" style=\"display:none;top:200;left:200\">
   <strong>Payments By Cheque or Cash</strong><br />
 <br />
 If you prefer to pay by cheque or cash please bank into :<br />
 <br />
-<img src=\"http://duniaenglish.com/de2/images/ambank.jpg\" /><br />
+<img alt='image' src=\"http://duniaenglish.com/de2/images/ambank.jpg\" /><br />
 Bank Name :           Ambank (M) Berhad<br />
 Account Name :          LTT Global Communications Sdn Bhd<br />
 Account Number :   091-201-200355-4<br />
 </div>
-						<a href=\"#\" onClick=\"javascript:func_open(2);\"><img border=0 src=\"./images/spread.jpg\" /></a>
+						<a href=\"#\" onClick=\"javascript:func_open(2);\"><img alt='image' border=0 src=\"./images/spread.jpg\" /></a>
 						<br />
-						<a href=\"http://www.duniaenglish.com\" target=\"_blank\"><img border=0 src=\"./images/banner-de.jpg\" /></a>
+						<a href=\"http://www.duniaenglish.com\" target=\"_blank\"><img alt='image' border=0 src=\"./images/banner-de.jpg\" /></a>
 						<br />
-						<a href=\"http://www.ipdoum.edu.my\" target=\"_blank\"><img border=0 src=\"./images/banner-openuniversity.jpg\" /></a>
+						<a href=\"http://www.ipdoum.edu.my\" target=\"_blank\"><img alt='image' border=0 src=\"./images/banner-openuniversity.jpg\" /></a>
 		";
 
   return $str_footer;

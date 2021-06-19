@@ -58,7 +58,7 @@ if ($sql->rowCount() > 0) {
         </div>
       </div>
       <div class="header-in-course-img">
-        <img src="images/courses/<?php echo $row['sys_course_image']; ?>">
+        <img alt='image' src="images/courses/<?php echo $row['sys_course_image']; ?>">
       </div>
     </div>
 

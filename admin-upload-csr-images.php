@@ -28,7 +28,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             enctype="multipart/form-data">
         <div class='row'>
           <div class='col-6'>
-            <img src="../images/upload.jpg" id="imgAvatar" alt="Course Image">
+            <img alt='image' src="../images/upload.jpg" id="imgAvatar" alt="Course Image">
             <span class='mt-3 d-inline-block'>(Width : 300px) x (Height : 600px)</span>
           </div>
           <div class='col-6'>

@@ -33,30 +33,10 @@ VALUES(?, ?, ?, ?, 0, ?, ?)");
 }
 ?>
 
-
-<!-- image upload -->
-<script src="http://code.jquery.com/jquery-latest.js"></script>
-<script language="Javascript">
-    function showPreview(ele) {
-        $('#imgAvatar').attr('src', ele.value); // for IE
-        if (ele.files && ele.files[0]) {
-            var reader = new FileReader();
-            reader.onload = function (e) {
-                $('#imgAvatar').attr('src', e.target.result);
-            }
-            reader.readAsDataURL(ele.files[0]);
-        }
-    }
-</script>
-
-
-
-
-
 <div class="container-fluid">
   <div class="row">
     <?php
-    require_once($includes.'admin-sidebar.php');
+    require_once($includes . 'admin-sidebar.php');
     ?>
 
     <div class="col-10">
@@ -85,53 +65,56 @@ VALUES(?, ?, ?, ?, 0, ?, ?)");
 
 
                       <form name="frm_add_channel" method="post" enctype="multipart/form-data">
-                        <img src="https://testersdock.com/wp-content/uploads/2017/09/file-upload-1280x640.png"
-                             id="imgAvatar" alt="Course Image"/>
+                        <img src="https://testersdock.com/wp-content/uploads/2017/09/file-upload-1280x640.png" id="imgAvatar" alt="Course Image" />
                         <br><br>
-                        <p><input type="file" name="image" id="image" onChange="showPreview(this)"
-                                  accept="images/album"/></p>
+                        <p><input type="file" name="image" id="image" onchange="showPreview(this)" accept="images/album" /></p>
 
 
                         <p class="form-text">Property Name</p>
-                        <p><input type="text" class="form" name="name" placeholder="eg: Twin Tower" size="30"/></p>
+                        <p><input type="text" class="form" name="name" placeholder="eg: Twin Tower" size="30" /></p>
                         <input name='price' type="hidden" value"" />
 
-                        <p class="form-text">Place</p
-                        <p><input type="text" class="form" name="place" placeholder="eg: Petaling Jaya" size="30"/></p>
+                        <p class="form-text">Place</p> <input type="text" class="form" name="place" placeholder="eg: Petaling Jaya" size="30" />
 
                         <p class="form-text">Type</p>
-                        <p>
 
-                          <select name="cat" class="form">
-                            <?php
-                            $sql = $conn->prepare("SELECT * FROM sys_cat");
-                            $sql->execute();
-                            foreach ($sql->fetchAll() as $row) {
-                              ?>
-                              <option value="<?php echo $row['cat_id']; ?>"><?php echo $row['cat_name']; ?></option>
-                            <?php } ?>
-                          </select>
+                        <select name="cat" class="form">
+                          <?php
+                          $sql = $conn->prepare("SELECT * FROM sys_cat");
+                          $sql->execute();
+                          foreach ($sql->fetchAll() as $row) {
+                          ?>
+                            <option value="<?php echo $row['cat_id']; ?>"><?php echo $row['cat_name']; ?></option>
+                          <?php } ?>
+                        </select>
 
-                        </p>
-                        <input type="submit" value="Add Album" onclick="return checking()"/>
-                        <input type="hidden" name="MM_insert" value="frm_add_channel">
+                        <input type="submit" value="Add Album" />
                       </form>
-
-
                     </div>
                   </div>
                 </div>
               </div>
-
-
             </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-
-  <?php
-    require_once($includes . 'footer.php');
-  ?>
+<script src="<? echo $js; ?>jquery.min.js"></script>
+<script language="Javascript">
+  function showPreview(ele) {
+    $('#imgAvatar').attr('src', ele.value); // for IE
+    if (ele.files && ele.files[0]) {
+      var reader = new FileReader();
+      reader.onload = function(e) {
+        $('#imgAvatar').attr('src', e.target.result);
+      }
+      reader.readAsDataURL(ele.files[0]);
+    }
+  }
+</script>
+<?php
+require_once($includes . 'footer.php');
+?>

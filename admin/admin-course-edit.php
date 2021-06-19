@@ -149,7 +149,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                   <div class="row">
                                     <div class="col-sm-6">
                                       <p class="form-text">Course Image</p>
-                                      <img src="images/courses/<?php echo $row['sys_course_image']; ?>" id="course_image" alt=''>
+                                      <img alt='image' src="images/courses/<?php echo $row['sys_course_image']; ?>" id="course_image" alt='image'>
                                       <br>
                                       <label for="course_image">Image</label>
                                       <input type="file" name="course_image" accept="image/*" onchange="readURL(this)" />
@@ -447,7 +447,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                       } ?>
                 </div>
 
-                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+                <script src="<? echo $js; ?>jquery.min.js"></script>
                 <script>
                   $(document).ready(function() {
                     $("input[type='radio']").change(function() {

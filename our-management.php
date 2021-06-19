@@ -39,7 +39,7 @@ $categoriesImages = $stmt->fetchAll(PDO::FETCH_GROUP);
         <? foreach ($category as $images) { ?>
           <div class="col-sm-12">
             <div class="margin-30">
-              <img src="<? echo $images['path'] . $images['name'] ?>">
+              <img alt='image' src="<? echo $images['path'] . $images['name'] ?>">
             </div>
           </div>
         <? } ?>

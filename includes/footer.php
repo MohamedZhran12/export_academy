@@ -5,7 +5,7 @@
         <div class="row">
           <div class="col-sm-5">
             <div class="width-200">
-              <img src="<? echo $images; ?>/logo/Logo (MEA) W.png">
+              <img alt='image' src="<? echo $images; ?>/logo/Logo (MEA) W.png">
             </div>
             <p>Malaysian Export Academy was registered in October 2007, to take over the activities of The Exporters
               Club of Malaysia specifically the Training & Education Unit.</p>

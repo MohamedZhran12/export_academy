@@ -118,7 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                   <div class="row">
                     <div class="col-6">
                       <p class="form-text">Course Image</p>
-                      <img class='mb-3' src="/images/upload.jpg" id="imgAvatar" alt="Course Image" />
+                      <img alt='image' class='mb-3' src="/images/upload.jpg" id="imgAvatar" alt="Course Image" />
                       <label class="image-size d-block mb-4">(<strong>Width :</strong> 300px) x (<strong>Height :</strong> 600px)</label>
                       <input class='mb-3' type="file" name="image" id="image" onchange="showPreview(this)" accept="images/*" />
                       <p class="form-text mb-2">Upload Brochure</p>

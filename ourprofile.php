@@ -162,7 +162,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
     <!--	<div class="overlay-white">-->
     <!--	<div class="course-image">-->
     <!--	<p>Exporting and International Trade</p>-->
-    <!--	<img src="images/about/courses/trade.jpg">-->
+    <!--	<img alt='image' src="images/about/courses/trade.jpg">-->
     <!--	</div>-->
     <!--	</div>-->
     <!--	<div class="courses-desc">-->

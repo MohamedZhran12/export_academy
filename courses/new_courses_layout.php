@@ -1,5 +1,5 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
 
 require_once($includes . 'sections_info.php');
 $course_type = str_replace('sys_', '', $table);
@@ -113,7 +113,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
                     <div class="row">
                       <div class="col-12 col-md-3">
                         <div class="courses-image">
-                          <img src="images/courses/<?php echo $courseInfo['sys_course_image']; ?>" alt='course image'>
+                          <img alt='image' src="images/courses/<?php echo $courseInfo['sys_course_image']; ?>" alt='course image'>
                         </div>
                         <?php
                         $datesSql = $conn->prepare("select course_date_start,course_date_end from courses_dates where course_type=? and course_id=?");

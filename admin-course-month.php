@@ -65,7 +65,7 @@ $month = $_GET['month'];
                                               class="fas fa-calendar-alt"></i> <?php echo $row['sys_course_date']; ?>
                                           - <?php echo $row['sys_course_month']; ?>
                                           - <?php echo $row['sys_course_year']; ?></p>
-                                        <img src="images/courses/<?php echo $row['sys_course_image']; ?>">
+                                        <img alt='image' src="images/courses/<?php echo $row['sys_course_image']; ?>">
                                       </div>
                                       <div class="courses-desc1">
                                         <p class="course-topic-1-2"><?php echo $row['sys_course_topic']; ?></p>
