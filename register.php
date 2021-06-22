@@ -1,30 +1,7 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
-
+require_once($includes . 'sections_info');
 $id = $_GET['id'];
-?>
-
-
-
-<?php
-$table = isset($_GET['t']) ? $_GET['t'] : 'sys_course';
-if ($table == 'sys_course') {
-  $sectionUrl = 'public-training.php';
-  $section = 'Public Training';
-} else if ($table == 'sys_seminars') {
-  $sectionUrl = 'seminar-conference.php';
-  $section = 'Seminar & Conferences';
-} else if ($table == 'sys_professional_cert') {
-  $sectionUrl = 'professional-certifications.php';
-  $section = 'Professional Certification';
-} else if ($table == 'sys_special_programmes') {
-  $sectionUrl = 'special-programs.php';
-  $section = 'Special Programmes';
-} else if ($table == 'sys_trade_missions') {
-  $sectionUrl = 'trade-missions.php';
-  $section = 'Trade Missions';
-}
-
 $sql = $conn->prepare("SELECT * FROM $table WHERE sys_course_id = ?");
 $sql->execute([$id]);
 if ($sql->rowCount() > 0) {
@@ -35,10 +12,10 @@ if ($sql->rowCount() > 0) {
       <div class="overlay-white">
         <div class="container">
           <div class="header-in-topic">
-            <h1><? echo $section; ?> Enquiry</h1>
+            <h1><? echo $sectionName; ?> Enquiry</h1>
             <div class="breadcrumb-in">
               <p class="link"><a href="index.php"><i class="fas fa-home"></i> Home</a></p>
-              <p class="link"><a href="public-training.php"><? echo $section; ?></a></p>
+              <p class="link"><a href="public-training.php"><? echo $sectionName; ?></a></p>
               <p class="link"><?php echo $row['sys_course_topic']; ?></p>
               <p class="link-at">Registration</p>
             </div>
@@ -104,7 +81,7 @@ if ($sql->rowCount() > 0) {
 
           <div class="col-sm-8">
 
-            <p class="form-text-topic"><? echo $section; ?> Enquiry Form</p>
+            <p class="form-text-topic"><? echo $sectionName; ?> Enquiry Form</p>
             <div class="border-box">
               <form action="addmore.php" method="post">
 
@@ -239,7 +216,7 @@ if ($sql->rowCount() > 0) {
 
 
                   <div class="col-sm-8">
-                    <input type='hidden' name='section' value='<? echo $sectionUrl ?>'>
+                    <input type='hidden' name='section' value='<? echo $sectionNameUrl ?>'>
                     <?php include('captcha.php'); ?>
                     <input type="submit" name="submit" id="submit" class="btn btn-info" value="Submit" disabled />
                   </div>

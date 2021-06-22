@@ -4,13 +4,13 @@
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
 
 $id = $_GET['id'];
-$table = isset($_GET['t']) ? $_GET['t'] : 'sys_course';
+$table = isset($_GET['course']) ? $_GET['course'] : 'sys_course';
 require_once($includes . 'sections_info.php');
 
 
 $sqlStmt = "select course_date_start,course_date_end,id from courses_dates where course_type=? and course_id=?";
 $datesSql = $conn->prepare($sqlStmt);
-$datesSql->execute([$course_type, $id]);
+$datesSql->execute([$table, $id]);
 $dates = $datesSql->fetchAll();
 
 $stmt = $conn->prepare("select ID, name from courses_groups");
@@ -91,7 +91,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   $insert_dates_stmt = "insert into courses_dates(course_date_start,course_date_end,course_type,course_id) values";
   for ($i = 0; $i < count($start_date); $i++) {
-    $insert_dates_stmt .= "('$start_date[$i]','$end_date[$i]','$course_type',$id)";
+    $insert_dates_stmt .= "('$start_date[$i]','$end_date[$i]','$table',$id)";
     if ($i != count($start_date) - 1) {
       $insert_dates_stmt .= ',';
     }
@@ -119,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               <div class="breadcrumb-main">
                 <p class="current-link">Admin Dashboard</p>
                 <i class="fas fa-chevron-right"></i>
-                <p class="current-link">Edit <? echo $section; ?></p>
+                <p class="current-link">Edit <? echo $sectionName; ?></p>
               </div>
               <br>
 
@@ -128,7 +128,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                   <div class="margin-bottom-30">
                     <div class="background-white">
                       <div class="padding-topic">
-                        <p class="menu-topic">Edit <? echo $section; ?></p>
+                        <p class="menu-topic">Edit <? echo $sectionName; ?></p>
                       </div>
                       <hr>
 
@@ -448,6 +448,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 </div>
 
                 <script src="<? echo $js; ?>jquery.min.js"></script>
+                <script src="https://cdn.ckeditor.com/4.15.0/full/ckeditor.js"></script>
+                <script src='assets/bootstrap-datepicker.min.js'></script>
                 <script>
                   $(document).ready(function() {
                     $("input[type='radio']").change(function() {
@@ -460,13 +462,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                       }
                     });
                   });
-                </script>
 
-                <script src="https://cdn.ckeditor.com/4.15.0/full/ckeditor.js"></script>
-                <script src='assets/bootstrap-datepicker.min.js'></script>
-                <script>
                   function insertAfter(newNode, referenceNode) {
                     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
+                  }
+
+                  function readURL(input) {
+                    if (input.files && input.files[0]) {
+                      var reader = new FileReader();
+
+                      reader.onload = function(e) {
+                        document.getElementById('course_image').setAttribute('src', e.target.result);
+                      };
+
+                      reader.readAsDataURL(input.files[0]);
+                    }
                   }
 
                   CKEDITOR.replace('editor1');
@@ -492,17 +502,3 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
   </div>
 </div>
-
-<script>
-  function readURL(input) {
-    if (input.files && input.files[0]) {
-      var reader = new FileReader();
-
-      reader.onload = function(e) {
-        document.getElementById('course_image').setAttribute('src', e.target.result);
-      };
-
-      reader.readAsDataURL(input.files[0]);
-    }
-  }
-</script>

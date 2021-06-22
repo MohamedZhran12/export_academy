@@ -148,7 +148,7 @@
               ?>
                   <div class="text-center">
                     <a href="uploads/<?php echo $row['pdf']; ?>" class="button" download>Download Brochure</a>
-                    <a href="register.php?id=<?php echo $row['sys_course_id']; ?>&t=<?php echo $table; ?>" class="button2">Enquire
+                    <a href="register.php?id=<?php echo $row['sys_course_id']; ?>&course=<?php echo $table; ?>" class="button2">Enquire
                       Now</a>
                   </div>
     </div>

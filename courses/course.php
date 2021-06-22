@@ -11,7 +11,7 @@ $sql->execute([$id]);
 
 if ($table == 'sys_professional_cert' || $table == 'sys_special_programmes') {
   $sql = $conn->prepare("select course_date_start,course_date_end from courses_dates where course_type=? and course_id=?");
-  $sql->execute([$course_type, $id]);
+  $sql->execute([$table, $id]);
   $dates = $sql->fetchAll();
 }
 
@@ -51,7 +51,7 @@ if ($sql->rowCount() > 0) {
             <h1><?php echo $row['sys_course_topic']; ?></h1>
             <div class="breadcrumb-in">
               <p class="link"><a href="index.php"><i class="fas fa-home"></i> Home</a></p>
-              <p class="link"><a href="#"><?php echo $section; ?></a></p>
+              <p class="link"><a href="#"><?php echo $sectionName; ?></a></p>
               <p class="link-at"><?php echo $row['sys_course_topic']; ?></p>
             </div>
           </div>
@@ -116,7 +116,7 @@ if ($sql->rowCount() > 0) {
                     </a>
                   </li>
                   <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false"><i class="fas fa-user-friends"></i> <? echo $instructor_type; ?></a>
+                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false"><i class="fas fa-user-friends"></i> <? echo $instructorType; ?></a>
                   </li>
                   <? if (isset($row['certification_name'])) { ?>
                     <li class="nav-item" role="presentation">

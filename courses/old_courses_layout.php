@@ -10,10 +10,10 @@ $sql->execute();
   <div class="overlay-white">
     <div class="container">
       <div class="header-in-topic">
-        <h1><?php echo $section; ?></h1>
+        <h1><?php echo $sectionName; ?></h1>
         <div class="breadcrumb-in">
           <p class="link"><a href="index.php"><i class="fas fa-home"></i> HOME</a></p>
-          <p class="link-at"><?php echo $section; ?></p>
+          <p class="link-at"><?php echo $sectionName; ?></p>
         </div>
       </div>
     </div>
@@ -35,7 +35,7 @@ $sql->execute();
             <?php
             echo date("F", strtotime('m')) . ' ';
             echo date("Y") . ' ';
-            echo $section; ?> </h2>
+            echo $sectionName; ?> </h2>
         </div>
 
         <?php
@@ -45,7 +45,7 @@ $sql->execute();
             <div class="col-sm-4">
               <div class="margin-30">
                 <div class="courses-det">
-                  <a class="button-1" href="course.php?id=<?php echo $courseInfo['sys_course_id']; ?>&cat_id=<?php echo $courseInfo['cat_id']; ?>&t=<? echo $table; ?>">
+                  <a class="button-1" href="course.php?id=<?php echo $courseInfo['sys_course_id']; ?>&cat_id=<?php echo $courseInfo['cat_id']; ?>&course=<? echo $table; ?>">
                     <div class="courses-image">
                       <p class="date"><i class="fas fa-calendar-alt"></i> <?php echo $courseInfo['sys_course_date']; ?>
                         - <?php echo $courseInfo['sys_course_month']; ?> - <?php echo $courseInfo['sys_course_year']; ?></p>

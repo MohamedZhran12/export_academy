@@ -7,19 +7,20 @@ $stmt = $conn->prepare("select ID, name from courses_groups");
 $stmt->execute();
 $groups = $stmt->fetchAll();
 
-function addToArrayIfValueIsSet($value, &$array) {
-  if (isset($value) && !empty($value)) {
-    $array[] = $value;
+function addToArrayIfValueIsSet($optionalArr, &$mainArray) {
+  foreach ($optionalArr as $value) {
+    if (isset($value)) {
+      $mainArray[] = $value;
+    }
   }
 }
 
-function insertMoreDates($start_date, $end_date) {
+function insertMoreDates($start_date, $end_date, $table) {
   global $conn;
   $last_inserted_id = $conn->lastInsertId();
-  $course_type = 'special_programmes';
   $insert_dates_stmt = "insert into courses_dates(course_date_start,course_date_end,course_type,course_id) values";
   for ($i = 0; $i < count($start_date); $i++) {
-    $insert_dates_stmt .= "('$start_date[$i]','$end_date[$i]','$course_type',$last_inserted_id)";
+    $insert_dates_stmt .= "('$start_date[$i]','$end_date[$i]','$table',$last_inserted_id)";
     if ($i != count($start_date) - 1) {
       $insert_dates_stmt .= ',';
     }
@@ -29,11 +30,11 @@ function insertMoreDates($start_date, $end_date) {
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   if (!empty($_FILES['image']['tmp_name'])) {
-    move_uploaded_file($_FILES['image']['tmp_name'], "images/courses/" . $_FILES['image']['name']);
+    move_uploaded_file($_FILES['image']['tmp_name'], $rootDir . "images/courses/" . $_FILES['image']['name']);
   }
 
   if (!empty($_FILES['brochure']['tmp_name'])) {
-    move_uploaded_file($_FILES['brochure']['tmp_name'], "uploads/" . $_FILES['brochure']['name']);
+    move_uploaded_file($_FILES['brochure']['tmp_name'], $rootDir . "uploads/" . $_FILES['brochure']['name']);
   }
 
   $start_date = is_array($_POST['start_date']) ? explode('-', $_POST['start_date'][0])[0] : $_POST['start_date'];
@@ -42,7 +43,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $year = is_array($_POST['end_date']) ? explode('-', $_POST['end_date'][0])[2] : $_POST['year'];
   $venue = $_POST['cat'] == 1 ? $_POST['virtual_venue'] : $_POST['public_venue'];
 
-  $courseAttrib = [
+  $courseAttributes = [
+    null,
     $_FILES['image']['name'],
     $_POST['topic'],
     $_POST['days'],
@@ -63,29 +65,30 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $_POST['fees_before_in_usd'],
     $_POST['points'],
     0,
-    $_POST['session'],
+    null,
     $_POST['tax'],
     $_POST['cat'],
     $_FILES['brochure']['name']
   ];
 
-  addToArrayIfValueIsSet($_POST['certification_name'], $courseAttrib);
-  addToArrayIfValueIsSet($_POST['certification_info'], $courseAttrib);
-  addToArrayIfValueIsSet($_POST['toggle_hrdf'], $courseAttrib);
-  addToArrayIfValueIsSet($_POST['toggle_cpd_text'], $courseAttrib);
-  addToArrayIfValueIsSet($_POST['toggle_lunch'], $courseAttrib);
-  addToArrayIfValueIsSet($_POST['group_id'], $courseAttrib);
+  $optionalAttributes = [
+    $_POST['certification_name'], $_POST['certification_info'],
+    $_POST['toggle_hrdf'], $_POST['toggle_cpd_text'],
+    $_POST['toggle_lunch'], $_POST['group_id']
+  ];
 
-  $valuesBinding = str_repeat(',?', count($courseAttrib) - 1);
+  addToArrayIfValueIsSet($optionalAttributes, $courseAttributes);
+
+  $valuesBinding = str_repeat(',?', count($courseAttributes) - 1);
   $sql = $conn->prepare("INSERT INTO $table
   VALUES (?$valuesBinding)");
-  $isCourseAdded = $sql->execute($courseAttrib);
+  $isCourseAdded = $sql->execute($courseAttributes);
 
   if ($isThereMoreDates) {
-    $isDatesAdded = insertMoreDates($start_date, $end_date);
+    $isDatesAdded = insertMoreDates($_POST['start_date'], $_POST['end_date'], $table);
   }
 
-  if ($isCourseAdded || (isset($isDatesAdded) && $isDatesAdded)) {
+  if ($isCourseAdded) {
     echo '
 	<script type="text/javascript">
 	    alert("Course Successfully Uploaded!");
@@ -106,7 +109,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           <div class="breadcrumb-main">
             <p class="current-link">Admin Dashboard</p>
             <i class="fas fa-chevron-right"></i>
-            <p class="current-link">Upload Special Programmes</p>
+            <p class="current-link">Upload <? echo $sectionName; ?></p>
           </div>
         </div>
 
@@ -118,7 +121,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                   <div class="row">
                     <div class="col-6">
                       <p class="form-text">Course Image</p>
-                      <img alt='image' class='mb-3' src="/images/upload.jpg" id="imgAvatar" alt="Course Image" />
+                      <img class='mb-3' src="/images/upload.jpg" id="imgAvatar" alt="Course Image" />
                       <label class="image-size d-block mb-4">(<strong>Width :</strong> 300px) x (<strong>Height :</strong> 600px)</label>
                       <input class='mb-3' type="file" name="image" id="image" onchange="showPreview(this)" accept="images/*" />
                       <p class="form-text mb-2">Upload Brochure</p>
@@ -167,17 +170,18 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                           <input type="time" class="form" name="time_out">
 
                         </div>
-
-                        <div class="col-12 mb-3">
-                          <select id='group-title' name='group_id' class="custom-select">
-                            <option value="" disabled selected>Select Group</option>
-                            <? foreach ($groups as $group) { ?>
-                              <option value="<? echo $group['ID'] ?>">
-                                <? echo $group['name'] ?>
-                              </option>
-                            <? } ?>
-                          </select>
-                        </div>
+                        <? if ($isThereGroups) { ?>
+                          <div class="col-12 mb-3">
+                            <select id='group-title' name='group_id' class="custom-select">
+                              <option value="" disabled selected>Select Group</option>
+                              <? foreach ($groups as $group) { ?>
+                                <option value="<? echo $group['ID'] ?>">
+                                  <? echo $group['name'] ?>
+                                </option>
+                              <? } ?>
+                            </select>
+                          </div>
+                        <? } ?>
                         <div class="col-12 mb-3">
                           <span>Show Tax:</span>
                           <input type="radio" id="show-tax" name="show-hide-tax" checked /><span> Yes</span>
@@ -231,37 +235,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <div class="col-12 my-3">
                       <p class="form-text">Intro</p>
                       <textarea id="editor1" name="intro"></textarea>
-
-
                     </div>
 
                     <div class="col-12 my-3">
                       <p class="form-text">Course Module</p>
                       <textarea id="editor3" name="module"></textarea>
-
-
                     </div>
 
                     <div class="col-12 my-3">
                       <p class="form-text">Trainer Name</p>
                       <input type="text" class="form" name="trainer" placeholder="eg: Ali" size="30" />
                     </div>
-                    <? if ($isThereMoreDates) { ?>
-                      <div class="col-12 my-3">
-                        <p class="form-text">Trainer Info</p>
-                        <textarea id="editor2" name="trainer_info"></textarea>
-                      </div>
 
+                    <div class="col-12 my-3">
+                      <p class="form-text">Trainer Info</p>
+                      <textarea id="editor2" name="trainer_info"></textarea>
+                    </div>
+                    <? if ($isThereMoreDates) { ?>
                       <div class="col-12 my-3">
                         <p class="form-text">Certification Name</p>
                         <textarea id="editor4" name="certification_name"></textarea>
                       </div>
-                    <? } ?>
-                    <div class="col-12 my-3">
-                      <p class="form-text">Certification Info</p>
-                      <textarea id="editor5" name="certification_info"></textarea>
-                    </div>
 
+                      <div class="col-12 my-3">
+                        <p class="form-text">Certification Info</p>
+                        <textarea id="editor5" name="certification_info"></textarea>
+                      </div>
+                    <? } ?>
                     <div class="col-6 my-3">
                       <p class="form-text">Current Price in MYR</p>
                       <input type="number" min="0.00" step="0.00" value="0.00" class="form" name="fees" size="30" />
@@ -280,7 +280,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <div class="col-6 my-3">
                       <p class="form-text">Normal Price in USD</p>
                       <input type="number" min="0.00" step="0.00" value="0.00" class="form" name="fees_before_in_usd" size="30" />
-
                     </div>
 
                     <div class="col-12 mb-3">

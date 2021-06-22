@@ -18,7 +18,7 @@ require_once($includes . 'sections_info.php');
               <div class="breadcrumb-main">
                 <p class="current-link">Admin Dashboard</p>
                 <i class="fas fa-chevron-right"></i>
-                <p class="current-link"><? echo $section; ?></p>
+                <p class="current-link"><? echo $sectionName; ?></p>
               </div>
               <br>
 
@@ -35,7 +35,7 @@ require_once($includes . 'sections_info.php');
                   <div class="margin-bottom-30">
                     <div class="background-white">
                       <div class="padding-topic">
-                        <p class="menu-topic"><? echo $section; ?></p>
+                        <p class="menu-topic"><? echo $sectionName; ?></p>
                       </div>
                       <hr>
                     </div>
@@ -79,10 +79,10 @@ require_once($includes . 'sections_info.php');
                                         </div>
 
                                         <div class="take-action">
-                                          <a class="edit" href="admin-course-edit.php?id=<?php echo $row['sys_course_id']; ?>&t=<? echo $table; ?>" title="Edit Course">
+                                          <a class="edit" href="admin-course-edit.php?id=<?php echo $row['sys_course_id']; ?>&course=<? echo $table; ?>" title="Edit Course">
                                             <p><i class="fas fa-edit"></i></p>
                                           </a>
-                                          <a class="delete" href="admin-delete-course.php?id=<?php echo $row['sys_course_id']; ?>&t=<? echo $table; ?>" onclick="return confirm('Are you sure you want to delete?')" title="Delete Album">
+                                          <a class="delete" href="admin-delete-course.php?id=<?php echo $row['sys_course_id']; ?>&course=<? echo $table; ?>" onclick="return confirm('Are you sure you want to delete?')" title="Delete Album">
                                             <p><i class="fas fa-trash-alt"></i></p>
                                           </a>
 

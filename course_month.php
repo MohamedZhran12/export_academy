@@ -4,7 +4,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
 
 $id = $_GET['id'];
 $month = $_GET['month'];
-$table = isset($_GET['t']) ? $_GET['t'] : 'sys_course';
+$table = isset($_GET['course']) ? $_GET['course'] : 'sys_course';
 
 $sql = $conn->prepare("UPDATE $table SET sys_course_view = sys_course_view + 1 WHERE sys_course_id = ?");
 $sql->execute([$id]);
@@ -88,7 +88,7 @@ $sql->execute([$id]);
                     <div class="margin-30">
                       <div class="courses-det">
                         <a class="button-1"
-                           href="course.php?id=<?php echo $row['sys_course_id']; ?>&cat_id=<?php echo $row['cat_id']; ?> &t=<? echo $table; ?>">
+                           href="course.php?id=<?php echo $row['sys_course_id']; ?>&cat_id=<?php echo $row['cat_id']; ?> &course=<? echo $table; ?>">
                           <div class="courses-image">
                             <p class="date"><i class="fas fa-calendar-alt"></i> <?php echo $row['sys_course_date']; ?>
                               - <?php echo $row['sys_course_month']; ?> - <?php echo $row['sys_course_year']; ?></p>

@@ -2,8 +2,7 @@
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
 
 require_once($includes . 'sections_info.php');
-$course_type = str_replace('sys_', '', $table);
-$course_name = str_replace('_', ' ', $course_type);
+
 
 $sql = $conn->prepare("
 select courses_groups.name, $table.*, courses_groups.group_order from $table
@@ -81,7 +80,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
     <div class="col-md-9">
       <div class="row">
         <div class='col-12 my-4'>
-          <h2 class='text-capitalize mb-3'><?php echo $course_name; ?></h2>
+          <h2 class='text-capitalize mb-3'><?php echo $sectionName; ?></h2>
           <?php echo $headerAndTerms[0]['value']; ?>
         </div>
         <div class="col-12 mb-3">
@@ -89,7 +88,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
             <?php
             echo date("F", strtotime('m'));
             echo date("Y");
-            echo ' ' . $section; ?>
+            echo ' ' . $sectionName; ?>
           </h2>
         </div>
         <div class="col-12">
@@ -107,7 +106,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
                 }
                 $coursesContainer = !is_numeric($groupName) ? $courses : [$allCourses[$groupName]];
                 foreach ($coursesContainer as $courseInfo) {
-                  $courseDetailsUrl = "course.php?id={$courseInfo['sys_course_id']}&cat_id={$courseInfo['cat_id']}&t=$table&section=" . urlencode($section);
+                  $courseDetailsUrl = "course.php?id={$courseInfo['sys_course_id']}&cat_id={$courseInfo['cat_id']}&course=$table&section=" . urlencode($sectionName);
                 ?>
                   <div class="course col-12 mb-3 ml-1 p-3 shadow bg-white rounded <?php echo !is_numeric($groupName) ? $groupName . ' d-none' : ''; ?> " data-course-details="<?php echo $courseDetailsUrl; ?>">
                     <div class="row">
@@ -117,7 +116,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
                         </div>
                         <?php
                         $datesSql = $conn->prepare("select course_date_start,course_date_end from courses_dates where course_type=? and course_id=?");
-                        $datesSql->execute([$course_type, $courseInfo['sys_course_id']]);
+                        $datesSql->execute([$table, $courseInfo['sys_course_id']]);
                         $dates = $datesSql->fetchAll();
                         foreach ($dates as $date) { ?>
                           <div class='dates mb-3'>
@@ -145,7 +144,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
                                 Details</a>
                             </div>
                             <div class='mt-3'>
-                              <a class="btn btn-success" href="register.php?id=<?php echo $courseInfo['sys_course_id']; ?>&t=<?php echo $table; ?>">Register/Enquire
+                              <a class="btn btn-success" href="register.php?id=<?php echo $courseInfo['sys_course_id']; ?>&course=<?php echo $table; ?>">Register/Enquire
                                 Now</a>
                             </div>
                           </div>

@@ -24,14 +24,14 @@
                   <li><a href="#">Corporate Training</a>
                     <!-- Second Tier Drop Down -->
                     <ul>
-                      <li><a href="/courses/old_courses_layout.php?t=sys_course"><i class="fas fa-graduation-cap"></i> Public Training</a></li>
-                      <li><a href="/courses/new_courses_layout.php?t=sys_course"><i class="fas fa-graduation-cap"></i> In-house Training</a></li>
+                      <li><a href="/courses/old_courses_layout.php?course=sys_course"><i class="fas fa-graduation-cap"></i> Public Training</a></li>
+                      <li><a href="/courses/new_courses_layout.php?course=sys_course"><i class="fas fa-graduation-cap"></i> In-house Training</a></li>
                     </ul>
                   </li>
-                  <li><a href="/courses/old_courses_layout.php?t=sys_sys_seminars">Seminar & Conferences</a></li>
-                  <li><a href="/courses/old_courses_layout.php?t=sys_professional_cert">Professional Certification</a></li>
+                  <li><a href="/courses/old_courses_layout.php?course=sys_sys_seminars">Seminar & Conferences</a></li>
+                  <li><a href="/courses/old_courses_layout.php?course=sys_professional_cert">Professional Certification</a></li>
 
-                  <li><a href="/courses/old_courses_layout.php?t=sys_special_programmes">Special Programmes</a></li>
+                  <li><a href="/courses/old_courses_layout.php?course=sys_special_programmes">Special Programmes</a></li>
                   <li><a href="/coming-soon.php">Online Training</a>
                     <ul>
                       <li><a href="https://www.londonvschool.com" target="_blank"><i class="fas fa-graduation-cap"></i>Virtual
@@ -47,7 +47,7 @@
                   <li><a href="/consulting.php">Export Coaching</a></li>
                   <li><a href="/online-training.php">Export Promotion</a>
                     <ul>
-                      <li><a href="/courses/old_courses_layout.php?t=sys_trade_missions">Trade Missions</a></li>
+                      <li><a href="/courses/old_courses_layout.php?course=sys_trade_missions">Trade Missions</a></li>
                       <li><a href="#">Trade Shows</a></li>
                       <li><a href="#">Listing of Products</a></li>
                     </ul>
@@ -106,14 +106,14 @@
     <ul id="menu">
       <div style='margin-top: 50em;'></div>
       <li><a href="/index.php">Home</a></li>
-      <li><a href="/courses/old_courses_layout.php?t=sys_course">Public Training</a></li>
-      <li><a href="/courses/new_courses_layout.php?t=sys_course">In-House Training</a></li>
-      <li><a href="/courses/old_courses_layout.php?t=sys_sys_seminars">Seminar & Conferences</a></li>
-      <li><a href="/courses/old_courses_layout.php?t=sys_professional_cert">Professional Certification</a></li>
-      <li><a href="/courses/old_courses_layout.php?t=sys_special_programmes">Special Programmes</a></li>
+      <li><a href="/courses/old_courses_layout.php?course=sys_course">Public Training</a></li>
+      <li><a href="/courses/new_courses_layout.php?course=sys_course">In-House Training</a></li>
+      <li><a href="/courses/old_courses_layout.php?course=sys_sys_seminars">Seminar & Conferences</a></li>
+      <li><a href="/courses/old_courses_layout.php?course=sys_professional_cert">Professional Certification</a></li>
+      <li><a href="/courses/old_courses_layout.php?course=sys_special_programmes">Special Programmes</a></li>
       <li><a href="/online-training.php">Online Training</a></li>
       <li><a href="/consulting.php">Export Coaching</a></li>
-      <li><a href="/courses/old_courses_layout.php?t=sys_trade_missions">Trade Missions</a></li>
+      <li><a href="/courses/old_courses_layout.php?course=sys_trade_missions">Trade Missions</a></li>
       <li><a href="#">Trade Shows</a></li>
       <li><a href="#">Listing of Products</a></li>
       <li><a href="/room.php">Hall Rental</a></li>
