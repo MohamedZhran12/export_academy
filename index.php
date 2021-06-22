@@ -1,5 +1,5 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
 
 require_once('slider.php');
 
@@ -101,7 +101,8 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
                   <h2 class="topic">Calendar <?php echo date("Y"); ?></h2>
                   <hr class="topic-white">
                   <?php
-                  require_once('index_calendar.php');
+                  $table = 'sys_course';
+                  require_once('sidebar.php');
                   ?>
                 </div>
               </div>
