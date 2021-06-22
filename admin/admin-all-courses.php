@@ -1,12 +1,10 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
-
 require_once($includes . 'sections_info.php');
 ?>
 <div class="background-gradient">
   <div class="container-fluid">
     <div class="row">
-
       <?php
       require_once($includes . 'admin-sidebar.php');
       ?>
@@ -27,7 +25,7 @@ require_once($includes . 'sections_info.php');
                   <?php
                   require_once($rootDir . 'sidebar.php');
                   ?>
-                  <a class='btn btn-info mt-3' href="admin-edit-header_and_terms_text.php" class="side-menu-link">Edit
+                  <a class='btn btn-info mt-3' href="/admin-edit-header_and_terms_text.php?course=<? echo $table; ?>" class="side-menu-link">Edit
                     Header And Terms</a>
                 </div>
 
@@ -61,7 +59,9 @@ require_once($includes . 'sections_info.php');
                                       </div>
                                       <div class="courses-desc1">
                                         <p class="course-topic-1-2"><?php echo $row['sys_course_topic']; ?></p>
-                                        <p class="place"><i class="fas fa-map-marker-alt"></i> <?php echo $row['sys_course_venue']; ?>
+                                        <p class="place">
+                                          <i class="fas fa-map-marker-alt"></i>
+                                          <?php echo $row['sys_course_venue']; ?>
                                         </p>
                                         <div class="courses-set-in">
                                           <? if ($row['sys_course_price'] != 0 || $row['sys_course_price_before'] != 0) { ?>
@@ -94,11 +94,9 @@ require_once($includes . 'sections_info.php');
                               </div>
                           <?php }
                           } ?>
-
                         </div>
                       </div>
                     </div>
-
                   </div>
                 </div>
               </div>

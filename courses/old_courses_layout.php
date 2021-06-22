@@ -1,9 +1,16 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
-
+require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
 require_once($includes . 'sections_info.php');
+
 $sql = $conn->prepare("SELECT * FROM $table WHERE sys_course_year = YEAR(CURDATE()) AND sys_course_month = MONTH(CURDATE())");
 $sql->execute();
+
+$courseTypeHeader = str_replace('sys_', '', $table) . '_header';
+$courseTypeTerms = str_replace('sys_', '', $table) . '_terms';
+
+$headerAndTermsStmt = $conn->prepare("select value from statics where name=? or name=?");
+$headerAndTermsStmt->execute([$courseTypeHeader, $courseTypeTerms]);
+$headerAndTerms = $headerAndTermsStmt->fetchAll();
 ?>
 
 <div class="header-in">
@@ -36,6 +43,7 @@ $sql->execute();
             echo date("F", strtotime('m')) . ' ';
             echo date("Y") . ' ';
             echo $sectionName; ?> </h2>
+          <?php echo $headerAndTerms[0]['value']; ?>
         </div>
 
         <?php
@@ -72,6 +80,9 @@ $sql->execute();
         } ?>
 
       </div>
+    </div>
+    <div class='col-12 my-4'>
+      <?php echo $headerAndTerms[1]['value']; ?>
     </div>
   </div>
 </div>

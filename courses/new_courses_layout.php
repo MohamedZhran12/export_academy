@@ -22,8 +22,11 @@ $coursesWithoutGroups = $coursesWithoutGroupsSql->fetchAll();
 $allCourses = array_merge($courses, $coursesWithoutGroups);
 
 
-$headerAndTermsStmt = $conn->prepare("select value from statics where name='special_programs_header' or name='special_programs_terms'");
-$headerAndTermsStmt->execute();
+$courseTypeHeader = str_replace('sys_', '', $table) . '_header';
+$courseTypeTerms = str_replace('sys_', '', $table) . '_terms';
+
+$headerAndTermsStmt = $conn->prepare("select value from statics where name=? or name=?");
+$headerAndTermsStmt->execute([$courseTypeHeader, $courseTypeTerms]);
 $headerAndTerms = $headerAndTermsStmt->fetchAll();
 ?>
 <style>

@@ -28,7 +28,7 @@
                       <li><a href="/courses/new_courses_layout.php?course=in_house"><i class="fas fa-graduation-cap"></i> In-house Training</a></li>
                     </ul>
                   </li>
-                  <li><a href="/courses/old_courses_layout.php?course=sys_sys_seminars">Seminar & Conferences</a></li>
+                  <li><a href="/courses/old_courses_layout.php?course=sys_seminars">Seminar & Conferences</a></li>
                   <li><a href="/courses/old_courses_layout.php?course=sys_professional_cert">Professional Certification</a></li>
 
                   <li><a href="/courses/new_courses_layout.php?course=consulting_services">Consulting Services</a></li>

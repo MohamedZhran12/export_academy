@@ -24,7 +24,7 @@ if ($_SESSION['user']['level_id'] == 1 && $_GET['delete'] == 'image') {
   <div class="row">
     <? require_once($includes.'admin-sidebar.php'); ?>
     <div class="col-9 .bg-white">
-      <div class="breadcrumb-main mt-5">
+      <div class="breadcrumb-main">
         <p class="current-link">Admin Dashboard</p>
         <i class="fas fa-chevron-right"></i>
         <p class="current-link">Delete Logos Images</p>
