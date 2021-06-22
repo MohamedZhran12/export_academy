@@ -25,11 +25,17 @@
                     <!-- Second Tier Drop Down -->
                     <ul>
                       <li><a href="/courses/old_courses_layout.php?course=sys_course"><i class="fas fa-graduation-cap"></i> Public Training</a></li>
-                      <li><a href="/courses/new_courses_layout.php?course=sys_course"><i class="fas fa-graduation-cap"></i> In-house Training</a></li>
+                      <li><a href="/courses/new_courses_layout.php?course=in_house"><i class="fas fa-graduation-cap"></i> In-house Training</a></li>
                     </ul>
                   </li>
                   <li><a href="/courses/old_courses_layout.php?course=sys_sys_seminars">Seminar & Conferences</a></li>
                   <li><a href="/courses/old_courses_layout.php?course=sys_professional_cert">Professional Certification</a></li>
+
+                  <li><a href="/courses/new_courses_layout.php?course=consulting_services">Consulting Services</a></li>
+                  <li><a href="/courses/new_courses_layout.php?course=export_coaching">Export Coaching</a></li>
+                  <li><a href="/courses/new_courses_layout.php?course=products">Products</a></li>
+                  <li><a href="/courses/new_courses_layout.php?course=global_network">Global Network</a></li>
+                  <li><a href="/courses/new_courses_layout.php?course=trade_shows">Trade Shows</a></li>
 
                   <li><a href="/courses/old_courses_layout.php?course=sys_special_programmes">Special Programmes</a></li>
                   <li><a href="/coming-soon.php">Online Training</a>
