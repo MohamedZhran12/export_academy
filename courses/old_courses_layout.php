@@ -38,7 +38,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
     <div class="col-sm-9">
       <div class="row">
         <div class="col-12 mb-3">
-          <h2 class="topic-in">
+          <h2 class="font-weight-bold mb-5">
             <?php
             echo date("F", strtotime('m')) . ' ';
             echo date("Y") . ' ';
@@ -57,7 +57,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
                     <div class="courses-image">
                       <p class="date"><i class="fas fa-calendar-alt"></i> <?php echo $courseInfo['sys_course_date']; ?>
                         - <?php echo $courseInfo['sys_course_month']; ?> - <?php echo $courseInfo['sys_course_year']; ?></p>
-                      <img alt='image' src="images/courses/<?php echo $courseInfo['sys_course_image']; ?>">
+                      <img alt='image' src="/images/courses/<?php echo $courseInfo['sys_course_image']; ?>">
                     </div>
                     <div class="courses-desc1">
                       <p class="course-topic-1-2"><?php echo $courseInfo['sys_course_topic']; ?></p>
@@ -80,10 +80,11 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
         } ?>
 
       </div>
+      <div class='col-12 my-4'>
+        <?php echo $headerAndTerms[1]['value']; ?>
+      </div>
     </div>
-    <div class='col-12 my-4'>
-      <?php echo $headerAndTerms[1]['value']; ?>
-    </div>
+
   </div>
 </div>
 
