@@ -7,4 +7,5 @@ $sql->execute([$_GET['id']]);
 
 echo "
 	<script type='text/javascript'>alert('Delete Course Successfully!');
+  location.href='/admin/admin-all-courses.php?course=$table'
 	</script>";
