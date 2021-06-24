@@ -11,7 +11,7 @@ const sizeLimit = 3145728;
   private $size;
   private $partnerType;
   private $newPath;
-    private $fullPath; //3mb
+  private $fullPath; //3mb
 
   public function __construct($image)
   {

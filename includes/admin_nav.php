@@ -4,7 +4,7 @@
       <div class="col-sm-3">
         <div class="row">
           <div class="logo">
-            <img alt='image' src="<? echo $images; ?>logo/Logo (MEA) W.png">
+            <img alt='image' src="<? echo $imagesDir; ?>logo/Logo (MEA) W.png">
             <i class="fas fa-bars"></i>
           </div>
         </div>
@@ -17,7 +17,7 @@
           <div class="admin-nav-right">
             <div class="profile-main">
               <div class="profile-image">
-                <img alt='image' src="<? echo $images; ?>logo/Logo (MEA).jpg">
+                <img alt='image' src="<? echo $imagesDir; ?>logo/Logo (MEA).jpg">
               </div>
 
 

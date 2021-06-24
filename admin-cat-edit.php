@@ -15,7 +15,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "frm_add_channel")) 
 
   $sql = $conn->prepare("UPDATE sys_cat SET sys_cat_name = '$topic' WHERE sys_cat_id = '" . $_GET['id'] . "'");
   $sql->execute();
-  echo '<script type="text/javascript">alert("Successfully Update Password!");location.href="admin-cat.php";</script>';
+  echo '<script>alert("Successfully Update Password!");location.href="admin-cat.php";</script>';
 }
 ?>
 

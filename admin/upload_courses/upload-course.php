@@ -90,7 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   if ($isCourseAdded) {
     echo '
-	<script type="text/javascript">
+	<script>
 	    alert("Course Successfully Uploaded!");
 	</script>';
   }

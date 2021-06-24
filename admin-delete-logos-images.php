@@ -14,7 +14,7 @@ if ($_SESSION['user']['level_id'] == 1 && $_GET['delete'] == 'image') {
   $stmt->execute([$_GET['image_id']]);
   unlink($_GET['full_path']);
   echo '
-	<script type="text/javascript">alert("Image is Successfully Deleted");
+	<script>alert("Image is Successfully Deleted");
 	location.href="' . str_replace('/', '', $_SERVER['SCRIPT_NAME']) . '"' .
     '</script>';
 }

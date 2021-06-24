@@ -41,7 +41,7 @@ VALUES
   $sql->execute([$path, $topic, $days, $date, $month, $year, $timein, $timeout, $venue, $intro, $module, $trainer, $trainerinfo, $fees, $feesbefore, 0, $session, $cat]);
 
   echo '
-	<script type="text/javascript">alert("Course Categories Successfully Uploaded!");
+	<script>alert("Course Categories Successfully Uploaded!");
 	</script>';
 }
 ?>

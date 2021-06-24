@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   if ($stmt->execute([$_POST['category_id'], $_POST['video'], date('Y-m-d H:i:s')])) {
     echo '
-	<script type="text/javascript">alert("Video is Successfully Added");
+	<script>alert("Video is Successfully Added");
 	location.href="' . str_replace('/', '', $_SERVER['SCRIPT_NAME']) . '"' .
       '</script>';
 

@@ -12,7 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $stmt = $conn->prepare('update gallery_categories set title = ? , description= ? where id = ?');
   $stmt->execute([$_POST['title'], $_POST['description'], $_POST['category_id']]);
   echo '
-	<script type="text/javascript">alert("Event is Successfully Updated");
+	<script>alert("Event is Successfully Updated");
 	location.href="' . str_replace('/', '', $_SERVER['SCRIPT_NAME']) . '"' .
     '</script>';
 }

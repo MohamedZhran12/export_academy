@@ -29,7 +29,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   $sql->execute([$name]);
   echo '
-	<script type="text/javascript">alert("Article Successfully Uploaded!");
+	<script>alert("Article Successfully Uploaded!");
 	</script>';
 }
 ?>

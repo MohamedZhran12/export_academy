@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   if ($isSuccess) {
     echo '
-	<script type="text/javascript">alert("Group is deleted successfully");
+	<script>alert("Group is deleted successfully");
 	</script>';
   }
 }

@@ -1,6 +1,6 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
-
+require_once($includes . 'about_us_pages_config.php');
 
 $table = 'mexa_tv_categories';
 $sectionName = 'MEXA TV';
@@ -9,7 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $stmt = $conn->prepare("insert into $table (title,description,created_at) values(?,?,?)");
   $stmt->execute([$_POST['title'], $_POST['description'], date("Y-m-d H:i:s")]);
   echo '
-	<script type="text/javascript">alert("MEXA TV Event added successfully");
+	<script>alert("MEXA TV Event added successfully");
 	location.href="' . str_replace('/', '', $_SERVER['SCRIPT_NAME']) . '"' .
     '</script>';
 }
@@ -17,7 +17,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <div class="container-fluid">
   <div class="row">
-    <? require_once($includes.'admin-sidebar.php'); ?>
+    <? require_once($includes . 'admin-sidebar.php'); ?>
     <div class="col-9 .bg-white">
       <div class="breadcrumb-main">
         <p class="current-link">Admin Dashboard</p>
@@ -31,8 +31,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
         <div class='form-group'>
           <label for='description'>Description</label>
-          <textarea id='description' class='form-control' name='description' placeholder='Description'
-                    required></textarea>
+          <textarea id='description' class='form-control' name='description' placeholder='Description' required></textarea>
         </div>
         <div class='form-group'>
           <input type='submit' class='btn btn-primary'>
@@ -44,5 +43,5 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <script src="https://cdn.ckeditor.com/4.15.0/full/ckeditor.js"></script>
 <script>
-    CKEDITOR.replace('description');
+  CKEDITOR.replace('description');
 </script>

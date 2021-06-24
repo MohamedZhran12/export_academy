@@ -236,7 +236,7 @@ if ($sql->rowCount() > 0) {
 
     <script src="<? echo $js; ?>jquery.min.js"></script>
 
-    <script type="text/javascript">
+    <script>
       $(document).ready(function() {
         var postURL = "/addmore.php";
         var i = 1;

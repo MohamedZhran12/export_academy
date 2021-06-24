@@ -98,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   }
   $isDatesUpdated = $conn->prepare($insert_dates_stmt)->execute();
   if ($isUpdated && $isDatesUpdated) {
-    echo '<script type="text/javascript">alert("Course Successfully Updated!");</script>';
+    echo '<script>alert("Course Successfully Updated!");</script>';
   }
 }
 ?>

@@ -13,7 +13,7 @@ if ($_SESSION['user']['level_id'] == 1 && $_GET['delete'] == 'video') {
   $stmt = $conn->prepare("DELETE FROM $table WHERE id=?");
   $stmt->execute([$_GET['video_id']]);
   echo '
-	<script type="text/javascript">alert("Video is Successfully Deleted");
+	<script>alert("Video is Successfully Deleted");
 	location.href="' . str_replace('/', '', $_SERVER['SCRIPT_NAME']) . '"' .
     '</script>';
 }

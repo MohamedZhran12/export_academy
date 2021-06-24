@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $stmt->execute([$_POST['category_id']]);
 
   echo '
-	<script type="text/javascript">alert("Category is deleted successfully");
+	<script>alert("Category is deleted successfully");
 	location.href="' . str_replace('/', '', $_SERVER['SCRIPT_NAME']) . '"' .
     '</script>';
 }

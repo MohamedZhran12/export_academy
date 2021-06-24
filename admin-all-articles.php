@@ -3,9 +3,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
 
 ?>
 
-
-
-
 <div class="background-gradient">
   <div class="container-fluid">
     <div class="row">

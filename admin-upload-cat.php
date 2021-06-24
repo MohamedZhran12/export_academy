@@ -5,7 +5,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
 
 
 if ($_SESSION['user']['level_id'] != 1) {
-  echo '<script type="text/javascript">alert("Only MAXZ staffs are allowed to access this page.\n\nThank you.");location.href="login.php"</script>';
+  echo '<script>alert("Only MAXZ staffs are allowed to access this page.\n\nThank you.");location.href="login.php"</script>';
 }
 
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "frm_add_channel")) {
@@ -25,7 +25,7 @@ VALUES
 
 
   echo '
-	<script type="text/javascript">alert("Course Categories Successfully Uploaded!");
+	<script>alert("Course Categories Successfully Uploaded!");
 
 	</script>';
 }

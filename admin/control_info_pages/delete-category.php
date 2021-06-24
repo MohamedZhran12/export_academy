@@ -1,19 +1,18 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
 
+require_once($includes . 'about_us_pages_config.php');
 
-
-$stmt = $conn->prepare("select title,id from categories");
+$stmt = $conn->prepare("select title,id from $categoryTable");
 $stmt->execute();
 $result = $stmt->fetchAll();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-  $stmt = $conn->prepare('DELETE FROM categories WHERE id=?');
-  $stmt->execute([$_POST['category_id']]);
+  $stmt = $conn->prepare("DELETE FROM $categoryTable WHERE id=?");
+  $isSuccess = $stmt->execute([$_POST['category_id']]);
 
-  function deleteDir($dirPath)
-  {
+  function deleteDir($dirPath) {
     if (!is_dir($dirPath)) {
       throw new InvalidArgumentException("$dirPath must be a directory");
     }
@@ -32,21 +31,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   }
 
   deleteDir('csr_images/' . $_POST['category_id']);
-  echo '
-	<script type="text/javascript">alert("Category is deleted successfully");
-	location.href="' . str_replace('/', '', $_SERVER['SCRIPT_NAME']) . '"' .
-    '</script>';
+  if ($isSuccess) {
+    echo '
+	<script>alert("Category is deleted successfully");
+</script>';
+  }
 }
 ?>
 
 <div class="container-fluid">
   <div class="row">
-    <? require_once($includes.'admin-sidebar.php'); ?>
+    <? require_once($includes . 'admin-sidebar.php'); ?>
     <div class="col-9 .bg-white">
       <div class="breadcrumb-main">
         <p class="current-link">Admin Dashboard</p>
         <i class="fas fa-chevron-right"></i>
-        <p class="current-link">Delete CSR Category</p>
+        <p class="current-link">Delete <? echo $name;?> Category</p>
       </div>
       <form class='mt-5 shadow-sm p-4 mb-5 bg-white rounded' method='post'>
         <div class='form-group'>

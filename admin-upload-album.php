@@ -28,7 +28,7 @@ sys_album_view, sys_album_type,cat_id)
 VALUES(?, ?, ?, ?, 0, ?, ?)");
   $sql->execute([$path, $name, $place, $owner, 0, $type, $cat]);
   echo '
-	<script type="text/javascript">alert("Successfully Update Album!");
+	<script>alert("Successfully Update Album!");
 	</script>';
 }
 ?>

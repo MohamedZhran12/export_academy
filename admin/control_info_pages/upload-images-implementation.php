@@ -1,5 +1,10 @@
 <?php
-require_once('upload_gallery_image.class.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
+require_once($includes . 'about_us_pages_config.php');
+
+require_once('includes/upload_image.class.php');
+require_once("includes/upload_{$_GET['page']}_image.class.php");
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $images = $_FILES['images'];
   $categoryID = $_POST['category_id'];
@@ -8,12 +13,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       'extension' => pathinfo($images['name'][$i], PATHINFO_EXTENSION),
       'tmpName' => $images['tmp_name'][$i],
       'size' => $images['size'][$i],
-      'categoryID' => $categoryID
+      'categoryID' => $categoryID,
+      'table' => $mediaTable,
+      'mainDirectory' => "../../images/$name/",
     ];
     $imageObject = new Image($image);
     $imageObject->startUploadingImage();
   }
   echo '
 	<script>alert("Image is Successfully Uploaded");
-	location.href="admin-upload-csr-images.php"</script>';
+  location.href="/admin/control_info_pages/upload-images.php";
+	</script>';
 }

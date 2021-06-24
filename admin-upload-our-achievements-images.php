@@ -10,7 +10,7 @@ $stmt->execute();
 $result = $stmt->fetchAll();
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   echo '
-	<script type="text/javascript">alert("Image is Successfully Uploaded");
+	<script>alert("Image is Successfully Uploaded");
 	location.href="' . str_replace('/', '', $_SERVER['SCRIPT_NAME']) . '"' .
     '</script>';
 }

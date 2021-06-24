@@ -32,12 +32,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   }
   if ($isSuccess) {
     echo '
-  <script type="text/javascript">
+  <script>
     alert("Group is edit successfully");
   </script>';
   } else {
     echo '
-    <script type="text/javascript">
+    <script>
       alert("Failed to edit group");
     </script>';
   }

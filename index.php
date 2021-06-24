@@ -9,6 +9,7 @@ $stmt->execute();
 $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
 ?>
 
+
 <div class="background-white">
   <div class="container">
     <div class="padding-100">

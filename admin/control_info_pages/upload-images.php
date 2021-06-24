@@ -1,34 +1,26 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
 
+require_once($includes . 'about_us_pages_config.php');
 
-
-$stmt = $conn->prepare("select title,id from categories order by id desc");
+$stmt = $conn->prepare("select title,id from $categoryTable order by id desc");
 $stmt->execute();
 $result = $stmt->fetchAll();
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  echo '
-	<script type="text/javascript">alert("Image is Successfully Uploaded");
-	location.href="' . str_replace('/', '', $_SERVER['SCRIPT_NAME']) . '"' .
-    '</script>';
-}
 ?>
-
 
 <div class="container-fluid">
   <div class="row">
-    <? require_once($includes.'admin-sidebar.php'); ?>
+    <? require_once($includes . 'admin-sidebar.php'); ?>
     <div class="col-9 .bg-white">
       <div class="breadcrumb-main">
         <p class="current-link">Admin Dashboard</p>
         <i class="fas fa-chevron-right"></i>
-        <p class="current-link">Upload CSR Images</p>
+        <p class="current-link">Upload <? echo $name; ?> Images</p>
       </div>
-      <form class='mt-5 shadow-sm p-4 mb-5 bg-white rounded' action='upload-csr.php' method='post'
-            enctype="multipart/form-data">
+      <form class='mt-5 shadow-sm p-4 mb-5 bg-white rounded' action='upload-images-implementation.php?page=<? echo $_GET['page']; ?>' method='post' enctype="multipart/form-data">
         <div class='row'>
           <div class='col-6'>
-            <img alt='image' src="../images/upload.jpg" id="imgAvatar" alt="Course Image">
+            <img src="/images/upload.jpg" id="imgAvatar" alt="Course Image">
             <span class='mt-3 d-inline-block'>(Width : 300px) x (Height : 600px)</span>
           </div>
           <div class='col-6'>

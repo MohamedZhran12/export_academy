@@ -8,7 +8,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $stmt = $conn->prepare('insert into gallery_categories (title,description,created_at) values(?,?,?)');
   $stmt->execute([$_POST['title'], $_POST['description'], date("Y-m-d H:i:s")]);
   echo '
-	<script type="text/javascript">alert("Gallery Event added successfully");
+	<script>alert("Gallery Event added successfully");
 	location.href="' . str_replace('/', '', $_SERVER['SCRIPT_NAME']) . '"' .
     '</script>';
 }

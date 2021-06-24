@@ -1,6 +1,8 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
 
+
+
 $stmt = $conn->prepare('SELECT csr_categories.title, csr_categories.description , csr_images.name , csr_images.path
    from csr_categories
    JOIN csr_images on csr_images.category = csr_categories.id order by csr_categories.id desc');

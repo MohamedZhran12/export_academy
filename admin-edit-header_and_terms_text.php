@@ -16,7 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $isSuccess2 = $stmt->execute([$_POST['terms'], $courseTypeTerms]);
   if ($isSuccess && $isSuccess2) {
     echo '
-	<script type="text/javascript">alert("Text is Successfully Updated");
+	<script>alert("Text is Successfully Updated");
 	</script>';
   }
 }

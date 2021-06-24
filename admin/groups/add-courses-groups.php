@@ -12,19 +12,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $isSuccess = $stmt->execute([$_POST['name'], $_POST['order']]);
   } else {
     echo '
-    <script type="text/javascript">
+    <script>
       alert("This order is already used");
     </script>';
   }
 
   if ($isSuccess) {
     echo '
-	<script type="text/javascript">
+	<script>
     alert("Group is added successfully");
   </script>';
   } else {
     echo '
-    <script type="text/javascript">
+    <script>
       alert("Failed to add group");
     </script>';
   }

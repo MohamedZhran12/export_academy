@@ -1,18 +1,15 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
 
-
-
 $stmt = $conn->prepare("select value from statics where name='csr page header'");
 $stmt->execute();
 $result = $stmt->fetch();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-
   $stmt = $conn->prepare("update statics set value= ? where name = 'csr page header'");
   $stmt->execute([$_POST['description']]);
   echo '
-	<script type="text/javascript">alert("CSR page header is Successfully Updated");
+	<script>alert("CSR page header is Successfully Updated");
 	location.href="admin-main.php";
 	</script>';
 }

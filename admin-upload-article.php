@@ -31,7 +31,7 @@ VALUES (?, ?, ?, ?, ?, ?, 0)");
 
 
   echo '
-	<script type="text/javascript">alert("Article Successfully Uploaded!");
+	<script>alert("Article Successfully Uploaded!");
 	</script>';
 }
 ?>
