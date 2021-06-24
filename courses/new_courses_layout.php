@@ -155,7 +155,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
                                 Details</a>
                             </div>
                             <div class='mt-3'>
-                              <a class="btn btn-success" href="register.php?id=<?php echo $courseInfo['sys_course_id']; ?>&course=<?php echo $table; ?>">Register/Enquire
+                              <a class="btn btn-success" href="in_house_form.php?topic=<? echo urlencode($groupName) ?>&sub_topic=<? echo urlencode($courseInfo['sys_course_topic']) ?>">Register/Enquire
                                 Now</a>
                             </div>
                           </div>
