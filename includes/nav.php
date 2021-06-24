@@ -32,9 +32,6 @@
                   <li><a href="/courses/old_courses_layout.php?course=sys_professional_cert">Professional Certification</a></li>
                   <li><a href="/courses/old_courses_layout.php?course=sys_special_programmes">Special Programmes</a></li>
 
-                  <li><a href="/courses/new_courses_layout.php?course=products">Products</a></li>
-                  <li><a href="/courses/new_courses_layout.php?course=global_network">Global Network</a></li>
-
                   <li><a href="/coming-soon.php">Online Training</a>
                     <ul>
                       <li><a href="https://www.londonvschool.com" target="_blank"><i class="fas fa-graduation-cap"></i>Virtual
