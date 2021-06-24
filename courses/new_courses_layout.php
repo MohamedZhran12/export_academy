@@ -3,14 +3,12 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
 
 require_once($includes . 'sections_info.php');
 
-
+//WHERE $table.sys_course_year = YEAR(CURDATE()) AND $table.sys_course_month = MONTH(CURDATE())
 $sql = $conn->prepare("
 select $groupsTable.name, $table.*, $groupsTable.group_order from $table
 join $groupsTable
 on $table.group_id=$groupsTable.ID
-WHERE $table.sys_course_year = YEAR(CURDATE()) AND $table.sys_course_month = MONTH(CURDATE())
-order by $groupsTable.group_order asc
-");
+order by $groupsTable.group_order asc");
 $sql->execute();
 $courses = $sql->fetchAll(PDO::FETCH_GROUP);
 
