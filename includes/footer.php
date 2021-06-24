@@ -1,4 +1,4 @@
-<div class="footer-nav-main">
+<div class="footer-nav-main mt-5">
   <div class="overlay-black">
     <div class="padding-80">
       <div class="container">
