@@ -86,18 +86,20 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
           <h2 class='text-capitalize mb-3'><?php echo $sectionName; ?></h2>
           <?php echo $headerAndTerms[0]['value']; ?>
         </div>
-        <div class="col-12 mb-3">
-          <h2 class="font-weight-bold">
-            <?php
-            echo date("F", strtotime('m'));
-            echo date("Y");
-            echo ' ' . $sectionName; ?>
-          </h2>
-        </div>
+        <? if ($isThereCalendar) { ?>
+          <div class="col-12 mb-3">
+            <h2 class="font-weight-bold">
+              <?php
+              echo date("F", strtotime('m'));
+              echo date("Y");
+              echo ' ' . $sectionName; ?>
+            </h2>
+          </div>
+        <? } ?>
         <div class="col-12">
           <div class="row">
             <?php
-            if (count($allCourses) > 0) {
+            if (!empty($allCourses)) {
               foreach ($allCourses as $groupName => $courses) {
                 if (!is_numeric($groupName)) {
             ?>
@@ -126,19 +128,23 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
                             <span class="d-block">From: <?php echo date('d - M - Y', strtotime($date['course_date_start'])); ?></span>
                             <span class="d-block ">To: <?php echo date('d - M - Y', strtotime($date['course_date_end'])); ?></span>
                           </div>
-                        <?php } ?>
-                        <p class="mb-3">
-                          <?php echo ($courseInfo['cat_id'] == 1) ? 'Virtual Programme - ' : 'Public Programme - ';
-                          echo $courseInfo['sys_course_venue']; ?> <i class="fas fa-map-marker-alt"></i>
-                        </p>
+                        <?php }
+                        if ($isThereVenue) { ?>
+                          <p class="mb-3">
+                            <?php echo ($courseInfo['cat_id'] == 1) ? 'Virtual Programme - ' : 'Public Programme - ';
+                            echo $courseInfo['sys_course_venue']; ?> <i class="fas fa-map-marker-alt"></i>
+                          </p>
+                        <? } ?>
                       </div>
 
                       <div class="col-12 col-md-9">
                         <div class="row">
                           <div class="details col-12 col-md-7">
                             <p class="mb-3 font-weight-bold"><?php echo $courseInfo['sys_course_topic']; ?></p>
-                            <p class="mb-4">
-                              Trainer(s)/Speaker(s)/Consultant(s): <?php echo $courseInfo['sys_course_trainer']; ?></p>
+                            <? if ($isThereTrainerName) { ?>
+                              <p class="mb-4">
+                                Trainer(s)/Speaker(s)/Consultant(s): <?php echo $courseInfo['sys_course_trainer']; ?></p>
+                            <? } ?>
                           </div>
 
                           <div class='col-12 col-md-5'>
