@@ -2,7 +2,7 @@
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
 require_once($includes . 'sections_info.php');
 
-$stmt = $conn->prepare("select ID, name from courses_groups");
+$stmt = $conn->prepare("select ID, name from $groupsTable");
 $stmt->execute();
 $groups = $stmt->fetchAll();
 
