@@ -144,12 +144,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                           <p class="form-text">Topic</p>
                           <input type="text" class="form mb-3" name="topic" placeholder="eg: Accounts" size="30" />
                         </div>
-
-                        <div class="col-12 mb-3">
-                          <p class="form-text">CPD Points</p>
-                          <input type="number" id='cpd-points' class="form" name="points" placeholder="eg: 11" size="30" />
-                        </div>
-
+                        <? if ($isThereRightMenu) { ?>
+                          <div class="col-12 mb-3">
+                            <p class="form-text">CPD Points</p>
+                            <input type="number" id='cpd-points' class="form" name="points" placeholder="eg: 11" size="30" />
+                          </div>
+                        <? } ?>
                         <?php
                         if ($isThereMoreDates && $isThereCalendar) {
                           require_once('components/new_dates.php');
