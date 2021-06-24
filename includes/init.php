@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 $css = '/assets/css/';
 $js = '/assets/js/';
-$images = '/images/';
+$imagesDir = '/images/';
 $rootDir = $_SERVER['DOCUMENT_ROOT'] . '/';
 $includes = $rootDir . '/includes/';
 
