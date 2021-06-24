@@ -76,13 +76,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     'group_id' => $_POST['group_id']
   ];
 
-  $courseAttributesNames = [
-    'sys_course_id'
-  ];
+  $courseAttributesNames = [];
 
-  $courseAttributesValues = [
-    null,
-  ];
+  $courseAttributesValues = [];
 
   addToInsertQueryIfValueIsSet($tableAttributes, $courseAttributesNames, $courseAttributesValues);
 
