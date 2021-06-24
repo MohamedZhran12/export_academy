@@ -5,12 +5,13 @@ require_once($includes . 'sections_info.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-  $isOrderExistQuery = $conn->prepare("select count($groupsTable) from courses_groups where $groupsTable=?");
+  $isOrderExistQuery = $conn->prepare("select count(ID) from $groupsTable where group_order=?");
   $isOrderExistQuery->execute([$_POST['order']]);
   if ($isOrderExistQuery->fetch()[0] == 0) {
-    $stmt = $conn->prepare("insert into courses_groups (name,$groupsTable) values(?,?)");
+    $stmt = $conn->prepare("insert into $groupsTable (name,group_order) values(?,?)");
     $isSuccess = $stmt->execute([$_POST['name'], $_POST['order']]);
   } else {
+    $isSuccess = false;
     echo '
     <script>
       alert("This order is already used");
