@@ -12,8 +12,8 @@ order by $groupsTable.group_order asc");
 $sql->execute();
 $courses = $sql->fetchAll(PDO::FETCH_GROUP);
 
-
-$coursesWithoutGroupsSql = $conn->prepare("SELECT * FROM $table WHERE `group_id`= 0 AND sys_course_year = YEAR(CURDATE()) AND sys_course_month = MONTH(CURDATE())");
+//AND sys_course_year = YEAR(CURDATE()) AND sys_course_month = MONTH(CURDATE())
+$coursesWithoutGroupsSql = $conn->prepare("SELECT * FROM $table WHERE group_id= 0 or group_id is null");
 $coursesWithoutGroupsSql->execute();
 $coursesWithoutGroups = $coursesWithoutGroupsSql->fetchAll();
 
