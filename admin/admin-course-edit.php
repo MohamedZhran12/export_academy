@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+
 <?php
 
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
