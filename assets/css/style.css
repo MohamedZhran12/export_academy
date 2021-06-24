@@ -440,6 +440,7 @@ video {
   padding: 100px 0;
 }
 .header-in {
+  height: 23em;
   background: url(../../images/header/about.jpg) no-repeat fixed;
   background-size: cover;
 }
