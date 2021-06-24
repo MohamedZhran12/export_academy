@@ -72,15 +72,15 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
 
 <div class="container">
   <div class="row">
-    <div class="col-md-3 mb-3 mb-md-0 ">
-      <?php
-      if ($isThereCalendar) {
-        require_once($rootDir . 'sidebar.php');
-      }
-      ?>
-    </div>
 
-    <div class="col-md-9">
+    <?php
+    if ($isThereCalendar) { ?>
+      <div class="col-md-3 mb-3 mb-md-0 ">
+        <? require_once($rootDir . 'sidebar.php'); ?>
+      </div>
+    <? }
+    ?>
+    <div class="col">
       <div class="row">
         <div class='col-12 my-4'>
           <h2 class='text-capitalize mb-3'><?php echo $sectionName; ?></h2>
