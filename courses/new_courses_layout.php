@@ -76,7 +76,9 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
   <div class="row">
     <div class="col-md-3 mb-3 mb-md-0 ">
       <?php
-      require_once($rootDir . 'sidebar.php');
+      if ($isThereCalendar) {
+        require_once($rootDir . 'sidebar.php');
+      }
       ?>
     </div>
 

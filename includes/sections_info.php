@@ -74,9 +74,11 @@ if ($_GET['course'] == 'sys_course') {
 }
 
 $coursesWithDates = ['sys_course', 'sys_seminars', 'sys_professional_cert', 'sys_special_programmes', 'sys_trade_missions'];
+$coursesWithCalendars = ['sys_course', 'sys_seminars', 'sys_professional_cert', 'sys_special_programmes', 'sys_trade_missions', 'trade_shows'];
 $coursesWithRightMenu = ['sys_course', 'sys_seminars', 'sys_professional_cert', 'sys_special_programmes'];
 $coursesWithGroups = ['consulting_services', 'trade_shows', 'global_network', 'products', 'in_house', 'export_coaching'];
 
 $isThereMoreDates = in_array($table, $coursesWithDates);
+$isThereCalendar = in_array($table, $coursesWithCalendars);
 $isThereRightMenu = in_array($table, $coursesWithRightMenu);
 $isThereGroups = in_array($table, $coursesWithGroups);

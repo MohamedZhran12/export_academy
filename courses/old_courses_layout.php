@@ -31,7 +31,9 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
   <div class="row">
     <div class="col-sm-3">
       <?php
-      require_once($rootDir . 'sidebar.php');
+      if ($isThereCalendar) {
+        require_once($rootDir . 'sidebar.php');
+      }
       ?>
     </div>
 
