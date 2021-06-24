@@ -280,23 +280,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                       <p class="form-text">Normal Price in USD</p>
                       <input type="number" min="0.00" step="0.00" value="0.00" class="form" name="fees_before_in_usd" size="30" />
                     </div>
-
-                    <div class="col-12 mb-3">
-                      <span>Show HRDF:</span>
-                      <input type="radio" name="toggle_hrdf" value='1' checked /><span> Yes</span>
-                      <input type="radio" name="toggle_hrdf" value="0" /><span> No</span>
-                    </div>
-                    <div class="col-12 mb-3">
-                      <span>Show Lunch:</span>
-                      <input type="radio" name="toggle_lunch" value='1' checked /><span> Yes</span>
-                      <input type="radio" name="toggle_lunch" value="0" /><span> No</span>
-                    </div>
-                    <div class="col-12 mb-3">
-                      <span>Show Certificate of Attendance:</span>
-                      <input type="radio" name="toggle_cpd_text" value='1' checked /><span> Yes</span>
-                      <input type="radio" name="toggle_cpd_text" value="0" /><span> No</span>
-                    </div>
-
+                    <? if ($isThereRightMenu) { ?>
+                      <div class="col-12 mb-3">
+                        <span>Show HRDF:</span>
+                        <input type="radio" name="toggle_hrdf" value='1' checked /><span> Yes</span>
+                        <input type="radio" name="toggle_hrdf" value="0" /><span> No</span>
+                      </div>
+                      <div class="col-12 mb-3">
+                        <span>Show Lunch:</span>
+                        <input type="radio" name="toggle_lunch" value='1' checked /><span> Yes</span>
+                        <input type="radio" name="toggle_lunch" value="0" /><span> No</span>
+                      </div>
+                      <div class="col-12 mb-3">
+                        <span>Show Certificate of Attendance:</span>
+                        <input type="radio" name="toggle_cpd_text" value='1' checked /><span> Yes</span>
+                        <input type="radio" name="toggle_cpd_text" value="0" /><span> No</span>
+                      </div>
+                    <? } ?>
                     <div class="col-12 mb-3">
                       <input type="submit" class="button" value="Add Course" />
                     </div>
