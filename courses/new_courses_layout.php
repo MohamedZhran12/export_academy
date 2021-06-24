@@ -116,10 +116,12 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
                   <div class="course col-12 mb-3 ml-1 p-3 shadow bg-white rounded <?php echo !is_numeric($groupName) ? str_replace([' ', '&'], '_', $groupName) . ' d-none' : ''; ?> " data-course-details="<?php echo $courseDetailsUrl; ?>">
                     <div class="row">
                       <div class="col-12 col-md-3">
-                        <div class="courses-image">
-                          <img alt='image' src="images/courses/<?php echo $courseInfo['sys_course_image']; ?>" alt='course image'>
-                        </div>
+                        <? if (!empty($courseInfo['sys_course_image'])) { ?>
+                          <div class="courses-image">
+                            <img alt='image' src="images/courses/<?php echo $courseInfo['sys_course_image']; ?>" alt='course image'>
+                          </div>
                         <?php
+                        }
                         $datesSql = $conn->prepare("select course_date_start,course_date_end from courses_dates where course_type=? and course_id=?");
                         $datesSql->execute([$table, $courseInfo['sys_course_id']]);
                         $dates = $datesSql->fetchAll();
@@ -137,7 +139,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
                         <? } ?>
                       </div>
 
-                      <div class="col-12 col-md-9">
+                      <div class="col-12 col">
                         <div class="row">
                           <div class="details col-12 col-md-7">
                             <p class="mb-3 font-weight-bold"><?php echo $courseInfo['sys_course_topic']; ?></p>
@@ -157,15 +159,16 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
                                 Now</a>
                             </div>
                           </div>
-
-                          <div class="col-12 mb-4"><?php echo $courseInfo['sys_course_intro']; ?></div>
+                          <? if ($isThereIntro) { ?>
+                            <div class="col-12 mb-4"><?php echo $courseInfo['sys_course_intro']; ?></div>
+                          <? } ?>
                           <div class="col-12">
                             <?php require_once('common_component/price.php'); ?>
                           </div>
-                          <div class='col-2 ml-auto'>
+                          <!-- <div class='col-2 ml-auto'>
                             <p class='mb-3'><i class="fas fa-eye"> <?php echo $courseInfo['sys_course_view']; ?> </i>
                             </p>
-                          </div>
+                          </div> -->
                         </div>
                       </div>
                     </div>

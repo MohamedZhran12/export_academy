@@ -1,6 +1,6 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
-require_once($includes . 'sections_info');
+require_once($includes . 'sections_info.php');
 $id = $_GET['id'];
 $sql = $conn->prepare("SELECT * FROM $table WHERE sys_course_id = ?");
 $sql->execute([$id]);
@@ -32,54 +32,56 @@ if ($sql->rowCount() > 0) {
 
 
         <div class="row">
-          <div class="col-sm-4">
-            <div class="border-box">
-              <img alt='image' src="images/courses/<?php echo $row['sys_course_image']; ?>"><br><br>
-              <p><b><?php echo $row['sys_course_topic']; ?></b></p><br>
+          <? if ($isTherePrices) { ?>
+            <div class="col-sm-4">
+              <div class="border-box">
+                <img alt='image' src="images/courses/<?php echo $row['sys_course_image']; ?>"><br><br>
+                <p><b><?php echo $row['sys_course_topic']; ?></b></p><br>
 
-              <div class="courses-pricing">
-                <?php
-                $amount = $row['sys_course_price_before'];
-                if ($amount >= 1.00) {
-                  echo '<p><b>Early Bird</b></p>';
-                  echo '<p class="price-before">';
-                  echo "RM" . $row["sys_course_price"] . "";
-                  echo '<p class="norm-price">';
-                  echo '<b>Normal Price ';
-                  echo '<span class="dashed">';
-                  echo "RM" . $row["sys_course_price_before"] . "";
-                  echo '</span>';
-                  echo '</b>';
-                  echo '</p>';
-                  echo '</p>';
-                } else {
-                  echo '<p><b>Price</b></p>';
-                  echo '<p class="price-before">';
-                  echo "RM" . $row["sys_course_price"] . "";
-                  echo '</p>';
-                }
-                ?>
+                <div class="courses-pricing">
+                  <?php
+                  $amount = $row['sys_course_price_before'];
+                  if ($amount >= 1.00) {
+                    echo '<p><b>Early Bird</b></p>';
+                    echo '<p class="price-before">';
+                    echo "RM" . $row["sys_course_price"] . "";
+                    echo '<p class="norm-price">';
+                    echo '<b>Normal Price ';
+                    echo '<span class="dashed">';
+                    echo "RM" . $row["sys_course_price_before"] . "";
+                    echo '</span>';
+                    echo '</b>';
+                    echo '</p>';
+                    echo '</p>';
+                  } else {
+                    echo '<p><b>Price</b></p>';
+                    echo '<p class="price-before">';
+                    echo "RM" . $row["sys_course_price"] . "";
+                    echo '</p>';
+                  }
+                  ?>
 
-              </div>
-
-              <div class="more-det-group">
-                <div class="more-det-main">
-                  <div class="more-det-icon">
-                    <p class="more-det"><i class="far fa-clock"></i></p>
-                  </div>
-                  <div class="more-det-text">
-                    <p class="more-det"><?php echo $row['sys_course_session']; ?> </p>
-                  </div>
                 </div>
 
+                <div class="more-det-group">
+                  <div class="more-det-main">
+                    <div class="more-det-icon">
+                      <p class="more-det"><i class="far fa-clock"></i></p>
+                    </div>
+                    <div class="more-det-text">
+                      <p class="more-det"><?php echo $row['sys_course_session']; ?> </p>
+                    </div>
+                  </div>
 
+
+                </div>
               </div>
+          <?php }
+        } ?>
             </div>
-        <?php }
-    } ?>
-          </div>
+          <? } ?>
 
-          <div class="col-sm-8">
+          <div class="col">
 
             <p class="form-text-topic"><? echo $sectionName; ?> Enquiry Form</p>
             <div class="border-box">
@@ -217,7 +219,7 @@ if ($sql->rowCount() > 0) {
 
                   <div class="col-sm-8">
                     <input type='hidden' name='section' value='<? echo $sectionNameUrl ?>'>
-                    <?php include('captcha.php'); ?>
+                    <?php include($rootDir . '/components/captcha.php'); ?>
                     <input type="submit" name="submit" id="submit" class="btn btn-info" value="Submit" disabled />
                   </div>
                 </div>

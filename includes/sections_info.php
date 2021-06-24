@@ -81,8 +81,10 @@ $coursesWithVenue = ['sys_course', 'sys_seminars', 'sys_professional_cert', 'sys
 $coursesWithTaxes = ['sys_course', 'sys_seminars', 'sys_professional_cert', 'sys_special_programmes', 'sys_trade_missions'];
 $coursesWithRightMenu = ['sys_course', 'sys_seminars', 'sys_professional_cert', 'sys_special_programmes'];
 $coursesWithGroups = ['consulting_services', 'trade_shows', 'global_network', 'products', 'in_house', 'export_coaching'];
+$coursesWithIntro = ['in_house'];
 
 $isThereMoreDates = in_array($table, $coursesWithDates);
+$isThereIntro = in_array($table, $coursesWithIntro);
 $isThereTrainerName = in_array($table, $coursesWithTrainerName);
 $isTherePrices = in_array($table, $coursesWithPrices);
 $isThereCalendar = in_array($table, $coursesWithCalendars);
