@@ -97,7 +97,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
         <div class="col-12">
           <div class="row">
             <?php
-            if ($sql->rowCount() > 0) {
+            if (count($allCourses) > 0) {
               foreach ($allCourses as $groupName => $courses) {
                 if (!is_numeric($groupName)) {
             ?>
