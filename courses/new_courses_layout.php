@@ -103,7 +103,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
               foreach ($allCourses as $groupName => $courses) {
                 if (!is_numeric($groupName)) {
             ?>
-                  <div class="col-12 mb-1 dashed-border rounded group-shadow group-name" data-group-name='<?php echo str_replace(' ', '_', $groupName); ?>'>
+                  <div class="col-12 mb-1 dashed-border rounded group-shadow group-name" data-group-name='<?php echo str_replace([' ', '&'], '_', $groupName); ?>'>
                     <span class='index'><?php echo $courses[0]['group_order']; ?></span>
                     <span><?php echo $groupName; ?></span>
                   </div>
@@ -113,7 +113,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
                 foreach ($coursesContainer as $courseInfo) {
                   $courseDetailsUrl = "course.php?id={$courseInfo['sys_course_id']}&cat_id={$courseInfo['cat_id']}&course=$table&section=" . urlencode($sectionName);
                 ?>
-                  <div class="course col-12 mb-3 ml-1 p-3 shadow bg-white rounded <?php echo !is_numeric($groupName) ? str_replace(' ', '_', $groupName) . ' d-none' : ''; ?> " data-course-details="<?php echo $courseDetailsUrl; ?>">
+                  <div class="course col-12 mb-3 ml-1 p-3 shadow bg-white rounded <?php echo !is_numeric($groupName) ? str_replace([' ', '&'], '_', $groupName) . ' d-none' : ''; ?> " data-course-details="<?php echo $courseDetailsUrl; ?>">
                     <div class="row">
                       <div class="col-12 col-md-3">
                         <div class="courses-image">
