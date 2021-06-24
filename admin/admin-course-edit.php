@@ -1,10 +1,7 @@
-
 <?php
-
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
 
 $id = $_GET['id'];
-$table = isset($_GET['course']) ? $_GET['course'] : 'sys_course';
 require_once($includes . 'sections_info.php');
 
 
