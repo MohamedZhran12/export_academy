@@ -5,11 +5,11 @@ require_once($includes . 'sections_info.php');
 
 
 $sql = $conn->prepare("
-select courses_groups.name, $table.*, courses_groups.group_order from $table
-join courses_groups
-on $table.group_id=courses_groups.ID
+select $groupsTable.name, $table.*, $groupsTable.group_order from $table
+join $groupsTable
+on $table.group_id=$groupsTable.ID
 WHERE $table.sys_course_year = YEAR(CURDATE()) AND $table.sys_course_month = MONTH(CURDATE())
-order by courses_groups.group_order asc
+order by $groupsTable.group_order asc
 ");
 $sql->execute();
 $courses = $sql->fetchAll(PDO::FETCH_GROUP);
