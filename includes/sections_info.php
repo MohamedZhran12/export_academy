@@ -74,11 +74,17 @@ if ($_GET['course'] == 'sys_course') {
 }
 
 $coursesWithDates = ['sys_course', 'sys_seminars', 'sys_professional_cert', 'sys_special_programmes', 'sys_trade_missions'];
+$coursesWithPrices = ['sys_course', 'sys_seminars', 'sys_professional_cert', 'sys_special_programmes', 'sys_trade_missions'];
 $coursesWithCalendars = ['sys_course', 'sys_seminars', 'sys_professional_cert', 'sys_special_programmes', 'sys_trade_missions', 'trade_shows'];
+$coursesWithVenue = ['sys_course', 'sys_seminars', 'sys_professional_cert', 'sys_special_programmes', 'sys_trade_missions', 'trade_shows'];
+$coursesWithTaxes = ['sys_course', 'sys_seminars', 'sys_professional_cert', 'sys_special_programmes', 'sys_trade_missions'];
 $coursesWithRightMenu = ['sys_course', 'sys_seminars', 'sys_professional_cert', 'sys_special_programmes'];
 $coursesWithGroups = ['consulting_services', 'trade_shows', 'global_network', 'products', 'in_house', 'export_coaching'];
 
 $isThereMoreDates = in_array($table, $coursesWithDates);
+$isTherePrices = in_array($table, $coursesWithPrices);
 $isThereCalendar = in_array($table, $coursesWithCalendars);
+$isThereTaxes = in_array($table, $coursesWithTaxes);
+$isThereVenue = in_array($table, $coursesWithVenue);
 $isThereRightMenu = in_array($table, $coursesWithRightMenu);
 $isThereGroups = in_array($table, $coursesWithGroups);

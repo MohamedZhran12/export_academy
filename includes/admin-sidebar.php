@@ -16,22 +16,47 @@
         <li>
           <a href="/admin/admin-main.php" class="side-menu-link">Admin Dashboard</a>
         </li>
-        <li>
-          <a href="/admin/admin-all-courses.php?course=sys_course" class="side-menu-link">All Courses</a>
-        </li>
-        <li>
-          <a href="/admin/admin-all-courses.php?course=sys_seminars" class="side-menu-link">All Seminar & Conferences</a>
-        </li>
-        <li>
-          <a href="/admin/admin-all-courses.php?course=sys_professional_cert" class="side-menu-link">All Professional
-            Certification</a>
-        </li>
-        <li>
-          <a href="/admin/admin-all-courses.php?course=sys_special_programmes" class="side-menu-link">All Special Programmes</a>
-        </li>
-        <li>
-          <a href="/admin/admin-all-courses.php?course=sys_trade_missions" class="side-menu-link">All Trade Missions</a>
-        </li>
+
+        <li id='all-courses-btn' style='cursor:pointer'><a class='side-menu-link'>Courses List</a></li>
+        <div id='all-courses' class='d-none ml-5'>
+          <li>
+            <a href="/admin/admin-all-courses.php?course=sys_course" class="side-menu-link">All Courses</a>
+          </li>
+          <li>
+            <a href="/admin/admin-all-courses.php?course=sys_seminars" class="side-menu-link">All Seminar & Conferences</a>
+          </li>
+          <li>
+            <a href="/admin/admin-all-courses.php?course=sys_professional_cert" class="side-menu-link">All Professional
+              Certification</a>
+          </li>
+          <li>
+            <a href="/admin/admin-all-courses.php?course=sys_special_programmes" class="side-menu-link">All Special Programmes</a>
+          </li>
+          <li>
+            <a href="/admin/admin-all-courses.php?course=in_house" class="side-menu-link">All In House</a>
+          </li>
+          <li>
+            <a href="/admin/admin-all-courses.php?course=sys_trade_missions" class="side-menu-link">All Trade Missions</a>
+          </li>
+          <li>
+            <a href="/admin/admin-all-courses.php?course=export_coaching" class="side-menu-link">All Export Coaching</a>
+          </li>
+          <li>
+            <a href="/admin/admin-all-courses.php?course=trade_shows" class="side-menu-link">All Trade Shows</a>
+          </li>
+          <li>
+            <a href="/admin/admin-all-courses.php?course=products" class="side-menu-link">All List of Product</a>
+          </li>
+          <li>
+            <a href="/admin/admin-all-courses.php?course=consulting_services" class="side-menu-link">All Consulting Services</a>
+          </li>
+          <li>
+            <a href="/admin/admin-all-courses.php?course=global_network" class="side-menu-link">All Global Network</a>
+          </li>
+          <li>
+            <a href="admin-all-articles.php" class="side-menu-link">All Articles</a>
+          </li>
+        </div>
 
         <li id='all-csr-events-btn' style='cursor:pointer'><a class='side-menu-link'>All CSR Events</a></li>
         <div id='all-csr-events' class='d-none ml-5'>
@@ -79,10 +104,6 @@
           <li><a href="admin-delete-mexa-tv-videos.php" class="side-menu-link">Delete MEXA TV videos</a>
           </li>
         </div>
-
-        <li>
-          <a href="admin-all-articles.php" class="side-menu-link">All Articles</a>
-        </li>
       </ul>
     </div>
 
@@ -228,7 +249,7 @@
   const dropDownIDs = ['upload-courses', 'csr-events', 'all-csr-events',
     'homepage-slider', 'partners-logos', 'all-gallery-events',
     'gallery-events', 'all-our-achievements', 'our-achievements-events',
-    'all-mexa-tv', 'mexa-tv-events', 'our-management-events', 'all-our-management', 'courses-groups'
+    'all-mexa-tv', 'mexa-tv-events', 'our-management-events', 'all-our-management', 'courses-groups', 'all-courses'
   ];
 
   dropDownIDs.forEach((item) => {

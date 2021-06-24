@@ -6,10 +6,11 @@ $stmt = $conn->prepare("select ID, name from courses_groups");
 $stmt->execute();
 $groups = $stmt->fetchAll();
 
-function addToArrayIfValueIsSet($optionalArr, &$mainArray) {
-  foreach ($optionalArr as $value) {
+function addToInsertQueryIfValueIsSet($tableAttributes, &$names, &$values) {
+  foreach ($tableAttributes as $key => $value) {
     if (isset($value)) {
-      $mainArray[] = $value;
+      $names[] = $key;
+      $values[] = $value;
     }
   }
 }
@@ -42,46 +43,55 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $year = is_array($_POST['end_date']) ? explode('-', $_POST['end_date'][0])[2] : $_POST['year'];
   $venue = $_POST['cat'] == 1 ? $_POST['virtual_venue'] : $_POST['public_venue'];
 
-  $courseAttributes = [
-    null,
-    $_FILES['image']['name'],
-    $_POST['topic'],
-    $_POST['days'],
-    $start_date,
-    $end_date,
-    $month,
-    $year,
-    $_POST['time_in'],
-    $_POST['time_out'],
-    $venue,
-    $_POST['intro'],
-    $_POST['module'],
-    $_POST['trainer'],
-    $_POST['trainer_info'],
-    $_POST['fees'],
-    $_POST['fees_before'],
-    $_POST['fees_in_usd'],
-    $_POST['fees_before_in_usd'],
-    $_POST['points'],
-    0,
-    null,
-    $_POST['tax'],
-    $_POST['cat'],
-    $_FILES['brochure']['name']
+  $tableAttributes = [
+    'sys_course_image' => $_FILES['image']['name'],
+    'sys_course_topic' => $_POST['topic'],
+    'sys_course_days' => $_POST['days'],
+    'sys_course_date ' => $start_date,
+    'sys_course_dateend ' => $end_date,
+    'sys_course_month' => $month,
+    'sys_course_year' => $year,
+    'sys_course_time' => $_POST['time_in'],
+    'sys_course_timeout' => $_POST['time_out'],
+    'sys_course_venue' => $venue,
+    'sys_course_intro' => $_POST['intro'],
+    'sys_course_module' => $_POST['module'],
+    'sys_course_trainer' => $_POST['trainer'],
+    'sys_course_trainer_info' => $_POST['trainer_info'],
+    'sys_course_price' => $_POST['fees'],
+    'sys_course_price_before' => $_POST['fees_before'],
+    'sys_cpd_points' => $_POST['points'],
+    'sys_course_view' => 0,
+    'sys_course_session' => 'none',
+    'sys_sst' => $_POST['tax'],
+    'cat_id' => $_POST['cat'],
+    'pdf' => $_FILES['brochure']['name'],
+    'sys_course_price_usd' => $_POST['fees_in_usd'],
+    'sys_course_price_before_usd' => $_POST['fees_before_in_usd'],
+    'certification_name' => $_POST['certification_name'],
+    'certification_info' => $_POST['certification_info'],
+    'is_hrdf' => $_POST['toggle_hrdf'],
+    'is_cpd_text' => $_POST['toggle_cpd_text'],
+    'is_lunch' => $_POST['toggle_lunch'],
+    'group_id' => $_POST['group_id']
   ];
 
-  $optionalAttributes = [
-    $_POST['certification_name'], $_POST['certification_info'],
-    $_POST['toggle_hrdf'], $_POST['toggle_cpd_text'],
-    $_POST['toggle_lunch'], $_POST['group_id']
+  $courseAttributesNames = [
+    'sys_course_id'
   ];
 
-  addToArrayIfValueIsSet($optionalAttributes, $courseAttributes);
+  $courseAttributesValues = [
+    null,
+  ];
 
-  $valuesBinding = str_repeat(',?', count($courseAttributes) - 1);
-  $sql = $conn->prepare("INSERT INTO $table
+  addToInsertQueryIfValueIsSet($tableAttributes, $courseAttributesNames, $courseAttributesValues);
+
+  $courseAttributesNamesString = implode(',', $courseAttributesNames);
+
+  $valuesBinding = str_repeat(',?', count($courseAttributesValues) - 1);
+  $sql = $conn->prepare("INSERT INTO $table ($courseAttributesNamesString)
   VALUES (?$valuesBinding)");
-  $isCourseAdded = $sql->execute($courseAttributes);
+  $isCourseAdded = $sql->execute($courseAttributesValues);
 
   if ($isThereMoreDates) {
     $isDatesAdded = insertMoreDates($_POST['start_date'], $_POST['end_date'], $table);
@@ -132,13 +142,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <div class="col-12">
                           <p class="form-text">Topic</p>
                           <input type="text" class="form mb-3" name="topic" placeholder="eg: Accounts" size="30" />
-
-                        </div>
-
-                        <div class="col-12 mb-3">
-                          <span>Show CPD:</span>
-                          <input type="radio" id="show-cpd" name="show-hide-cpd" checked /><span> Yes</span>
-                          <input type="radio" id="hide-cpd" name="show-hide-cpd" /><span> No</span>
                         </div>
 
                         <div class="col-12 mb-3">
@@ -147,28 +150,28 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         </div>
 
                         <?php
-                        if ($isThereMoreDates) {
+                        if ($isThereMoreDates && $isThereCalendar) {
                           require_once('components/new_dates.php');
-                        } else {
+                        } elseif ($isThereCalendar) {
                           require_once('components/old_dates.php');
                         }
+                        if ($isThereMoreDates) {
                         ?>
-                        <div class="col-4 mb-4">
-                          <p class="form-text">Days</p>
-                          <input type="number" class="form" value="1" name="days">
-                        </div>
+                          <div class="col-4 mb-4">
+                            <p class="form-text">Days</p>
+                            <input type="number" class="form" value="1" name="days">
+                          </div>
 
-                        <div class="col-4">
-                          <p class="form-text">Start Time</p>
-                          <input type="time" class="form" name="time_in">
+                          <div class="col-4">
+                            <p class="form-text">Start Time</p>
+                            <input type="time" class="form" name="time_in">
+                          </div>
 
-                        </div>
-
-                        <div class="col-4">
-                          <p class="form-text">End Time</p>
-                          <input type="time" class="form" name="time_out">
-
-                        </div>
+                          <div class="col-4">
+                            <p class="form-text">End Time</p>
+                            <input type="time" class="form" name="time_out">
+                          </div>
+                        <? } ?>
                         <? if ($isThereGroups) { ?>
                           <div class="col-12 mb-3">
                             <select id='group-title' name='group_id' class="custom-select">
@@ -181,53 +184,55 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             </select>
                           </div>
                         <? } ?>
-                        <div class="col-12 mb-3">
-                          <span>Show Tax:</span>
-                          <input type="radio" id="show-tax" name="show-hide-tax" checked /><span> Yes</span>
-                          <input type="radio" id="hide-tax" name="show-hide-tax" /><span> No</span>
-                        </div>
 
-                        <div class="col-12">
-                          <p class="form-text">6% SST</p>
-                          <div class="row">
-                            <div class="col-6 mb-3">
-                              Inclusive <input type="radio" name="tax" checked value="Inclusive of 6% SST" />
-                            </div>
-
-                            <div class="col-6">
-                              Subjected <input type="radio" name="tax" value="Subjected to 6% SST" />
-                            </div>
-
+                        <? if ($isThereTaxes) { ?>
+                          <div class="col-12 mb-3">
+                            <span>Show Tax:</span>
+                            <input type="radio" id="show-tax" name="show-hide-tax" checked /><span> Yes</span>
+                            <input type="radio" id="hide-tax" name="show-hide-tax" /><span> No</span>
                           </div>
-                          <p class="form-text">GST</p>
-                          <div class="row">
-                            <div class="col-6">
-                              Inclusive <input type="radio" name="tax" value="Inclusive of 6% GST" />
-                            </div>
+                          <div class="col-12">
+                            <p class="form-text">6% SST</p>
+                            <div class="row">
+                              <div class="col-6 mb-3">
+                                Inclusive <input type="radio" name="tax" checked value="Inclusive of 6% SST" />
+                              </div>
 
-                            <div class="col-6 mb-3">
-                              Subjected <input type="radio" name="tax" value="Subjected to 6% GST" />
-                            </div>
-                          </div>
-                        </div>
-
-                        <div class="col-12 mt-3">
-                          <p class="form-text">Mode of Program</p>
-                          <div class="row">
-                            <div class="col-6">
-                              Virtual Programme
-                              <input type="radio" id='virtual-class' name="cat" value="1" />
+                              <div class="col-6">
+                                Subjected <input type="radio" name="tax" value="Subjected to 6% SST" />
+                              </div>
 
                             </div>
-                            <div class="col-6">
-                              Public Programme
-                              <input type="radio" id='public-class' name="cat" value="2" />
+                            <p class="form-text">GST</p>
+                            <div class="row">
+                              <div class="col-6">
+                                Inclusive <input type="radio" name="tax" value="Inclusive of 6% GST" />
+                              </div>
+
+                              <div class="col-6 mb-3">
+                                Subjected <input type="radio" name="tax" value="Subjected to 6% GST" />
+                              </div>
                             </div>
                           </div>
-                          <input style="display:none;" class="form" type="text" name="virtual_venue" value="Platform Name" id="virtualAnswer" />
-                          <input style="display:none;" class="form" type="text" name="public_venue" value="Venue Name" id="publicAnswer" />
+                        <? } ?>
+                        <? if ($isThereVenue) { ?>
+                          <div class="col-12 mt-3">
+                            <p class="form-text">Mode of Program</p>
+                            <div class="row">
+                              <div class="col-6">
+                                Virtual Programme
+                                <input type="radio" id='virtual-class' name="cat" value="1" />
 
-                        </div>
+                              </div>
+                              <div class="col-6">
+                                Public Programme
+                                <input type="radio" id='public-class' name="cat" value="2" />
+                              </div>
+                            </div>
+                            <input style="display:none;" class="form" type="text" name="virtual_venue" value="Platform Name" id="virtualAnswer" />
+                            <input style="display:none;" class="form" type="text" name="public_venue" value="Venue Name" id="publicAnswer" />
+                          </div>
+                        <? } ?>
                       </div>
                     </div>
 
@@ -260,27 +265,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <p class="form-text">Certification Info</p>
                         <textarea id="editor5" name="certification_info"></textarea>
                       </div>
+                    <? }
+                    if ($isTherePrices) { ?>
+                      <div class="col-6 my-3">
+                        <p class="form-text">Current Price in MYR</p>
+                        <input type="number" min="0.00" step="0.00" value="0.00" class="form" name="fees" size="30" />
+                      </div>
+
+                      <div class="col-6 my-3">
+                        <p class="form-text">Normal Price in MYR</p>
+                        <input type="number" min="0.00" step="0.00" value="0.00" class="form" name="fees_before" size="30" />
+                      </div>
+
+                      <div class="col-6 my-3">
+                        <p class="form-text">Current Price in USD</p>
+                        <input type="number" min="0.00" step="0.00" value="0.00" class="form" name="fees_in_usd" size="30" />
+                      </div>
+
+                      <div class="col-6 my-3">
+                        <p class="form-text">Normal Price in USD</p>
+                        <input type="number" min="0.00" step="0.00" value="0.00" class="form" name="fees_before_in_usd" size="30" />
+                      </div>
                     <? } ?>
-                    <div class="col-6 my-3">
-                      <p class="form-text">Current Price in MYR</p>
-                      <input type="number" min="0.00" step="0.00" value="0.00" class="form" name="fees" size="30" />
-                    </div>
-
-                    <div class="col-6 my-3">
-                      <p class="form-text">Normal Price in MYR</p>
-                      <input type="number" min="0.00" step="0.00" value="0.00" class="form" name="fees_before" size="30" />
-                    </div>
-
-                    <div class="col-6 my-3">
-                      <p class="form-text">Current Price in USD</p>
-                      <input type="number" min="0.00" step="0.00" value="0.00" class="form" name="fees_in_usd" size="30" />
-                    </div>
-
-                    <div class="col-6 my-3">
-                      <p class="form-text">Normal Price in USD</p>
-                      <input type="number" min="0.00" step="0.00" value="0.00" class="form" name="fees_before_in_usd" size="30" />
-                    </div>
                     <? if ($isThereRightMenu) { ?>
+                      <div class="col-12 mb-3">
+                        <span>Show CPD:</span>
+                        <input type="radio" id="show-cpd" name="show-hide-cpd" checked /><span> Yes</span>
+                        <input type="radio" id="hide-cpd" name="show-hide-cpd" /><span> No</span>
+                      </div>
                       <div class="col-12 mb-3">
                         <span>Show HRDF:</span>
                         <input type="radio" name="toggle_hrdf" value='1' checked /><span> Yes</span>
@@ -338,27 +350,29 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     });
   });
 
-  document.getElementById('show-cpd').addEventListener('click', function() {
-    var cpdValue = document.getElementById('cpd-points');
-    if (cpdValue.value[0] == 0) {
-      cpdValue.value = cpdValue.value.replace('0', '');
-    }
-  })
-  document.getElementById('hide-cpd').addEventListener('click', function() {
-    var cpdValue = document.getElementById('cpd-points');
-    cpdValue.value = 0 + cpdValue.value;
-  })
+  if (document.getElementById('show-cpd')) {
+    document.getElementById('show-cpd').addEventListener('click', function() {
+      var cpdValue = document.getElementById('cpd-points');
+      if (cpdValue.value[0] == 0) {
+        cpdValue.value = cpdValue.value.replace('0', '');
+      }
+    })
+    document.getElementById('hide-cpd').addEventListener('click', function() {
+      var cpdValue = document.getElementById('cpd-points');
+      cpdValue.value = 0 + cpdValue.value;
+    })
 
-  document.getElementById('show-tax').addEventListener('click', function() {
-    var cpdValue = document.querySelector('input[name=tax]:checked');
-    if (cpdValue.value[0] == 0) {
-      cpdValue.value = cpdValue.value.replace('0', '');
-    }
-  })
-  document.getElementById('hide-tax').addEventListener('click', function() {
-    var cpdValue = document.querySelector('input[name=tax]:checked');
-    cpdValue.value = 0 + cpdValue.value;
-  })
+    document.getElementById('show-tax').addEventListener('click', function() {
+      var cpdValue = document.querySelector('input[name=tax]:checked');
+      if (cpdValue.value[0] == 0) {
+        cpdValue.value = cpdValue.value.replace('0', '');
+      }
+    })
+    document.getElementById('hide-tax').addEventListener('click', function() {
+      var cpdValue = document.querySelector('input[name=tax]:checked');
+      cpdValue.value = 0 + cpdValue.value;
+    })
+  }
 
   function insertAfter(newNode, referenceNode) {
     referenceNode.parentNode.insertBefore(newNode, referenceNode.nextSibling);
