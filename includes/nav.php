@@ -6,7 +6,7 @@
         <div class="col-3">
           <div class="logo">
             <a href="/index.php">
-              <img alt='image' src="<? echo $images; ?>logo/Malaysia Export Academy Logo.png">
+              <img alt='image' src="<? echo $imagesDir; ?>logo/Malaysia Export Academy Logo.png">
             </a>
           </div>
         </div>
@@ -31,11 +31,9 @@
                   <li><a href="/courses/old_courses_layout.php?course=sys_seminars">Seminar & Conferences</a></li>
                   <li><a href="/courses/old_courses_layout.php?course=sys_professional_cert">Professional Certification</a></li>
                   <li><a href="/courses/old_courses_layout.php?course=sys_special_programmes">Special Programmes</a></li>
-                  <li><a href="/courses/new_courses_layout.php?course=consulting_services">Consulting Services</a></li>
-                  <li><a href="/courses/new_courses_layout.php?course=export_coaching">Export Coaching</a></li>
+
                   <li><a href="/courses/new_courses_layout.php?course=products">Products</a></li>
                   <li><a href="/courses/new_courses_layout.php?course=global_network">Global Network</a></li>
-                  <li><a href="/courses/new_courses_layout.php?course=trade_shows">Trade Shows</a></li>
 
                   <li><a href="/coming-soon.php">Online Training</a>
                     <ul>
@@ -49,22 +47,22 @@
 
               <li><a href="#">Services</a>
                 <ul>
-                  <li><a href="/consulting.php">Export Coaching</a></li>
+                  <li><a href="/courses/new_courses_layout.php?course=export_coaching">Export Coaching</a></li>
                   <li><a href="/online-training.php">Export Promotion</a>
                     <ul>
                       <li><a href="/courses/old_courses_layout.php?course=sys_trade_missions">Trade Missions</a></li>
-                      <li><a href="#">Trade Shows</a></li>
-                      <li><a href="#">Listing of Products</a></li>
+                      <li><a href="/courses/new_courses_layout.php?course=trade_shows">Trade Shows</a></li>
+                      <li><a href="/courses/new_courses_layout.php?course=products">Listing of Products</a></li>
                     </ul>
                   </li>
 
-                  <li><a href="/consulting.php">Consulting Services</a></li>
+                  <li><a href="/courses/new_courses_layout.php?course=consulting_services">Consulting Services</a></li>
                   <li><a href="/room.php">Hall Rental</a></li>
                   <li><a href="http://www.eexport.org.my/" target='_blank'>Cross Border Ecommerce</a></li>
                 </ul>
               </li>
 
-              <li><a href="/coming-soon.php">Global Network</a></li>
+              <li><a href="/courses/new_courses_layout.php?course=global_network">Global Network</a></li>
               <li><a href="#">Resource Center</a>
                 <ul>
                   <li><a href="/articles.php">Articles</a></li>
