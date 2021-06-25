@@ -1,6 +1,9 @@
 body {
   font-family: Roboto, sans-serif;
 }
+div:empty {
+  display: none !important;
+}
 img {
   width: 100%;
 }
