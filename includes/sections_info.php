@@ -73,7 +73,7 @@ if ($_GET['course'] == 'sys_course') {
   $groupsTable = $table . '_groups';
 }
 
-$coursesWithDates = ['sys_course', 'sys_seminars', 'sys_professional_cert', 'sys_special_programmes', 'sys_trade_missions'];
+$coursesWithDates = ['sys_course', 'sys_seminars', 'sys_professional_cert', 'sys_special_programmes', 'sys_trade_missions','trade_shows'];
 $coursesWithTrainerName = ['sys_course', 'sys_seminars', 'sys_professional_cert', 'sys_special_programmes', 'trade_shows'];
 $coursesWithPrices = ['sys_course', 'sys_seminars', 'sys_professional_cert', 'sys_special_programmes', 'sys_trade_missions'];
 $coursesWithCalendars = ['sys_course', 'sys_seminars', 'sys_professional_cert', 'sys_special_programmes', 'sys_trade_missions', 'trade_shows'];
