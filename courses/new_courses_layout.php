@@ -103,7 +103,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
               foreach ($allCourses as $groupName => $courses) {
                 if (!is_numeric($groupName)) {
             ?>
-                  <div class="col-12 mb-1 dashed-border rounded group-shadow group-name" data-group-name='<?php echo str_replace([' ', '&'], '_', $groupName); ?>'>
+                  <div class="col-12 mb-1 dashed-border rounded group-shadow group-name" data-group-name='<?php echo str_replace([' ', '&', ',', '*', '^', '%', '$', '#', '@', '!'], '_', $groupName); ?>'>
                     <span class='index'><?php echo $courses[0]['group_order']; ?></span>
                     <span><?php echo $groupName; ?></span>
                   </div>
