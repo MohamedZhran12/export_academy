@@ -115,30 +115,33 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
                 ?>
                   <div class="course col-12 mb-3 ml-1 p-3 shadow bg-white rounded <?php echo !is_numeric($groupName) ? str_replace([' ', '&', ',', '*', '^', '%', '$', '#', '@', '!'], '_', $groupName) . ' d-none' : ''; ?> " data-course-details="<?php echo $courseDetailsUrl; ?>">
                     <div class="row">
-                      <div class="col-12 col-md-3">
-                        <? if (!empty($courseInfo['sys_course_image'])) { ?>
-                          <div class="courses-image">
-                            <img alt='image' src="/images/courses/<?php echo $courseInfo['sys_course_image']; ?>" alt='course image'>
-                          </div>
-                        <?php
-                        }
-                        $datesSql = $conn->prepare("select course_date_start,course_date_end from courses_dates where course_type=? and course_id=?");
-                        $datesSql->execute([$table, $courseInfo['sys_course_id']]);
-                        $dates = $datesSql->fetchAll();
-                        foreach ($dates as $date) { ?>
-                          <div class='dates mb-3'>
-                            <span class="d-block">From: <?php echo date('d - M - Y', strtotime($date['course_date_start'])); ?></span>
-                            <span class="d-block ">To: <?php echo date('d - M - Y', strtotime($date['course_date_end'])); ?></span>
-                          </div>
-                        <?php }
-                        if ($isThereVenue) { ?>
-                          <p class="mb-3">
-                            <?php echo ($courseInfo['cat_id'] == 1) ? 'Virtual Programme - ' : 'Public Programme - ';
-                            echo $courseInfo['sys_course_venue']; ?> <i class="fas fa-map-marker-alt"></i>
-                          </p>
-                        <? } ?>
-                      </div>
-
+                      <? if (!empty($courseInfo['sys_course_image']) || $isThereMoreDates || $isThereVenue) { ?>
+                        <div class="col-12 col-md-3">
+                          <? if (!empty($courseInfo['sys_course_image'])) { ?>
+                            <div class="courses-image">
+                              <img alt='image' src="/images/courses/<?php echo $courseInfo['sys_course_image']; ?>" alt='course image'>
+                            </div>
+                            <?php
+                          }
+                          if ($isThereMoreDates) {
+                            $datesSql = $conn->prepare("select course_date_start,course_date_end from courses_dates where course_type=? and course_id=?");
+                            $datesSql->execute([$table, $courseInfo['sys_course_id']]);
+                            $dates = $datesSql->fetchAll();
+                            foreach ($dates as $date) { ?>
+                              <div class='dates mb-3'>
+                                <span class="d-block">From: <?php echo date('d - M - Y', strtotime($date['course_date_start'])); ?></span>
+                                <span class="d-block ">To: <?php echo date('d - M - Y', strtotime($date['course_date_end'])); ?></span>
+                              </div>
+                            <?php }
+                          }
+                          if ($isThereVenue) { ?>
+                            <p class="mb-3">
+                              <?php echo ($courseInfo['cat_id'] == 1) ? 'Virtual Programme - ' : 'Public Programme - ';
+                              echo $courseInfo['sys_course_venue']; ?> <i class="fas fa-map-marker-alt"></i>
+                            </p>
+                          <? } ?>
+                        </div>
+                      <? } ?>
                       <div class="col">
                         <div class="row">
                           <div class="details col-12 col-md-7">
