@@ -1,107 +1,5 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
-
-$id = $_GET['id'];
-require_once($includes . 'sections_info.php');
-
-
-$sqlStmt = "select course_date_start,course_date_end,id from courses_dates where course_type=? and course_id=?";
-$datesSql = $conn->prepare($sqlStmt);
-$datesSql->execute([$table, $id]);
-$dates = $datesSql->fetchAll();
-
-$stmt = $conn->prepare("select ID, name from courses_groups");
-$stmt->execute();
-$groups = $stmt->fetchAll();
-
-if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  if (!empty($_FILES['course_image']['name'])) {
-    require_once('update_course_image.php');
-  }
-  if (!empty($_FILES['pdf']['name'])) {
-    require_once('edit_brochure.php');
-  }
-  $topic = $_POST['topic'];
-  $start_date = $_POST['start_date'];
-  $end_date = $_POST['end_date'];
-  $days = $_POST['days'];
-  $date = isset($_POST['date']) ? $_POST['date'] : explode('-', $start_date[0])[0];
-  $month = isset($_POST['month']) ? $_POST['month'] : explode('-', $start_date[0])[1];
-  $year = $_POST['year'];
-  $timein = $_POST['timein'];
-  $timeout = $_POST['timeout'];
-  $intro = $_POST['intro'];
-  $module = $_POST['module'];
-  $trainer = $_POST['trainer'];
-  $trainerinfo = $_POST['trainerinfo'];
-  $fees = $_POST['fees'];
-  $feesbefore = $_POST['feesbefore'];
-  $fees_usd = $_POST['fees_usd'];
-  $feesbefore_usd = $_POST['feesbefore_usd'];
-  $points = $_POST['points'];
-  $session = $_POST['session'];
-  $sst = $_POST['tax'];
-  $cat = $_POST['cat'];
-  $venue = ($cat == 1) ? $_POST['virtual_venue'] : $_POST['public_venue'];
-  $is_lunch = $_POST['toggle_lunch'];
-  $is_hrdf = $_POST['toggle_hrdf'];
-  $is_cpd_text = $_POST['toggle_cpd_text'];
-  $group_id = $_POST['group_id'];
-
-  $sql = "UPDATE $table SET
-    sys_course_topic =?,
-    sys_course_days =?,
-    sys_course_date =?,
-    sys_course_month =?,
-    sys_course_year =?,
-    sys_course_time =?,
-    sys_course_timeout =?,
-    sys_course_intro =?,
-    sys_course_module =?,
-    sys_course_date =?,
-    sys_course_trainer =?,
-    sys_course_trainer_info =?,
-    sys_course_date =?,
-    sys_course_price =?,
-    sys_course_price_before =?,
-    sys_course_price_usd =?,
-    sys_course_price_before_usd =?,
-    sys_cpd_points =?,
-    sys_sst =?,
-    sys_course_session=?,
-    sys_course_venue=?,
-    cat_id=?,
-    is_hrdf=?,
-    is_cpd_text=?,
-    is_lunch=?,
-    group_id=?
-    WHERE sys_course_id =?";
-
-  $result = $conn->prepare($sql)->execute([
-    $topic, $days, $date, $month, $year, $timein, $timeout, $intro,
-    $module, $date, $trainer, $trainerinfo, $date, $fees, $feesbefore, $fees_usd, $feesbefore_usd, $points,
-    $sst, $session, $venue, $cat, $is_hrdf, $is_cpd_text, $is_lunch, $group_id, $id
-  ]);
-
-
-  $isUpdated = $conn->prepare("delete from courses_dates where course_id=?")->execute([$id]);
-
-  $insert_dates_stmt = "insert into courses_dates(course_date_start,course_date_end,course_type,course_id) values";
-  for ($i = 0; $i < count($start_date); $i++) {
-    $insert_dates_stmt .= "('$start_date[$i]','$end_date[$i]','$table',$id)";
-    if ($i != count($start_date) - 1) {
-      $insert_dates_stmt .= ',';
-    }
-  }
-  $isDatesUpdated = $conn->prepare($insert_dates_stmt)->execute();
-  if ($isUpdated && $isDatesUpdated) {
-    echo '<script>alert("Course Successfully Updated!");</script>';
-  }
-}
 ?>
-
-
-
 <div class="background-gradient">
   <div class="container-fluid">
     <div class="row">
@@ -134,11 +32,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                       $sql->execute([$id]);
                       $course = $sql->fetchAll();
                       if ($sql->rowCount() > 0) {
-                        foreach ($course
-
-                          as $row) {
+                        foreach ($course as $row) {
                       ?>
-
                           <div class="col-sm-12">
                             <div class="padding-30">
                               <div class="row">

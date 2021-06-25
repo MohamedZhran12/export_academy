@@ -152,9 +152,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <? } ?>
                         <?php
                         if ($isThereMoreDates && $isThereCalendar) {
-                          require_once('components/new_dates.php');
+                          require_once('../components/new_dates.php');
                         } elseif ($isThereCalendar) {
-                          require_once('components/old_dates.php');
+                          require_once('../components/old_dates.php');
                         }
                         if ($isThereMoreDates) {
                         ?>

@@ -134,36 +134,36 @@
         <li id='upload-courses-btn' style='cursor:pointer'><a class='side-menu-link'>Upload Courses</a></li>
         <div id="upload-courses" class="d-none ml-5">
           <li>
-            <a href="/admin/upload_courses/upload-course.php?course=sys_course" class="side-menu-link">Upload Course</a>
+            <a href="/admin/control_courses/upload-course.php?course=sys_course" class="side-menu-link">Upload Course</a>
           </li>
-          <li><a href="/admin/upload_courses/upload-course.php?course=sys_seminars" class="side-menu-link">Upload Seminar & Conferences</a>
-          </li>
-          <li>
-            <a href="/admin/upload_courses/upload-course.php?course=sys_professional_cert" class="side-menu-link">Upload Professional Certification</a>
+          <li><a href="/admin/control_courses/upload-course.php?course=sys_seminars" class="side-menu-link">Upload Seminar & Conferences</a>
           </li>
           <li>
-            <a href="/admin/upload_courses/upload-course.php?course=sys_special_programmes" class="side-menu-link">Upload Special Programmes</a>
+            <a href="/admin/control_courses/upload-course.php?course=sys_professional_cert" class="side-menu-link">Upload Professional Certification</a>
           </li>
           <li>
-            <a href="/admin/upload_courses/upload-course.php?course=sys_trade_missions" class="side-menu-link">Upload Trade Missions</a>
+            <a href="/admin/control_courses/upload-course.php?course=sys_special_programmes" class="side-menu-link">Upload Special Programmes</a>
           </li>
           <li>
-            <a href="/admin/upload_courses/upload-course.php?course=consulting_services" class="side-menu-link">Upload Consulting Services</a>
+            <a href="/admin/control_courses/upload-course.php?course=sys_trade_missions" class="side-menu-link">Upload Trade Missions</a>
           </li>
           <li>
-            <a href="/admin/upload_courses/upload-course.php?course=trade_shows" class="side-menu-link">Upload Trade Shows</a>
+            <a href="/admin/control_courses/upload-course.php?course=consulting_services" class="side-menu-link">Upload Consulting Services</a>
           </li>
           <li>
-            <a href="/admin/upload_courses/upload-course.php?course=global_network" class="side-menu-link">Upload Global Network</a>
+            <a href="/admin/control_courses/upload-course.php?course=trade_shows" class="side-menu-link">Upload Trade Shows</a>
           </li>
           <li>
-            <a href="/admin/upload_courses/upload-course.php?course=products" class="side-menu-link">Upload Products</a>
+            <a href="/admin/control_courses/upload-course.php?course=global_network" class="side-menu-link">Upload Global Network</a>
           </li>
           <li>
-            <a href="/admin/upload_courses/upload-course.php?course=in_house" class="side-menu-link">Upload In House</a>
+            <a href="/admin/control_courses/upload-course.php?course=products" class="side-menu-link">Upload Products</a>
           </li>
           <li>
-            <a href="/admin/upload_courses/upload-course.php?course=export_coaching" class="side-menu-link">Upload Export Coaching</a>
+            <a href="/admin/control_courses/upload-course.php?course=in_house" class="side-menu-link">Upload In House</a>
+          </li>
+          <li>
+            <a href="/admin/control_courses/upload-course.php?course=export_coaching" class="side-menu-link">Upload Export Coaching</a>
           </li>
         </div>
 

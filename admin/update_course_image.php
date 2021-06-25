@@ -1,6 +1,6 @@
 <?php
 
-require_once('upload_course_image_class.php');
+require_once('edit_course_image_class.php');
 
 class CourseImage extends Image
 {

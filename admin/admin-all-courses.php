@@ -79,7 +79,7 @@ require_once($includes . 'sections_info.php');
                                         </div>
 
                                         <div class="take-action">
-                                          <a class="edit" href="admin-course-edit.php?id=<?php echo $row['sys_course_id']; ?>&course=<? echo $table; ?>" title="Edit Course">
+                                          <a class="edit" href="/admin/control_courses/course-edit.php?id=<?php echo $row['sys_course_id']; ?>&course=<? echo $table; ?>" title="Edit Course">
                                             <p><i class="fas fa-edit"></i></p>
                                           </a>
                                           <a class="delete" href="admin-delete-course.php?id=<?php echo $row['sys_course_id']; ?>&course=<? echo $table; ?>" onclick="return confirm('Are you sure you want to delete?')" title="Delete Album">

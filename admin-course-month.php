@@ -102,7 +102,7 @@ $month = $_GET['month'];
                                         <div class="take-action">
 
                                           <a class="edit"
-                                             href="admin-course-edit.php?id=<?php echo $row['sys_course_id']; ?>"
+                                             href="/admin/control_courses/course-edit.php?id=<?php echo $row['sys_course_id']; ?>"
                                              title="Edit Course">
                                             <p><i class="fas fa-edit"></i></p>
                                           </a>
