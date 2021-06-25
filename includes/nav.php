@@ -45,7 +45,7 @@
               <li><a href="#">Services</a>
                 <ul>
                   <li><a href="/courses/new_courses_layout.php?course=export_coaching">Export Coaching</a></li>
-                  <li><a href="/online-training.php">Export Promotion</a>
+                  <li><a href="#">Export Promotion</a>
                     <ul>
                       <li><a href="/courses/old_courses_layout.php?course=sys_trade_missions">Trade Missions</a></li>
                       <li><a href="/courses/new_courses_layout.php?course=trade_shows">Trade Shows</a></li>

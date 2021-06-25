@@ -118,7 +118,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
                       <div class="col-12 col-md-3">
                         <? if (!empty($courseInfo['sys_course_image'])) { ?>
                           <div class="courses-image">
-                            <img alt='image' src="images/courses/<?php echo $courseInfo['sys_course_image']; ?>" alt='course image'>
+                            <img alt='image' src="/images/courses/<?php echo $courseInfo['sys_course_image']; ?>" alt='course image'>
                           </div>
                         <?php
                         }
@@ -139,7 +139,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
                         <? } ?>
                       </div>
 
-                      <div class="col-12 col">
+                      <div class="col">
                         <div class="row">
                           <div class="details col-12 col-md-7">
                             <p class="mb-3 font-weight-bold"><?php echo $courseInfo['sys_course_topic']; ?></p>
