@@ -31,7 +31,7 @@ foreach ($sql->fetchAll() as $row) {
     </div>
   </div>
   <div class="header-in-course-img">
-    <img alt='image' src="images/articles/<?php echo $row['sys_image']; ?>">
+    <img alt='image' src="/images/articles/<?php echo $row['sys_image']; ?>">
   </div>
 </div>
 
@@ -78,7 +78,7 @@ foreach ($sql->fetchAll() as $row) {
               <div class="col-sm-12">
                 <div class="margin-30">
                   <div class="main-desc-in-1">
-                    <img alt='image' src="images/articles/<?php echo $row['sys_image']; ?>">
+                    <img alt='image' src="/images/articles/<?php echo $row['sys_image']; ?>">
 
                     <?php echo $row['sys_dec']; ?>
                   </div>
@@ -113,7 +113,7 @@ foreach ($sql->fetchAll() as $row) {
                     <div class="recent-main">
                       <div class="recent-image">
                         <div class="square image">
-                          <img alt='image' src="images/articles/<?php echo $row['sys_image']; ?>">
+                          <img alt='image' src="/images/articles/<?php echo $row['sys_image']; ?>">
                         </div>
                       </div>
 

@@ -27,7 +27,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
         <div class="row">
           <div class="col-sm-5">
             <div class="image-back-css">
-              <img alt='image' src="images/founder/drkabur.jpg">
+              <img alt='image' src="/images/founder/drkabur.jpg">
             </div>
           </div>
 
@@ -66,7 +66,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
         </div>
 
         <div class="col-sm-4">
-          <img alt='image' src="images/founder/drkabur.jpg">
+          <img alt='image' src="/images/founder/drkabur.jpg">
         </div>
       </div>
       </div>

@@ -35,7 +35,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
           <div class="padding-20">
             <div class="text-center">
               <div class="icon-image">
-                <img alt='image' src="images/icon/time.png">
+                <img alt='image' src="/images/icon/time.png">
               </div>
               <p><b>Available by the hour</b></p>
               <p>Rent meeting rooms by the hour.</p>
@@ -48,7 +48,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
           <div class="padding-20">
             <div class="text-center">
               <div class="icon-image">
-                <img alt='image' src="images/icon/desk.png">
+                <img alt='image' src="/images/icon/desk.png">
               </div>
               <p><b>Customizable Space</b></p>
               <p>Change your room's layout depending on your meeting's purpose.</p>
@@ -61,7 +61,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
           <div class="padding-20">
             <div class="text-center">
               <div class="icon-image">
-                <img alt='image' src="images/icon/application-form.png">
+                <img alt='image' src="/images/icon/application-form.png">
               </div>
               <p><b>Simple Booking</b></p>
               <p>Use our online form to book meeting room quickly- no need to phone up.</p>
@@ -74,7 +74,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
           <div class="padding-20">
             <div class="text-center">
               <div class="icon-image">
-                <img alt='image' src="images/icon/line-chart.png">
+                <img alt='image' src="/images/icon/line-chart.png">
               </div>
               <p><b>Ready To Use</b></p>
               <p>The room will already be set up for you when you arrive.</p>
@@ -104,7 +104,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
           <div class="col-sm-4">
             <div class="room-main">
               <div class="images-zoom">
-                <img alt='image' src="images/rooms/bigroom.png">
+                <img alt='image' src="/images/rooms/bigroom.png">
               </div>
               <div class="room-set">
                 <div class="room-det-in">
@@ -151,7 +151,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
           <div class="col-sm-4">
             <div class="room-main">
               <div class="images-zoom">
-                <img alt='image' src="images/rooms/facilities_3.png">
+                <img alt='image' src="/images/rooms/facilities_3.png">
               </div>
               <div class="room-set">
                 <div class="room-det-in">
@@ -194,7 +194,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
           <div class="col-sm-4">
             <div class="room-main">
               <div class="images-zoom">
-                <img alt='image' src="images/rooms/meetingroom_9.png">
+                <img alt='image' src="/images/rooms/meetingroom_9.png">
               </div>
               <div class="room-set">
                 <div class="room-det-in">
@@ -240,7 +240,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
           <div class="col-sm-4">
             <div class="room-main">
               <div class="images-zoom">
-                <img alt='image' src="images/rooms/lab1.png">
+                <img alt='image' src="/images/rooms/lab1.png">
               </div>
               <div class="room-set">
                 <div class="room-det-in">

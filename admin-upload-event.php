@@ -10,7 +10,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "frm_add_channel") &
   $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
   $image_name = addslashes($_FILES['image']['name']);
 
-  move_uploaded_file($_FILES['image']['tmp_name'], "images/courses/" . $_FILES['image']['name']);
+  move_uploaded_file($_FILES['image']['tmp_name'], "/images/courses/" . $_FILES['image']['name']);
 
   $topic = $_POST['topic'];
   $days = $_POST['days'];
@@ -66,7 +66,7 @@ VALUES
               <img alt='image' src="https://testersdock.com/wp-content/uploads/2017/09/file-upload-1280x640.png" id="imgAvatar" alt="Course Image" />
               <span class="image-size">(<b>Width :</b> 200px) x (<b>Height :</b> 100px)</span>
               <br><br>
-              <p><input type="file" name="image" id="image" onchange="showPreview(this)" accept="images/course" /></p>
+              <p><input type="file" name="image" id="image" onchange="showPreview(this)" accept="/images/course" /></p>
               <br>
             </div>
 

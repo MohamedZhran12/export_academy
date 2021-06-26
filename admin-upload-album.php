@@ -67,7 +67,7 @@ VALUES(?, ?, ?, ?, 0, ?, ?)");
                       <form name="frm_add_channel" method="post" enctype="multipart/form-data">
                         <img src="https://testersdock.com/wp-content/uploads/2017/09/file-upload-1280x640.png" id="imgAvatar" alt="Course Image" />
                         <br><br>
-                        <p><input type="file" name="image" id="image" onchange="showPreview(this)" accept="images/album" /></p>
+                        <p><input type="file" name="image" id="image" onchange="showPreview(this)" accept="/images/album" /></p>
 
 
                         <p class="form-text">Property Name</p>

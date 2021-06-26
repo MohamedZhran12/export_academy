@@ -18,11 +18,11 @@ $imageDetails = [
   'tmpName' => $image['tmp_name'],
   'size' => $image['size'],
   'table' => $table,
-  'mainDirectory' => $rootDir . 'images/courses/',
+  'mainDirectory' => $rootDir . '/images/courses/',
   'courseID' => intval($id)
 ];
 
 
 $image = new CourseImage($imageDetails);
-unlink($rootDir . "images/courses/$old_image");
+unlink($rootDir . "/images/courses/$old_image");
 $image->startUploadingImage();

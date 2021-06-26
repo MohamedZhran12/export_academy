@@ -19,7 +19,7 @@
   <!-- Style -->
   <link href="<? echo $css; ?>style.css" rel="stylesheet">
   <!-- Favicon -->
-  <link rel="icon" type="image/png" href="images/favicon/favicon.png" />
+  <link rel="icon" type="image/png" href="/images/favicon/favicon.png" />
 
   <title>Malaysian Export Academy</title>
 </head>

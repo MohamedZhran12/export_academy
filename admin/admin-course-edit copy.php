@@ -41,7 +41,7 @@
                                   <div class="row">
                                     <div class="col-sm-6">
                                       <p class="form-text">Course Image</p>
-                                      <img alt='image' src="images/courses/<?php echo $row['sys_course_image']; ?>" id="course_image" alt='image'>
+                                      <img alt='image' src="/images/courses/<?php echo $row['sys_course_image']; ?>" id="course_image" alt='image'>
                                       <br>
                                       <label for="course_image">Image</label>
                                       <input type="file" name="course_image" accept="image/*" onchange="readURL(this)" />

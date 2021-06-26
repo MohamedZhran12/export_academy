@@ -57,7 +57,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
                                         <p class="date"><i
                                               class="fas fa-calendar-alt"></i> <?php echo $row['sys_date']; ?>
                                           - <?php echo $row['sys_month']; ?> - <?php echo $row['sys_year']; ?></p>
-                                        <img alt='image' src="images/articles/<?php echo $row['sys_image']; ?>">
+                                        <img alt='image' src="/images/articles/<?php echo $row['sys_image']; ?>">
                                       </div>
                                       <div class="courses-desc1">
                                         <p class="course-topic-1-2"><?php echo $row['sys_topic']; ?></p>

@@ -14,7 +14,7 @@
   // path
   $sys_config['document_root'] = "./";
   $sys_config['includes_path'] = $sys_config['document_root']."includes/";
-  $sys_config['images_path'] = $sys_config['document_root']."images/";
+  $sys_config['images_path'] = $sys_config['document_root']."/images/";
   $sys_config['lttcom_images_path'] = "http://lttcom.com/v3/images/";
   $sys_config['session_path'] = $sys_config['document_root']."session/";
 ?>

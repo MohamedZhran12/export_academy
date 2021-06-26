@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     rmdir($dirPath);
   }
 
-  deleteDir('csr_images/' . $_POST['category_id']);
+  deleteDir('csr_/images/' . $_POST['category_id']);
   if ($isSuccess) {
     echo '
 	<script>alert("Category is deleted successfully");

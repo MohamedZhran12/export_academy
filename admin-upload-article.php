@@ -11,7 +11,7 @@ if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "frm_add_channel") &
   $image = addslashes(file_get_contents($_FILES['image']['tmp_name']));
   $image_name = addslashes($_FILES['image']['name']);
 
-  move_uploaded_file($_FILES['image']['tmp_name'], "images/articles/" . $_FILES['image']['name']);
+  move_uploaded_file($_FILES['image']['tmp_name'], "/images/articles/" . $_FILES['image']['name']);
 
 
   $topic = $_POST['topic'];
@@ -77,7 +77,7 @@ VALUES (?, ?, ?, ?, ?, ?, 0)");
                                 <br><br>
                                 <span class="image-size">(<b>Width :</b> 600px) x (<b>Height :</b> 300px)</span>
                                 <br><br>
-                                <p><input type="file" name="image" id="image" onChange="showPreview(this)" accept="images/course" /></p>
+                                <p><input type="file" name="image" id="image" onChange="showPreview(this)" accept="/images/course" /></p>
                                 <br>
                               </div>
 

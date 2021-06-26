@@ -45,8 +45,8 @@ require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
             <div class="col-sm-4">
               <div class="margin-30">
                 <div class="overflow-hidden">
-                  <a class="lightbox" href="images/overseastrainees/smdp3.jpg">
-                    <img alt='image' src="images/overseastrainees/smdp3.jpg" alt="images/overseastrainees/smdp3.jpg">
+                  <a class="lightbox" href="/images/overseastrainees/smdp3.jpg">
+                    <img alt='image' src="/images/overseastrainees/smdp3.jpg" alt="/images/overseastrainees/smdp3.jpg">
                   </a>
                 </div>
               </div>
@@ -56,8 +56,8 @@ require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
             <div class="col-sm-4">
               <div class="margin-30">
                 <div class="overflow-hidden">
-                  <a class="lightbox" href="images/overseastrainees/smdp4.jpg">
-                    <img alt='image' src="images/overseastrainees/smdp4.jpg" alt="images/overseastrainees/smdp4.jpg">
+                  <a class="lightbox" href="/images/overseastrainees/smdp4.jpg">
+                    <img alt='image' src="/images/overseastrainees/smdp4.jpg" alt="/images/overseastrainees/smdp4.jpg">
                   </a>
                 </div>
               </div>
@@ -67,8 +67,8 @@ require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
             <div class="col-sm-4">
               <div class="margin-30">
                 <div class="overflow-hidden">
-                  <a class="lightbox" href="images/overseastrainees/smdp5.png">
-                    <img alt='image' src="images/overseastrainees/smdp5.png" alt="images/overseastrainees/smdp5.png">
+                  <a class="lightbox" href="/images/overseastrainees/smdp5.png">
+                    <img alt='image' src="/images/overseastrainees/smdp5.png" alt="/images/overseastrainees/smdp5.png">
                   </a>
                 </div>
               </div>
@@ -77,8 +77,8 @@ require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
             <div class="col-sm-4">
               <div class="margin-30">
                 <div class="overflow-hidden">
-                  <a class="lightbox" href="images/overseastrainees/smdp6.png">
-                    <img alt='image' src="images/overseastrainees/smdp6.png" alt="images/overseastrainees/smdp6.png">
+                  <a class="lightbox" href="/images/overseastrainees/smdp6.png">
+                    <img alt='image' src="/images/overseastrainees/smdp6.png" alt="/images/overseastrainees/smdp6.png">
                   </a>
                 </div>
               </div>
@@ -99,9 +99,9 @@ require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
             <div class="col-sm-4">
               <div class="margin-30">
                 <div class="overflow-hidden">
-                  <a class="lightbox" href="images/overseastrainees/overseas-trainee.png">
-                    <img alt='image' src="images/overseastrainees/overseas-trainee.png"
-                         alt="images/overseastrainees/overseas-trainee.png">
+                  <a class="lightbox" href="/images/overseastrainees/overseas-trainee.png">
+                    <img alt='image' src="/images/overseastrainees/overseas-trainee.png"
+                         alt="/images/overseastrainees/overseas-trainee.png">
                   </a>
                 </div>
               </div>
@@ -110,9 +110,9 @@ require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
             <div class="col-sm-4">
               <div class="margin-30">
                 <div class="overflow-hidden">
-                  <a class="lightbox" href="images/overseastrainees/overseas-trainee-1.png">
-                    <img alt='image' src="images/overseastrainees/overseas-trainee-1.png"
-                         alt="images/overseastrainees/overseas-trainee-1.png">
+                  <a class="lightbox" href="/images/overseastrainees/overseas-trainee-1.png">
+                    <img alt='image' src="/images/overseastrainees/overseas-trainee-1.png"
+                         alt="/images/overseastrainees/overseas-trainee-1.png">
                   </a>
                 </div>
               </div>
@@ -121,9 +121,9 @@ require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
             <div class="col-sm-4">
               <div class="margin-30">
                 <div class="overflow-hidden">
-                  <a class="lightbox" href="images/overseastrainees/overseas-trainee-2.png">
-                    <img alt='image' src="images/overseastrainees/overseas-trainee-2.png"
-                         alt="images/overseastrainees/overseas-trainee-2.png">
+                  <a class="lightbox" href="/images/overseastrainees/overseas-trainee-2.png">
+                    <img alt='image' src="/images/overseastrainees/overseas-trainee-2.png"
+                         alt="/images/overseastrainees/overseas-trainee-2.png">
                   </a>
                 </div>
               </div>
@@ -133,9 +133,9 @@ require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
             <div class="col-sm-4">
               <div class="margin-30">
                 <div class="overflow-hidden">
-                  <a class="lightbox" href="images/overseastrainees/overseas-trainee-3.png">
-                    <img alt='image' src="images/overseastrainees/overseas-trainee-3.png"
-                         alt="images/overseastrainees/overseas-trainee-3.png">
+                  <a class="lightbox" href="/images/overseastrainees/overseas-trainee-3.png">
+                    <img alt='image' src="/images/overseastrainees/overseas-trainee-3.png"
+                         alt="/images/overseastrainees/overseas-trainee-3.png">
                   </a>
                 </div>
               </div>

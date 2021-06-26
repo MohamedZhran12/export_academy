@@ -35,7 +35,7 @@ if ($sql->rowCount() > 0) {
           <? if ($isTherePrices) { ?>
             <div class="col-sm-4">
               <div class="border-box">
-                <img alt='image' src="images/courses/<?php echo $row['sys_course_image']; ?>"><br><br>
+                <img alt='image' src="/images/courses/<?php echo $row['sys_course_image']; ?>"><br><br>
                 <p><b><?php echo $row['sys_course_topic']; ?></b></p><br>
 
                 <div class="courses-pricing">
