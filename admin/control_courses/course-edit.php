@@ -277,12 +277,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <? if ($isThereMoreDates) { ?>
                           <div class="col-12 my-3">
                             <p class="form-text">Certification Name</p>
-                            <textarea id="editor4" name="certification_name"></textarea>
+                            <textarea id="editor4" name="certification_name"><? echo $row['certification_name']; ?></textarea>
                           </div>
 
                           <div class="col-12 my-3">
                             <p class="form-text">Certification Info</p>
-                            <textarea id="editor5" name="certification_info"></textarea>
+                            <textarea id="editor5" name="certification_info"><? echo $row['certification_info']; ?></textarea>
                           </div>
                         <? }
                         if ($isTherePrices) { ?>
