@@ -29,12 +29,11 @@ function addToInsertQueryIfValueIsSet($tableAttributes, &$names, &$values) {
   }
 }
 
-function insertMoreDates($start_date, $end_date, $table) {
+function insertMoreDates($start_date, $end_date, $table, $course_id) {
   global $conn;
-  $last_inserted_id = $conn->lastInsertId();
   $insert_dates_stmt = "insert into courses_dates(course_date_start,course_date_end,course_type,course_id) values";
   for ($i = 0; $i < count($start_date); $i++) {
-    $insert_dates_stmt .= "('$start_date[$i]','$end_date[$i]','$table',$last_inserted_id)";
+    $insert_dates_stmt .= "('$start_date[$i]','$end_date[$i]','$table','$course_id')";
     if ($i != count($start_date) - 1) {
       $insert_dates_stmt .= ',';
     }
@@ -101,7 +100,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
   if ($isThereMoreDates) {
     $conn->prepare("delete from courses_dates where course_id=?")->execute([$id]);
-    $isDatesAdded = insertMoreDates($_POST['start_date'], $_POST['end_date'], $table);
+    $isDatesAdded = insertMoreDates($_POST['start_date'], $_POST['end_date'], $table, $course[0]['sys_course_id']);
   }
 
   if ($isCourseUpdated) {
@@ -162,12 +161,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <? if ($isThereRightMenu) { ?>
                               <div class="col-12 mb-3">
                                 <p class="form-text">CPD Points</p>
-                                <input type="number" id=' cpd-points' class="form" name="points" placeholder="eg: 11" size="30" value='<? echo $row['sys_cpd_points']; ?>' />
+                                <input type="number" id='cpd-points' class="form" name="points" placeholder="eg: 11" size="30" value='<? echo $row['sys_cpd_points']; ?>' />
                               </div>
                             <? } ?>
                             <?php
                             if ($isThereMoreDates && $isThereCalendar) {
-                              require_once('../components/new_dates.php');
+                              require_once('../components/new_edit_dates.php');
                             } elseif ($isThereCalendar) {
                               require_once('../components/old_dates.php');
                             }
@@ -311,7 +310,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                           </div>
                         <? } ?>
                         <? if ($isThereRightMenu) { ?>
-                          <div class="col-12 mb-3">
+                          <div class="col-12 my-3">
                             <span>Show CPD:</span>
                             <input type="radio" id="show-cpd" name="show-hide-cpd" <? if ($row['sys_cpd_points'][0] != 0) echo 'checked'; ?> /><span> Yes</span>
                             <input type="radio" id="hide-cpd" name="show-hide-cpd" <? if ($row['sys_cpd_points'][0] == 0) echo 'checked'; ?> /><span> No</span>

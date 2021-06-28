@@ -113,7 +113,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
                 foreach ($coursesContainer as $courseInfo) {
                   $courseDetailsUrl = "course.php?id={$courseInfo['sys_course_id']}&cat_id={$courseInfo['cat_id']}&course=$table&section=" . urlencode($sectionName);
                 ?>
-                  <div class="course col-12 mb-3 ml-1 p-3 shadow bg-white rounded <?php echo !is_numeric($groupName) ? str_replace([' ', '&', ',', '*', '^', '%', '$', '#', '@', '!'], '_', $groupName) . ' d-none' : ''; ?> " data-course-details="<?php echo $courseDetailsUrl; ?>">
+                  <div class="course col-12 mb-3 ml-1 p-3 shadow bg-white rounded course <?php echo !is_numeric($groupName) ? str_replace([' ', '&', ',', '*', '^', '%', '$', '#', '@', '!'], '_', $groupName) . ' d-none' : ''; ?> " data-course-details="<?php echo $courseDetailsUrl; ?>">
                     <div class="row">
                       <? if (!empty($courseInfo['sys_course_image']) || $isThereMoreDates || $isThereVenue) { ?>
                         <div class="col-12 col-md-3">
@@ -196,6 +196,9 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
     item.addEventListener('click', function() {
       var groupName = this.getAttribute('data-group-name');
       document.querySelectorAll(`.${groupName}`).forEach(item => {
+        item.classList.toggle('d-none');
+      });
+      document.querySelectorAll(`.course:not(.${groupName})`).forEach(item => {
         item.classList.toggle('d-none');
       });
     })
