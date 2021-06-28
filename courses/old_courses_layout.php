@@ -66,7 +66,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
                       <p class="place"><i class="fas fa-map-marker-alt"></i></p>
 
                       <div class="course-set-pp">
-                        <? require_once('common_component/price.php'); ?>
+                        <? require('common_component/price.php'); ?>
                         <div class="courses-more-det">
                           <p class="view"><i class="fas fa-eye"></i> <?php echo $courseInfo['sys_course_view']; ?></p>
                           <p class="<?php echo $courseInfo['sys_course_session']; ?>"></p>
