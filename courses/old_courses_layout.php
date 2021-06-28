@@ -63,7 +63,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
                     </div>
                     <div class="courses-desc1">
                       <p class="course-topic-1-2"><?php echo $courseInfo['sys_course_topic']; ?></p>
-                      <p class="place"><i class="fas fa-map-marker-alt"></i></p>
+                      <p class="place"><i class="fas fa-map-marker-alt"></i><? echo $courseInfo['sys_course_venue']; ?></p>
 
                       <div class="course-set-pp">
                         <? require('common_component/price.php'); ?>
