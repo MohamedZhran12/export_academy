@@ -69,6 +69,19 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
   }
 </style>
 
+<div class="header-in">
+  <div class="overlay-white">
+    <div class="container">
+      <div class="header-in-topic">
+        <h1><?php echo $sectionName; ?></h1>
+        <div class="breadcrumb-in">
+          <p class="link"><a href="index.php"><i class="fas fa-home"></i> HOME</a></p>
+          <p class="link-at"><?php echo $sectionName; ?></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <div class="container">
   <div class="row">
@@ -82,8 +95,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
     ?>
     <div class="col">
       <div class="row">
-        <div class='col-12 my-4'>
-          <h2 class='text-capitalize mb-3'><?php echo $sectionName; ?></h2>
+        <div class='col-12 my-5'>
           <?php echo $headerAndTerms[0]['value']; ?>
         </div>
         <? if ($isThereCalendar) { ?>
