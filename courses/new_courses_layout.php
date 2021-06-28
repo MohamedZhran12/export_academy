@@ -146,7 +146,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
                         <div class="row">
                           <div class="details col-12 col-md-7">
                             <p class="mb-3 font-weight-bold"><?php echo $courseInfo['sys_course_topic']; ?></p>
-                            <? if ($isThereTrainerName) { ?>
+                            <? if ($isThereTrainer) { ?>
                               <p class="mb-4">
                                 Trainer(s)/Speaker(s)/Consultant(s): <?php echo $courseInfo['sys_course_trainer']; ?></p>
                             <? } ?>

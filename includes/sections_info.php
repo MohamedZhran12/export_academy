@@ -73,8 +73,8 @@ if ($_GET['course'] == 'sys_course') {
   $groupsTable = $table . '_groups';
 }
 
-$coursesWithDates = ['sys_course', 'sys_seminars', 'sys_professional_cert', 'sys_special_programmes', 'sys_trade_missions','trade_shows'];
-$coursesWithTrainerName = ['sys_course', 'sys_seminars', 'sys_professional_cert', 'sys_special_programmes', 'trade_shows'];
+$coursesWithDates = ['sys_course', 'sys_seminars', 'sys_professional_cert', 'sys_special_programmes', 'sys_trade_missions', 'trade_shows'];
+$coursesWithTrainer = ['sys_course', 'sys_seminars', 'sys_professional_cert', 'sys_special_programmes', 'consulting_services'];
 $coursesWithPrices = ['sys_course', 'sys_seminars', 'sys_professional_cert', 'sys_special_programmes', 'sys_trade_missions'];
 $coursesWithCalendars = ['sys_course', 'sys_seminars', 'sys_professional_cert', 'sys_special_programmes', 'sys_trade_missions', 'trade_shows'];
 $coursesWithVenue = ['sys_course', 'sys_seminars', 'sys_professional_cert', 'sys_special_programmes', 'sys_trade_missions', 'trade_shows'];
@@ -84,8 +84,8 @@ $coursesWithGroups = ['consulting_services', 'trade_shows', 'global_network', 'p
 $coursesWithIntro = [''];
 
 $isThereMoreDates = in_array($table, $coursesWithDates);
+$isThereTrainer = in_array($table, $coursesWithTrainer);
 $isThereIntro = in_array($table, $coursesWithIntro);
-$isThereTrainerName = in_array($table, $coursesWithTrainerName);
 $isTherePrices = in_array($table, $coursesWithPrices);
 $isThereCalendar = in_array($table, $coursesWithCalendars);
 $isThereTaxes = in_array($table, $coursesWithTaxes);

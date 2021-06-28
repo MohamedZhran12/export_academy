@@ -263,16 +263,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                           <p class="form-text">Course Module</p>
                           <textarea id="editor3" name="module"><?php echo $row['sys_course_module']; ?></textarea>
                         </div>
+                        <? if ($coursesWithTrainer) { ?>
+                          <div class="col-12 my-3">
+                            <p class="form-text">Trainer Name</p>
+                            <input type="text" class="form" name="trainer" placeholder="eg: Ali" size="30" value="<?php echo $row['sys_course_trainer']; ?>" />
+                          </div>
 
-                        <div class="col-12 my-3">
-                          <p class="form-text">Trainer Name</p>
-                          <input type="text" class="form" name="trainer" placeholder="eg: Ali" size="30" value="<?php echo $row['sys_course_trainer']; ?>" />
-                        </div>
-
-                        <div class="col-12 my-3">
-                          <p class="form-text">Trainer Info</p>
-                          <textarea id="editor2" name="trainer_info"><?php echo $row['sys_course_trainer_info']; ?></textarea>
-                        </div>
+                          <div class="col-12 my-3">
+                            <p class="form-text">Trainer Info</p>
+                            <textarea id="editor2" name="trainer_info"><?php echo $row['sys_course_trainer_info']; ?></textarea>
+                          </div>
+                        <? } ?>
                         <? if ($isThereMoreDates) { ?>
                           <div class="col-12 my-3">
                             <p class="form-text">Certification Name</p>

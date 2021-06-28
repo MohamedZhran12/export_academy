@@ -248,11 +248,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                       <p class="form-text">Course Module</p>
                       <textarea id="editor3" name="module"></textarea>
                     </div>
-
-                    <div class="col-12 my-3">
-                      <p class="form-text">Trainer Name</p>
-                      <input type="text" class="form" name="trainer" placeholder="eg: Ali" size="30" />
-                    </div>
+                    <? if ($coursesWithTrainer) { ?>
+                      <div class="col-12 my-3">
+                        <p class="form-text">Trainer Name</p>
+                        <input type="text" class="form" name="trainer" placeholder="eg: Ali" size="30" />
+                      </div>
+                    <? } ?>
 
                     <div class="col-12 my-3">
                       <p class="form-text">Trainer Info</p>

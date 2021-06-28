@@ -9,7 +9,7 @@ require_once($includes . 'sections_info.php');
 $sql = $conn->prepare("UPDATE $table  SET sys_course_view = sys_course_view + 1 WHERE sys_course_id = '$id'");
 $sql->execute([$id]);
 
-if ($table == 'sys_professional_cert' || $table == 'sys_special_programmes') {
+if ($isThereMoreDates) {
   $sql = $conn->prepare("select course_date_start,course_date_end from courses_dates where course_type=? and course_id=?");
   $sql->execute([$table, $id]);
   $dates = $sql->fetchAll();
@@ -74,7 +74,7 @@ if ($sql->rowCount() > 0) {
                 <div class="row">
                   <div class="col-12 mb-2">
                     <strong>Date :</strong>
-                    <? if ($table == 'sys_professional_cert' || $table == 'sys_special_programmes') { ?>
+                    <? if ($isThereMoreDates) { ?>
                       <? foreach ($dates as $dateRow) { ?>
                         <div class="dates">
                           <span><? echo date('d - M - Y', strtotime($dateRow['course_date_start'])); ?></span>
@@ -116,9 +116,11 @@ if ($sql->rowCount() > 0) {
                     <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"><i class="fas fa-book"></i> <? echo $modules; ?>
                     </a>
                   </li>
-                  <li class="nav-item" role="presentation">
-                    <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false"><i class="fas fa-user-friends"></i> <? echo $instructorType; ?></a>
-                  </li>
+                  <? if ($isThereTrainer) { ?>
+                    <li class="nav-item" role="presentation">
+                      <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false"><i class="fas fa-user-friends"></i> <? echo $instructorType; ?></a>
+                    </li>
+                  <? } ?>
                   <? if (isset($row['certification_name'])) { ?>
                     <li class="nav-item" role="presentation">
                       <a class="nav-link" id="pills-certification-tab" data-toggle="pill" href="#pills-certification" role="tab" aria-controls="pills-certification" aria-selected="false"><i class="fas fa-user-friends"></i> Certified By</a>
@@ -137,21 +139,21 @@ if ($sql->rowCount() > 0) {
                   <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
                     <?php echo $row['sys_course_module']; ?>
                   </div>
+                  <? if ($isThereTrainer) { ?>
+                    <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
 
-                  <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
+                      <div class="trainer-name-info">
+                        <h1 class="ff-name">
+                          <?php
+                          echo $row['sys_course_trainer'][0];
+                          ?>
+                        </h1>
+                        <p class="trainers-name"><b><?php echo $row['sys_course_trainer']; ?></b></p>
+                      </div>
+                      <?php echo $row['sys_course_trainer_info']; ?>
 
-                    <div class="trainer-name-info">
-                      <h1 class="ff-name">
-                        <?php
-                        echo $row['sys_course_trainer'][0];
-                        ?>
-                      </h1>
-                      <p class="trainers-name"><b><?php echo $row['sys_course_trainer']; ?></b></p>
                     </div>
-                    <?php echo $row['sys_course_trainer_info']; ?>
-
-                  </div>
-
+                  <? } ?>
                   <? if (isset($row['certification_name'])) { ?>
                     <div class="tab-pane fade" id="pills-certification" role="tabpanel" aria-labelledby="pills-certification-tab">
                       <div class="trainer-name-info">
