@@ -40,12 +40,12 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
     <div class="col-sm-9">
       <div class="row">
         <div class="col-12 mb-3">
+          <?php echo $headerAndTerms[0]['value']; ?>
           <h2 class="font-weight-bold mb-5">
             <?php
             echo date("F", strtotime('m')) . ' ';
             echo date("Y") . ' ';
             echo $sectionName; ?> </h2>
-          <?php echo $headerAndTerms[0]['value']; ?>
         </div>
 
         <?php
