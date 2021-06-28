@@ -294,7 +294,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
                           <div class="col-sm-6">
                             <p class="form-text">Normal Price in MYR</p>
-                            <input type="number" min='0' value="<?php echo $row['sys_course_price_before']; ?>" class="form" name="feesbefore" size="30" />
+                            <input type="number" min='0' value="<?php echo $row['sys_course_price_before']; ?>" class="form" name="fees_before" size="30" />
                             <br>
                           </div>
 
