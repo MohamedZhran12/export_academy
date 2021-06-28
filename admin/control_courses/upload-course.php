@@ -135,7 +135,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                       <p class="form-text">Course Image</p>
                       <img class='mb-3' src="/images/upload.jpg" id="imgAvatar" alt="Course Image" />
                       <label class="image-size d-block mb-4">(<strong>Width :</strong> 300px) x (<strong>Height :</strong> 600px)</label>
-                      <input class='mb-3' type="file" name="image" id="image" onchange="showPreview(this)" accept="/images/*" required />
+                      <input class='mb-3' type="file" name="image" id="image" onchange="showPreview(this)" accept="/images/*" />
                       <p class="form-text mb-2">Upload Brochure</p>
                       <input type="file" name="brochure">
                     </div>
