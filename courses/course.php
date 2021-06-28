@@ -44,25 +44,6 @@ $sql->execute([$cat_id, $id]);
 if ($sql->rowCount() > 0) {
   foreach ($sql->fetchAll() as $row) {
 ?>
-    <div class="header-in-course" style="
-    background-image: linear-gradient(
-    90deg,
-    #020024 0,
-    rgb(0 212 255 / 48%) 100%
-  ),url(/images/courses/<?php echo $row['sys_course_image']; ?>);
-    ">
-      <div class="container">
-        <div class="header-in-topic">
-          <h1><?php echo $row['sys_course_topic']; ?></h1>
-          <div class="breadcrumb-in">
-            <p class="link"><a href="index.php"><i class="fas fa-home"></i> Home</a></p>
-            <p class="link"><a href="#"><?php echo $sectionName; ?></a></p>
-            <p class="link-at"><?php echo $row['sys_course_topic']; ?></p>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <div class="container">
       <div class="padding-100">
 
@@ -107,6 +88,24 @@ if ($sql->rowCount() > 0) {
           if ($coursesCount > 0) {
             foreach ($courseDetails as $row) {
           ?>
+              <div class="header-in-course mb-5" style="
+    background-image: linear-gradient(
+    90deg,
+    #020024 0,
+    rgb(0 212 255 / 48%) 100%
+  ),url(/images/courses/<?php echo $row['sys_course_image']; ?>);
+    ">
+                <div class="container">
+                  <div class="header-in-topic">
+                    <h1><?php echo $row['sys_course_topic']; ?></h1>
+                    <div class="breadcrumb-in">
+                      <p class="link"><a href="index.php"><i class="fas fa-home"></i> Home</a></p>
+                      <p class="link"><a href="#"><?php echo $sectionName; ?></a></p>
+                      <p class="link-at"><?php echo $row['sys_course_topic']; ?></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class="col-12">
                 <ul class="nav nav-pills" id="pills-tab" role="tablist">
                   <li class="nav-item" role="presentation">
