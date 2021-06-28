@@ -1885,6 +1885,7 @@ p.form-text-topic {
 .header-in-room {
   background: url(../../images/header/boardroom.jpg) no-repeat fixed;
   background-size: cover;
+  height: 23em;
 }
 .on-top h1 {
   position: absolute;
