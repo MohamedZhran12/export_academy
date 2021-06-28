@@ -199,7 +199,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
         item.classList.toggle('d-none');
       });
       document.querySelectorAll(`.course:not(.${groupName})`).forEach(item => {
-        item.classList.toggle('d-none');
+        item.classList.add('d-none');
       });
     })
   });
