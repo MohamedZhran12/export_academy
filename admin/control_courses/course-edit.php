@@ -8,13 +8,17 @@ $courseSql = $conn->prepare("SELECT * FROM $table WHERE sys_course_id= ?");
 $courseSql->execute([$id]);
 $course = $courseSql->fetchAll();
 
-$datesSql = $conn->prepare("select course_date_start,course_date_end,id from courses_dates where course_type=? and course_id=?");
-$datesSql->execute([$table, $id]);
-$dates = $datesSql->fetchAll();
+if ($isThereMoreDates) {
+  $datesSql = $conn->prepare("select course_date_start,course_date_end,id from courses_dates where course_type=? and course_id=?");
+  $datesSql->execute([$table, $id]);
+  $dates = $datesSql->fetchAll();
+}
 
-$groupsSql = $conn->prepare("select ID, name from $groupsTable");
-$groupsSql->execute();
-$groups = $groupsSql->fetchAll();
+if ($isThereGroups) {
+  $groupsSql = $conn->prepare("select ID, name from $groupsTable");
+  $groupsSql->execute();
+  $groups = $groupsSql->fetchAll();
+}
 
 function addToInsertQueryIfValueIsSet($tableAttributes, &$names, &$values) {
   foreach ($tableAttributes as $key => $value) {
