@@ -2,9 +2,11 @@
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
 require_once($includes . 'sections_info.php');
 
-$stmt = $conn->prepare("select ID, name from $groupsTable");
-$stmt->execute();
-$groups = $stmt->fetchAll();
+if ($isThereGroups) {
+  $stmt = $conn->prepare("select ID, name from $groupsTable");
+  $stmt->execute();
+  $groups = $stmt->fetchAll();
+}
 
 function addToInsertQueryIfValueIsSet($tableAttributes, &$names, &$values) {
   foreach ($tableAttributes as $key => $value) {

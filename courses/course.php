@@ -1,5 +1,5 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
 
 $id = $_GET['id'];
 $cat_id = $_GET['cat_id'];
@@ -44,21 +44,22 @@ $sql->execute([$cat_id, $id]);
 if ($sql->rowCount() > 0) {
   foreach ($sql->fetchAll() as $row) {
 ?>
-    <div class="header-in-course">
-      <div class="overlay-white">
-        <div class="container">
-          <div class="header-in-topic">
-            <h1><?php echo $row['sys_course_topic']; ?></h1>
-            <div class="breadcrumb-in">
-              <p class="link"><a href="index.php"><i class="fas fa-home"></i> Home</a></p>
-              <p class="link"><a href="#"><?php echo $sectionName; ?></a></p>
-              <p class="link-at"><?php echo $row['sys_course_topic']; ?></p>
-            </div>
+    <div class="header-in-course" style="
+    background-image: linear-gradient(
+    90deg,
+    #020024 0,
+    rgb(0 212 255 / 48%) 100%
+  ),url(/images/courses/<?php echo $row['sys_course_image']; ?>);
+    ">
+      <div class="container">
+        <div class="header-in-topic">
+          <h1><?php echo $row['sys_course_topic']; ?></h1>
+          <div class="breadcrumb-in">
+            <p class="link"><a href="index.php"><i class="fas fa-home"></i> Home</a></p>
+            <p class="link"><a href="#"><?php echo $sectionName; ?></a></p>
+            <p class="link-at"><?php echo $row['sys_course_topic']; ?></p>
           </div>
         </div>
-      </div>
-      <div class="header-in-course-img">
-        <img alt='image' src="/images/courses/<?php echo $row['sys_course_image']; ?>">
       </div>
     </div>
 
