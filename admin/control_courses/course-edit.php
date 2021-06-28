@@ -145,11 +145,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                       <div class="row">
                         <div class="col-6 mb-5">
                           <p class="form-text">Course Image</p>
-                          <img class='mb-3' src="/images/courses/<? echo !empty($row['sys_course_image']) ? $row['sys_course_image'] : 'upload.jpg'; ?>" id="imgAvatar" alt="Course Image" />
                           <label class="image-size d-block mb-4">(<strong>Width :</strong> 300px) x (<strong>Height :</strong> 600px)</label>
                           <input class='mb-3' type="file" name="course_image" id="course_image" onchange="showPreview(this)" accept="/images/*" />
                           <p class="form-text mb-2">Upload Brochure</p>
                           <input type="file" name="brochure">
+                          <img class='my-3' src="/images/courses/<? echo !empty($row['sys_course_image']) ? $row['sys_course_image'] : 'upload.jpg'; ?>" id="imgAvatar" alt="Course Image" />
                         </div>
 
                         <div class="col-6">
