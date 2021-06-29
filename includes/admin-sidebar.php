@@ -18,7 +18,7 @@
         </li>
 
         <li id='all-courses-btn' style='cursor:pointer'><a class='side-menu-link'>Courses List</a></li>
-        <div id='all-courses' class='d-none ml-5'>
+        <div id='all-courses' class='d-none ml-4'>
           <li>
             <a href="/admin/admin-all-courses.php?course=sys_course" class="side-menu-link">All Courses</a>
           </li>
@@ -59,7 +59,7 @@
         </div>
 
         <li id='all-csr-events-btn' style='cursor:pointer'><a class='side-menu-link'>All CSR Events</a></li>
-        <div id='all-csr-events' class='d-none ml-5'>
+        <div id='all-csr-events' class='d-none ml-4'>
           <li><a href="admin-edit-csr-text.php" class="side-menu-link">Edit CSR Page Header</a></li>
           <li><a href="admin-edit-csr-category.php" class="side-menu-link">Edit CSR Event</a></li>
           <li><a href="admin-delete-csr-category.php" class="side-menu-link">Delete CSR Event</a></li>
@@ -67,7 +67,7 @@
         </div>
 
         <li id='all-gallery-events-btn' style='cursor:pointer'><a class='side-menu-link'>All Gallery Events</a></li>
-        <div id='all-gallery-events' class='d-none ml-5'>
+        <div id='all-gallery-events' class='d-none ml-4'>
           <li><a href="admin-edit-gallery-category.php" class="side-menu-link">Edit Gallery Event</a></li>
           <li><a href="admin-delete-gallery-category.php" class="side-menu-link">Delete Gallery Event</a>
           </li>
@@ -76,7 +76,7 @@
         </div>
 
         <li id='all-our-achievements-btn' style='cursor:pointer'><a class='side-menu-link'>All Our Achievements</a></li>
-        <div id='all-our-achievements' class='d-none ml-5'>
+        <div id='all-our-achievements' class='d-none ml-4'>
           <li><a href="admin-edit-our-achievements-category.php" class="side-menu-link">Edit Our
               Achievements Category</a></li>
           <li><a href="admin-delete-our-achievements-category.php" class="side-menu-link">Delete Our
@@ -86,7 +86,7 @@
         </div>
 
         <li id='all-our-management-btn' style='cursor:pointer'><a class='side-menu-link'>All Our Management</a></li>
-        <div id='all-our-management' class='d-none ml-5'>
+        <div id='all-our-management' class='d-none ml-4'>
           <li><a href="admin-edit-our-management-category.php" class="side-menu-link">Edit Our Management
               Category</a></li>
           <li><a href="admin-delete-our-management-category.php" class="side-menu-link">Delete Our
@@ -96,7 +96,7 @@
         </div>
 
         <li id='all-mexa-tv-btn' style='cursor:pointer'><a class='side-menu-link'>All MEXA TV</a></li>
-        <div id='all-mexa-tv' class='d-none ml-5'>
+        <div id='all-mexa-tv' class='d-none ml-4'>
           <li><a href="admin-edit-mexa-tv-category.php" class="side-menu-link">Edit MEXA TV Category</a>
           </li>
           <li><a href="admin-delete-mexa-tv-category.php" class="side-menu-link">Delete MEXA TV
@@ -112,7 +112,7 @@
       <ul class='list-unstyled'>
 
         <li id='homepage-slider-btn' style='cursor:pointer'><a class='side-menu-link'>Homepage Images</a></li>
-        <div id='homepage-slider' class='d-none ml-5'>
+        <div id='homepage-slider' class='d-none ml-4'>
           <li>
             <a href="admin-upload-homepage-images.php" class="side-menu-link">Upload Homepage Images</a>
           </li>
@@ -122,7 +122,7 @@
         </div>
 
         <li id='partners-logos-btn' style='cursor:pointer'><a class='side-menu-link'>Partners Logo Images</a></li>
-        <div id='partners-logos' class='d-none ml-5'>
+        <div id='partners-logos' class='d-none ml-4'>
           <li>
             <a href="admin-upload-logos-images.php" class="side-menu-link">Upload Partner Images</a>
           </li>
@@ -132,7 +132,7 @@
         </div>
 
         <li id='upload-courses-btn' style='cursor:pointer'><a class='side-menu-link'>Upload Courses</a></li>
-        <div id="upload-courses" class="d-none ml-5">
+        <div id="upload-courses" class="d-none ml-4">
           <li>
             <a href="/admin/control_courses/upload-course.php?course=sys_course" class="side-menu-link">Upload Course</a>
           </li>
@@ -168,7 +168,7 @@
         </div>
 
         <li id='csr-events-btn' style='cursor:pointer'><a class='side-menu-link'>Upload CSR Events</a></li>
-        <div id='csr-events' class='d-none ml-5'>
+        <div id='csr-events' class='d-none ml-4'>
           <li>
             <a href="admin-add-csr-category.php" class="side-menu-link">Add CSR Event</a>
           </li>
@@ -178,7 +178,7 @@
         </div>
 
         <li id='gallery-events-btn' style='cursor:pointer'><a class='side-menu-link'>Upload Gallery Events</a></li>
-        <div id='gallery-events' class='d-none ml-5'>
+        <div id='gallery-events' class='d-none ml-4'>
           <li>
             <a href="admin-add-gallery-category.php" class="side-menu-link">Add Gallery Event</a>
           </li>
@@ -189,7 +189,7 @@
 
         <li id='our-achievements-events-btn' style='cursor:pointer'><a class='side-menu-link'>Upload Our
             Achievements</a></li>
-        <div id='our-achievements-events' class='d-none ml-5'>
+        <div id='our-achievements-events' class='d-none ml-4'>
           <li>
             <a href="admin-add-our-achievements-category.php" class="side-menu-link">Add Our Achievements Event</a>
           </li>
@@ -201,7 +201,7 @@
 
         <li id='our-management-events-btn' style='cursor:pointer'><a class='side-menu-link'>Upload Our Management</a>
         </li>
-        <div id='our-management-events' class='d-none ml-5'>
+        <div id='our-management-events' class='d-none ml-4'>
           <li>
             <a href="admin-add-our-management-category.php" class="side-menu-link">Add Our Management</a>
           </li>
@@ -211,7 +211,7 @@
         </div>
 
         <li id='mexa-tv-events-btn' style='cursor:pointer'><a class='side-menu-link'>Upload MEXA TV Events</a></li>
-        <div id='mexa-tv-events' class='d-none ml-5'>
+        <div id='mexa-tv-events' class='d-none ml-4'>
           <li>
             <a href="admin-add-mexa-tv-category.php" class="side-menu-link">Add MEXA TV Event</a>
           </li>
@@ -221,7 +221,7 @@
         </div>
 
         <li id='courses-groups-btn' style='cursor:pointer'><a class='side-menu-link'>Control Groups</a></li>
-        <div id='courses-groups' class="d-none ml-5">
+        <div id='courses-groups' class="d-none ml-4">
           <li>
             <a href="/admin/groups/add-courses-groups.php" class="side-menu-link">Add group</a>
           </li>
