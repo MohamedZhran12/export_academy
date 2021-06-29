@@ -7,7 +7,7 @@
   }
 </style>
 
-<div style="margin-right: 24.7vw;"></div>
+<div style="margin-right: 24.7%;"></div>
 <div class="col-3 p-0 dashboard-sidebar">
   <div class="background-gradient">
     <div class="side-bar-menu">
