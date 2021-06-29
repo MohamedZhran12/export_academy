@@ -169,10 +169,12 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
                               <a class="btn btn-info" href="<?php echo $courseDetailsUrl; ?>">More
                                 Details</a>
                             </div>
-                            <div class='mt-3'>
-                              <a class="btn btn-success" href="in_house_form.php?topic=<? echo urlencode($groupName) ?>&sub_topic=<? echo urlencode($courseInfo['sys_course_topic']) ?>">Register/Enquire
-                                Now</a>
-                            </div>
+                            <? if ($isService) { ?>
+                              <div class='mt-3'>
+                                <a class="btn btn-success" href="in_house_form.php?topic=<? echo urlencode($groupName) ?>&sub_topic=<? echo urlencode($courseInfo['sys_course_topic']) ?>">Register/Enquire
+                                  Now</a>
+                              </div>
+                            <? } ?>
                           </div>
                           <? if ($isThereIntro) { ?>
                             <div class="col-12 mb-4"><?php echo $courseInfo['sys_course_intro']; ?></div>

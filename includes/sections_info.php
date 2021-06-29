@@ -92,9 +92,11 @@ $coursesWithVenue = ['sys_course', 'sys_seminars', 'sys_professional_cert', 'sys
 $coursesWithTaxes = ['sys_course', 'sys_seminars', 'sys_professional_cert', 'sys_special_programmes', 'sys_trade_missions'];
 $coursesWithRightMenu = ['sys_course', 'sys_seminars', 'sys_professional_cert', 'sys_special_programmes'];
 $coursesWithGroups = ['consulting_services', 'trade_shows', 'global_network', 'products', 'in_house', 'export_coaching'];
+$servicesCourses = ['consulting_services', 'trade_shows', 'sys_trade_missions', 'products', 'export_coaching'];
 $coursesWithIntro = [''];
 
 $isThereMoreDates = in_array($table, $coursesWithDates);
+$isService = in_array($table, $servicesCourses);
 $isThereTrainer = in_array($table, $coursesWithTrainer);
 $isThereIntro = in_array($table, $coursesWithIntro);
 $isTherePrices = in_array($table, $coursesWithPrices);
