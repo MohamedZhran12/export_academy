@@ -6,8 +6,18 @@ $cat_id = $_GET['cat_id'];
 
 require_once($includes . 'sections_info.php');
 
-$sql = $conn->prepare("UPDATE $table  SET sys_course_view = sys_course_view + 1 WHERE sys_course_id = '$id'");
+$sql = $conn->prepare("UPDATE $table SET sys_course_view = sys_course_view + 1 WHERE sys_course_id = ?");
 $sql->execute([$id]);
+
+
+if ($isThereGroups) {
+  $groupSql = $conn->prepare("select $groupsTable.name from $groupsTable
+join $table
+on $table.group_id = $groupsTable.ID
+where $table.sys_course_id=?");
+  $groupSql->execute([$id]);
+  $groupName = $groupSql->fetch();
+}
 
 if ($isThereMoreDates) {
   $sql = $conn->prepare("select course_date_start,course_date_end from courses_dates where course_type=? and course_id=?");
@@ -179,11 +189,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
           require_once('common_component/right-menu.php');
         }
         if ($coursesCount > 0) {
-          foreach ($courseDetails as $row) { ?>
+          foreach ($courseDetails as $row) {
+            $oldPages = "register.php?id={$row['sys_course_id']}&course=$table";
+            if ($isThereGroups) {
+              $groupEncoded = (is_array($groupName)) ? urlencode($groupName[0]) : '';
+              $subTopic = urlencode($row['sys_course_topic']);
+              $orangePages = "in_house_form.php?topic=$groupEncoded&sub_topic=$subTopic&in_house=0";
+              $in_house = "in_house_form.php?topic=$groupEncoded&sub_topic=$subTopic&in_house=1";
+              $formUrl = $table == 'in_house' ? $in_house : (isset($isNewLayout) ? $orangePages : $oldPages);
+            }
+        ?>
+
             <div class="col-12">
               <div class="text-center">
                 <a href="uploads/<?php echo $row['pdf']; ?>" class="button" download>Download Brochure</a>
-                <a href="register.php?id=<?php echo $row['sys_course_id']; ?>&course=<?php echo $table; ?>" class="button2">Enquire
+                <a href="<? echo $formUrl; ?>" class="button2">Enquire
                   Now</a>
               </div>
             </div>
