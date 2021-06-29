@@ -46,7 +46,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <h1><?php echo $courseDetails[0]['sys_course_topic']; ?></h1>
       <div class="breadcrumb-in">
         <p class="link"><a href="index.php"><i class="fas fa-home"></i> Home</a></p>
-        <p class="link"><a href="<? echo "/courses/new_courses_layout.php?course=$table"; ?>"><?php echo $sectionName; ?></a></p>
+        <p class="link">
+          <a href="<? echo '/courses/';
+                    echo ($isNewLayout) ? 'new' : 'old' . "_courses_layout.php?course=$table"; ?>">
+            <?php echo $sectionName; ?>
+          </a>
+        </p>
         <p class="link-at"><?php echo $courseDetails[0]['sys_course_topic']; ?></p>
       </div>
     </div>

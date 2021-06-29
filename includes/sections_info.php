@@ -5,30 +5,35 @@ if ($_GET['course'] == 'sys_course') {
   $details = 'Course Details';
   $modules = 'Modules';
   $instructorType = 'Trainer/s';
+  $isNewLayout = false;
 } else if ($_GET['course'] == 'sys_seminars') {
   $table = 'sys_seminars';
   $sectionName = 'Seminar & Conferences';
   $details = 'Course Details';
   $modules = 'Tentative Programme';
   $instructorType = 'Speaker/s';
+  $isNewLayout = false;
 } else if ($_GET['course'] == 'sys_professional_cert') {
   $table = 'sys_professional_cert';
   $sectionName = 'Professional Certification';
   $details = 'Course Details';
   $modules = 'Modules';
   $instructorType = 'Trainer/s';
+  $isNewLayout = false;
 } else if ($_GET['course'] == 'sys_special_programmes') {
   $table = 'sys_special_programmes';
   $sectionName = 'Special Programmes';
   $details = 'Course Details';
   $modules = 'Modules';
   $instructorType = 'Trainer(s)/Speaker(s)';
+  $isNewLayout = false;
 } else if ($_GET['course'] == 'sys_trade_missions') {
   $table = 'sys_trade_missions';
   $sectionName = 'Trade Missions';
   $details = 'Mission Info';
   $modules = 'Tentative Programme';
   $instructorType = 'Trade Accelerator (TA)';
+  $isNewLayout = false;
 } else if ($_GET['course'] == 'consulting_services') {
   $table = 'consulting_services';
   $sectionName = 'Consulting Services';
@@ -36,6 +41,7 @@ if ($_GET['course'] == 'sys_course') {
   $modules = 'Modules';
   $instructorType = 'Trainer(s)/Speaker(s)';
   $groupsTable = $table . '_groups';
+  $isNewLayout = true;
 } else if ($_GET['course'] == 'export_coaching') {
   $table = 'export_coaching';
   $sectionName = 'Export Coaching';
@@ -43,6 +49,7 @@ if ($_GET['course'] == 'sys_course') {
   $modules = 'Modules';
   $instructorType = 'Trainer(s)/Speaker(s)';
   $groupsTable = $table . '_groups';
+  $isNewLayout = true;
 } else if ($_GET['course'] == 'in_house') {
   $table = 'in_house';
   $sectionName = 'In House';
@@ -50,6 +57,7 @@ if ($_GET['course'] == 'sys_course') {
   $modules = 'Modules';
   $instructorType = 'Trainer(s)/Speaker(s)';
   $groupsTable = $table . '_groups';
+  $isNewLayout = true;
 } else if ($_GET['course'] == 'products') {
   $table = 'products';
   $sectionName = 'Products';
@@ -57,6 +65,7 @@ if ($_GET['course'] == 'sys_course') {
   $modules = 'Modules';
   $instructorType = 'Trainer(s)/Speaker(s)';
   $groupsTable = $table . '_groups';
+  $isNewLayout = true;
 } else if ($_GET['course'] == 'global_network') {
   $table = 'global_network';
   $sectionName = 'Global Network';
@@ -64,6 +73,7 @@ if ($_GET['course'] == 'sys_course') {
   $modules = 'Modules';
   $instructorType = 'Trainer(s)/Speaker(s)';
   $groupsTable = $table . '_groups';
+  $isNewLayout = true;
 } else if ($_GET['course'] == 'trade_shows') {
   $table = 'trade_shows';
   $sectionName = 'Trade Shows';
@@ -71,6 +81,7 @@ if ($_GET['course'] == 'sys_course') {
   $modules = 'Modules';
   $instructorType = 'Trainer(s)/Speaker(s)';
   $groupsTable = $table . '_groups';
+  $isNewLayout = true;
 }
 
 $coursesWithDates = ['sys_course', 'sys_seminars', 'sys_professional_cert', 'sys_special_programmes', 'sys_trade_missions', 'trade_shows'];
