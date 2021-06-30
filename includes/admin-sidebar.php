@@ -61,37 +61,37 @@
         <li id='all-csr-events-btn' style='cursor:pointer'><a class='side-menu-link'>All CSR Events</a></li>
         <div id='all-csr-events' class='d-none ml-4'>
           <li><a href="admin-edit-csr-text.php" class="side-menu-link">Edit CSR Page Header</a></li>
-          <li><a href="admin-edit-csr-category.php" class="side-menu-link">Edit CSR Event</a></li>
-          <li><a href="admin-delete-csr-category.php" class="side-menu-link">Delete CSR Event</a></li>
-          <li><a href="admin-delete-csr-images.php" class="side-menu-link">Delete CSR Image</a></li>
+          <li><a href="/admin/control_info_pages/edit-category.php?page=csr" class="side-menu-link">Edit CSR Event</a></li>
+          <li><a href="/admin/control_info_pages/delete-category.php?page=csr" class="side-menu-link">Delete CSR Event</a></li>
+          <li><a href="/admin/control_info_pages/delete-images.php?page=csr" class="side-menu-link">Delete CSR Image</a></li>
         </div>
 
         <li id='all-gallery-events-btn' style='cursor:pointer'><a class='side-menu-link'>All Gallery Events</a></li>
         <div id='all-gallery-events' class='d-none ml-4'>
-          <li><a href="admin-edit-gallery-category.php" class="side-menu-link">Edit Gallery Event</a></li>
-          <li><a href="admin-delete-gallery-category.php" class="side-menu-link">Delete Gallery Event</a>
+          <li><a href="/admin/control_info_pages/edit-category.php?page=gallery" class="side-menu-link">Edit Gallery Event</a></li>
+          <li><a href="/admin/control_info_pages/delete-category.php?page=gallery" class="side-menu-link">Delete Gallery Event</a>
           </li>
-          <li><a href="admin-delete-gallery-images.php" class="side-menu-link">Delete Gallery Image</a>
+          <li><a href="/admin/control_info_pages/delete-images.php?page=gallery" class="side-menu-link">Delete Gallery Image</a>
           </li>
         </div>
 
         <li id='all-our-achievements-btn' style='cursor:pointer'><a class='side-menu-link'>All Our Achievements</a></li>
         <div id='all-our-achievements' class='d-none ml-4'>
-          <li><a href="admin-edit-our-achievements-category.php" class="side-menu-link">Edit Our
+          <li><a href="/admin/control_info_pages/edit-category.php?page=our_achievements" class="side-menu-link">Edit Our
               Achievements Category</a></li>
-          <li><a href="admin-delete-our-achievements-category.php" class="side-menu-link">Delete Our
+          <li><a href="/admin/control_info_pages/delete-category.php?page=our_achievements" class="side-menu-link">Delete Our
               Achievements Category</a></li>
-          <li><a href="admin-delete-our-achievements-images.php" class="side-menu-link">Delete Our
+          <li><a href="/admin/control_info_pages/delete-images.php?page=our_achievements" class="side-menu-link">Delete Our
               Achievements Images</a></li>
         </div>
 
         <li id='all-our-management-btn' style='cursor:pointer'><a class='side-menu-link'>All Our Management</a></li>
         <div id='all-our-management' class='d-none ml-4'>
-          <li><a href="admin-edit-our-management-category.php" class="side-menu-link">Edit Our Management
+          <li><a href="/admin/control_info_pages/edit-category.php?page=our_management" class="side-menu-link">Edit Our Management
               Category</a></li>
-          <li><a href="admin-delete-our-management-category.php" class="side-menu-link">Delete Our
+          <li><a href="/admin/control_info_pages/delete-category.php?page=our_management" class="side-menu-link">Delete Our
               Management Category</a></li>
-          <li><a href="admin-delete-our-management-images.php" class="side-menu-link">Delete Our Management
+          <li><a href="/admin/control_info_pages/delete-images.php?page=our_management" class="side-menu-link">Delete Our Management
               Images</a></li>
         </div>
 
@@ -170,20 +170,20 @@
         <li id='csr-events-btn' style='cursor:pointer'><a class='side-menu-link'>Upload CSR Events</a></li>
         <div id='csr-events' class='d-none ml-4'>
           <li>
-            <a href="admin-add-csr-category.php" class="side-menu-link">Add CSR Event</a>
+            <a href="/admin/control_info_pages/add-category.php?page=csr" class="side-menu-link">Add CSR Event</a>
           </li>
           <li>
-            <a href="admin-upload-csr-images.php" class="side-menu-link">Add CSR images to Event</a>
+            <a href="/admin/control_info_pages/upload-images.php?page=csr" class="side-menu-link">Add CSR images to Event</a>
           </li>
         </div>
 
         <li id='gallery-events-btn' style='cursor:pointer'><a class='side-menu-link'>Upload Gallery Events</a></li>
         <div id='gallery-events' class='d-none ml-4'>
           <li>
-            <a href="admin-add-gallery-category.php" class="side-menu-link">Add Gallery Event</a>
+            <a href="/admin/control_info_pages/add-category.php?page=gallery" class="side-menu-link">Add Gallery Event</a>
           </li>
           <li>
-            <a href="admin-upload-gallery-images.php" class="side-menu-link">Add Gallery images to Event</a>
+            <a href="/admin/control_info_pages/upload-images.php?page=gallery" class="side-menu-link">Add Gallery images to Event</a>
           </li>
         </div>
 
@@ -191,10 +191,10 @@
             Achievements</a></li>
         <div id='our-achievements-events' class='d-none ml-4'>
           <li>
-            <a href="admin-add-our-achievements-category.php" class="side-menu-link">Add Our Achievements Event</a>
+            <a href="/admin/control_info_pages/add-category.php?page=our_achievements" class="side-menu-link">Add Our Achievements Event</a>
           </li>
           <li>
-            <a href="admin-upload-our-achievements-images.php" class="side-menu-link">Add Our Achievements images to
+            <a href="/admin/control_info_pages/upload-images.php?page=our_achievements" class="side-menu-link">Add Our Achievements images to
               Event</a>
           </li>
         </div>
@@ -203,10 +203,10 @@
         </li>
         <div id='our-management-events' class='d-none ml-4'>
           <li>
-            <a href="admin-add-our-management-category.php" class="side-menu-link">Add Our Management</a>
+            <a href="/admin/control_info_pages/add-category.php?page=our_management" class="side-menu-link">Add Our Management</a>
           </li>
           <li>
-            <a href="admin-upload-our-management-images.php" class="side-menu-link">Add Our Management images</a>
+            <a href="/admin/control_info_pages/upload-images.php?page=our_management" class="side-menu-link">Add Our Management images</a>
           </li>
         </div>
 

@@ -32,7 +32,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
     <div class="col-sm-3">
       <?php
       if ($isThereCalendar) {
-        require_once($rootDir . 'sidebar.php');
+        require_once($rootDir . 'components/calendar.php);
       }
       ?>
     </div>

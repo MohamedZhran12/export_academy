@@ -23,7 +23,7 @@ require_once($includes . 'sections_info.php');
               <div class="row">
                 <div class="col-sm-3">
                   <?php
-                  require_once($rootDir . 'sidebar.php');
+                  require_once($rootDir . 'components/calendar.php);
                   ?>
                   <a class='btn btn-info mt-3' href="/admin-edit-header_and_terms_text.php?course=<? echo $table; ?>" class="side-menu-link">Edit
                     Header And Terms</a>

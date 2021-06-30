@@ -94,7 +94,7 @@ foreach ($sql->fetchAll() as $row) {
 
         <div class="col-sm-3">
           <?php
-          require_once($rootDir . 'sidebar.php');
+          require_once($rootDir . 'components/calendar.php);
           ?>
 
           <br><br>

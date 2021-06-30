@@ -2,8 +2,8 @@
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
 require_once($includes . 'about_us_pages_config.php');
 
-require_once('includes/upload_image.class.php');
-require_once("includes/upload_{$_GET['page']}_image.class.php");
+require_once('includes/upload_abstract_image.class.php');
+require_once("includes/upload_image.class.php");
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $images = $_FILES['images'];
@@ -15,7 +15,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       'size' => $images['size'][$i],
       'categoryID' => $categoryID,
       'table' => $mediaTable,
-      'mainDirectory' => "../../images/$name/",
+      'mainDirectory' => "../../images/$mediaTable/",
     ];
     $imageObject = new Image($image);
     $imageObject->startUploadingImage();

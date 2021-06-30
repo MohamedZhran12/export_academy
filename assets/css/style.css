@@ -440,7 +440,6 @@ video {
   padding: 100px 0;
 }
 .header-in {
-  height: 23em;
   background: url(../../images/header/about.jpg) no-repeat fixed;
   background-size: cover;
 }
@@ -1114,7 +1113,6 @@ video {
 .overlay-white {
   background: #000000d9;
   color: #fff;
-  height: 100%;
   background: #020024;
   background: linear-gradient(90deg, #020024 0, rgb(0 212 255 / 48%) 100%);
 }
@@ -1240,7 +1238,7 @@ video {
   background-size: cover;
 }
 .header-in-topic {
-  padding: 100px 0;
+  padding: 8em 0;
 }
 .header-in-class {
   background: url(../../images/header/class.jpg) no-repeat fixed;
@@ -1710,7 +1708,6 @@ input.button:hover {
   opacity: 0.9;
 }
 .header-in-course {
-  height: 23em;
   background-size: cover;
   background-repeat: no-repeat;
   background-image: linear-gradient(
@@ -1885,7 +1882,6 @@ p.form-text-topic {
 .header-in-room {
   background: url(../../images/header/boardroom.jpg) no-repeat fixed;
   background-size: cover;
-  height: 23em;
 }
 .on-top h1 {
   position: absolute;

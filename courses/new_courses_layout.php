@@ -89,7 +89,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
     <?php
     if ($isThereCalendar) { ?>
       <div class="col-md-3 my-5 mb-md-0 ">
-        <? require_once($rootDir . 'sidebar.php'); ?>
+        <? require_once($rootDir . 'components/calendar.php); ?>
       </div>
     <? }
     ?>
