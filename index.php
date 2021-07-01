@@ -103,7 +103,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
                   <hr class="topic-white">
                   <?php
                   $table = 'sys_course';
-                  require_once('sidebar.php');
+                  require_once($rootDir . 'components/calendar.php');
                   ?>
                 </div>
               </div>
