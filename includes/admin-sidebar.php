@@ -97,11 +97,11 @@
 
         <li id='all-mexa-tv-btn' style='cursor:pointer'><a class='side-menu-link'>All MEXA TV</a></li>
         <div id='all-mexa-tv' class='d-none ml-4'>
-          <li><a href="admin-edit-mexa-tv-category.php" class="side-menu-link">Edit MEXA TV Category</a>
+          <li><a href="/admin/control_mexa_tv/edit-mexa-tv-category.php" class="side-menu-link">Edit MEXA TV Category</a>
           </li>
-          <li><a href="admin-delete-mexa-tv-category.php" class="side-menu-link">Delete MEXA TV
+          <li><a href="/admin/control_mexa_tv/delete-mexa-tv-category.php" class="side-menu-link">Delete MEXA TV
               Category</a></li>
-          <li><a href="admin-delete-mexa-tv-videos.php" class="side-menu-link">Delete MEXA TV videos</a>
+          <li><a href="/admin/control_mexa_tv/delete-mexa-tv-videos.php" class="side-menu-link">Delete MEXA TV videos</a>
           </li>
         </div>
       </ul>
@@ -114,20 +114,20 @@
         <li id='homepage-slider-btn' style='cursor:pointer'><a class='side-menu-link'>Homepage Images</a></li>
         <div id='homepage-slider' class='d-none ml-4'>
           <li>
-            <a href="admin-upload-homepage-images.php" class="side-menu-link">Upload Homepage Images</a>
+            <a href="/admin/control_homepage_slider/upload-homepage-images.php" class="side-menu-link">Upload Homepage Images</a>
           </li>
           <li>
-            <a href="admin-delete-homepage-images.php" class="side-menu-link">Delete Homepage Images</a>
+            <a href="/admin/control_homepage_slider/delete-homepage-images.php" class="side-menu-link">Delete Homepage Images</a>
           </li>
         </div>
 
         <li id='partners-logos-btn' style='cursor:pointer'><a class='side-menu-link'>Partners Logo Images</a></li>
         <div id='partners-logos' class='d-none ml-4'>
           <li>
-            <a href="admin-upload-logos-images.php" class="side-menu-link">Upload Partner Images</a>
+            <a href="/admin/control_partners_logos/upload-logos-images.php" class="side-menu-link">Upload Partner Images</a>
           </li>
           <li>
-            <a href="admin-delete-logos-images.php" class="side-menu-link">Delete Partner Images</a>
+            <a href="/admin/control_partners_logos/delete-logos-images.php" class="side-menu-link">Delete Partner Images</a>
           </li>
         </div>
 
@@ -213,10 +213,10 @@
         <li id='mexa-tv-events-btn' style='cursor:pointer'><a class='side-menu-link'>Upload MEXA TV Events</a></li>
         <div id='mexa-tv-events' class='d-none ml-4'>
           <li>
-            <a href="admin-add-mexa-tv-category.php" class="side-menu-link">Add MEXA TV Event</a>
+            <a href="/admin/control_mexa_tv/add-mexa-tv-category.php" class="side-menu-link">Add MEXA TV Event</a>
           </li>
           <li>
-            <a href="admin-upload-mexa-tv-videos.php" class="side-menu-link">Add MEXA TV Videos to Event</a>
+            <a href="/admin/control_mexa_tv/upload-mexa-tv-videos.php" class="side-menu-link">Add MEXA TV Videos to Event</a>
           </li>
         </div>
 
