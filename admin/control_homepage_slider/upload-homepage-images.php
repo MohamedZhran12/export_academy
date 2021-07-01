@@ -5,9 +5,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   echo '
-	<script>alert("Image is Successfully Uploaded");
-	location.href="' . str_replace('/', '', $_SERVER['SCRIPT_NAME']) . '"' .
-    '</script>';
+	<script>alert("Image is Successfully Uploaded");</script>';
 }
 ?>
 

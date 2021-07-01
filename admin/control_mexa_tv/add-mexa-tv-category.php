@@ -9,9 +9,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $stmt = $conn->prepare("insert into $table (title,description,created_at) values(?,?,?)");
   $stmt->execute([$_POST['title'], $_POST['description'], date("Y-m-d H:i:s")]);
   echo '
-	<script>alert("MEXA TV Event added successfully");
-	location.href="' . str_replace('/', '', $_SERVER['SCRIPT_NAME']) . '"' .
-    '</script>';
+	<script>alert("MEXA TV Event added successfully");</script>';
 }
 ?>
 

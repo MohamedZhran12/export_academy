@@ -1,10 +1,6 @@
 <?php
-require_once('adminheader.php');
-require_once('adminnav.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
 
-if($_SESSION['user']['level_id'] != 1) {
-echo '<script type="text/javascript">alert("Only MEA staffs are allowed to access this page.\n\nThank you.");location.href="login.php";</script>';
-}
 
 $table='mexa_tv_categories';
 $sectionName='MEXA TV';
