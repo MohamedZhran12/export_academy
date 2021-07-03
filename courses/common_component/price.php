@@ -1,15 +1,19 @@
 <?php
 if ($courseInfo['sys_course_price'] > 0) { ?>
   <div class="courses-pricing-rm col-sm-12 mb-3 myr-<? echo $courseInfo['sys_course_id']; ?>">
-    <span class="cutoff">MYR <? echo $courseInfo["sys_course_price_before"]; ?></span>
+    <? if ($courseInfo['sys_course_price_before'] > 0) { ?>
+      <span class="cutoff">MYR <? echo $courseInfo["sys_course_price_before"]; ?></span>
+    <? } ?>
     <p>MYR <? echo $courseInfo['sys_course_price']; ?></p>
   </div>
 <? }
 ?>
 <?php
 if ($courseInfo['sys_course_price_usd'] > 0) { ?>
-  <div class="courses-pricing-usd col-sm-12 mb-3 d-none usd-<? echo $courseInfo['sys_course_id']; ?> ">
-    <span class="cutoff">USD <? echo $courseInfo["sys_course_price_before_usd"]; ?></span>
+  <div class="courses-pricing-usd col-sm-12 mb-3 <? if ($courseInfo['sys_course_price'] != 0) echo 'd-none'; ?> usd-<? echo $courseInfo['sys_course_id']; ?> ">
+    <? if ($courseInfo['sys_course_price_before_usd'] > 0) { ?>
+      <span class="cutoff">USD <? echo $courseInfo["sys_course_price_before_usd"]; ?></span>
+    <? } ?>
     <p>USD <? echo $courseInfo['sys_course_price_usd']; ?></p>
   </div>
 <? }
@@ -28,3 +32,4 @@ if ($courseInfo['sys_course_price_usd'] > 0) { ?>
     <?php } ?>
   </div>
 <? } ?>
+<script src='/courses/common_component/js/price_switch.js'></script>

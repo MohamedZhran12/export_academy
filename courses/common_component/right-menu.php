@@ -1,148 +1,95 @@
 <div class="col-12">
-<div class="sticky">
-  <div class="border-box">
+  <div class="sticky">
+    <div class="border-box">
+      <strong class="mb-4">Price</strong>
+      <?php
+      if ($coursesCount > 0) {
+        $courseInfo = $courseDetails[0];
+        require_once 'price.php';
+      }
 
-    <?php
-    if ($coursesCount > 0) {
-      foreach ($courseDetails as $row) {
-        $amount = $row['sys_course_price_before'];
+      ?>
 
-        if ($amount <= 1.00) {
-          echo "<p><b>Price</b></p> ";
-        } else {
-          echo "<p><b>Early Bird</b></p>";
-        }
-    ?>
-        <div>
-          <label>Currency :</label>
-          <?php if ($row['sys_course_price'] >= 1.00) { ?>
-            <label for='rm_currency'>MYR</label>
-            <input type='radio' id='myr_currency' checked name='currency'>
-          <?php } ?>
-          <?php if ($row['sys_course_price_usd'] >= 1.00) { ?>
-            <label for='usd_currency'>USD</label>
-            <input type='radio' id='usd_currency' name='currency'>
-          <?php } ?>
-        </div>
-        <?
+    </div>
+    <div>
+      <?php
+      if ($coursesCount > 0) {
+        foreach ($courseDetails as $row) {
+      ?>
+          <p><?php if (!empty($row['sys_sst']) && $row['sys_sst'][0] != 0) echo $row['sys_sst']; ?></p>
+      <?php }
+      } ?>
 
-        $amount = $row['sys_course_price'];
-        if ($amount >= 1.00) {
-        ?>
-          <div id='myr_price'>
-            <p class="price-before">MYR <?php echo $row['sys_course_price']; ?></p>
-            <p class="norm-price">
-              <?
-              echo 'Normal Price ';
-              echo '<span class="dashed">';
-              echo "MYR" . $row["sys_course_price_before"] . "";
-              echo '</span>';
-              ?>
 
-            </p>
+      <?php
+      if ($coursesCount > 0) {
+        foreach ($courseDetails as $row) {
+      ?>
+          <div class="width-full">
+            <div class="left-align">
+              <p class="view"><i class="fas fa-eye"></i> <?php echo $row['sys_course_view']; ?></p>
+            </div>
+            <div class="right-align">
+              <p class="<?php echo $row['sys_course_session']; ?>"></p>
+              <p class="icon-3"><i class="fas fa-certificate"></i></p>
+            </div>
           </div>
 
-          <?php
-          $amount = $row['sys_course_price_usd'];
-          if ($amount >= 1.00) {
-          ?>
-            <div id='usd_price' style='display:none'>
-              <p class="price-before">USD <?php echo $row['sys_course_price_usd']; ?></p>
-              <p class="norm-price">
-        <?
-            echo 'Normal Price ';
-            echo '<span class="dashed">';
-            echo "USD" . $row["sys_course_price_before_usd"] . "";
-            echo '</span>';
-          }
-        }
-      }
-    }
-        ?>
+          <div class="more-det-group">
 
-              </p>
+            <div class="more-det-main">
+              <div class="more-det-icon">
+                <p class="more-det"><i class="far fa-clock"></i></p>
+              </div>
+              <div class="more-det-text">
+                <p class="more-det"><?php echo $row['sys_course_days']; ?> Day/s</p>
+              </div>
+              <div class='more-det-text'>
+                <? if (isset($row['sys_cpd_points'][0]) &&  $row['sys_cpd_points'][0] != 0) { ?>
+                  <p class="more-det"><?php echo $row['sys_cpd_points'] . ' CPD Points'; ?></p>
+                <? } ?>
+              </div>
             </div>
-            <div>
 
-
-              <?php
-              if ($coursesCount > 0) {
-                foreach ($courseDetails as $row) {
-              ?>
-                  <p><?php if (!empty($row['sys_sst']) && $row['sys_sst'][0] != 0) echo $row['sys_sst']; ?></p>
-              <?php }
-              } ?>
-
-
-              <?php
-              if ($coursesCount > 0) {
-                foreach ($courseDetails as $row) {
-              ?>
-                  <div class="width-full">
-                    <div class="left-align">
-                      <p class="view"><i class="fas fa-eye"></i> <?php echo $row['sys_course_view']; ?></p>
-                    </div>
-                    <div class="right-align">
-                      <p class="<?php echo $row['sys_course_session']; ?>"></p>
-                      <p class="icon-3"><i class="fas fa-certificate"></i></p>
-                    </div>
-                  </div>
-
-                  <div class="more-det-group">
-
-                    <div class="more-det-main">
-                      <div class="more-det-icon">
-                        <p class="more-det"><i class="far fa-clock"></i></p>
-                      </div>
-                      <div class="more-det-text">
-                        <p class="more-det"><?php echo $row['sys_course_days']; ?> Day/s</p>
-                      </div>
-                      <div class='more-det-text'>
-                        <? if ($row['sys_cpd_points'][0] != 0) { ?>
-                          <p class="more-det"><?php echo $row['sys_cpd_points'] . ' CPD Points'; ?></p>
-                        <? } ?>
-                      </div>
-                    </div>
-
-                    <?php
-                    $sql = $conn->prepare("SELECT $table.is_lunch,$table.is_cpd_text,$table.is_hrdf
+            <?php
+            $sql = $conn->prepare("SELECT $table.is_lunch,$table.is_cpd_text,$table.is_hrdf
                                                         FROM  $table
                                                         where $table.sys_course_id=?");
-                    $sql->execute([$id]);
-                    if ($sql->rowCount() > 0) {
-                      foreach ($sql->fetchAll() as $row) {
+            $sql->execute([$id]);
+            if ($sql->rowCount() > 0) {
+              foreach ($sql->fetchAll() as $row) {
 
-                    ?>
-                        <div class="more-det-main">
+            ?>
+                <div class="more-det-main">
 
-                          <div class="more-det-icon">
-                            <p class="more-det"><i class="fas fa-check"></i></p>
-                          </div>
-                          <? if ($row['is_cpd_text']) { ?>
-                            <div class="more-det-text">
-                              <p class="more-det">Certificate of Attendance Will be Provided</p>
-                            </div>
-                          <? } ?>
-                          <? if ($row['is_hrdf']) { ?>
-                            <div class="more-det-text">
-                              <p class="more-det">HRDF SBL Claimable</p>
-                            </div>
-                          <? } ?>
-                          <? if ($row['is_lunch']) { ?>
-                            <div class="more-det-text">
-                              <p class="more-det">Lunch & Refreshment Provided</p>
-                            </div>
-                          <? } ?>
-                        </div>
-                    <?php }
-                    } ?>
-
+                  <div class="more-det-icon">
+                    <p class="more-det"><i class="fas fa-check"></i></p>
                   </div>
-            </div>
+                  <? if ($row['is_cpd_text']) { ?>
+                    <div class="more-det-text">
+                      <p class="more-det">Certificate of Attendance Will be Provided</p>
+                    </div>
+                  <? } ?>
+                  <? if ($row['is_hrdf']) { ?>
+                    <div class="more-det-text">
+                      <p class="more-det">HRDF SBL Claimable</p>
+                    </div>
+                  <? } ?>
+                  <? if ($row['is_lunch']) { ?>
+                    <div class="more-det-text">
+                      <p class="more-det">Lunch & Refreshment Provided</p>
+                    </div>
+                  <? } ?>
+                </div>
+            <?php }
+            } ?>
+
+          </div>
+    </div>
   </div>
 </div>
 
 
 <?php }
-              } ?>
-</div>
+      } ?>
+

@@ -1306,6 +1306,7 @@ p.header-topic {
   border-radius: 6px;
   overflow: hidden;
   box-shadow: 0 1px 7px #00000024;
+  height: 23em.5;
 }
 .courses-image {
   height: 150px;

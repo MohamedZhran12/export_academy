@@ -69,6 +69,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
 
                       <div class="course-set-pp">
                         <? require('common_component/price.php'); ?>
+                        <p class="mt-2"><?php echo $courseInfo['sys_sst']; ?></p>
                         <div class="courses-more-det">
                           <p class="view"><i class="fas fa-eye"></i> <?php echo $courseInfo['sys_course_view']; ?></p>
                           <p class="<?php echo $courseInfo['sys_course_session']; ?>"></p>
@@ -92,23 +93,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
   </div>
 </div>
 
-<script>
-  document.querySelectorAll('.myr_currency').forEach(function(item) {
-    item.addEventListener('click', function() {
-      const dataCourseID = this.getAttribute('data-course-id');
-      document.querySelector(`.myr-${dataCourseID}`).classList.remove('d-none');
-      document.querySelector(`.usd-${dataCourseID}`).classList.add('d-none');
-    })
-  });
-
-  document.querySelectorAll('.usd_currency').forEach(function(item) {
-    item.addEventListener('click', function() {
-      const dataCourseID = this.getAttribute('data-course-id');
-      document.querySelector(`.myr-${dataCourseID}`).classList.add('d-none');
-      document.querySelector(`.usd-${dataCourseID}`).classList.remove('d-none');
-    })
-  });
-</script>
+<script src='/courses/common_component/js/price_switch.js'></script>
 
 <?php
 require_once($includes . 'footer.php');
