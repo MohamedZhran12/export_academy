@@ -102,7 +102,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
           <div class="col-12 mb-3">
             <h2 class="font-weight-bold">
               <?php
-              echo date("F", strtotime('m'));
+              echo date("F", strtotime('m')) . ' ';
               echo date("Y");
               echo ' ' . $sectionName; ?>
             </h2>

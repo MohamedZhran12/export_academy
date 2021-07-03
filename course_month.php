@@ -5,16 +5,14 @@ $month = $_GET['month'];
 
 ?>
 
-
-
 <div class="header-in">
   <div class="overlay-white">
     <div class="container">
       <div class="header-in-topic">
-        <h1>Public Training</h1>
+        <h1><? echo $sectionName; ?></h1>
         <div class="breadcrumb-in">
           <p class="link"><a href="index.php"><i class="fas fa-home"></i> HOME</a></p>
-          <p class="link"><a href="public-training.php">Public Training</a></p>
+          <p class="link"><? echo $sectionName; ?></p>
           <p class="link-at"><?php
                               $monthNum = $month;/*Here 1 is the month number*/
                               $dateObj = DateTime::createFromFormat('!m', $monthNum);/*Convert the number into month name*/
