@@ -67,7 +67,7 @@ $sql->execute([$id]);
               </h2>
 
               <?php
-              require_once('right-link.php');
+
               ?>
             </div>
 

@@ -1,13 +1,8 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
-
-
-$id = $_GET['id'];
+require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
+require_once($includes . 'sections_info.php');
 $month = $_GET['month'];
-$table = isset($_GET['course']) ? $_GET['course'] : 'sys_course';
 
-$sql = $conn->prepare("UPDATE $table SET sys_course_view = sys_course_view + 1 WHERE sys_course_id = ?");
-$sql->execute([$id]);
 ?>
 
 
@@ -21,11 +16,11 @@ $sql->execute([$id]);
           <p class="link"><a href="index.php"><i class="fas fa-home"></i> HOME</a></p>
           <p class="link"><a href="public-training.php">Public Training</a></p>
           <p class="link-at"><?php
-            $monthNum = $month;/*Here 1 is the month number*/
-            $dateObj = DateTime::createFromFormat('!m', $monthNum);/*Convert the number into month name*/
-            $monthName = $dateObj->format('F');
-            echo $monthName;
-            ?>
+                              $monthNum = $month;/*Here 1 is the month number*/
+                              $dateObj = DateTime::createFromFormat('!m', $monthNum);/*Convert the number into month name*/
+                              $monthName = $dateObj->format('F');
+                              echo $monthName;
+                              ?>
 
             <?php echo date("Y"); ?>
 
@@ -65,9 +60,8 @@ $sql->execute([$id]);
                 Courses
               </h2>
 
-
               <?php
-              require_once('right-link.php');
+
               ?>
             </div>
 
@@ -81,14 +75,13 @@ $sql->execute([$id]);
               if ($sql->rowCount() > 0) {
                 foreach ($sql->fetchAll() as $row) {
 
-                  ?>
+              ?>
 
 
                   <div class="col-sm-4">
                     <div class="margin-30">
                       <div class="courses-det">
-                        <a class="button-1"
-                           href="course.php?id=<?php echo $row['sys_course_id']; ?>&cat_id=<?php echo $row['cat_id']; ?> &course=<? echo $table; ?>">
+                        <a class="button-1" href="course.php?id=<?php echo $row['sys_course_id']; ?>&cat_id=<?php echo $row['cat_id']; ?> &course=<? echo $table; ?>">
                           <div class="courses-image">
                             <p class="date"><i class="fas fa-calendar-alt"></i> <?php echo $row['sys_course_date']; ?>
                               - <?php echo $row['sys_course_month']; ?> - <?php echo $row['sys_course_year']; ?></p>
@@ -96,8 +89,7 @@ $sql->execute([$id]);
                           </div>
                           <div class="courses-desc1">
                             <p class="course-topic-1-2"><?php echo $row['sys_course_topic']; ?></p>
-                            <p class="place"><i
-                                  class="fas fa-map-marker-alt"></i> <?php echo $row['sys_course_venue']; ?></p>
+                            <p class="place"><i class="fas fa-map-marker-alt"></i> <?php echo $row['sys_course_venue']; ?></p>
 
                             <div class="course-set-pp">
                               <div class="courses-pricing">
@@ -125,7 +117,7 @@ $sql->execute([$id]);
                       </div>
                     </div>
                   </div>
-                <?php }
+              <?php }
               } ?>
 
             </div>
@@ -137,5 +129,5 @@ $sql->execute([$id]);
 
 
   <?php
-    require_once($includes . 'footer.php');
+  require_once($includes . 'footer.php');
   ?>
