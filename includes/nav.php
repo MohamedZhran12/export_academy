@@ -70,11 +70,11 @@
                 <!-- First Tier Drop Down -->
                 <ul>
                   <li><a href="/ourprofile.php">Our Profile</a></li>
-                  <li><a href="/achievements.php">Our Achievements</a></li>
-                  <li><a href="/csr.php">CSR</a></li>
+                  <li><a href="/info_page.php?page=our_achievements">Our Achievements</a></li>
+                  <li><a href="/info_page.php?page=csr">CSR</a></li>
                   <li><a href="/advisor.php">Board of Advisors</a></li>
-                  <li><a href="/our-management.php">Management Team</a></li>
-                  <li><a href="/our-gallery.php">Our Gallery</a></li>
+                  <li><a href="/info_page.php?page=our_management">Management Team</a></li>
+                  <li><a href="/info_page.php?page=gallery">Our Gallery</a></li>
                   <ul>
                     <li><a href="#">Things</a></li>
                     <li><a href="#">Other Stuff</a></li>

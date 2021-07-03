@@ -1,6 +1,6 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
-require_once($includes . 'about_us_pages_config.php');
+require_once($includes . 'about_us_pages_info.php');
 
 require_once('includes/upload_abstract_image.class.php');
 require_once("includes/upload_image.class.php");

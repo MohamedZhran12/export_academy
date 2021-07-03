@@ -1,7 +1,7 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
 
-require_once($includes . 'about_us_pages_config.php');
+require_once($includes . 'about_us_pages_info.php');
 
 $stmt = $conn->prepare("SELECT $categoryTable.title, $categoryTable.description , $mediaTable.name , $mediaTable.path
    from $categoryTable
