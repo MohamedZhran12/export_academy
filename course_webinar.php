@@ -45,7 +45,7 @@ $sql->execute([$id]);
       <div class="row">
         <div class="col-sm-3">
           <?php
-          require_once($rootDir . 'components/calendar.php);
+          require_once($rootDir . 'components/calendar.php');
           ?>
         </div>
 
