@@ -88,7 +88,7 @@ $courseDetails = $courseDetailsStmt->fetchAll();
                   <span><? echo $courseDetails[0]['cat_id'] == 1 ? 'Virtual Programme' : 'Public Programme'; ?></span>
                 </div>
                 <div class="col-12 mb-4">
-                  <strong><? echo $courseDetails[0]['cat_id'] == 1 ? 'Platform' : 'Venue'; ?></strong>
+                  <strong><? echo $courseDetails[0]['cat_id'] == 1 ? 'Platform: ' : 'Venue: '; ?></strong>
                   <span>
                     <?php echo $courseDetails[0]['sys_course_venue']; ?></span>
                 </div>
