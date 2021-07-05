@@ -225,7 +225,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
       <div class="text-center">
         <h2 class="topic-blue">Our Activities</h2>
         <hr class="topic-blue">
-        <div class="row">
+        <div class="row justify-content-center">
 
           <div class="col-sm-3">
             <div class="bordering-1">
@@ -245,17 +245,6 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
                   <i class="fas fa-globe-asia"></i>
                 </div>
                 <p>CSR</p>
-            </div>
-            </a>
-          </div>
-
-          <div class="col-sm-3">
-            <div class="bordering-1">
-              <a href="#" target="blank">
-                <div class="icon-width-80">
-                  <i class="fas fa-globe-asia"></i>
-                </div>
-                <p>Test</p>
             </div>
             </a>
           </div>

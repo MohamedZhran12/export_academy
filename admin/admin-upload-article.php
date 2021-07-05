@@ -73,7 +73,7 @@ VALUES (?, ?, ?, ?, ?, ?, 0)");
                             <div class="row">
                               <div class="col-sm-6">
                                 <p class="form-text">Course Image</p>
-                                <img alt='image' src="../images/upload.jpg" id="imgAvatar" alt="Course Image" />
+                                <img alt='image' src="../images/statics/upload.jpg" id="imgAvatar" alt="Course Image" />
                                 <br><br>
                                 <span class="image-size">(<b>Width :</b> 600px) x (<b>Height :</b> 300px)</span>
                                 <br><br>

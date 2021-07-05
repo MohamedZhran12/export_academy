@@ -41,9 +41,9 @@ $categoriesImages = $stmt->fetchAll(PDO::FETCH_GROUP);
     </div>
     <div class="row">
       <? foreach ($category as $images) { ?>
-        <div class="<? echo ($name == 'Our Management') ? 'col-12' : 'col-4'; ?>">
+        <div class="<? echo ($name == 'Our Management' || $name == 'Our Achievements') ? 'col-12' : 'col-4'; ?>">
           <div class="margin-30">
-            <div class="<? echo ($name != 'Our Management') ? 'images-zoom' : ''; ?>">
+            <div class="<? echo ($name != 'Our Management' && $name != 'Our Achievements') ? 'images-zoom' : ''; ?>">
               <img alt='image' src="<? echo $images['path'] . $images['name'] ?>">
             </div>
           </div>

@@ -236,10 +236,10 @@
         </div>
 
         <li>
-          <a href="admin-upload-article.php" class="side-menu-link">Upload Articles</a>
+          <a href="/admin/admin-upload-article.php" class="side-menu-link">Upload Articles</a>
         </li>
         <li>
-          <a href="admin-upload-album.php" class="side-menu-link">Upload Galleries</a>
+          <a href="/admin/admin-upload-album.php" class="side-menu-link">Upload Galleries</a>
         </li>
       </ul>
     </div>

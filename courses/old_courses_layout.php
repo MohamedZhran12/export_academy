@@ -73,9 +73,10 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
                           <p class="mt-2"><?php echo $courseInfo['sys_sst']; ?></p>
                         <? } ?>
                         <div class="courses-more-det">
-                          <p class="view"><i class="fas fa-eye"></i> <?php echo $courseInfo['sys_course_view']; ?></p>
+                          <p class="view d-inline mr-3"><i class="fas fa-eye"></i> <?php echo $courseInfo['sys_course_view']; ?></p>
+                          <img src="<?php echo $courseInfo['cat_id'] == 1 ? '/images/statics/virtual.png' : '/images/statics/public.png'; ?>" alt='image' style='width:2em;height:2em'>
                           <p class="<?php echo $courseInfo['sys_course_session']; ?>"></p>
-                          <p class="icon-3"><i class="fas fa-certificate"></i></p>
+                          <!-- <p class="icon-3"><i class="fas fa-certificate"></i></p> -->
                         </div>
                       </div>
                     </div>

@@ -20,7 +20,7 @@ $result = $stmt->fetchAll();
       <form class='mt-5 shadow-sm p-4 mb-5 bg-white rounded' action='upload-images-implementation.php?page=<? echo $_GET['page']; ?>' method='post' enctype="multipart/form-data">
         <div class='row'>
           <div class='col-6'>
-            <img src="/images/upload.jpg" id="imgAvatar" alt="Course Image">
+            <img src="/images/statics/upload.jpg" id="imgAvatar" alt="Course Image">
             <span class='mt-3 d-inline-block'>(Width : 300px) x (Height : 600px)</span>
           </div>
           <div class='col-6'>

@@ -1,10 +1,5 @@
 <?php
-require_once('admin/adminheader.php');
-require_once('admin/adminnav.php');
-
-
-
-
+require_once($_SERVER['DOCUMENT_ROOT'] . '/includes/init_admin.php');
 
 if ((isset($_POST["MM_insert"])) && ($_POST["MM_insert"] == "frm_add_channel") && isset($_FILES['image']['tmp_name'])) {
   $file = $_FILES['image']['tmp_name'];
@@ -39,7 +34,7 @@ VALUES(?, ?, ?, ?, 0, ?, ?)");
     require_once($includes . 'admin-sidebar.php');
     ?>
 
-    <div class="col-10">
+    <div class="col-9">
       <div class="padding-30-15">
         <div class="breadcrumb-main">
           <p class="current-link">Admin Dashboard</p>
@@ -115,6 +110,3 @@ VALUES(?, ?, ?, ?, 0, ?, ?)");
     }
   }
 </script>
-<?php
-require_once($includes . 'footer.php');
-?>
