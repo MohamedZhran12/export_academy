@@ -63,7 +63,9 @@ $courseDetails = $courseDetailsStmt->fetchAll();
             <div class="col-12">
               <div class="row">
                 <div class="col-12 mb-2">
-                  <strong>Date :</strong>
+                  <? if ($isThereMoreDates || $isThereCalendar) { ?>
+                    <strong>Date :</strong>
+                  <? } ?>
                   <? if ($isThereMoreDates) { ?>
                     <? foreach ($dates as $dateRow) { ?>
                       <div class="dates">
@@ -72,7 +74,7 @@ $courseDetails = $courseDetailsStmt->fetchAll();
                         <span><? echo date('d - M - Y', strtotime($dateRow['course_date_end'])); ?></span>
                       </div>
                     <? }
-                  } else {
+                  } else if ($isThereCalendar) {
                     $dateWithoutDay = ' - ' . DateTime::createFromFormat('!m', $courseDetails[0]['sys_course_month'])->format('F') . ' - ' . $courseDetails[0]['sys_course_year'];
                     ?>
                     <span><?php echo $courseDetails[0]['sys_course_date'] . $dateWithoutDay ?></span>

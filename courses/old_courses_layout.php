@@ -69,7 +69,9 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
 
                       <div class="course-set-pp">
                         <? require('common_component/price.php'); ?>
-                        <p class="mt-2"><?php echo $courseInfo['sys_sst']; ?></p>
+                        <? if ($courseInfo['sys_sst'][0] != 0) { ?>
+                          <p class="mt-2"><?php echo $courseInfo['sys_sst']; ?></p>
+                        <? } ?>
                         <div class="courses-more-det">
                           <p class="view"><i class="fas fa-eye"></i> <?php echo $courseInfo['sys_course_view']; ?></p>
                           <p class="<?php echo $courseInfo['sys_course_session']; ?>"></p>

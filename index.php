@@ -61,7 +61,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
               <hr class="topic-white">
 
               <div class="row">
-                <div class="col-sm-4">
+                <div class="col-md-4">
                   <div class="bordering">
                     <a href="public-training.php">
                       <div class="icon-width-80">
@@ -72,7 +72,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
                   </a>
                 </div>
 
-                <div class="col-sm-4">
+                <div class="col-md-4">
                   <div class="bordering">
                     <a href="coming-soon.php">
                       <div class="icon-width-80">
@@ -83,7 +83,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
                   </a>
                 </div>
 
-                <div class="col-sm-4">
+                <div class="col-md-4">
                   <div class="bordering">
                     <a href="coming-soon.php">
                       <div class="icon-width-80">
@@ -96,9 +96,9 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
               </div>
             </div>
 
-            <div class="col-sm-4">
+            <div class="col-md-4">
               <div class="calendar-main">
-                <div class="calendar-topic">
+                <div class="calendar-topic mt-4 mt-md-0">
                   <h2 class="topic">Calendar <?php echo date("Y"); ?></h2>
                   <hr class="topic-white">
                   <?php

@@ -209,8 +209,6 @@ hr.topic-white {
 }
 .overlay-blue {
   background: #0d6992d9;
-  width: 100%;
-  height: 100%;
 }
 .bordering {
   padding: 40px;
@@ -982,11 +980,6 @@ hr.topic-white {
 }
 .icon-width-80 {
   font-size: 55px;
-}
-.overlay-blue {
-  background: #0d6992d9;
-  width: 100%;
-  height: 100%;
 }
 .bordering {
   padding: 40px;
