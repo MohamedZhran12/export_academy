@@ -333,7 +333,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                           </div>
                         <? } ?>
                         <div class="col-12 mb-3">
-                          <input type="submit" class="button" value="Add Course" />
+                          <input type="submit" class="button" value="Update Course" />
                           <input type="hidden" name='old_image' value="<? echo $row['sys_course_image']; ?>">
                         </div>
                       </div>

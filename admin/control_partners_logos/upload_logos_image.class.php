@@ -3,8 +3,8 @@ require_once('includes/config.php');
 
 class Image
 {
-  const mainDirectory = 'logo_images/';
-const sizeLimit = 3145728;
+  const mainDirectory = 'logos/logo_images/';
+  const sizeLimit = 3145728;
   private $name;
   private $extension;
   private $tmpName;
@@ -126,7 +126,7 @@ const sizeLimit = 3145728;
 
   public function storeImageInDatabase()
   {
-
+    glob
     $stmt = $conn->prepare("insert into logos_images (name,path,size,partner_type,created_at) values(?,?,?,?,?)");
     return $stmt->execute([$this->name, $this->newPath, $this->size, $this->partnerType, date('Y-m-d H:i:s')]);
   }

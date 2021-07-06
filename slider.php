@@ -9,8 +9,7 @@ $result = $stmt->fetchAll();
 <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
   <ol class="carousel-indicators">
     <?php foreach ($result as $key => $row) { ?>
-      <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $key; ?>"
-          class="<?php if ($key == 0) echo 'active'; ?>"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="<?php echo $key; ?>" class="<?php if ($key == 0) echo 'active'; ?>"></li>
     <?php } ?>
   </ol>
   <div class="zoominbox">
@@ -30,7 +29,7 @@ $result = $stmt->fetchAll();
                 </div>
               </div>
             </div>
-            <img alt='image' src="<?php echo $row['path'] . $row['name']; ?>" class="d-block w-100" alt="image">
+            <img alt='image' src="<?php echo $row['path'] . $row['name']; ?>" class="d-block w-100">
           </div>
         <?php } ?>
       </div>

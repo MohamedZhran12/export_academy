@@ -3,8 +3,8 @@ require_once('includes/config.php');
 
 class Image
 {
-  const mainDirectory = 'homepage_images/';
-const sizeLimit = 3145728;
+  const mainDirectory = 'images/homepage_images/';
+  const sizeLimit = 3145728;
   private $name;
   private $extension;
   private $tmpName;
@@ -13,7 +13,7 @@ const sizeLimit = 3145728;
   private $title;
   private $description;
   private $newPath;
-    private $fullPath; //3mb
+  private $fullPath; //3mb
 
   public function __construct($image)
   {

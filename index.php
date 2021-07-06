@@ -286,7 +286,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
                         ?>
                         <?php echo $row['sys_course_year']; ?>
                       </p>
-                      <img alt='image' loading="lazy" loading="lazy" src="/images/courses/<?php echo $row['sys_course_image']; ?>">
+                      <img alt='image' loading="lazy" src="/images/courses/<?php echo $row['sys_course_image']; ?>">
                     </div>
                     <div class="courses-desc1">
                       <p class="topic-1-2"><?php echo $row['sys_course_topic']; ?></p>
@@ -348,7 +348,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
               <div class="col-sm-3">
                 <div class="media-main">
                   <div class="media-img">
-                    <img alt='image' loading="lazy" loading="lazy" src="/images/articles/<?php echo $row['sys_image']; ?>">
+                    <img alt='image' loading="lazy" src="/images/articles/<?php echo $row['sys_image']; ?>">
                     <div class="date-time">
                       <i class="fas fa-clock"></i>
                       <?php echo $row['sys_date']; ?>,
@@ -407,7 +407,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
               <div class="row">
                 <? foreach ($logosImages['Registered_With'] as $logo) { ?>
                   <div class="col-sm-4">
-                    <div class="logo-1"><img alt='image' loading="lazy" loading="lazy" src="<? echo $logo['path'] . $logo['name']; ?>"></div>
+                    <div class="logo-1"><img alt='image' loading="lazy" src="<? echo $logo['path'] . $logo['name']; ?>"></div>
                   </div>
                 <? } ?>
               </div>
@@ -426,7 +426,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
               <div class="row">
                 <? foreach ($logosImages['Our_Partners'] as $logo) { ?>
                   <div class="col-sm-4">
-                    <div class="logo-1"><img alt='image' loading="lazy" loading="lazy" src="<? echo $logo['path'] . $logo['name']; ?>"></div>
+                    <div class="logo-1"><img alt='image' loading="lazy" src="<? echo $logo['path'] . $logo['name']; ?>"></div>
                   </div>
                 <? } ?>
               </div>
@@ -444,7 +444,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
             <div class="row">
               <? foreach ($logosImages['Membership'] as $logo) { ?>
                 <div class="col-sm-4">
-                  <div class="logo-1"><img alt='image' loading="lazy" loading="lazy" src="<? echo $logo['path'] . $logo['name']; ?>"></div>
+                  <div class="logo-1"><img alt='image' loading="lazy" src="<? echo $logo['path'] . $logo['name']; ?>"></div>
                 </div>
               <? } ?>
             </div>
