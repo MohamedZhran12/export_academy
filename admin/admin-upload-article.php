@@ -57,9 +57,9 @@ VALUES (?, ?, ?, ?, ?, ?, 0)");
                             <div class="row">
                               <div class="col-sm-6">
                                 <p class="form-text">Course Image</p>
-                                <img src="../images/statics/upload.jpg" id="imgAvatar" alt="Course Image" class='mb-3' />
                                 <span class="image-size d-inline-block mb-3">(<strong>Width :</strong> 600px) x (<strong>Height :</strong> 300px)</span>
                                 <input type="file" class="d-inline-block mb-3" name="image" id="image" onchange="showPreview(this)" accept="/images/course" />
+                                <img src="../images/statics/upload.jpg" id="imgAvatar" alt="Course Image" class='mb-3' />
                               </div>
 
                               <div class="col-sm-6">
