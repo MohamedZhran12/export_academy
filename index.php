@@ -77,7 +77,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
                       <div class="icon-width-80">
                         <i class="fas fa-calendar-alt"></i>
                       </div>
-                      <p>Calendar</p>
+                      <p>Our Calendar</p>
                   </div>
                   </a>
                 </div>
