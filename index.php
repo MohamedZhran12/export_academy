@@ -179,7 +179,6 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
             </div>
             </a>
           </div>
-
           <div class="col-sm-3">
             <div class="bordering-1">
               <a href="#">
@@ -207,7 +206,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
 
           <div class="col-sm-3">
             <div class="bordering-1">
-              <a href="#" target="blank">
+              <a href="/info_page.php?page=gallery" target="blank">
                 <div class="icon-width-80">
                   <i class="fas fa-globe-asia"></i>
                 </div>
@@ -218,7 +217,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
 
           <div class="col-sm-3">
             <div class="bordering-1">
-              <a href="#" target="blank">
+              <a href="/info_page.php?page=csr" target="blank">
                 <div class="icon-width-80">
                   <i class="fas fa-globe-asia"></i>
                 </div>
