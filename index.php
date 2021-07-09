@@ -3,7 +3,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
 
 require_once('slider.php');
 
-
 $stmt = $conn->prepare('SELECT partner_type,name,path from logos_images');
 $stmt->execute();
 $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
