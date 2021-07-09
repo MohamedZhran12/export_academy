@@ -31,6 +31,7 @@
                   <li><a href="/courses/old_courses_layout.php?course=sys_seminars">Seminar & Conferences</a></li>
                   <li><a href="/courses/old_courses_layout.php?course=sys_professional_cert">Professional Certification</a></li>
                   <li><a href="/courses/old_courses_layout.php?course=sys_special_programmes">Special Programmes</a></li>
+                  <li><a href="/coming-soon.php">Calendars</a></li>
 
                   <li><a href="/coming-soon.php">Online Training</a>
                     <ul>

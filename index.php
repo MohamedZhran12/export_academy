@@ -33,14 +33,14 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
       <div class="padding-100">
         <div class="text-center">
           <div class="row">
-            <div class="col-sm-8">
+            <div class="col">
               <h2 class="topic">Our Programmes</h2>
               <hr class="topic-white">
 
               <div class="row">
                 <div class="col-md-4">
                   <div class="bordering">
-                    <a href="public-training.php">
+                    <a href="/courses/old_courses_layout.php?course=sys_course">
                       <div class="icon-width-80">
                         <i class="fas fa-building"></i>
                       </div>
@@ -51,7 +51,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
 
                 <div class="col-md-4">
                   <div class="bordering">
-                    <a href="coming-soon.php">
+                    <a href="/courses/old_courses_layout.php?course=sys_professional_cert">
                       <div class="icon-width-80">
                         <i class="fas fa-user-tie"></i>
                       </div>
@@ -62,7 +62,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
 
                 <div class="col-md-4">
                   <div class="bordering">
-                    <a href="coming-soon.php">
+                    <a href="/courses/old_courses_layout.php?course=sys_seminars">
                       <div class="icon-width-80">
                         <i class="fas fa-chalkboard-teacher"></i>
                       </div>
@@ -70,18 +70,16 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
                   </div>
                   </a>
                 </div>
-              </div>
-            </div>
 
-            <div class="col-md-4">
-              <div class="calendar-main">
-                <div class="calendar-topic mt-4 mt-md-0">
-                  <h2 class="topic">Calendar <?php echo date("Y"); ?></h2>
-                  <hr class="topic-white">
-                  <?php
-                  $table = 'sys_course';
-                  require_once($rootDir . 'components/calendar.php');
-                  ?>
+                <div class="col-md-4 mt-2 text-center">
+                  <div class="bordering">
+                    <a href="/coming-soon.php">
+                      <div class="icon-width-80 ma-0">
+                        <i class="far fa-calendar-alt"></i>
+                      </div>
+                      <p class="ml-4">Calendar</p>
+                  </div>
+                  </a>
                 </div>
               </div>
             </div>
