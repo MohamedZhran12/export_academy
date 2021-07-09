@@ -1,17 +1,17 @@
 <?php
-require_once('includes/config.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/includes/init_admin.php');
 
 class Image
 {
-  const mainDirectory = 'logos/logo_images/';
-  const sizeLimit = 3145728;
+  const mainDirectory = '/images/logo_images/';
+  const sizeLimit = 3145728; //3mb
   private $name;
   private $extension;
   private $tmpName;
   private $size;
   private $partnerType;
   private $newPath;
-  private $fullPath; //3mb
+  private $fullPath;
 
   public function __construct($image)
   {
@@ -20,7 +20,7 @@ class Image
     $this->tmpName = $image['tmpName'];
     $this->size = $image['size'];
     $this->partnerType = $image['partner_type'];
-    $this->newPath = self::mainDirectory;
+    $this->newPath = $_SERVER['DOCUMENT_ROOT'] . '/images/logo_images/';
     $this->fullPath = $this->newPath . $this->name;
   }
 
@@ -126,8 +126,8 @@ class Image
 
   public function storeImageInDatabase()
   {
-    glob
+    global $conn;
     $stmt = $conn->prepare("insert into logos_images (name,path,size,partner_type,created_at) values(?,?,?,?,?)");
-    return $stmt->execute([$this->name, $this->newPath, $this->size, $this->partnerType, date('Y-m-d H:i:s')]);
+    return $stmt->execute([$this->name, self::mainDirectory, $this->size, $this->partnerType, date('Y-m-d H:i:s')]);
   }
 }

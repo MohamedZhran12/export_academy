@@ -1,12 +1,7 @@
-/includes/config.php
-/csr_images
+/includes/init.php
+/includes/init_admin.php
 /awards
-/gallery_images
-/homepage_images
 /images
-/logo_images
-/our_achievements_images
-/our_management_images
 /pdf
 /uploads
 .htaccess

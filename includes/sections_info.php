@@ -52,7 +52,7 @@ if ($_GET['course'] == 'sys_course') {
   $isNewLayout = true;
 } else if ($_GET['course'] == 'in_house') {
   $table = 'in_house';
-  $sectionName = 'In House';
+  $sectionName = 'In House Training';
   $details = 'Details';
   $modules = 'Modules';
   $instructorType = 'Trainer(s)/Speaker(s)';
@@ -60,7 +60,7 @@ if ($_GET['course'] == 'sys_course') {
   $isNewLayout = true;
 } else if ($_GET['course'] == 'products') {
   $table = 'products';
-  $sectionName = 'Products';
+  $sectionName = 'Listing of Products';
   $details = 'Details';
   $modules = 'Modules';
   $instructorType = 'Trainer(s)/Speaker(s)';

@@ -13,6 +13,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $imageObject->startUploadingImage();
   }
   echo '
-	<script>alert("Image is Successfully Uploaded");
-	location.href="admin-upload-csr-images.php"</script>';
+	<script>
+  alert("Image is Successfully Uploaded");
+	location.href="/admin/control_partners_logos/upload-logos-images.php"
+  </script>';
 }

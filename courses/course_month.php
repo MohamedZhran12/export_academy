@@ -3,6 +3,13 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
 require_once($includes . 'sections_info.php');
 $month = $_GET['month'];
 
+$courseTypeHeader = str_replace('sys_', '', $table) . '_header';
+$courseTypeTerms = str_replace('sys_', '', $table) . '_terms';
+
+$headerAndTermsStmt = $conn->prepare("select value from statics where name=? or name=?");
+$headerAndTermsStmt->execute([$courseTypeHeader, $courseTypeTerms]);
+$headerAndTerms = $headerAndTermsStmt->fetchAll();
+
 ?>
 
 <div class="header-in">
@@ -45,7 +52,8 @@ $month = $_GET['month'];
         <div class="col-sm-9">
           <div class="padding-left-30">
             <div class="my-main-list">
-              <h2 class="topic-in">
+              <?php echo $headerAndTerms[0]['value']; ?>
+              <h2 class="topic-in mt-3">
                 <?php
                 $monthNum = $month;/*Here 1 is the month number*/
                 $dateObj = DateTime::createFromFormat('!m', $monthNum);/*Convert the number into month name*/
@@ -79,7 +87,7 @@ $month = $_GET['month'];
                   <div class="col-sm-4">
                     <div class="margin-30">
                       <div class="courses-det">
-                        <a class="button-1" href="course.php?id=<?php echo $row['sys_course_id']; ?>&cat_id=<?php echo $row['cat_id']; ?> &course=<? echo $table; ?>">
+                        <a class="button-1" href="/courses/course.php?id=<?php echo $row['sys_course_id']; ?>&cat_id=<?php echo $row['cat_id']; ?> &course=<? echo $table; ?>">
                           <div class="courses-image">
                             <p class="date"><i class="fas fa-calendar-alt"></i> <?php echo $row['sys_course_date']; ?>
                               - <?php echo $row['sys_course_month']; ?> - <?php echo $row['sys_course_year']; ?></p>
@@ -117,15 +125,17 @@ $month = $_GET['month'];
                   </div>
               <?php }
               } ?>
-
             </div>
           </div>
+          <?php echo $headerAndTerms[1]['value']; ?>
         </div>
       </div>
     </div>
+
   </div>
+</div>
 
 
-  <?php
-  require_once($includes . 'footer.php');
-  ?>
+<?php
+require_once($includes . 'footer.php');
+?>

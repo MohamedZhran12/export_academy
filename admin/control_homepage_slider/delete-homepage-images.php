@@ -11,9 +11,7 @@ if ($_SESSION['user']['level_id'] == 1 && $_GET['delete'] == 'image') {
   $stmt->execute([$_GET['image_id']]);
   unlink($_GET['full_path']);
   echo '
-	<script>alert("Image is Successfully Deleted");
-	location.href="' . str_replace('/', '', $_SERVER['SCRIPT_NAME']) . '"' .
-    '</script>';
+	<script>alert("Image is Successfully Deleted");</script>';
 }
 ?>
 
@@ -37,16 +35,16 @@ if ($_SESSION['user']['level_id'] == 1 && $_GET['delete'] == 'image') {
   </div>
 </div>
 
-    <script>
-      var elements = document.querySelectorAll('.delete-image');
-      elements.forEach(ele => {
-        ele.addEventListener('click', function(e) {
-          var isConfirmed = confirm('are you sure to delete this image?');
-          var id = ele.getAttribute('data-id');
-          var fullPath = ele.getAttribute('data-fullpath');
-          if (isConfirmed) {
-            location.search += `&delete=image&image_id=${id}&full_path=${fullPath}`;
-          }
-        })
-      })
-    </script>
+<script>
+  var elements = document.querySelectorAll('.delete-image');
+  elements.forEach(ele => {
+    ele.addEventListener('click', function(e) {
+      var isConfirmed = confirm('are you sure to delete this image?');
+      var id = ele.getAttribute('data-id');
+      var fullPath = ele.getAttribute('data-fullpath');
+      if (isConfirmed) {
+        location.search += `&delete=image&image_id=${id}&full_path=${fullPath}`;
+      }
+    })
+  })
+</script>

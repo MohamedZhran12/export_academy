@@ -1,27 +1,22 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
 
-
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   echo '
-	<script>alert("Image is Successfully Uploaded");
-	location.href="' . str_replace('/', '', $_SERVER['SCRIPT_NAME']) . '"' .
-    '</script>';
+	<script>alert("Image is Successfully Uploaded");</script>';
 }
 ?>
 
-
 <div class="container-fluid">
   <div class="row">
-    <? require_once($includes.'admin-sidebar.php'); ?>
+    <? require_once($includes . 'admin-sidebar.php'); ?>
     <div class="col-9 .bg-white">
       <div class="breadcrumb-main">
         <p class="current-link">Admin Dashboard</p>
         <i class="fas fa-chevron-right"></i>
         <p class="current-link">Upload Logos Images</p>
       </div>
-      <form class='mt-5 shadow-sm p-4 mb-5 bg-white rounded' action='upload-logos-images-implementation.php' method='post'
-            enctype="multipart/form-data">
+      <form class='mt-5 shadow-sm p-4 mb-5 bg-white rounded' action='upload-logos-images-implementation.php' method='post' enctype="multipart/form-data">
         <div class='row'>
           <div class='col-12'>
             <div class="form-group">
@@ -51,6 +46,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </div>
 <script src="https://cdn.ckeditor.com/4.15.0/full/ckeditor.js"></script>
 <script>
-    CKEDITOR.replace('title');
-    CKEDITOR.replace('description');
+  CKEDITOR.replace('title');
+  CKEDITOR.replace('description');
 </script>

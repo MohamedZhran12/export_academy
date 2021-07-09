@@ -1,22 +1,23 @@
 <?php
-require_once('includes/config.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
 
 class Image
 {
-  const mainDirectory = 'images/homepage_images/';
+  const mainDirectory = '/images/homepage_images/';
   const sizeLimit = 3145728;
   private $name;
   private $extension;
   private $tmpName;
-  private $size;
+  private $size; //3mb
   private $url;
   private $title;
   private $description;
   private $newPath;
-  private $fullPath; //3mb
+  private $fullPath;
 
   public function __construct($image)
   {
+    $this->newPath = $_SERVER['DOCUMENT_ROOT'] . '/images/homepage_images/';
     $this->extension = $image['extension'];
     $this->name = time() . '_' . uniqid() . '.' . $this->extension;
     $this->tmpName = $image['tmpName'];
@@ -24,7 +25,6 @@ class Image
     $this->url = $image['url'];
     $this->title = $image['title'];
     $this->description = $image['description'];
-    $this->newPath = self::mainDirectory;
     $this->fullPath = $this->newPath . $this->name;
   }
 
@@ -130,8 +130,8 @@ class Image
 
   public function storeImageInDatabase()
   {
-
+    global $conn;
     $stmt = $conn->prepare('insert into homepage_images (name,path,size,url,title,description,created_at) values(?,?,?,?,?,?,?)');
-    return $stmt->execute([$this->name, $this->newPath, $this->size, $this->url, $this->title, $this->description, date('Y-m-d H:i:s')]);
+    return $stmt->execute([$this->name, self::mainDirectory, $this->size, $this->url, $this->title, $this->description, date('Y-m-d H:i:s')]);
   }
 }

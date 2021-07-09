@@ -8,13 +8,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       'tmpName' => $images['tmp_name'][$i],
       'size' => $images['size'][$i],
       'url' => $_POST['url'],
-      'title' => $_POST['title'],
+      'title' => $_POST['title'], 
       'description' => $_POST['description']
     ];
     $imageObject = new Image($image);
     $imageObject->startUploadingImage();
   }
   echo '
-	<script>alert("Image is Successfully Uploaded");
-	"</script>';
+	<script>
+  alert("Image is Successfully Uploaded");
+  location.href="/admin/control_homepage_slider/upload-homepage-images.php";
+	</script>';
 }

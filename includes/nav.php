@@ -60,7 +60,7 @@
               </li>
 
               <li><a href="/courses/new_courses_layout.php?course=global_network">Global Network</a></li>
-              <li><a href="#">Resource Center</a>
+              <li><a href="#">Resource Centre</a>
                 <ul>
                   <li><a href="/articles.php">Articles</a></li>
                   <li><a href="/mexa-tv.php">MEXA TV</a></li>

@@ -9,42 +9,20 @@ $stmt->execute();
 $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
 ?>
 
-
+<hr>
 <div class="background-white">
   <div class="container">
     <div class="padding-100">
 
-      <div class="row">
-        <div class="col-sm-2"></div>
+      <div class="row justify-content-center">
         <div class="col-sm-8">
-
-          <p class="text-justify">
-            Malaysian Export Academy was registered in October 2007 as a Company with the Registrar of
-            Companies in
-            Malaysia. Its main activities are training and education services and event management. The
-            Academy has
-            been certified ISO 9001:2008 standards in 2015. It is awarded the 5 Star Rating with HRDF.
-
+          <p class='text-center'>
+            Malaysian Export Academy was registered in October 2007 as a Company with the registrar of Companies in Malaysia. Its main activities are training and education. The Academy has been certified ISO 9001:2015.
             <br><br>
-
-            The Academy has been registered with the Human Resources Development Fund, Ministry of Human
-            Resources
-            of Malaysia. In this respect, almost all of its training programmes are fully subsidized by the
-            said Fund. The
-            Academy is also registered with the Ministry of Finance of Malaysia.
-
-            <br><br>
-
-            The Academy has won many government tenders to conduct short courses and professional programmes
-            under various schemes that include 1 Malaysia Globally Recognised Industry and Professionals
-            Programme,
-            Minimum Wages Training Incentive, SME Senior Managers Development Programme, SME Upskilling
-            Programmes and INBASE Programmes.
+            The Academy has been registered with the Human Resources Development Corporation, Ministry of Human Resources of Malaysia. In this respect, almost all of its training programmes are fully subsidized by the said Fund. The Academy is also registered with the Ministry of Finance of Malaysia. The Academy has been awarded the 5 star status by the Human Resources Development Fund in 2016.
           </p>
         </div>
-
       </div>
-      <div class="col-sm-2"></div>
     </div>
   </div>
 </div>
