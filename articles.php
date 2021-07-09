@@ -37,7 +37,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
               <br>
               <div class="wrapper">
 
-                <section class="products grid group">
+                <div class="row">
                   <?php
 
                   $sql = $conn->prepare("SELECT * FROM sys_article order by sys_id desc");
@@ -47,7 +47,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
 
                   ?>
 
-                      <article class="product">
+                      <div class="col-md-4 mt-3">
                         <div class="product__inner">
 
                           <section class="product__image">
@@ -76,31 +76,31 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
                           </div><!-- /product__details -->
 
                         </div>
-                      </article><!-- /product -->
+                      </div><!-- /product -->
 
                   <?php }
                   } ?>
 
 
-                </section><!-- /products -->
+                  </section><!-- /products -->
 
 
-              </div><!-- /wrapper -->
+                </div><!-- /wrapper -->
+              </div>
+              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <script src="https://apps.elfsight.com/p/platform.js" defer></script>
+                <div class="elfsight-app-c8a859ad-8c42-42ea-954f-08a79f15c5af"></div>
+              </div>
             </div>
-            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-              <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-              <div class="elfsight-app-c8a859ad-8c42-42ea-954f-08a79f15c5af"></div>
-            </div>
+
+
           </div>
-
-
         </div>
-      </div>
 
+      </div>
     </div>
   </div>
-</div>
 
-<?php
-require_once($includes . 'footer.php');
-?>
+  <?php
+  require_once($includes . 'footer.php');
+  ?>
