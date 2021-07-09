@@ -467,7 +467,13 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
 
         <div class="youtube-carousel-wrap">
           <div class="youtube-carousel-main">
-            <iframe defer id="main-youtube-video" loading="lazy" src="https://www.youtube.com/embed/SJcA0AZz_bA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <?
+            $stmt = $conn->prepare('SELECT url FROM `mexa_tv_videos` ORDER BY created_at desc');
+            $stmt->execute();
+            $latestVideo = $stmt->fetch();
+            preg_match('/src="(.+?)"/', $latestVideo['url'], $latestVideoUrl);
+            ?>
+            <iframe defer id="main-youtube-video" loading="lazy" src="<? echo $latestVideoUrl[1]; ?>" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen title='video'></iframe>
           </div>
           <div class="youtube-carousel-gallery" data-simplebar>
             <?php
