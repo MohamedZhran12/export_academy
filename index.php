@@ -38,7 +38,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
               <hr class="topic-white">
 
               <div class="row">
-                <div class="col-md-4">
+                <div class="col">
                   <div class="bordering">
                     <a href="/courses/old_courses_layout.php?course=sys_course">
                       <div class="icon-width-80">
@@ -49,7 +49,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
                   </a>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col">
                   <div class="bordering">
                     <a href="/courses/old_courses_layout.php?course=sys_professional_cert">
                       <div class="icon-width-80">
@@ -60,7 +60,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
                   </a>
                 </div>
 
-                <div class="col-md-4">
+                <div class="col">
                   <div class="bordering">
                     <a href="/courses/old_courses_layout.php?course=sys_seminars">
                       <div class="icon-width-80">
@@ -71,13 +71,13 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
                   </a>
                 </div>
 
-                <div class="col-md-4 mt-2 text-center">
+                <div class="col">
                   <div class="bordering">
                     <a href="/coming-soon.php">
-                      <div class="icon-width-80 ma-0">
-                        <i class="far fa-calendar-alt"></i>
+                      <div class="icon-width-80">
+                        <i class="fas fa-calendar-alt"></i>
                       </div>
-                      <p class="ml-4">Calendar</p>
+                      <p>Calendar</p>
                   </div>
                   </a>
                 </div>
@@ -314,7 +314,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
 
         <div class="row">
           <?php
-          $sql = $conn->prepare("SELECT * FROM sys_article WHERE sys_year = YEAR(CURDATE()) LIMIT 4");
+          $sql = $conn->prepare("SELECT * FROM sys_article WHERE sys_year = YEAR(CURDATE()) order by sys_id desc LIMIT 4");
           $sql->execute();
           if ($sql->rowCount() > 0) {
             foreach ($sql->fetchAll() as $row) {

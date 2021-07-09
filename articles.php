@@ -40,7 +40,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
                 <section class="products grid group">
                   <?php
 
-                  $sql = $conn->prepare("SELECT * FROM sys_article WHERE sys_year = YEAR(CURDATE())");
+                  $sql = $conn->prepare("SELECT * FROM sys_article order by sys_id desc");
                   $sql->execute();
                   if ($sql->rowCount() > 0) {
                     foreach ($sql->fetchAll() as $row) {
