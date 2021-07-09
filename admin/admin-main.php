@@ -204,6 +204,23 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
             </div>
           </div>
         </div>
+        <div class="col-md-3 mb-2">
+          <div class="text-white">
+            <div class="background-1">
+              <h2><i class="fas fa-book-reader"></i>
+                <?php
+                $sql = $conn->prepare("select count(1) FROM mexa_tv_videos");
+                $sql->execute();
+                $total = $sql->fetch()[0];
+                echo " $total ";
+                ?>
+              </h2>
+              <p>
+                Mexa TV
+              </p>
+            </div>
+          </div>
+        </div>
 
         <div class="col-md-3 mb-2">
           <div class="text-white">
@@ -217,7 +234,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
                 ?>
               </h2>
               <p>
-                Articles & Events
+                Articles
               </p>
             </div>
           </div>
