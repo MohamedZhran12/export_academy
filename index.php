@@ -15,7 +15,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
 
       <div class="row justify-content-center">
         <div class="col-sm-8">
-          <p class='text-center'>
+          <p>
             Malaysian Export Academy was registered in October 2007 as a Company with the registrar of Companies in Malaysia. Its main activities are training and education. The Academy has been certified ISO 9001:2015.
             <br><br>
             The Academy has been registered with the Human Resources Development Corporation, Ministry of Human Resources of Malaysia. In this respect, almost all of its training programmes are fully subsidized by the said Fund. The Academy is also registered with the Ministry of Finance of Malaysia. The Academy has been awarded the 5 star status by the Human Resources Development Fund in 2016.
