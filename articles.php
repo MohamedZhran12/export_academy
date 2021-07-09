@@ -1,10 +1,7 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
 
 ?>
-
-
-
 <div class="header-in">
   <div class="overlay-white">
     <div class="container">
@@ -29,12 +26,10 @@ require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
 
           <ul class="nav nav-tabs" id="myTab" role="tablist">
             <li class="nav-item" role="presentation">
-              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home"
-                 aria-selected="true">Articles</a>
+              <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Articles</a>
             </li>
             <li class="nav-item" role="presentation">
-              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile"
-                 aria-selected="false">Social feeds</a>
+              <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Social feeds</a>
             </li>
           </ul>
           <div class="tab-content" id="myTabContent">
@@ -55,7 +50,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
                   if ($sql->rowCount() > 0) {
                     foreach ($sql->fetchAll() as $row) {
 
-                      ?>
+                  ?>
 
                       <article class="product">
                         <div class="product__inner">
@@ -81,15 +76,14 @@ require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
 
                             <section class="product__short-description"><?php echo $row['sys_dec']; ?></section>
 
-                            <div class="add-to-cart"><a href="article.php?id=<?php echo $row['sys_id']; ?>"
-                                                        class="button1">Read More</a></div>
+                            <div class="add-to-cart"><a href="article.php?id=<?php echo $row['sys_id']; ?>" class="button1">Read More</a></div>
 
                           </div><!-- /product__details -->
 
                         </div>
                       </article><!-- /product -->
 
-                    <?php }
+                  <?php }
                   } ?>
 
 
@@ -102,9 +96,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
               <script src="https://apps.elfsight.com/p/platform.js" defer></script>
               <div class="elfsight-app-c8a859ad-8c42-42ea-954f-08a79f15c5af"></div>
             </div>
-            <!--
-  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">...</div>
--->
           </div>
 
 
@@ -113,53 +104,53 @@ require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
 
     </div>
   </div>
+</div>
 
+<script>
+  (function() {
+    /**
+     * Vanilla JS
+     */
+    /* Variables */
+    var icon = document.getElementsByClassName('icon');
+    var products = document.getElementsByClassName('products');
 
-  <script>
-      (function () {
-          /**
-           * Vanilla JS
-           */
-          /* Variables */
-          var icon = document.getElementsByClassName('icon');
-          var products = document.getElementsByClassName('products');
+    /* Functions */
 
-          /* Functions */
+    // Has class
+    function hasClass(elem, className) {
+      return elem.classList.contains(className);
+    }
 
-          // Has class
-          function hasClass(elem, className) {
-              return elem.classList.contains(className);
-          }
+    /* Do stuff */
+    // For each icon
+    for (var i = 0, len = icon.length; i < len; i++) {
+      // On click of icon
+      icon[i].addEventListener('click', function() {
+        // If clicked icon has 'active' class
+        if (hasClass(this, 'active')) {
+          // Do nothing
 
-          /* Do stuff */
+          // If clicked icon doesn't have 'active' class
+        } else {
           // For each icon
-          for (var i = 0, len = icon.length; i < len; i++) {
-              // On click of icon
-              icon[i].addEventListener('click', function () {
-                  // If clicked icon has 'active' class
-                  if (hasClass(this, 'active')) {
-                      // Do nothing
-
-                      // If clicked icon doesn't have 'active' class
-                  } else {
-                      // For each icon
-                      for (var j = 0, len = icon.length; j < len; j++) {
-                          // Toggle the 'active' class
-                          icon[j].classList.toggle('active');
-                      }
-                      // Toggle the 'list' and 'grid' classes
-                      products[0].classList.toggle('list');
-                      products[0].classList.toggle('grid');
-
-                  }
-
-              });
-
+          for (var j = 0, len = icon.length; j < len; j++) {
+            // Toggle the 'active' class
+            icon[j].classList.toggle('active');
           }
-      })();
-  </script>
+          // Toggle the 'list' and 'grid' classes
+          products[0].classList.toggle('list');
+          products[0].classList.toggle('grid');
+
+        }
+
+      });
+
+    }
+  })();
+</script>
 
 
-  <?php
-    require_once($includes . 'footer.php');
-  ?>
+<?php
+require_once($includes . 'footer.php');
+?>
