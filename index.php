@@ -102,87 +102,43 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
 
           <div class="col-sm-3">
             <div class="bordering-1">
-              <a href="https://www.oxfordcollege.edu.my/" target="blank">
-                <div class="icon-width-80">
-                  <i class="fas fa-university"></i>
-                </div>
-                <p>Oxford Business College (JPK Centre)</p>
-            </div>
-            </a>
-          </div>
-
-          <div class="col-sm-3">
-            <div class="bordering-1">
-              <a href="#" target="blank">
-                <div class="icon-width-80">
-                  <i class="fas fa-globe-asia"></i>
-                </div>
-                <p>Regent College of International Trade</p>
-            </div>
-            </a>
-          </div>
-
-          <div class="col-sm-3">
-            <div class="bordering-1">
-              <a href="overseastrainees.php">
-                <div class="icon-width-80">
-                  <i class="fas fa-users"></i>
-                </div>
-                <p>Overseas <br>Trainees</p>
-            </div>
-            </a>
-          </div>
-
-          <div class="col-sm-3">
-            <div class="bordering-1">
-              <a href="csr.php">
-                <div class="icon-width-80">
-                  <i class="fas fa-hands-helping"></i>
-                </div>
-                <p>Corporate Social Responsibility (CSR)</p>
-            </div>
-            </a>
-          </div>
-
-          <div class="col-sm-3">
-            <div class="bordering-1">
-              <a href="achievements.php">
-                <div class="icon-width-80">
-                  <i class="fas fa-trophy"></i>
-                </div>
-                <p>Our Achievements</p>
-            </div>
-            </a>
-          </div>
-
-          <div class="col-sm-3">
-            <div class="bordering-1">
-              <a href="consultancy.php">
-                <div class="icon-width-80">
-                  <i class="fas fa-user-friends"></i>
-                </div>
-                <p>Consultancy</p>
-            </div>
-            </a>
-          </div>
-
-          <div class="col-sm-3">
-            <div class="bordering-1">
-              <a href="#">
-                <div class="icon-width-80">
-                  <i class="fas fa-photo-video"></i>
-                </div>
-                <p>Gallery</p>
+              <a href="/courses/new_courses_layout.php?course=export_coaching" target="blank">
+                <p>Export Coaching</p>
             </div>
             </a>
           </div>
           <div class="col-sm-3">
             <div class="bordering-1">
-              <a href="#">
-                <div class="icon-width-80">
-                  <i class="fas fa-video"></i>
-                </div>
-                <p>MEA TV</p>
+              <a href="/courses/old_courses_layout.php?course=sys_trade_missions" target="blank">
+                <p>Trade Missions</p>
+            </div>
+            </a>
+          </div>
+          <div class="col-sm-3">
+            <div class="bordering-1">
+              <a href="/courses/new_courses_layout.php?course=trade_shows" target="blank">
+                <p>Trade Shows</p>
+            </div>
+            </a>
+          </div>
+          <div class="col-sm-3">
+            <div class="bordering-1">
+              <a href="/courses/new_courses_layout.php?course=products" target="blank">
+                <p>Listing of Products</p>
+            </div>
+            </a>
+          </div>
+          <div class="col-sm-3">
+            <div class="bordering-1">
+              <a href="/courses/new_courses_layout.php?course=consulting_services" target="blank">
+                <p>Consultancy Services</p>
+            </div>
+            </a>
+          </div>
+          <div class="col-sm-3">
+            <div class="bordering-1">
+              <a href="/room.php" target="blank">
+                <p>Hall Rental</p>
             </div>
             </a>
           </div>
@@ -193,36 +149,38 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
   </div>
 </div>
 
-<div class="background-white">
-  <div class="container">
-    <div class="padding-100">
-      <div class="text-center">
-        <h2 class="topic-blue">Our Activities</h2>
-        <hr class="topic-blue">
-        <div class="row justify-content-center">
+<div class="background-courses">
+  <div class="overlay-blue">
+    <div class="container">
+      <div class="padding-100">
+        <div class="text-center">
+          <h2 class="topic">Our Activities</h2>
+          <hr class="topic-white">
+          <div class="row justify-content-center">
 
-          <div class="col-sm-3">
-            <div class="bordering-1">
-              <a href="/info_page.php?page=gallery" target="blank">
-                <div class="icon-width-80">
-                  <i class="fas fa-globe-asia"></i>
-                </div>
-                <p>Event Gallery</p>
+            <div class="col-sm-3">
+              <div class="bordering">
+                <a href="/info_page.php?page=gallery" target="blank">
+                  <div class="icon-width-80">
+                    <i class="fas fa-globe-asia"></i>
+                  </div>
+                  <p>Event Gallery</p>
+              </div>
+              </a>
             </div>
-            </a>
-          </div>
 
-          <div class="col-sm-3">
-            <div class="bordering-1">
-              <a href="/info_page.php?page=csr" target="blank">
-                <div class="icon-width-80">
-                  <i class="fas fa-globe-asia"></i>
-                </div>
-                <p>CSR</p>
+            <div class="col-sm-3">
+              <div class="bordering">
+                <a href="/info_page.php?page=csr" target="blank">
+                  <div class="icon-width-80">
+                    <i class="fas fa-globe-asia"></i>
+                  </div>
+                  <p>CSR</p>
+              </div>
+              </a>
             </div>
-            </a>
-          </div>
 
+          </div>
         </div>
       </div>
     </div>
@@ -451,7 +409,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
           </div>
           <div class="youtube-carousel-gallery" data-simplebar>
             <?php
-            $stmt = $conn->prepare('select url from mexa_tv_videos');
+            $stmt = $conn->prepare('select url from mexa_tv_videos order by id desc');
             $stmt->execute();
             $videos = $stmt->fetchAll();
             foreach ($videos as $video) {
@@ -465,24 +423,24 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
       </div>
     </div>
   </div>
+</div>
+
+<script>
+  var videos = document.getElementsByClassName("youtube-control");
+  for (i = 0; i < videos.length; i++) {
+    videos[i].addEventListener("click", function() {
+      changeSrc(this);
+    });
+  }
+
+  function changeSrc(video) {
+    var source = video.getAttribute("data-source");
+    var mainVideo = document.getElementById("main-youtube-video");
+    mainVideo.src = source;
+  }
+</script>
 
 
-  <script>
-    var videos = document.getElementsByClassName("youtube-control");
-    for (i = 0; i < videos.length; i++) {
-      videos[i].addEventListener("click", function() {
-        changeSrc(this);
-      });
-    }
-
-    function changeSrc(video) {
-      var source = video.getAttribute("data-source");
-      var mainVideo = document.getElementById("main-youtube-video");
-      mainVideo.src = source;
-    }
-  </script>
-
-
-  <?php
-  require_once($includes . 'footer.php');
-  ?>
+<?php
+require_once($includes . 'footer.php');
+?>

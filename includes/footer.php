@@ -15,27 +15,26 @@
 
           <div class="col-sm-2">
             <p class="footer-nav-topic">Company</p>
-            <a class="footer-nav" href="index.php">Home</a>
+            <a class="footer-nav" href="/index.php">Home</a>
             <a class="footer-nav" href="aboutus.php">About Us</a>
-            <a class="footer-nav" href="achievements.php">Our Achievements</a>
-            <a class="footer-nav" href="advisor.php">Board of Advisors</a>
-            <a class="footer-nav" href="team.php">Management Team</a>
-            <a class="footer-nav" href="csr.php">CSR</a>
-            <a class="footer-nav" href="articles.php">Articles</a>
-            <a class="footer-nav" href="contact.php">Contact</a>
+            <a class="footer-nav" href="/info_page.php?page=our_achievements">Our Achievements</a>
+            <a class="footer-nav" href="/advisor.php">Board of Advisors</a>
+            <a class="footer-nav" href="/info_page.php?page=our_management">Management Team</a>
+            <a class="footer-nav" href="/info_page.php?page=csr">CSR</a>
+            <a class="footer-nav" href="/articles.php">Articles</a>
+            <a class="footer-nav" href="/contact.php">Contact</a>
             <a class="footer-nav" href="/admin/login.php">Admin</a>
           </div>
 
           <div class="col-sm-2">
             <p class="footer-nav-topic">Services</p>
-            <a class="footer-nav" href="public-training.php">Public Training</a>
+            <a class="footer-nav" href="/courses/old_courses_layout.php?course=sys_course">Public Training</a>
             <a class="footer-nav" href="coming-soon.php">Online Training</a>
-            <a class="footer-nav" href="inhouse.php">In-House Training</a>
-            <a class="footer-nav" href="coming-soon.php">Seminars</a>
-            <a class="footer-nav" href="coming-soon.php">Conferences</a>
-            <a class="footer-nav" href="coming-soon.php">Professional Cert</a>
-            <a class="footer-nav" href="room.php">Rent a Hall</a>
-            <a class="footer-nav" href="consulting.php">Consulting Services</a>
+            <a class="footer-nav" href="/courses/new_courses_layout.php?course=in_house">In-House Training</a>
+            <a class="footer-nav" href="/courses/old_courses_layout.php?course=sys_seminars">Seminars</a>
+            <a class="footer-nav" href="/courses/old_courses_layout.php?course=sys_professional_cert">Professional Cert</a>
+            <a class="footer-nav" href="/room.php">Rent a Hall</a>
+            <a class="footer-nav" href="/courses/new_courses_layout.php?course=consulting_services">Consulting Services</a>
           </div>
 
           <div class="col-sm-2">

@@ -18,9 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   if ($stmt->execute([$_POST['category_id'], $_POST['video'], date('Y-m-d H:i:s')])) {
     echo '
 	<script>alert("Video is Successfully Added");
-	location.href="' . str_replace('/', '', $_SERVER['SCRIPT_NAME']) . '"' .
-      '</script>';
-
+	</script>';
   }
 }
 ?>
@@ -28,7 +26,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 <div class="container-fluid">
   <div class="row">
-    <? require_once($includes.'admin-sidebar.php'); ?>
+    <? require_once($includes . 'admin-sidebar.php'); ?>
     <div class="col-9 .bg-white">
       <div class="breadcrumb-main">
         <p class="current-link">Admin Dashboard</p>

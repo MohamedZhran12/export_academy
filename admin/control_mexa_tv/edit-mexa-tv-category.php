@@ -14,9 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $stmt = $conn->prepare("update $table set title = ? , description= ? where id = ?");
   $stmt->execute([$_POST['title'], $_POST['description'], $_POST['category_id']]);
   echo '
-	<script>alert("Event is Successfully Updated");
-	location.href="' . str_replace('/', '', $_SERVER['SCRIPT_NAME']) . '"' .
-    '</script>';
+	<script>alert("Event is Successfully Updated");</script>';
 }
 
 if (isset($_GET['event_id'])) {
@@ -28,7 +26,7 @@ if (isset($_GET['event_id'])) {
 
 <div class="container-fluid">
   <div class="row">
-    <? require_once($includes.'admin-sidebar.php'); ?>
+    <? require_once($includes . 'admin-sidebar.php'); ?>
     <div class="col-9 .bg-white">
       <div class="breadcrumb-main">
         <p class="current-link">Admin Dashboard</p>
@@ -42,8 +40,8 @@ if (isset($_GET['event_id'])) {
             <option value="">Select <? echo $sectionName; ?> Event</option>
             <? foreach ($result as $row) { ?>
               <option <? if ($_GET['event_id'] == $row['id']) {
-                echo 'selected';
-              } ?> value="<? echo $row['id'] ?>">
+                        echo 'selected';
+                      } ?> value="<? echo $row['id'] ?>">
                 <? echo $row['title'] ?>
               </option>
             <? } ?>
@@ -51,13 +49,11 @@ if (isset($_GET['event_id'])) {
         </div>
         <div class='form-group'>
           <label for='title'>Title</label>
-          <input type='text' class='form-control' id='title' name='title' placeholder='Title' required
-                 value="<? echo isset($eventDetails['title']) ? $eventDetails['title'] : ''; ?>">
+          <input type='text' class='form-control' id='title' name='title' placeholder='Title' required value="<? echo isset($eventDetails['title']) ? $eventDetails['title'] : ''; ?>">
         </div>
         <div class='form-group'>
           <label for='description'>Description</label>
-          <textarea id='description' class='form-control' name='description' placeholder='Description'
-                    required><? echo isset($eventDetails['description']) ? $eventDetails['description'] : ''; ?></textarea>
+          <textarea id='description' class='form-control' name='description' placeholder='Description' required><? echo isset($eventDetails['description']) ? $eventDetails['description'] : ''; ?></textarea>
         </div>
         <div class='form-group'>
           <input type='submit' value='Update' class='btn btn-primary'>
@@ -69,9 +65,9 @@ if (isset($_GET['event_id'])) {
 
 <script src="https://cdn.ckeditor.com/4.15.0/full/ckeditor.js"></script>
 <script>
-    CKEDITOR.replace('description');
+  CKEDITOR.replace('description');
 
-    document.getElementById('category-title').addEventListener('change', function () {
-        location.href = 'admin-edit-csr-category.php?event_id=' + document.getElementById('category-title').value + '';
-    })
+  document.getElementById('category-title').addEventListener('change', function() {
+    location.search = '&event_id=' + document.getElementById('category-title').value;
+  })
 </script>
