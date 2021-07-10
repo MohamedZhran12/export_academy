@@ -78,7 +78,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
                           <?php if ($courseInfo['cat_id'] == 2) { ?>
                             <i class="fas fa-map-marker-alt" style="background-color: #ffbb58;  color:#fff ;padding:5px; border-radius:4px"></i>
                           <? } else { ?>
-                            <i class="fas fa-video" style="background-color: #BC7CB2;  color:#fff ;padding:5px; border-radius:3px"></i>
+                            <i class="fas fa-video" style="background-color: #ab0f90;  color:#fff ;padding:5px; border-radius:3px"></i>
                           <? } ?>
                           <p class="<?php echo $courseInfo['sys_course_session']; ?>"></p>
 

@@ -8,12 +8,12 @@ $sql = $conn->prepare("
 select $groupsTable.name, $table.*, $groupsTable.group_order from $table
 join $groupsTable
 on $table.group_id=$groupsTable.ID
-order by $groupsTable.group_order asc");
+order by $groupsTable.group_order asc ,sys_course_date,sys_course_month, sys_course_year");
 $sql->execute();
 $courses = $sql->fetchAll(PDO::FETCH_GROUP);
 
 //AND sys_course_year = YEAR(CURDATE()) AND sys_course_month = MONTH(CURDATE())
-$coursesWithoutGroupsSql = $conn->prepare("SELECT * FROM $table WHERE group_id= 0 or group_id is null");
+$coursesWithoutGroupsSql = $conn->prepare("SELECT * FROM $table WHERE group_id= 0 or group_id is null order by sys_course_date asc,sys_course_month, sys_course_year");
 $coursesWithoutGroupsSql->execute();
 $coursesWithoutGroups = $coursesWithoutGroupsSql->fetchAll();
 
