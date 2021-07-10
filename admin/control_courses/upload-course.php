@@ -8,7 +8,8 @@ if ($isThereGroups) {
   $groups = $stmt->fetchAll();
 }
 
-function addToInsertQueryIfValueIsSet($tableAttributes, &$names, &$values) {
+function addToInsertQueryIfValueIsSet($tableAttributes, &$names, &$values)
+{
   foreach ($tableAttributes as $key => $value) {
     if (isset($value)) {
       $names[] = $key;
@@ -17,7 +18,8 @@ function addToInsertQueryIfValueIsSet($tableAttributes, &$names, &$values) {
   }
 }
 
-function insertMoreDates($start_date, $end_date, $table) {
+function insertMoreDates($start_date, $end_date, $table)
+{
   global $conn;
   $last_inserted_id = $conn->lastInsertId();
   $insert_dates_stmt = "insert into courses_dates(course_date_start,course_date_end,course_type,course_id) values";
@@ -44,6 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
   $month = is_array($_POST['start_date']) ? explode('-', $_POST['start_date'][0])[1] : $_POST['month'];
   $year = is_array($_POST['end_date']) ? explode('-', $_POST['end_date'][0])[2] : $_POST['year'];
   $venue = $_POST['cat'] == 1 ? $_POST['virtual_venue'] : $_POST['public_venue'];
+  $session = $_POST['cat'] == 1 ? 'webinar' : 'class';
 
   $tableAttributes = [
     'sys_course_image' => $_FILES['image']['name'],
@@ -64,7 +67,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     'sys_course_price_before' => $_POST['fees_before'],
     'sys_cpd_points' => $_POST['points'],
     'sys_course_view' => 0,
-    'sys_course_session' => 'none',
+    'sys_course_session' => $session,
     'sys_sst' => $_POST['tax'],
     'cat_id' => $_POST['cat'],
     'pdf' => $_FILES['brochure']['name'],

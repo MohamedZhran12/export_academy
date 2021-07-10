@@ -35,6 +35,8 @@
             <a class="footer-nav" href="/courses/old_courses_layout.php?course=sys_special_programmes">Special Programmes</a>
             <a class="footer-nav" href="/room.php">Rent a Hall</a>
             <a class="footer-nav" href="/courses/new_courses_layout.php?course=consulting_services">Consulting Services</a>
+            <a class="footer-nav" href="/courses/new_courses_layout.php?course=export_coaching">Export Coaching</a>
+            <a class="footer-nav" href="/courses/new_courses_layout.php?course=global_network">Global Network</a>
           </div>
 
           <div class="col-sm-2">

@@ -7,7 +7,6 @@ for ($i = 0; $i < count($_POST['name']); $i++) {
 }
 
 $body .= '<b>Company Name: </b>' . $_POST['company'] . '<br><br>';
-$body .= '<b>Enquiry: </b>' . $_POST['enquiry'] . '<br><br>';
 $body .= '<b>Company Address: </b>' . $_POST['address'] . '<br><br>';
 $body .= '<b>Company Tel No: </b>' . $_POST['tel'] . '<br><br>';
 $body .= '<b>Nature of Business: </b>' . $_POST['nature'] . '<br><br>';
@@ -20,4 +19,3 @@ $body .= '<b>SME Company: </b>' . $_POST['sme'] . '<br><br>';
 $body .= '<b>Course Name: </b>' . $_POST['coursename'] . '<br><br>';
 $body .= '<b>Course Price: </b>' . $_POST['price'] . '<br><br>';
 $body .= '<b>Date: </b>' . $_POST['date'] . ' (Day) ' . $_POST['month'] . ' (Month) ' . $_POST['year'] . ' (Year) ' . '<br><br>';
-?>

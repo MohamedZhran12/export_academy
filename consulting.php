@@ -3,8 +3,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
 
 ?>
 
-
-
 <div class="header-in-consult">
   <div class="overlay-white">
     <div class="container">

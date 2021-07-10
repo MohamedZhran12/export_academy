@@ -15,7 +15,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
 
       <div class="row justify-content-center">
         <div class="col-sm-8">
-          <p>
+          <p class='text-justify'>
             Malaysian Export Academy was registered in October 2007 as a Company with the registrar of Companies in Malaysia. Its main activities are training and education. The Academy has been certified ISO 9001:2015.
             <br><br>
             The Academy has been registered with the Human Resources Development Corporation, Ministry of Human Resources of Malaysia. In this respect, almost all of its training programmes are fully subsidized by the said Fund. The Academy is also registered with the Ministry of Finance of Malaysia. The Academy has been awarded the 5 star status by the Human Resources Development Fund in 2016.
@@ -100,42 +100,42 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
         <hr class="topic-blue">
         <div class="row">
 
-          <div class="col-sm-3">
+          <div class="col-md-4">
             <div class="bordering-1">
               <a href="/courses/new_courses_layout.php?course=export_coaching" target="blank">
                 <p>Export Coaching</p>
             </div>
             </a>
           </div>
-          <div class="col-sm-3">
-            <div class="bordering-1">
+          <div class="bordering-1">
+            <div class="col-md-4">
               <a href="/courses/old_courses_layout.php?course=sys_trade_missions" target="blank">
                 <p>Trade Missions</p>
             </div>
             </a>
           </div>
-          <div class="col-sm-3">
+          <div class="col-md-4">
             <div class="bordering-1">
               <a href="/courses/new_courses_layout.php?course=trade_shows" target="blank">
                 <p>Trade Shows</p>
             </div>
             </a>
           </div>
-          <div class="col-sm-3">
+          <div class="col-md-4">
             <div class="bordering-1">
               <a href="/courses/new_courses_layout.php?course=products" target="blank">
                 <p>Listing of Products</p>
             </div>
             </a>
           </div>
-          <div class="col-sm-3">
+          <div class="col-md-4">
             <div class="bordering-1">
               <a href="/courses/new_courses_layout.php?course=consulting_services" target="blank">
                 <p>Consultancy Services</p>
             </div>
             </a>
           </div>
-          <div class="col-sm-3">
+          <div class="col-md-4">
             <div class="bordering-1">
               <a href="/room.php" target="blank">
                 <p>Hall Rental</p>
@@ -188,12 +188,11 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
 </div>
 
 
-<div class="background-grey">
+<div style='background-color:#BC7CB2'>
   <div class="container">
     <div class="padding-100">
       <div class="text-center">
-        <h2 class="topic-blue">Our Latest Events</h2>
-        <hr class="topic-blue">
+        <h2 class="text-white mb-4">Our Latest Events</h2>
       </div>
 
       <div class="row">
@@ -206,7 +205,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
             <div class="col">
               <div class="margin-30">
                 <div class="courses-det">
-                  <a class="button-1" href="course.php?id=<?php echo $row['sys_course_id']; ?>&cat_id=<?php echo $row['cat_id']; ?>">
+                  <a class="button-1" href="/courses/course.php?id=<?php echo $row['sys_course_id'] . '&cat_id=' . $row['cat_id'] . '&course=sys_course'; ?>">
                     <div class="courses-image">
                       <p class="date">
                         <i class="fas fa-calendar-alt"></i>
@@ -255,8 +254,8 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
         } ?>
       </div>
 
-      <a href="public-training.php">
-        <p class="view-all">View All Courses <i class="fas fa-angle-right"></i></p>
+      <a href="/courses/old_courses_layout.php?course=sys_course">
+        <p class="view-all text-white">View All Courses <i class="fas fa-angle-right"></i></p>
       </a>
     </div>
   </div>

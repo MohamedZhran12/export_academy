@@ -182,10 +182,6 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
                           <div class="col-12">
                             <?php require('common_component/price.php'); ?>
                           </div>
-                          <!-- <div class='col-2 ml-auto'>
-                            <p class='mb-3'><i class="fas fa-eye"> <?php echo $courseInfo['sys_course_view']; ?> </i>
-                            </p>
-                          </div> -->
                         </div>
                       </div>
                     </div>

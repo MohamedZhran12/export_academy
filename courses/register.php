@@ -12,7 +12,7 @@ if ($sql->rowCount() > 0) {
       <div class="overlay-white">
         <div class="container">
           <div class="header-in-topic">
-            <h1><? echo $sectionName; ?> Enquiry</h1>
+            <h1><? echo $sectionName; ?> Registration</h1>
             <div class="breadcrumb-in">
               <p class="link"><a href="index.php"><i class="fas fa-home"></i> Home</a></p>
               <p class="link"><a href="public-training.php"><? echo $sectionName; ?></a></p>
@@ -83,7 +83,7 @@ if ($sql->rowCount() > 0) {
 
           <div class="col">
 
-            <p class="form-text-topic"><? echo $sectionName; ?> Enquiry Form</p>
+            <p class="form-text-topic"><? echo $sectionName; ?> Registration</p>
             <div class="border-box">
               <form action="addmore.php" method="post">
 
@@ -93,32 +93,22 @@ if ($sql->rowCount() > 0) {
                     <label class="small">* You may add more participants by clicking "Add More" button</label>
                   </div>
 
-                  <div class="col-sm-8">
+                  <div id="dynamic-field" class="col-sm-8">
                     <input type="text" name="name[]" placeholder="Enter Name" class="form-control name_list" required />
 
                     <input type="text" name="participant_email[]" placeholder="Enter Email" class="form-control name_list" required />
 
                     <input type="number" name="mobile[]" placeholder="Enter Mobile" class="form-control name_list" required />
 
-                    <button type="button" name="add" id="add" class="btn btn-success">Add More</button>
+                    <button type="button" id="add" class="btn btn-success">Add More</button>
                   </div>
-                </div>
 
-                <div class="row">
                   <div class="col-sm-4">
                     <p>Company Name</p>
                   </div>
 
                   <div class="col-sm-8">
                     <input type="text" name="company" placeholder="Enter Company Name" class="form-control name_list" required />
-                  </div>
-
-                  <div class="col-sm-4">
-                    <p>Your Enquiry</p>
-                  </div>
-
-                  <div class="col-sm-8">
-                    <textarea name="enquiry" placeholder="Type your enquiry here" class="form-control name_list mb-3" required></textarea>
                   </div>
 
                   <div class="col-sm-4">
@@ -192,9 +182,8 @@ if ($sql->rowCount() > 0) {
                   </div>
 
                   <div class="col-sm-8">
-                    <label>Yes</label>
                     <input type="radio" name="sme" value="Yes" required>
-
+                    <label>Yes</label>
 
                     <input type="radio" name="sme" value="No">
                     <label>No</label>
@@ -243,16 +232,21 @@ if ($sql->rowCount() > 0) {
         var postURL = "/addmore.php";
         var i = 1;
 
-
-        $('#add').click(function() {
+        $('#add').on('click', function() {
           i++;
-          $('#dynamic_field').append('<tr id="row' + i + '" class="dynamic-added"><td><div class="row"> <div class="col-sm-4"></div> <div class="col-sm-8"><input type="text" name="name[]" placeholder="Enter Name" class="form-control name_list" required /> <input type="text" name="designation[]" placeholder="Enter Designation" class="form-control name_list" required /> <input type="number" name="mobile[]" placeholder="Enter Mobile" class="form-control name_list" required />  <button type="button" name="remove" id="' + i + '" class="btn btn-danger btn_remove">X</button></div></div></td>');
+          $('#dynamic-field').append(`
+              <div id="participant-${i}" class="col-sm-12 dynamic-added">
+                <input type="text" name="name[]" placeholder="Enter Name" class="form-control name_list" required />
+                <input type="text" name="designation[]" placeholder="Enter Designation" class="form-control name_list" required />
+                <input type="number" name="mobile[]" placeholder="Enter Mobile" class="form-control name_list" required />
+                <button type="button" name="remove" id="${i}" class="btn btn-danger btn_remove">X</button>
+              </div>`);
         });
 
 
         $(document).on('click', '.btn_remove', function() {
           var button_id = $(this).attr("id");
-          $('#row' + button_id + '').remove();
+          $('#participant-' + button_id).remove();
         });
 
 

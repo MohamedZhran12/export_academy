@@ -3,7 +3,7 @@ require 'phpmailer/PHPMailerAutoload.php';
 $mail = new PHPMailer;
 $mail->Host = 'smtp.gmail.com';
 $mail->SMTPAuth = true;
-$mail->Username = 'mohamedzhranfive@gmail.com';
+$mail->Username = 'admin@exportacademy.net';
 $mail->Password = 'neeyqphifmmnitgl';
 $mail->SMTPSecure = 'tls';
 $mail->Port = 587;

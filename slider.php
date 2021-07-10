@@ -22,7 +22,6 @@ $images = $stmt->fetchAll();
                 <div class="header-text-absolute">
                   <div class="row">
                     <div class="col-12" style='margin-left:80px'>
-                      <p class="header-topic">Malaysian Export Academy</p>
                       <h1 class="header-topic"><?php echo $row['title']; ?></h1>
                       <p><?php echo $row['description']; ?></p>
                       <a href="<?php echo $row['url']; ?>" class="button">Read More</a>

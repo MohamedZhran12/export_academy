@@ -2,7 +2,7 @@
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
 require_once($includes . 'sections_info.php');
 
-$sql = $conn->prepare("SELECT * FROM $table WHERE sys_course_year = YEAR(CURDATE()) AND sys_course_month = MONTH(CURDATE())");
+$sql = $conn->prepare("SELECT * FROM $table WHERE sys_course_year = YEAR(CURDATE()) AND sys_course_month = MONTH(CURDATE()) order by sys_course_date asc,sys_course_month, sys_course_year");
 $sql->execute();
 
 $courseTypeHeader = str_replace('sys_', '', $table) . '_header';
@@ -39,6 +39,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
 
     <div class="col-sm-9">
       <div class="row">
+        <div class="col-12"><?php require_once($rootDir . 'right-current-link.php'); ?></div>
         <div class="col-12 mb-3">
           <?php echo $headerAndTerms[0]['value']; ?>
           <h2 class="font-weight-bold my-4">
@@ -77,10 +78,10 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
                           <?php if ($courseInfo['cat_id'] == 2) { ?>
                             <i class="fas fa-map-marker-alt" style="background-color: #ffbb58;  color:#fff ;padding:5px; border-radius:4px"></i>
                           <? } else { ?>
-                            <i class="fas fa-video" style="background-color: #87669e;  color:#fff ;padding:5px; border-radius:3px"></i>
+                            <i class="fas fa-video" style="background-color: #BC7CB2;  color:#fff ;padding:5px; border-radius:3px"></i>
                           <? } ?>
                           <p class="<?php echo $courseInfo['sys_course_session']; ?>"></p>
-                          <!-- <p class="icon-3"><i class="fas fa-certificate"></i></p> -->
+
                         </div>
                       </div>
                     </div>

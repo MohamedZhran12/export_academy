@@ -7,7 +7,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
   <div class="container-fluid">
     <div class="row">
       <?php
-      require_once($includes.'admin-sidebar.php');
+      require_once($includes . 'admin-sidebar.php');
       ?>
 
       <div class="col-9">
@@ -23,13 +23,13 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
 
 
               <div class="row">
-                <div class="col-3">
+                <!-- <div class="col">
                   <?php
-                  require_once('sidebar.php');
+                  // require_once($rootDir . 'components/calendar.php');
                   ?>
-                </div>
+                </div> -->
 
-                <div class="col-9">
+                <div class="col">
                   <div class="margin-bottom-30">
                     <div class="background-white">
                       <div class="padding-topic">
@@ -46,7 +46,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
                           $sql->execute();
                           if ($sql->rowCount() > 0) {
                             foreach ($sql->fetchAll() as $row) {
-                              ?>
+                          ?>
 
 
                               <div class="col-sm-4">
@@ -54,8 +54,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
                                   <div class="margin-30">
                                     <div class="courses-det">
                                       <div class="courses-image">
-                                        <p class="date"><i
-                                              class="fas fa-calendar-alt"></i> <?php echo $row['sys_date']; ?>
+                                        <p class="date"><i class="fas fa-calendar-alt"></i> <?php echo $row['sys_date']; ?>
                                           - <?php echo $row['sys_month']; ?> - <?php echo $row['sys_year']; ?></p>
                                         <img alt='image' src="/images/articles/<?php echo $row['sys_image']; ?>">
                                       </div>
@@ -63,10 +62,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
                                         <p class="course-topic-1-2"><?php echo $row['sys_topic']; ?></p>
 
                                         <div class="take-action">
-                                          <a class="delete"
-                                             href="admin-delete-article.php?id=<?php echo $row['sys_id']; ?>"
-                                             onclick="return confirm('Are you sure you want to delete?')"
-                                             title="Delete Album">
+                                          <a class="delete" href="admin-delete-article.php?id=<?php echo $row['sys_id']; ?>" onclick="return confirm('Are you sure you want to delete?')" title="Delete Album">
                                             <p><i class="fas fa-trash-alt"></i></p>
                                           </a>
 
@@ -76,7 +72,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
                                   </div>
                                 </div>
                               </div>
-                            <?php }
+                          <?php }
                           } ?>
 
                         </div>
