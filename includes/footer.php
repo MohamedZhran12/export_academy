@@ -16,7 +16,7 @@
           <div class="col-sm-2">
             <p class="footer-nav-topic">Company</p>
             <a class="footer-nav" href="/index.php">Home</a>
-            <a class="footer-nav" href="aboutus.php">About Us</a>
+            <a class="footer-nav" href="/ourprofile.php">Our Profile</a>
             <a class="footer-nav" href="/info_page.php?page=our_achievements">Our Achievements</a>
             <a class="footer-nav" href="/advisor.php">Board of Advisors</a>
             <a class="footer-nav" href="/info_page.php?page=our_management">Management Team</a>
@@ -29,10 +29,10 @@
           <div class="col-sm-2">
             <p class="footer-nav-topic">Services</p>
             <a class="footer-nav" href="/courses/old_courses_layout.php?course=sys_course">Public Training</a>
-            <a class="footer-nav" href="coming-soon.php">Online Training</a>
             <a class="footer-nav" href="/courses/new_courses_layout.php?course=in_house">In-House Training</a>
             <a class="footer-nav" href="/courses/old_courses_layout.php?course=sys_seminars">Seminars</a>
             <a class="footer-nav" href="/courses/old_courses_layout.php?course=sys_professional_cert">Professional Cert</a>
+            <a class="footer-nav" href="/courses/old_courses_layout.php?course=sys_special_programmes">Special Programmes</a>
             <a class="footer-nav" href="/room.php">Rent a Hall</a>
             <a class="footer-nav" href="/courses/new_courses_layout.php?course=consulting_services">Consulting Services</a>
           </div>
