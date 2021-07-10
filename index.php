@@ -44,7 +44,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
                       <div class="icon-width-80">
                         <i class="fas fa-building"></i>
                       </div>
-                      <p>Corporate <br>Training</p>
+                      <p class='mt-3'>Corporate <br>Training</p>
                   </div>
                   </a>
                 </div>
@@ -55,7 +55,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
                       <div class="icon-width-80">
                         <i class="fas fa-user-tie"></i>
                       </div>
-                      <p>Professional <br>Certification</p>
+                      <p class='mt-3'>Professional <br>Certification</p>
                   </div>
                   </a>
                 </div>
@@ -66,7 +66,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
                       <div class="icon-width-80">
                         <i class="fas fa-chalkboard-teacher"></i>
                       </div>
-                      <p>Seminars / <br>Conferences</p>
+                      <p class='mt-3'>Seminars / <br>Conferences</p>
                   </div>
                   </a>
                 </div>
@@ -77,7 +77,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
                       <div class="icon-width-80">
                         <i class="fas fa-calendar-alt"></i>
                       </div>
-                      <p>Our Calendar</p>
+                      <p class='mt-3'>Our Calendar</p>
                   </div>
                   </a>
                 </div>
@@ -107,8 +107,8 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
             </div>
             </a>
           </div>
-          <div class="bordering-1">
-            <div class="col-md-4">
+          <div class="col-md-4">
+            <div class="bordering-1">
               <a href="/courses/old_courses_layout.php?course=sys_trade_missions" target="blank">
                 <p>Trade Missions</p>
             </div>
