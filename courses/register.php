@@ -85,7 +85,7 @@ if ($sql->rowCount() > 0) {
 
             <p class="form-text-topic"><? echo $sectionName; ?> Registration</p>
             <div class="border-box">
-              <form action="addmore.php" method="post">
+              <form action="/addmore.php" method="post">
 
                 <div class="row">
                   <div class="col-sm-4">
@@ -249,20 +249,21 @@ if ($sql->rowCount() > 0) {
           $('#participant-' + button_id).remove();
         });
 
-
-        $('#submit').click(function() {
-          $.ajax({
-            url: postURL,
-            method: "POST",
-            data: $('#add_name').serialize(),
-            type: 'json',
-            success: function(data) {
-              i = 1;
-              $('.dynamic-added').remove();
-              $('#add_name')[0].reset();
-              alert('Record Inserted Successfully.');
-            }
-          });
-        });
+        // if it doesn't make difference i will remove it
+        
+        // $('#submit').on('click', function() {
+        //   $.ajax({
+        //     url: postURL,
+        //     method: "POST",
+        //     data: $('#add_name').serialize(),
+        //     type: 'json',
+        //     success: function(data) {
+        //       i = 1;
+        //       $('.dynamic-added').remove();
+        //       $('#add_name')[0].reset();
+        //       alert('Record Inserted Successfully.');
+        //     }
+        //   });
+        // });
       });
     </script>
