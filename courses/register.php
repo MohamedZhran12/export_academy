@@ -60,7 +60,11 @@ if ($sql->rowCount() > 0) {
                     echo '</p>';
                   }
                   ?>
-
+                  <p class='sst'>
+                    <? if (!empty($row['sys_sst']) && $row['sys_sst'][0] !== '0') {
+                      echo $row['sys_sst'];
+                    } ?>
+                  </p>
                 </div>
 
                 <div class="more-det-group">
@@ -250,7 +254,7 @@ if ($sql->rowCount() > 0) {
         });
 
         // if it doesn't make difference i will remove it
-        
+
         // $('#submit').on('click', function() {
         //   $.ajax({
         //     url: postURL,

@@ -40,6 +40,7 @@ $courseDetails = $courseDetailsStmt->fetchAll();
   <div class="container">
     <div class="header-in-topic">
       <h1><?php echo $courseDetails[0]['sys_course_topic']; ?></h1>
+
       <div class="breadcrumb-in">
         <p class="link"><a href="index.php"><i class="fas fa-home"></i> Home</a></p>
         <p class="link">
