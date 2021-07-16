@@ -70,7 +70,7 @@ if ($_GET['course'] == 'sys_course') {
   $table = 'global_network';
   $sectionName = 'Global Network';
   $details = 'Details';
-  $modules = 'Modules';
+  $modules = 'Services';
   $instructorType = 'Trainer(s)/Speaker(s)';
   $groupsTable = $table . '_groups';
   $isNewLayout = true;
@@ -78,7 +78,7 @@ if ($_GET['course'] == 'sys_course') {
   $table = 'trade_shows';
   $sectionName = 'Trade Shows';
   $details = 'Details';
-  $modules = 'Modules';
+  $modules = 'Packages';
   $instructorType = 'Trainer(s)/Speaker(s)';
   $groupsTable = $table . '_groups';
   $isNewLayout = true;

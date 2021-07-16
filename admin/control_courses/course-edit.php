@@ -203,7 +203,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <? if ($isThereTaxes) { ?>
                               <div class="col-12 mb-3">
                                 <span>Show Tax:</span>
-                                <input type="radio" id="show-tax" name="show-hide-tax" <? if ($row['sys_sst'][0] != 0) echo 'checked'; ?> /><span> Yes</span>
+                                <input type="radio" id="show-tax" name="show-hide-tax" <? if ($row['sys_sst'][0] !== '0') echo 'checked'; ?> /><span> Yes</span>
                                 <input type="radio" id="hide-tax" name="show-hide-tax" <? if ($row['sys_sst'][0] == 0) echo 'checked'; ?> /><span> No</span>
                               </div>
                               <div class="col-12">
@@ -313,7 +313,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <? if ($isThereRightMenu) { ?>
                           <div class="col-12 my-3">
                             <span>Show CPD:</span>
-                            <input type="radio" id="show-cpd" name="show-hide-cpd" <? if ($row['sys_cpd_points'][0] != 0) echo 'checked'; ?> /><span> Yes</span>
+                            <input type="radio" id="show-cpd" name="show-hide-cpd" <? if ($row['sys_cpd_points'][0] !== '0') echo 'checked'; ?> /><span> Yes</span>
                             <input type="radio" id="hide-cpd" name="show-hide-cpd" <? if ($row['sys_cpd_points'][0] == 0) echo 'checked'; ?> /><span> No</span>
                           </div>
                           <div class="col-12 mb-3">

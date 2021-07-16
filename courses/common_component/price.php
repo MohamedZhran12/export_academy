@@ -10,7 +10,7 @@ if ($courseInfo['sys_course_price'] > 0) { ?>
 ?>
 <?php
 if ($courseInfo['sys_course_price_usd'] > 0) { ?>
-  <div class="courses-pricing-usd col-sm-12 mb-3 <? if ($courseInfo['sys_course_price'] != 0) echo 'd-none'; ?> usd-<? echo $courseInfo['sys_course_id']; ?> ">
+  <div class="courses-pricing-usd col-sm-12 mb-3 <? if ($courseInfo['sys_course_price'] !== '0') echo 'd-none'; ?> usd-<? echo $courseInfo['sys_course_id']; ?> ">
     <? if ($courseInfo['sys_course_price_before_usd'] > 0) { ?>
       <span class="cutoff">USD <? echo $courseInfo["sys_course_price_before_usd"]; ?></span>
     <? } ?>

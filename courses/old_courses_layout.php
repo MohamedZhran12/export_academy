@@ -2,7 +2,7 @@
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
 require_once($includes . 'sections_info.php');
 
-$sql = $conn->prepare("SELECT * FROM $table WHERE sys_course_year = YEAR(CURDATE()) AND sys_course_month = MONTH(CURDATE()) order by sys_course_date asc,sys_course_month, sys_course_year");
+$sql = $conn->prepare("SELECT * FROM $table WHERE sys_course_year = YEAR(CURDATE()) AND sys_course_month = MONTH(CURDATE()) order by sys_course_date desc,sys_course_month, sys_course_year");
 $sql->execute();
 
 $courseTypeHeader = str_replace('sys_', '', $table) . '_header';
@@ -70,7 +70,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
 
                       <div class="course-set-pp">
                         <? require('common_component/price.php'); ?>
-                        <? if ($courseInfo['sys_sst'][0] != 0) { ?>
+                        <? if ($courseInfo['sys_sst'][0] !== '0') { ?>
                           <p class="mt-2"><?php echo $courseInfo['sys_sst']; ?></p>
                         <? } ?>
                         <div class="courses-more-det">

@@ -8,12 +8,12 @@ $sql = $conn->prepare("
 select $groupsTable.name, $table.*, $groupsTable.group_order from $table
 join $groupsTable
 on $table.group_id=$groupsTable.ID
-order by $groupsTable.group_order asc ,sys_course_date,sys_course_month, sys_course_year");
+order by $groupsTable.group_order desc ,sys_course_date,sys_course_month, sys_course_year");
 $sql->execute();
 $courses = $sql->fetchAll(PDO::FETCH_GROUP);
 
 //AND sys_course_year = YEAR(CURDATE()) AND sys_course_month = MONTH(CURDATE())
-$coursesWithoutGroupsSql = $conn->prepare("SELECT * FROM $table WHERE group_id= 0 or group_id is null order by sys_course_date asc,sys_course_month, sys_course_year");
+$coursesWithoutGroupsSql = $conn->prepare("SELECT * FROM $table WHERE group_id= 0 or group_id is null order by sys_course_date desc,sys_course_month, sys_course_year");
 $coursesWithoutGroupsSql->execute();
 $coursesWithoutGroups = $coursesWithoutGroupsSql->fetchAll();
 
@@ -160,21 +160,13 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
                             <p class="mb-3 font-weight-bold"><?php echo $courseInfo['sys_course_topic']; ?></p>
                             <? if ($isThereTrainer) { ?>
                               <p class="mb-4">
-                                Trainer(s)/Speaker(s)/Consultant(s): <?php echo $courseInfo['sys_course_trainer']; ?></p>
+                                <? echo ($table == 'consulting_services') ? 'Consultant(s)' : 'Trainer(s)/Speaker(s)/Consultant(s)' ?>: <?php echo $courseInfo['sys_course_trainer']; ?></p>
                             <? } ?>
                           </div>
 
-                          <div class='col-12 col-md-5'>
-                            <div>
-                              <a class="btn btn-info" href="<?php echo $courseDetailsUrl; ?>">More
-                                Details</a>
-                            </div>
-                            <? if ($table == 'in_house') { ?>
-                              <div class='mt-3'>
-                                <a class="btn btn-success" href="in_house_form.php?topic=<? echo urlencode($groupName) ?>&sub_topic=<? echo urlencode($courseInfo['sys_course_topic']) ?>&in_house=1">Register/Enquire
-                                  Now</a>
-                              </div>
-                            <? } ?>
+                          <div class='col-12 col-md-5 text-center'>
+                            <a class="btn btn-info" href="<?php echo $courseDetailsUrl; ?>">More
+                              Details</a>
                           </div>
                           <? if ($isThereIntro) { ?>
                             <div class="col-12 mb-4"><?php echo $courseInfo['sys_course_intro']; ?></div>

@@ -166,33 +166,33 @@ if ($sql->rowCount() > 0) {
                     <input type="number" name="personmobile" placeholder="Enter Person Mobile Number" class="form-control name_list" required />
                   </div>
 
+                  <? if ($table != 'sys_trade_missions') { ?>
+                    <div class="col-sm-4">
+                      <p>HRDF Registered Company</p>
+                    </div>
 
-                  <div class="col-sm-4">
-                    <p>HRDF Registered Company</p>
-                  </div>
+                    <div class="col-sm-8">
 
-                  <div class="col-sm-8">
+                      <input type="radio" name="hrdf" value="Yes" required>
+                      <label>Yes</label>
 
-                    <input type="radio" name="hrdf" value="Yes" required>
-                    <label>Yes</label>
-
-                    <input type="radio" id="female" name="hrdf" value="No">
-                    <label>No</label>
-                  </div>
+                      <input type="radio" id="female" name="hrdf" value="No">
+                      <label>No</label>
+                    </div>
 
 
-                  <div class="col-sm-4">
-                    <p>SME Company</p>
-                  </div>
+                    <div class="col-sm-4">
+                      <p>SME Company</p>
+                    </div>
 
-                  <div class="col-sm-8">
-                    <input type="radio" name="sme" value="Yes" required>
-                    <label>Yes</label>
+                    <div class="col-sm-8">
+                      <input type="radio" name="sme" value="Yes" required>
+                      <label>Yes</label>
 
-                    <input type="radio" name="sme" value="No">
-                    <label>No</label>
-                  </div>
-
+                      <input type="radio" name="sme" value="No">
+                      <label>No</label>
+                    </div>
+                  <? } ?>
 
                   <div class="col-sm-4">
                   </div>

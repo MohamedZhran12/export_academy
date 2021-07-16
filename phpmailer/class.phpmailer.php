@@ -1405,7 +1405,7 @@ class PHPMailer
                     $body,
                     $this->From
                 );
-                if ($result != 0) {
+                if ($result !== '0') {
                     throw new phpmailerException($this->lang('execute') . $this->Sendmail, self::STOP_CRITICAL);
                 }
             }
@@ -1425,7 +1425,7 @@ class PHPMailer
                 $body,
                 $this->From
             );
-            if ($result != 0) {
+            if ($result !== '0') {
                 throw new phpmailerException($this->lang('execute') . $this->Sendmail, self::STOP_CRITICAL);
             }
         }

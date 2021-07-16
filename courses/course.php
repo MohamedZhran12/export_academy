@@ -59,64 +59,77 @@ $courseDetails = $courseDetailsStmt->fetchAll();
     <div class="col-9">
       <?php
       if ($coursesCount > 0) { ?>
-        <div class="col-sm-9">
-          <div class="row">
-            <div class="col-12">
-              <div class="row">
-                <div class="col-12 mb-2">
-                  <? if ($isThereMoreDates || $isThereCalendar) { ?>
-                    <strong>Date :</strong>
-                  <? } ?>
-                  <? if ($isThereMoreDates) { ?>
-                    <? foreach ($dates as $dateRow) { ?>
-                      <div class="dates">
-                        <span><? echo date('d - M - Y', strtotime($dateRow['course_date_start'])); ?></span>
-                        <strong>To</strong>
-                        <span><? echo date('d - M - Y', strtotime($dateRow['course_date_end'])); ?></span>
-                      </div>
-                    <? }
-                  } else if ($isThereCalendar) {
-                    $dateWithoutDay = ' - ' . DateTime::createFromFormat('!m', $courseDetails[0]['sys_course_month'])->format('F') . ' - ' . $courseDetails[0]['sys_course_year'];
-                    ?>
-                    <span><?php echo $courseDetails[0]['sys_course_date'] . $dateWithoutDay ?></span>
-                    <span> To <? echo $courseDetails[0]['sys_course_dateend'] . $dateWithoutDay ?></span>
-                  <? } ?>
-                </div>
-                <div class="col-12 mb-2">
-                  <strong>Time :</strong>
-                  <span><?php echo date('h:i a', strtotime($courseDetails[0]['sys_course_time'])) . ' - '  . date('h:i a', strtotime($courseDetails[0]['sys_course_timeout'])) ?></span>
-                </div>
-                <div class="col-12 mb-2">
-                  <strong>Mode of program :</strong>
-                  <span><? echo $courseDetails[0]['cat_id'] == 1 ? 'Virtual Programme' : 'Public Programme'; ?></span>
-                </div>
-                <div class="col-12 mb-4">
-                  <strong><? echo $courseDetails[0]['cat_id'] == 1 ? 'Platform: ' : 'Venue: '; ?></strong>
-                  <span>
-                    <?php echo $courseDetails[0]['sys_course_venue']; ?></span>
+        <? if ($table != 'in_house' && $table != 'products' && $table != 'consulting_services' && $table != 'global_network') { ?>
+          <div class="col-sm-9">
+            <div class="row">
+              <div class="col-12">
+                <div class="row">
+                  <div class="col-12 mb-2">
+                    <? if ($isThereMoreDates || $isThereCalendar) { ?>
+                      <strong>Date :</strong>
+                    <? } ?>
+                    <? if ($isThereMoreDates) { ?>
+                      <? foreach ($dates as $dateRow) { ?>
+                        <div class="dates">
+                          <span><? echo date('d - M - Y', strtotime($dateRow['course_date_start'])); ?></span>
+                          <strong>To</strong>
+                          <span><? echo date('d - M - Y', strtotime($dateRow['course_date_end'])); ?></span>
+                        </div>
+                      <? }
+                    } else if ($isThereCalendar) {
+                      $dateWithoutDay = ' - ' . DateTime::createFromFormat('!m', $courseDetails[0]['sys_course_month'])->format('F') . ' - ' . $courseDetails[0]['sys_course_year'];
+                      ?>
+                      <span><?php echo $courseDetails[0]['sys_course_date'] . $dateWithoutDay ?></span>
+                      <span> To <? echo $courseDetails[0]['sys_course_dateend'] . $dateWithoutDay ?></span>
+                    <? } ?>
+                  </div>
+                  <div class="col-12 mb-2">
+                    <strong>Time :</strong>
+                    <span><?php echo date('h:i a', strtotime($courseDetails[0]['sys_course_time'])) . ' - '  . date('h:i a', strtotime($courseDetails[0]['sys_course_timeout'])) ?></span>
+                  </div>
+                  <div class="col-12 mb-2">
+                    <strong>Mode of program :</strong>
+                    <span><? echo $courseDetails[0]['cat_id'] == 1 ? 'Virtual Programme' : 'Public Programme'; ?></span>
+                  </div>
+                  <div class="col-12 mb-4">
+                    <strong><? echo $courseDetails[0]['cat_id'] == 1 ? 'Platform: ' : 'Venue: '; ?></strong>
+                    <span>
+                      <?php echo $courseDetails[0]['sys_course_venue']; ?></span>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </div>
+        <? } ?>
 
         <div class="col-12">
           <ul class="nav nav-pills" id="pills-tab" role="tablist">
             <li class="nav-item" role="presentation">
               <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true"><i class="fas fa-graduation-cap"></i> <? echo $details; ?></a>
             </li>
-            <li class="nav-item" role="presentation">
-              <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"><i class="fas fa-book"></i> <? echo $modules; ?>
-              </a>
-            </li>
-            <? if ($isThereTrainer) { ?>
+            <? if ($table != 'in_house' && $table != 'export_coaching' && $table != 'products' && $table != 'consulting_services') { ?>
+              <li class="nav-item" role="presentation">
+                <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false"><i class="fas fa-book"></i> <? echo $modules; ?>
+                </a>
+              </li>
+            <? } ?>
+            <? if ($isThereTrainer && $table != 'consulting_services') { ?>
               <li class="nav-item" role="presentation">
                 <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false"><i class="fas fa-user-friends"></i> <? echo $instructorType; ?></a>
               </li>
             <? } ?>
-            <? if (isset($courseDetails[0]['certification_name'])) { ?>
+            <? if (isset($courseDetails[0]['certification_name']) && $table != 'trade_shows') { ?>
               <li class="nav-item" role="presentation">
-                <a class="nav-link" id="pills-certification-tab" data-toggle="pill" href="#pills-certification" role="tab" aria-controls="pills-certification" aria-selected="false"><i class="fas fa-user-friends"></i> Certified By</a>
+                <a class="nav-link" id="pills-certification-tab" data-toggle="pill" href="#pills-certification" role="tab" aria-controls="pills-certification" aria-selected="false"><i class="fas fa-user-friends"></i>
+                  <?
+                  if ($table == 'in_house')
+                    echo 'Sponsor/s';
+                  else if ($table == 'sys_trade_missions')
+                    echo 'Packages';
+                  else
+                    echo 'Certified By'
+                  ?>
+                </a>
               </li>
             <? } ?>
           </ul>
@@ -128,10 +141,11 @@ $courseDetails = $courseDetailsStmt->fetchAll();
 
               <?php echo $courseDetails[0]['sys_course_intro']; ?>
             </div>
-
-            <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
-              <?php echo $courseDetails[0]['sys_course_module']; ?>
-            </div>
+            <? if ($table != 'in_house' && $table != 'export_coaching' && $table != 'products') { ?>
+              <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+                <?php echo $courseDetails[0]['sys_course_module']; ?>
+              </div>
+            <? } ?>
             <? if ($isThereTrainer) { ?>
               <div class="tab-pane fade" id="pills-contact" role="tabpanel" aria-labelledby="pills-contact-tab">
 

@@ -188,7 +188,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
 </div>
 
 
-<div style='background-color:#BC7CB2'>
+<div style='background-color:#a47cbc'>
   <div class="container">
     <div class="padding-100">
       <div class="text-center">
@@ -197,7 +197,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
 
       <div class="row">
         <?php
-        $sql = $conn->prepare("SELECT * FROM sys_course WHERE sys_course_year = YEAR(CURDATE()) AND sys_course_month = MONTH(CURDATE()) LIMIT 5");
+        $sql = $conn->prepare("SELECT * FROM sys_course LIMIT 5");
         $sql->execute();
         if ($sql->rowCount() > 0) {
           foreach ($sql->fetchAll() as $row) {
@@ -241,8 +241,11 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
                         <div class="courses-more-det">
                           <p class="view"><i class="fas fa-eye"></i> <?php echo $row['sys_course_view']; ?>
                           </p>
-                          <p class="<?php echo $row['sys_course_session']; ?>"></p>
-                          <p class="icon-3"><i class="fas fa-certificate"></i></p>
+                          <?php if ($row['cat_id'] == 2) { ?>
+                            <i class="fas fa-map-marker-alt" style="background-color: #ffbb58;  color:#fff ;padding:4px; border-radius:4px"></i>
+                          <? } else { ?>
+                            <i class="fas fa-video" style="background-color: #ab0f90;  color:#fff ;padding:4px; border-radius:3px"></i>
+                          <? } ?>
                         </div>
                       </div>
                     </div>
@@ -271,7 +274,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
 
         <div class="row">
           <?php
-          $sql = $conn->prepare("SELECT * FROM sys_article WHERE sys_year = YEAR(CURDATE()) order by sys_id desc LIMIT 4");
+          $sql = $conn->prepare("SELECT * FROM sys_article order by sys_id desc LIMIT 4");
           $sql->execute();
           if ($sql->rowCount() > 0) {
             foreach ($sql->fetchAll() as $row) {

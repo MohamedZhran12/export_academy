@@ -64,7 +64,7 @@ require_once($includes . 'sections_info.php');
                                           <?php echo $row['sys_course_venue']; ?>
                                         </p>
                                         <div class="courses-set-in">
-                                          <? if ($row['sys_course_price'] != 0 || $row['sys_course_price_before'] != 0) { ?>
+                                          <? if ($row['sys_course_price'] !== '0' || $row['sys_course_price_before'] !== '0') { ?>
                                             <div class="courses-pricing">
                                               <span class="cutoff">MYR <?php echo $row['sys_course_price_before']; ?></span>
                                               <p>MYR <?php echo $row['sys_course_price']; ?></p>
@@ -74,7 +74,7 @@ require_once($includes . 'sections_info.php');
                                           <div class="courses-more-det">
                                             <p class="view"><i class="fas fa-eye"></i> <?php echo $row['sys_course_view']; ?></p>
                                             <p class="<?php echo $row['sys_course_session']; ?>"></p>
-                                            <p class="icon-3"><i class="fas fa-certificate"></i></p>
+
                                           </div>
                                         </div>
 

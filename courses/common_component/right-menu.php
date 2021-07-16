@@ -7,19 +7,15 @@
         $courseInfo = $courseDetails[0];
         require_once 'price.php';
       }
-
       ?>
 
     </div>
     <div>
-      <?php
-      if ($coursesCount > 0) {
-        foreach ($courseDetails as $row) {
-      ?>
-          <p><?php if (!empty($row['sys_sst']) && $row['sys_sst'][0] != 0) echo $row['sys_sst']; ?></p>
-      <?php }
-      } ?>
-
+      <p class='sst'>
+        <? if (!empty($courseDetails[0]['sys_sst']) && $courseDetails[0]['sys_sst'][0] !== '0') {
+          echo $courseDetails[0]['sys_sst'];
+        } ?>
+      </p>
 
       <?php
       if ($coursesCount > 0) {
@@ -31,7 +27,7 @@
             </div>
             <div class="right-align">
               <p class="<?php echo $row['sys_course_session']; ?>"></p>
-              <p class="icon-3"><i class="fas fa-certificate"></i></p>
+
             </div>
           </div>
 
@@ -45,7 +41,7 @@
                 <p class="more-det"><?php echo $row['sys_course_days']; ?> Day/s</p>
               </div>
               <div class='more-det-text'>
-                <? if (isset($row['sys_cpd_points'][0]) &&  $row['sys_cpd_points'][0] != 0) { ?>
+                <? if (isset($row['sys_cpd_points'][0]) &&  $row['sys_cpd_points'][0] !== '0') { ?>
                   <p class="more-det"><?php echo $row['sys_cpd_points'] . ' CPD Points'; ?></p>
                 <? } ?>
               </div>
@@ -92,4 +88,3 @@
 
 <?php }
       } ?>
-

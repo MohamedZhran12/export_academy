@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               <select id='category-title' name='partner_type' class="custom-select" required>
                 <option value="">Select Partner Type</option>
                 <option value="Registered_With">Registered With</option>
-                <option value="Our_Partners">Our Partners</option>
+                <option value="Accreditation">Accreditation</option>
                 <option value="Membership">Membership</option>
               </select>
 

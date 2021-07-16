@@ -115,7 +115,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
                               <div class="courses-more-det">
                                 <p class="view"><i class="fas fa-eye"></i> <?php echo $row['sys_course_view']; ?></p>
                                 <p class="<?php echo $row['sys_course_session']; ?>"></p>
-                                <p class="icon-3"><i class="fas fa-certificate"></i></p>
+
                               </div>
                             </div>
                           </div>

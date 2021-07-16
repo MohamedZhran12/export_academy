@@ -243,35 +243,48 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </div>
 
                     <div class="col-12 my-3">
-                      <p class="form-text">Intro</p>
+                      <p class="form-text"><? echo ($table == 'in_house' || $table == 'export_coaching' || $table == 'sys_trade_missions' || $table == 'trade_shows' || $table == 'products' || $table == 'consulting_services') ? 'Details' : 'Intro';
+                                            echo ($table == 'global_network') ? 'global_network' : '';
+                                            ?></p>
                       <textarea id="editor1" name="intro"></textarea>
                     </div>
 
-                    <div class="col-12 my-3">
-                      <p class="form-text">Course Module</p>
-                      <textarea id="editor3" name="module"></textarea>
-                    </div>
-                    <? if ($coursesWithTrainer) { ?>
+                    <? if ($table != 'in_house' && $table != 'export_coaching' && $table != 'products' && $table != 'consulting_services' && $table != 'global_network') { ?>
                       <div class="col-12 my-3">
-                        <p class="form-text">Trainer Name</p>
-                        <input type="text" class="form" name="trainer" placeholder="eg: Ali" size="30" />
+                        <p class="form-text">
+                          <? if ($table == 'sys_trade_missions') echo 'Tentative Program';
+                          else if ($table == 'trade_shows')
+                            echo 'Packages';
+                          else
+                            echo 'Course Module'; ?>
+                        </p>
+                        <textarea id="editor3" name="module"></textarea>
                       </div>
                     <? } ?>
+                    <? if ($table != 'in_house' && $table != 'export_coaching' && $table != 'sys_trade_missions' && $table != 'trade_shows' && $table != 'products' && $table != 'consulting_services' && $table != 'global_network') { ?>
+                      <? if ($coursesWithTrainer) { ?>
+                        <div class="col-12 my-3">
+                          <p class="form-text">Trainer Name</p>
+                          <input type="text" class="form" name="trainer" placeholder="eg: Ali" size="30" />
+                        </div>
+                      <? } ?>
 
-                    <div class="col-12 my-3">
-                      <p class="form-text">Trainer Info</p>
-                      <textarea id="editor2" name="trainer_info"></textarea>
-                    </div>
+                      <div class="col-12 my-3">
+                        <p class="form-text">Trainer Info</p>
+                        <textarea id="editor2" name="trainer_info"></textarea>
+                      </div>
+                    <? } ?>
                     <? if ($isThereMoreDates) { ?>
                       <div class="col-12 my-3">
-                        <p class="form-text">Certification Name</p>
+                        <p class="form-text"><? echo ($table == 'sys_trade_missions') ? 'Packages' : 'Certification Name'; ?></p>
                         <textarea id="editor4" name="certification_name"></textarea>
                       </div>
-
-                      <div class="col-12 my-3">
-                        <p class="form-text">Certification Info</p>
-                        <textarea id="editor5" name="certification_info"></textarea>
-                      </div>
+                      <? if ($table != 'sys_course') { ?>
+                        <div class="col-12 my-3">
+                          <p class="form-text">Certification Info</p>
+                          <textarea id="editor5" name="certification_info"></textarea>
+                        </div>
+                      <? } ?>
                     <? }
                     if ($isTherePrices) { ?>
                       <div class="col-6 my-3">
