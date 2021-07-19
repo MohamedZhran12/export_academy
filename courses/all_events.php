@@ -11,7 +11,7 @@ function getSectionCoursesFromDatabase($section)
   global $conn;
   $month = isset($_GET['month']) ? $_GET['month'] : date('m');
   $year = isset($_GET['year']) ? $_GET['year'] : date('Y');
-  $sql = $conn->prepare("SELECT * FROM $section WHERE sys_course_year = ? AND sys_course_month = ? order by sys_course_date desc,sys_course_month, sys_course_year");
+  $sql = $conn->prepare("SELECT * FROM $section WHERE sys_course_year = ? AND sys_course_month = ? order by sys_course_date asc,sys_course_month, sys_course_year");
   $sql->execute([$year, $month]);
   return $sql->fetchAll();
 }
