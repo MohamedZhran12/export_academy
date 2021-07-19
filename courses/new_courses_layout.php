@@ -165,8 +165,12 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
                           </div>
 
                           <div class='col-12 col-md-5 text-center'>
-                            <a class="btn btn-info" href="<?php echo $courseDetailsUrl; ?>">More
-                              Details</a>
+                            <div class="row justify-content-center align-items-center" style='height:10em'>
+                              <div class="col">
+                                <a class="btn btn-info" href="<?php echo $courseDetailsUrl; ?>">More
+                                  Details</a>
+                              </div>
+                            </div>
                           </div>
                           <? if ($isThereIntro) { ?>
                             <div class="col-12 mb-4"><?php echo $courseInfo['sys_course_intro']; ?></div>

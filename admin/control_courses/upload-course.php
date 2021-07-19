@@ -74,7 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     'sys_course_price_usd' => $_POST['fees_in_usd'],
     'sys_course_price_before_usd' => $_POST['fees_before_in_usd'],
     'certification_name' => $_POST['certification_name'],
-    'certification_info' => $_POST['certification_info'],
+    'certification_info' => '',
     'is_hrdf' => $_POST['toggle_hrdf'],
     'is_cpd_text' => $_POST['toggle_cpd_text'],
     'is_lunch' => $_POST['toggle_lunch'],
@@ -243,8 +243,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     </div>
 
                     <div class="col-12 my-3">
-                      <p class="form-text"><? echo ($table == 'in_house' || $table == 'export_coaching' || $table == 'sys_trade_missions' || $table == 'trade_shows' || $table == 'products' || $table == 'consulting_services') ? 'Details' : 'Intro';
-                                            echo ($table == 'global_network') ? 'global_network' : '';
+                      <p class="form-text"><? echo ($table == 'in_house' || $table == 'export_coaching' || $table == 'sys_trade_missions' || $table == 'trade_shows' || $table == 'products' || $table == 'consulting_services' || $table == 'global_network') ? 'Details' : 'Intro';
                                             ?></p>
                       <textarea id="editor1" name="intro"></textarea>
                     </div>
@@ -255,6 +254,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                           <? if ($table == 'sys_trade_missions') echo 'Tentative Program';
                           else if ($table == 'trade_shows')
                             echo 'Packages';
+                          else if ($table == 'global_network')
+                            echo 'Services';
                           else
                             echo 'Course Module'; ?>
                         </p>
@@ -279,12 +280,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <p class="form-text"><? echo ($table == 'sys_trade_missions') ? 'Packages' : 'Certification Name'; ?></p>
                         <textarea id="editor4" name="certification_name"></textarea>
                       </div>
-                      <? if ($table != 'sys_course') { ?>
-                        <div class="col-12 my-3">
-                          <p class="form-text">Certification Info</p>
-                          <textarea id="editor5" name="certification_info"></textarea>
-                        </div>
-                      <? } ?>
                     <? }
                     if ($isTherePrices) { ?>
                       <div class="col-6 my-3">

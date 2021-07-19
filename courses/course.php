@@ -59,7 +59,7 @@ $courseDetails = $courseDetailsStmt->fetchAll();
     <div class="col-9">
       <?php
       if ($coursesCount > 0) { ?>
-        <? if ($table != 'in_house' && $table != 'products' && $table != 'consulting_services' && $table != 'global_network') { ?>
+        <? if ($table != 'in_house' && $table != 'products' && $table != 'consulting_services' && $table != 'global_network' && $table != 'export_coaching') { ?>
           <div class="col-sm-9">
             <div class="row">
               <div class="col-12">
@@ -122,7 +122,7 @@ $courseDetails = $courseDetailsStmt->fetchAll();
               <li class="nav-item" role="presentation">
                 <a class="nav-link" id="pills-certification-tab" data-toggle="pill" href="#pills-certification" role="tab" aria-controls="pills-certification" aria-selected="false"><i class="fas fa-user-friends"></i>
                   <?
-                  if ($table == 'in_house')
+                  if ($table == 'in_house' || $table == 'sys_seminars')
                     echo 'Sponsor/s';
                   else if ($table == 'sys_trade_missions')
                     echo 'Packages';

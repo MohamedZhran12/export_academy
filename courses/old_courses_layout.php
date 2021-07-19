@@ -39,7 +39,6 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
 
     <div class="col-sm-9">
       <div class="row">
-        <div class="col-12"><?php require_once($rootDir . 'right-current-link.php'); ?></div>
         <div class="col-12 mb-3">
           <?php echo $headerAndTerms[0]['value']; ?>
           <h2 class="font-weight-bold my-4">
@@ -76,9 +75,9 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
                         <div class="courses-more-det">
                           <p class="view d-inline mr-3"><i class="fas fa-eye"></i> <?php echo $courseInfo['sys_course_view']; ?></p>
                           <?php if ($courseInfo['cat_id'] == 2) { ?>
-                            <i class="fas fa-map-marker-alt" style="background-color: #ffbb58;  color:#fff ;padding:5px; border-radius:4px"></i>
+                            <i class="fas fa-map-marker-alt" style="font-size:11px;background-color: #ffbb58;  color:#fff ;padding:5px; border-radius:4px"></i>
                           <? } else { ?>
-                            <i class="fas fa-video" style="background-color: #ab0f90;  color:#fff ;padding:5px; border-radius:3px"></i>
+                            <i class="fas fa-video" style="font-size:11px;background-color: #ab0f90;  color:#fff ;padding:5px; border-radius:3px"></i>
                           <? } ?>
                           <p class="<?php echo $courseInfo['sys_course_session']; ?>"></p>
 

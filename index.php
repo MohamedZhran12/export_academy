@@ -103,6 +103,9 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
           <div class="col-md-4">
             <div class="bordering-1">
               <a href="/courses/new_courses_layout.php?course=export_coaching" target="blank">
+                <div class="icon-width-80 mb-3">
+                  <i class="fas fa-globe-asia"></i>
+                </div>
                 <p>Export Coaching</p>
             </div>
             </a>
@@ -110,6 +113,9 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
           <div class="col-md-4">
             <div class="bordering-1">
               <a href="/courses/old_courses_layout.php?course=sys_trade_missions" target="blank">
+                <div class="icon-width-80 mb-3">
+                  <i class="fas fa-globe-asia"></i>
+                </div>
                 <p>Trade Missions</p>
             </div>
             </a>
@@ -117,6 +123,9 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
           <div class="col-md-4">
             <div class="bordering-1">
               <a href="/courses/new_courses_layout.php?course=trade_shows" target="blank">
+                <div class="icon-width-80 mb-3">
+                  <i class="fas fa-globe-asia"></i>
+                </div>
                 <p>Trade Shows</p>
             </div>
             </a>
@@ -124,6 +133,9 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
           <div class="col-md-4">
             <div class="bordering-1">
               <a href="/courses/new_courses_layout.php?course=products" target="blank">
+                <div class="icon-width-80 mb-3">
+                  <i class="fas fa-globe-asia"></i>
+                </div>
                 <p>Listing of Products</p>
             </div>
             </a>
@@ -131,6 +143,9 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
           <div class="col-md-4">
             <div class="bordering-1">
               <a href="/courses/new_courses_layout.php?course=consulting_services" target="blank">
+                <div class="icon-width-80 mb-3">
+                  <i class="fas fa-globe-asia"></i>
+                </div>
                 <p>Consultancy Services</p>
             </div>
             </a>
@@ -138,6 +153,9 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
           <div class="col-md-4">
             <div class="bordering-1">
               <a href="/room.php" target="blank">
+                <div class="icon-width-80 mb-3">
+                  <i class="fas fa-globe-asia"></i>
+                </div>
                 <p>Hall Rental</p>
             </div>
             </a>
@@ -161,7 +179,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
             <div class="col-sm-3">
               <div class="bordering">
                 <a href="/info_page.php?page=gallery" target="blank">
-                  <div class="icon-width-80">
+                  <div class="icon-width-80 mb-3">
                     <i class="fas fa-globe-asia"></i>
                   </div>
                   <p>Event Gallery</p>
@@ -172,7 +190,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
             <div class="col-sm-3">
               <div class="bordering">
                 <a href="/info_page.php?page=csr" target="blank">
-                  <div class="icon-width-80">
+                  <div class="icon-width-80 mb-3">
                     <i class="fas fa-globe-asia"></i>
                   </div>
                   <p>CSR</p>
@@ -189,79 +207,6 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
 
 
 <div style='background-color:#a47cbc'>
-  <div class="container">
-    <div class="padding-100">
-      <div class="text-center">
-        <h2 class="text-white mb-4">Our Latest Events</h2>
-      </div>
-
-      <div class="row">
-        <?php
-        $sql = $conn->prepare("SELECT * FROM sys_course LIMIT 5");
-        $sql->execute();
-        if ($sql->rowCount() > 0) {
-          foreach ($sql->fetchAll() as $row) {
-        ?>
-            <div class="col">
-              <div class="margin-30">
-                <div class="courses-det">
-                  <a class="button-1" href="/courses/course.php?id=<?php echo $row['sys_course_id'] . '&cat_id=' . $row['cat_id'] . '&course=sys_course'; ?>">
-                    <div class="courses-image">
-                      <p class="date">
-                        <i class="fas fa-calendar-alt"></i>
-                        <?php echo $row['sys_course_date']; ?>,
-                        <?php
-                        $monthNum = $row['sys_course_month'];
-                        $monthName = date("F", mktime(0, 0, 0, $monthNum, 10));
-                        echo $monthName; // Output: May
-                        ?>
-                        <?php echo $row['sys_course_year']; ?>
-                      </p>
-                      <img alt='image' loading="lazy" src="/images/courses/<?php echo $row['sys_course_image']; ?>">
-                    </div>
-                    <div class="courses-desc1">
-                      <p class="topic-1-2"><?php echo $row['sys_course_topic']; ?></p>
-
-
-                      <div class="course-set-pp">
-                        <div class="courses-pricing">
-                          <?php
-                          $amount = $row['sys_course_price_before'];
-                          if ($amount >= 1.00) {
-                            echo '<span class="cutoff">';
-                            echo "RM" . $row["sys_course_price_before"] . "";
-                            echo '</span>';
-                          } else {
-                            echo '<br>';
-                          }
-                          ?>
-                          <p>RM <?php echo $row['sys_course_price']; ?></p>
-                        </div>
-
-                        <div class="courses-more-det">
-                          <p class="view"><i class="fas fa-eye"></i> <?php echo $row['sys_course_view']; ?>
-                          </p>
-                          <?php if ($row['cat_id'] == 2) { ?>
-                            <i class="fas fa-map-marker-alt" style="background-color: #ffbb58;  color:#fff ;padding:4px; border-radius:4px"></i>
-                          <? } else { ?>
-                            <i class="fas fa-video" style="background-color: #ab0f90;  color:#fff ;padding:4px; border-radius:3px"></i>
-                          <? } ?>
-                        </div>
-                      </div>
-                    </div>
-                  </a>
-                </div>
-              </div>
-            </div>
-        <?php }
-        } ?>
-      </div>
-
-      <a href="/courses/old_courses_layout.php?course=sys_course">
-        <p class="view-all text-white">View All Courses <i class="fas fa-angle-right"></i></p>
-      </a>
-    </div>
-  </div>
 
 
   <div class="background-white">

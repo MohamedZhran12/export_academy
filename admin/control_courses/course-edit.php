@@ -20,7 +20,8 @@ if ($isThereGroups) {
   $groups = $groupsSql->fetchAll();
 }
 
-function addToInsertQueryIfValueIsSet($tableAttributes, &$names, &$values) {
+function addToInsertQueryIfValueIsSet($tableAttributes, &$names, &$values)
+{
   foreach ($tableAttributes as $key => $value) {
     if (isset($value)) {
       $names[] = $key . '=?';
@@ -29,7 +30,8 @@ function addToInsertQueryIfValueIsSet($tableAttributes, &$names, &$values) {
   }
 }
 
-function insertMoreDates($start_date, $end_date, $table, $course_id) {
+function insertMoreDates($start_date, $end_date, $table, $course_id)
+{
   global $conn;
   $insert_dates_stmt = "insert into courses_dates(course_date_start,course_date_end,course_type,course_id) values";
   for ($i = 0; $i < count($start_date); $i++) {
@@ -203,8 +205,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                             <? if ($isThereTaxes) { ?>
                               <div class="col-12 mb-3">
                                 <span>Show Tax:</span>
-                                <input type="radio" id="show-tax" name="show-hide-tax" <? if ($row['sys_sst'][0] !== '0') echo 'checked'; ?> /><span> Yes</span>
-                                <input type="radio" id="hide-tax" name="show-hide-tax" <? if ($row['sys_sst'][0] == 0) echo 'checked'; ?> /><span> No</span>
+                                <input type="radio" id="show-tax" name="show-hide-tax" <? if ($row['sys_sst'][0] != '0') echo 'checked'; ?> /><span> Yes</span>
+                                <input type="radio" id="hide-tax" name="show-hide-tax" <? if ($row['sys_sst'][0] == '0') echo 'checked'; ?> /><span> No</span>
                               </div>
                               <div class="col-12">
                                 <p class="form-text">6% SST</p>
@@ -215,7 +217,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                   </div>
 
                                   <div class="col-6">
-                                    Subjected <input type="radio" name="tax" value="Subjected to 6% SST" <?php if ($row['sys_sst'] == 'Inclusive of 6% SST') echo 'checked' ?> />
+                                    Subjected <input type="radio" name="tax" value="Subjected to 6% SST" <?php if ($row['sys_sst'] == 'Subjected to 6% SST') echo 'checked' ?> />
                                   </div>
 
                                 </div>
