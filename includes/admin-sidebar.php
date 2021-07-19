@@ -54,7 +54,7 @@
             <a href="/admin/admin-all-courses.php?course=global_network" class="side-menu-link">All Global Network</a>
           </li>
           <li>
-            <a href="admin-all-articles.php" class="side-menu-link">All Articles</a>
+            <a href="/admin/admin-all-articles.php" class="side-menu-link">All Articles</a>
           </li>
         </div>
 
