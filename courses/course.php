@@ -45,7 +45,8 @@ $courseDetails = $courseDetailsStmt->fetchAll();
         <p class="link"><a href="index.php"><i class="fas fa-home"></i> Home</a></p>
         <p class="link">
           <a href="<? echo '/courses/';
-                    echo ($isNewLayout) ? 'new' : 'old' . "_courses_layout.php?course=$table"; ?>">
+                    echo ($isNewLayout) ? 'new' : 'old';
+                    echo "_courses_layout.php?course=$table" ?>">
             <?php echo $sectionName; ?>
           </a>
         </p>

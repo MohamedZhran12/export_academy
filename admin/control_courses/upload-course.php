@@ -248,7 +248,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                       <textarea id="editor1" name="intro"></textarea>
                     </div>
 
-                    <? if ($table != 'in_house' && $table != 'export_coaching' && $table != 'products' && $table != 'consulting_services' && $table != 'global_network') { ?>
+                    <? if ($table != 'in_house' && $table != 'export_coaching' && $table != 'products' && $table != 'consulting_services') { ?>
                       <div class="col-12 my-3">
                         <p class="form-text">
                           <? if ($table == 'sys_trade_missions') echo 'Tentative Program';
@@ -275,7 +275,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <textarea id="editor2" name="trainer_info"></textarea>
                       </div>
                     <? } ?>
-                    <? if ($isThereMoreDates) { ?>
+                    <? if ($isThereMoreDates && $table != 'trade_shows') { ?>
                       <div class="col-12 my-3">
                         <p class="form-text"><? if ($table == 'sys_trade_missions') echo 'Packages';
                                               else if ($table == 'sys_seminars') echo 'Sponsor/s';

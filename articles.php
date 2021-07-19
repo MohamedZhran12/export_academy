@@ -80,16 +80,8 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
 
                   <?php }
                   } ?>
-
-
-                  </section><!-- /products -->
-
-
+                  <!-- /products -->
                 </div><!-- /wrapper -->
-              </div>
-              <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                <script src="https://apps.elfsight.com/p/platform.js" defer></script>
-                <div class="elfsight-app-c8a859ad-8c42-42ea-954f-08a79f15c5af"></div>
               </div>
             </div>
 
@@ -100,7 +92,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
       </div>
     </div>
   </div>
-
-  <?php
-  require_once($includes . 'footer.php');
-  ?>
+</div>
+<?php
+require_once($includes . 'footer.php');
+?>
