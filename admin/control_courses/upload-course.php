@@ -277,7 +277,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <? } ?>
                     <? if ($isThereMoreDates) { ?>
                       <div class="col-12 my-3">
-                        <p class="form-text"><? echo ($table == 'sys_trade_missions') ? 'Packages' : 'Certification Name'; ?></p>
+                        <p class="form-text"><? if ($table == 'sys_trade_missions') echo 'Packages';
+                                              else if ($table == 'sys_seminars') echo 'Sponsor/s';
+                                              else echo 'Certification Name'; ?></p>
                         <textarea id="editor4" name="certification_name"></textarea>
                       </div>
                     <? }
