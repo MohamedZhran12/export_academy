@@ -238,6 +238,7 @@ h2.topic-blue {
   padding: 40px;
   border: 5px solid #189dd8;
   margin-bottom: 30px;
+  height: 12em;
 }
 .bordering-1:hover {
   background: #189dd8;
