@@ -11,7 +11,7 @@ $stmt->execute();
 $categoriesVideos = $stmt->fetchAll(PDO::FETCH_GROUP);
 ?>
 
-  <div class="header-in-csr">
+  <div class="header-in" style="background-image: url('../../images/header/Mexa_TV.webp'), url(../../images/header/about.jpg)">
     <div class="overlay-white">
       <div class="container">
         <div class="header-in-topic">

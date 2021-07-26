@@ -2,7 +2,7 @@
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
 
 ?>
-<div class="header-in">
+<div class="header-in" style="background-image: url('../../images/header/Articles.webp'), url(../../images/header/about.jpg)">
   <div class="overlay-white">
     <div class="container">
       <div class="header-in-topic">

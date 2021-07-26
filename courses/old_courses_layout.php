@@ -13,7 +13,7 @@ $headerAndTermsStmt->execute([$courseTypeHeader, $courseTypeTerms]);
 $headerAndTerms = $headerAndTermsStmt->fetchAll();
 ?>
 
-<div class="header-in" style="background-image: url(../../images/header/<? echo str_replace(' ', '_', $sectionName) . '.png'; ?>), url(../../images/header/about.jpg)">
+<div class="header-in" style="background-image: url(../../images/header/<? echo str_replace(' ', '_', $sectionName) . '.webp'; ?>), url(../../images/header/about.jpg)">
   <div class="overlay-white">
     <div class="container">
       <div class="header-in-topic">

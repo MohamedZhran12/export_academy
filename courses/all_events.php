@@ -21,7 +21,7 @@ foreach ($sections as $section) {
 }
 ?>
 
-<div class="header-in">
+<div class="header-in" style="background-image: url('../../images/header/All_Events.webp'), url(../../images/header/about.jpg)">
   <div class="overlay-white">
     <div class="container">
       <div class="header-in-topic">
@@ -41,7 +41,7 @@ foreach ($sections as $section) {
       <?php
       $isNewYear = 0;
       require($rootDir . 'components/all_events_calendar.php');
-      if (date('m') == 11 || date('m') == 12) {
+      if (date('m') == 7 || date('m') == 12) {
         $isNewYear = 1;
         require($rootDir . 'components/all_events_calendar.php');
       }
