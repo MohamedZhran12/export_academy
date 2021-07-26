@@ -257,34 +257,47 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         </div>
 
                         <div class="col-12 my-3">
-                          <p class="form-text">Intro</p>
-                          <textarea id="editor1" name="intro"><?php echo $row['sys_course_intro']; ?></textarea>
+                          <p class="form-text"><? echo ($table == 'in_house' || $table == 'export_coaching' || $table == 'sys_trade_missions' || $table == 'trade_shows' || $table == 'products' || $table == 'consulting_services' || $table == 'global_network') ? 'Details' : 'Intro';
+                                                ?></p>
+                          <textarea id="editor1" name="intro"><? echo $row['sys_course_intro'] ?></textarea>
                         </div>
 
-                        <div class="col-12 my-3">
-                          <p class="form-text">Course Module</p>
-                          <textarea id="editor3" name="module"><?php echo $row['sys_course_module']; ?></textarea>
-                        </div>
-                        <? if ($coursesWithTrainer) { ?>
+                        <? if ($table != 'in_house' && $table != 'export_coaching' && $table != 'products' && $table != 'consulting_services') { ?>
                           <div class="col-12 my-3">
-                            <p class="form-text">Trainer Name</p>
-                            <input type="text" class="form" name="trainer" placeholder="eg: Ali" size="30" value="<?php echo $row['sys_course_trainer']; ?>" />
+                            <p class="form-text">
+                              <? if ($table == 'sys_trade_missions') echo 'Tentative Program';
+                              else if ($table == 'trade_shows')
+                                echo 'Packages';
+                              else if ($table == 'global_network')
+                                echo 'Services';
+                              else {
+                                echo 'Course Module';
+                              } ?>
+                            </p>
+                            <textarea id="editor3" name="module"><? echo $row['sys_course_module'] ?></textarea>
                           </div>
+                        <? } ?>
+                        <? if ($table != 'in_house' && $table != 'export_coaching' && $table != 'sys_trade_missions' && $table != 'trade_shows' && $table != 'products' && $table != 'consulting_services' && $table != 'global_network') { ?>
+                          <? if ($coursesWithTrainer) { ?>
+                            <div class="col-12 my-3">
+                              <p class="form-text">Trainer Name</p>
+                              <input type="text" class="form" name="trainer" placeholder="eg: Ali" size="30" value="<? echo $row['sys_course_trainer'] ?>" />
+                            </div>
+                          <? } ?>
 
                           <div class="col-12 my-3">
                             <p class="form-text">Trainer Info</p>
-                            <textarea id="editor2" name="trainer_info"><?php echo $row['sys_course_trainer_info']; ?></textarea>
+                            <textarea id="editor2" name="trainer_info"><? echo $row['sys_course_trainer_info'] ?></textarea>
                           </div>
                         <? } ?>
-                        <? if ($isThereMoreDates) { ?>
+                        <? if ($isThereMoreDates && $table != 'trade_shows') { ?>
                           <div class="col-12 my-3">
-                            <p class="form-text">Certification Name</p>
-                            <textarea id="editor4" name="certification_name"><? echo $row['certification_name']; ?></textarea>
-                          </div>
-
-                          <div class="col-12 my-3">
-                            <p class="form-text">Certification Info</p>
-                            <textarea id="editor5" name="certification_info"><? echo $row['certification_info']; ?></textarea>
+                            <p class="form-text"><? if ($table == 'sys_trade_missions') echo 'Packages';
+                                                  else if ($table == 'sys_seminars') echo 'Sponsor/s';
+                                                  else {
+                                                    echo 'Certification Name';
+                                                  } ?></p>
+                            <textarea id="editor4" name="certification_name"><? echo $row['certification_name'] ?></textarea>
                           </div>
                         <? }
                         if ($isTherePrices) { ?>

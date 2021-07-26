@@ -39,7 +39,12 @@ foreach ($sections as $section) {
   <div class="row">
     <div class="col-sm-3">
       <?php
-      require_once($rootDir . 'components/all_events_calendar.php');
+      $isNewYear = 0;
+      require($rootDir . 'components/all_events_calendar.php');
+      if (date('m') == 11 || date('m') == 12) {
+        $isNewYear = 1;
+        require($rootDir . 'components/all_events_calendar.php');
+      }
       ?>
     </div>
 
@@ -83,7 +88,6 @@ foreach ($sections as $section) {
                             <? } else { ?>
                               <i class="fas fa-video" style="font-size:11px;background-color: #ab0f90;  color:#fff ;padding:5px; border-radius:3px"></i>
                             <? } ?>
-                            <p class="<?php echo $courseInfo['sys_course_session']; ?>"></p>
 
                           </div>
                         </div>

@@ -440,8 +440,9 @@ video {
   padding: 100px 0;
 }
 .header-in {
-  background: url(../../images/header/about.jpg) no-repeat fixed;
   background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 .nav-tabs .nav-item.show .nav-link,
 .nav-tabs .nav-link.active {
@@ -505,6 +506,7 @@ p.header-topic {
   border-radius: 6px;
   overflow: hidden;
   box-shadow: 0 0 3px #00000042;
+  height: 24em;
 }
 .courses-image {
   height: 120px;

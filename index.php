@@ -94,7 +94,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
           <hr class="topic-blue">
           <div class="row">
 
-            <div class="col-md-4">
+            <div class="col-md-3">
               <div class="bordering-1">
                 <a href="/courses/new_courses_layout.php?course=export_coaching" target="blank">
                   <div class="icon-width-80 mb-3">
@@ -104,7 +104,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
               </div>
               </a>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
               <div class="bordering-1">
                 <a href="/courses/old_courses_layout.php?course=sys_trade_missions" target="blank">
                   <div class="icon-width-80 mb-3">
@@ -114,7 +114,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
               </div>
               </a>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
               <div class="bordering-1">
                 <a href="/courses/new_courses_layout.php?course=trade_shows" target="blank">
                   <div class="icon-width-80 mb-3">
@@ -124,7 +124,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
               </div>
               </a>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
               <div class="bordering-1">
                 <a href="/courses/new_courses_layout.php?course=products" target="blank">
                   <div class="icon-width-80 mb-3">
@@ -134,27 +134,30 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
               </div>
               </a>
             </div>
-            <div class="col-md-4">
-              <div class="bordering-1">
-                <a href="/courses/new_courses_layout.php?course=consulting_services" target="blank">
-                  <div class="icon-width-80 mb-3">
-                    <i class="fas fa-globe-asia"></i>
+            <div class="col-12">
+              <div class="row justify-content-center">
+                <div class="col-md-3">
+                  <div class="bordering-1">
+                    <a href="/courses/new_courses_layout.php?course=consulting_services" target="blank">
+                      <div class="icon-width-80 mb-3">
+                        <i class="fas fa-globe-asia"></i>
+                      </div>
+                      <p>Consultancy Services</p>
                   </div>
-                  <p>Consultancy Services</p>
-              </div>
-              </a>
-            </div>
-            <div class="col-md-4">
-              <div class="bordering-1">
-                <a href="/room.php" target="blank">
-                  <div class="icon-width-80 mb-3">
-                    <i class="fas fa-globe-asia"></i>
+                  </a>
+                </div>
+                <div class="col-md-3">
+                  <div class="bordering-1">
+                    <a href="/room.php" target="blank">
+                      <div class="icon-width-80 mb-3">
+                        <i class="fas fa-globe-asia"></i>
+                      </div>
+                      <p>Hall Rental</p>
                   </div>
-                  <p>Hall Rental</p>
+                  </a>
+                </div>
               </div>
-              </a>
             </div>
-
           </div>
         </div>
       </div>
@@ -365,23 +368,23 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
       </div>
     </div>
   </div>
+</div>
+<script>
+  var videos = document.getElementsByClassName("youtube-control");
+  for (i = 0; i < videos.length; i++) {
+    videos[i].addEventListener("click", function() {
+      changeSrc(this);
+    });
+  }
 
-  <script>
-    var videos = document.getElementsByClassName("youtube-control");
-    for (i = 0; i < videos.length; i++) {
-      videos[i].addEventListener("click", function() {
-        changeSrc(this);
-      });
-    }
-
-    function changeSrc(video) {
-      var source = video.getAttribute("data-source");
-      var mainVideo = document.getElementById("main-youtube-video");
-      mainVideo.src = source;
-    }
-  </script>
+  function changeSrc(video) {
+    var source = video.getAttribute("data-source");
+    var mainVideo = document.getElementById("main-youtube-video");
+    mainVideo.src = source;
+  }
+</script>
 
 
-  <?php
-  require_once($includes . 'footer.php');
-  ?>
+<?php
+require_once($includes . 'footer.php');
+?>

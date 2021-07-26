@@ -236,7 +236,11 @@
         </div>
 
         <li>
-          <a href="/admin/admin-upload-article.php" class="side-menu-link">Upload Articles</a>
+          <a href="/admin/control_display_pages.php" class="side-menu-link">Hide/Show Pages</a>
+        </li>
+
+        <li>
+          <a href="/admin/upload-article.php" class="side-menu-link">Upload Articles</a>
         </li>
         <li>
           <a href="/admin/admin-upload-album.php" class="side-menu-link">Upload Galleries</a>

@@ -1,27 +1,10 @@
 <?php
-
-function getSectionCoursesCount($section, $month)
-{
-  global $conn;
-  $sql = $conn->prepare("SELECT * FROM $section WHERE sys_course_year = YEAR(CURDATE()) AND sys_course_month = ? order by sys_course_date desc,sys_course_month, sys_course_year");
-  $sql->execute([$month]);
-  return $sql->rowCount();
-}
-
-function sumCoursesCountForAMonth($month)
-{
-  $totalCoursesCount = 0;
-  $sections = ['sys_course', 'sys_seminars', 'sys_professional_cert', 'sys_special_programmes', 'sys_trade_missions'];
-  foreach ($sections as $section) {
-    $totalCoursesCount += getSectionCoursesCount($section, $month);
-  }
-  return $totalCoursesCount;
-}
+require_once 'calendar_functions.php';
 ?>
 
-<div class="side-bar-main">
+<div class="side-bar-main mt-3">
   <div class="side-topic">
-    <strong>Calendar <?php echo date("Y"); ?></strong>
+    <strong>Calendar <?php echo date("Y") + $isNewYear; ?></strong>
   </div>
   <div class="side-des">
     <div class="container">

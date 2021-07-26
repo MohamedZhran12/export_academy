@@ -1,3 +1,9 @@
+<?php
+$sql = $conn->prepare('select * from toggle_hide_pages');
+$sql->execute();
+$allPages = $sql->fetchAll();
+?>
+
 <div class="cbp-af-header">
   <div class="cbp-af-inner">
     <div class="container">
@@ -49,8 +55,12 @@
                   <li><a href="#">Export Promotion</a>
                     <ul>
                       <li><a href="/courses/old_courses_layout.php?course=sys_trade_missions">Trade Missions</a></li>
-                      <li><a href="/courses/new_courses_layout.php?course=trade_shows">Trade Shows</a></li>
-                      <li><a href="/courses/new_courses_layout.php?course=products">Listing of Products</a></li>
+                      <? if ($allPages[0]['is_hidden']) { ?>
+                        <li><a href="/courses/new_courses_layout.php?course=trade_shows">Trade Shows</a></li>
+                      <? } ?>
+                      <? if ($allPages[1]['is_hidden']) { ?>
+                        <li><a href="/courses/new_courses_layout.php?course=products">Listing of Products</a></li>
+                      <? } ?>
                     </ul>
                   </li>
 
@@ -59,8 +69,9 @@
                   <li><a href="http://www.eexport.org.my/" target='_blank'>Cross Border Ecommerce</a></li>
                 </ul>
               </li>
-
-              <li><a href="/courses/new_courses_layout.php?course=global_network">Global Network</a></li>
+              <? if ($allPages[2]['is_hidden']) { ?>
+                <li><a href="/courses/new_courses_layout.php?course=global_network">Global Network</a></li>
+              <? } ?>
               <li><a href="#">Resource Centre</a>
                 <ul>
                   <li><a href="/articles.php">Articles</a></li>

@@ -13,7 +13,7 @@ $headerAndTermsStmt->execute([$courseTypeHeader, $courseTypeTerms]);
 $headerAndTerms = $headerAndTermsStmt->fetchAll();
 ?>
 
-<div class="header-in">
+<div class="header-in" style="background-image: url(../../images/header/<? echo str_replace(' ', '_', $sectionName) . '.png'; ?>), url(../../images/header/about.jpg)">
   <div class="overlay-white">
     <div class="container">
       <div class="header-in-topic">
@@ -32,7 +32,12 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
     <div class="col-sm-3">
       <?php
       if ($isThereCalendar) {
-        require_once($rootDir . 'components/calendar.php');
+        $isNewYear = 0;
+        require($rootDir . 'components/calendar.php');
+        if (date('m') == 11 || date('m') == 12) {
+          $isNewYear = 1;
+          require($rootDir . 'components/calendar.php');
+        }
       }
       ?>
     </div>
@@ -79,8 +84,6 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
                           <? } else { ?>
                             <i class="fas fa-video" style="font-size:11px;background-color: #ab0f90;  color:#fff ;padding:5px; border-radius:3px"></i>
                           <? } ?>
-                          <p class="<?php echo $courseInfo['sys_course_session']; ?>"></p>
-
                         </div>
                       </div>
                     </div>

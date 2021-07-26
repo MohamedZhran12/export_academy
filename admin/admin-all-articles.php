@@ -23,11 +23,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
 
 
               <div class="row">
-                <!-- <div class="col">
-                  <?php
-                  // require_once($rootDir . 'components/calendar.php');
-                  ?>
-                </div> -->
 
                 <div class="col">
                   <div class="margin-bottom-30">
@@ -62,7 +57,7 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
                                         <p class="course-topic-1-2"><?php echo $row['sys_topic']; ?></p>
 
                                         <div class="take-action">
-                                          <a class="delete" href="admin-delete-article.php?id=<?php echo $row['sys_id']; ?>" onclick="return confirm('Are you sure you want to delete?')" title="Delete Album">
+                                          <a class="delete" href="delete-article.php?id=<?php echo $row['sys_id']; ?>" onclick="return confirm('Are you sure you want to delete?')" title="Delete Album">
                                             <p><i class="fas fa-trash-alt"></i></p>
                                           </a>
 
