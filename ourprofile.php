@@ -39,8 +39,6 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
         The Academy trains and coaches an average of 3,500 participants per year on various programmes in Malaysia and also in other countries in the ASEAN region.
       </p>
       <br><br>
-      <p style="text-align: justify;background: transparent;line-height: 150%;">The Academy trains and coaches an average of 3,500 participants per year on various programmes in Malaysia and also in other countries in the ASEAN region.</p>
-      <br><br>
     </div>
   </div>
 
