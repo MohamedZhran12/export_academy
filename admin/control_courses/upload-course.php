@@ -74,7 +74,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     'sys_course_price_usd' => $_POST['fees_in_usd'],
     'sys_course_price_before_usd' => $_POST['fees_before_in_usd'],
     'certification_name' => $_POST['certification_name'],
-    'certification_info' => '',
     'is_hrdf' => $_POST['toggle_hrdf'],
     'is_cpd_text' => $_POST['toggle_cpd_text'],
     'is_lunch' => $_POST['toggle_lunch'],
