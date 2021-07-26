@@ -98,7 +98,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
               <div class="bordering-1">
                 <a href="/courses/new_courses_layout.php?course=export_coaching" target="blank">
                   <div class="icon-width-80 mb-3">
-                    <i class="fas fa-globe-asia"></i>
+                    <i class="fas fa-sign-out-alt"></i>
                   </div>
                   <p>Export Coaching</p>
               </div>
@@ -108,7 +108,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
               <div class="bordering-1">
                 <a href="/courses/old_courses_layout.php?course=sys_trade_missions" target="blank">
                   <div class="icon-width-80 mb-3">
-                    <i class="fas fa-globe-asia"></i>
+                    <i class="fas fa-truck"></i>
                   </div>
                   <p>Trade Missions</p>
               </div>
@@ -118,7 +118,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
               <div class="bordering-1">
                 <a href="/courses/new_courses_layout.php?course=trade_shows" target="blank">
                   <div class="icon-width-80 mb-3">
-                    <i class="fas fa-globe-asia"></i>
+                    <i class="fas fa-tv"></i>
                   </div>
                   <p>Trade Shows</p>
               </div>
@@ -128,7 +128,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
               <div class="bordering-1">
                 <a href="/courses/new_courses_layout.php?course=products" target="blank">
                   <div class="icon-width-80 mb-3">
-                    <i class="fas fa-globe-asia"></i>
+                    <i class="fas fa-parking"></i>
                   </div>
                   <p>Listing of Products</p>
               </div>
@@ -140,7 +140,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
                   <div class="bordering-1">
                     <a href="/courses/new_courses_layout.php?course=consulting_services" target="blank">
                       <div class="icon-width-80 mb-3">
-                        <i class="fas fa-globe-asia"></i>
+                        <i class="fas fa-headset"></i>
                       </div>
                       <p>Consultancy Services</p>
                   </div>
@@ -150,7 +150,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
                   <div class="bordering-1">
                     <a href="/room.php" target="blank">
                       <div class="icon-width-80 mb-3">
-                        <i class="fas fa-globe-asia"></i>
+                        <i class="fas fa-building"></i>
                       </div>
                       <p>Hall Rental</p>
                   </div>
