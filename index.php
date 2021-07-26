@@ -108,7 +108,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
               <div class="bordering-1">
                 <a href="/courses/old_courses_layout.php?course=sys_trade_missions" target="blank">
                   <div class="icon-width-80 mb-3">
-                    <i class="fas fa-truck"></i>
+                    <i class="fas fa-check"></i>
                   </div>
                   <p>Trade Missions</p>
               </div>
@@ -177,7 +177,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
                 <div class="bordering">
                   <a href="/info_page.php?page=gallery" target="blank">
                     <div class="icon-width-80 mb-3">
-                      <i class="fas fa-globe-asia"></i>
+                      <i class="fas fa-images"></i>
                     </div>
                     <p>Event Gallery</p>
                 </div>
@@ -188,7 +188,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
                 <div class="bordering">
                   <a href="/info_page.php?page=csr" target="blank">
                     <div class="icon-width-80 mb-3">
-                      <i class="fas fa-globe-asia"></i>
+                      <i class="fas fa-hand-holding"></i>
                     </div>
                     <p>CSR</p>
                 </div>

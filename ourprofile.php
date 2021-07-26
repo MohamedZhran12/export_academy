@@ -30,15 +30,15 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
           <h2 style="margin-top: 0in;margin-bottom: 0in;text-align: justify;background: transparent;font-family: Arial, serif;font-size:21px;font-weight: bold;line-height: 150%;">INTRODUCTION</h2>
         </li>
       </ol>
-      <p style="text-align: justify;background: transparent;margin-bottom: 0.11in;line-height: 150%;">Malaysian Export Academy was registered in October 2007 as a Company with the registrar of Companies in Malaysia. Its main activities are training and education. The Academy has been certified ISO 9001:2015.</p>
-      <p style="text-align: justify;background: transparent;margin-bottom: 0.11in;line-height: 150%;"><br>&nbsp;</p>
-      <p style="text-align: justify;background: transparent;margin-bottom: 0.11in;line-height: 150%;">The Academy has been registered with the Human Resources Development Corporation, Ministry of Human Resources of Malaysia. In this respect, almost all of its training programmes are fully subsidized by the said Fund. The Academy is also registered with the Ministry of Finance of Malaysia.&nbsp;The Academy has been awarded the 5 star status&nbsp;by the Human Resources Development Fund in 2016</p>
-      <p style="text-align: justify;background: transparent;margin-bottom: 0.11in;line-height: 150%;"><br>&nbsp;</p>
-      <p style="text-align: justify;background: transparent;margin-bottom: 0.11in;line-height: 150%;">The Academy has won many government tenders to conduct short courses and professional programmes under various schemes that included 1 Malaysia Globally Recognised Industry and Professionals Programme, Minimum Wages Training Incentive, SME Senior Managers Development Programme and SME Upskilling Programmes.</p>
-      <p style="text-align: justify;background: transparent;margin-bottom: 0.11in;line-height: 150%;"><br>&nbsp;</p>
-      <p style="text-align: justify;background: transparent;margin-bottom: 0.11in;line-height: 150%;">The Academy trains and coaches an average of 3,500 participants per year on various programmes in Malaysia and also in other countries in the ASEAN region.</p>
-      <p style="text-align: justify;background: transparent;margin-bottom: 0.11in;line-height: 150%;"><br>&nbsp;</p>
-      <p style="text-align: justify;background: transparent;margin-bottom: 0.11in;line-height: 150%;">The Academy is a member of the following Local and International organisations:</p>
+      <p style="text-align: justify;background: transparent;line-height: 150%;">Malaysian Export Academy was registered in October 2007 as a Company with the registrar of Companies in Malaysia. Its main activities are training and education. The Academy has been certified ISO 9001:2015.</p>
+      <br><br>
+      <p style="text-align: justify;background: transparent;line-height: 150%;">The Academy has been registered with the Human Resources Development Corporation, Ministry of Human Resources of Malaysia. In this respect, almost all of its training programmes are fully subsidized by the said Fund. The Academy is also registered with the Ministry of Finance of Malaysia.&nbsp;The Academy has been awarded the 5 star status&nbsp;by the Human Resources Development Fund in 2016</p>
+      <br><br>
+      <p style="text-align: justify;background: transparent;line-height: 150%;">The Academy has won many government tenders to conduct short courses and professional programmes under various schemes that included 1 Malaysia Globally Recognised Industry and Professionals Programme, Minimum Wages Training Incentive, SME Senior Managers Development Programme and SME Upskilling Programmes.</p>
+      <br><br>
+      <p style="text-align: justify;background: transparent;line-height: 150%;">The Academy trains and coaches an average of 3,500 participants per year on various programmes in Malaysia and also in other countries in the ASEAN region.</p>
+      <br><br>
+      <p style="text-align: justify;background: transparent;line-height: 150%;">The Academy is a member of the following Local and International organisations:</p>
       <ul>
         <li>
           <p style="text-align: justify;background: transparent;margin-bottom: 0in;line-height: 150%;">International Association of Trade Training Organisations (IATTO)</p>
@@ -56,9 +56,9 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
           <p style="text-align: justify;background: transparent;margin-bottom: 0in;line-height: 150%;">Malaysian International Chamber of Commerce and Industry</p>
         </li>
       </ul>
-      <p style="text-align: justify;background: transparent;margin-bottom: 0.11in;line-height: 150%;"><br>&nbsp;</p>
-      <p style="text-align: justify;background: transparent;margin-bottom: 0.11in;line-height: 150%;">The Academy runs various certification and professional programmes in collaboration with the following International and Local partners:</p>
-      <p style="text-align: justify;background: transparent;margin-bottom: 0.11in;line-height: 150%;"><br>&nbsp;</p>
+      <br><br>
+      <p style="text-align: justify;background: transparent;line-height: 150%;">The Academy runs various certification and professional programmes in collaboration with the following International and Local partners:</p>
+      <br><br>
       <ul>
         <li>
           <p style="text-align: justify;background: transparent;margin-bottom: 0in;line-height: 150%;">International Trade Council, USA</p>
@@ -85,25 +85,25 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
           <p style="text-align: justify;background: transparent;margin-bottom: 0in;line-height: 150%;">Genovasi University College, Malaysia</p>
         </li>
       </ul>
-      <p style="text-align: justify;background: transparent;margin-bottom: 0.11in;line-height: 150%;"><br>&nbsp;</p>
-      <p style="text-align: justify;background: transparent;margin-bottom: 0.11in;line-height: 150%;">Besides training and education, the Academy is also involved in seminars/conferences, consultancy, research &amp; development and publications.</p>
-      <p style="text-align: justify;background: transparent;margin-bottom: 0.11in;line-height: 150%;"><br>&nbsp;</p>
+      <br><br>
+      <p style="text-align: justify;background: transparent;line-height: 150%;">Besides training and education, the Academy is also involved in seminars/conferences, consultancy, research &amp; development and publications.</p>
+      <br><br>
       <ol start="2" type="A">
         <li>
           <h1 style='margin-top: 0in;margin-bottom: 0in;text-align: justify;background: transparent;font-family: "Times New Roman", serif;font-size:19px;font-weight: bold;line-height: 150%;'>VISION &amp; MISSION</h1>
         </li>
       </ol>
-      <p style="text-align: justify;background: transparent;margin-bottom: 0.11in;line-height: 108%;"><br>&nbsp;</p>
-      <p style="text-align: justify;background: transparent;margin-bottom: 0.11in;line-height: 150%;">Our Vision is to be a leading Training Provider in the ASEAN region.</p>
-      <p style="text-align: justify;background: transparent;margin-bottom: 0.11in;line-height: 150%;"><br>&nbsp;</p>
-      <p style="text-align: justify;background: transparent;margin-bottom: 0.11in;line-height: 150%;">Our Mission is to train and coach entrepreneurs and would be entrepreneurs to acquire Practical knowledge and skills in various fields including exporting and international trade</p>
-      <p style="text-align: justify;background: transparent;margin-bottom: 0.11in;line-height: 150%;"><br>&nbsp;</p>
+      <p style="text-align: justify;background: transparent;line-height: 108%;"><br>&nbsp;</p>
+      <p style="text-align: justify;background: transparent;line-height: 150%;">Our Vision is to be a leading Training Provider in the ASEAN region.</p>
+      <br><br>
+      <p style="text-align: justify;background: transparent;line-height: 150%;">Our Mission is to train and coach entrepreneurs and would be entrepreneurs to acquire Practical knowledge and skills in various fields including exporting and international trade</p>
+      <br><br>
       <ol start="3" type="A">
         <li>
           <p style="text-align: justify;background: transparent;margin-bottom: 0in;line-height: 150%;"><strong>OBJECTIVES</strong></p>
         </li>
       </ol>
-      <p style="text-align: justify;background: transparent;margin-bottom: 0.11in;line-height: 150%;">Our main objectives are:</p>
+      <p style="text-align: justify;background: transparent;line-height: 150%;">Our main objectives are:</p>
       <ul>
         <li>
           <p style="margin-bottom: 0in;line-height: 150%;text-align: left;background: transparent;">To provide professional, quality and industry driven practical training and education in the field of Export and International Trade, Logistics and Supply Chain Management, Human Resource Development, Tourism &amp; Hospitality, Event Management, Taxation &amp; Finance, Leadership and other skill programmes.</p>
@@ -115,8 +115,8 @@ require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
           <p style="margin-bottom: 0in;line-height: 150%;text-align: left;background: transparent;">To collaborate with other Training and Education Institutions to offer variety of quality programmes in Malaysia and other ASEAN countries<br>&nbsp;</p>
         </li>
       </ul>
-      <p style="text-align: center;background: transparent;margin-bottom: 0.11in;line-height: 108%;">To promote the culture of e-learning and blended learning in the region</p>
-      <p style="margin-bottom: 0.11in;line-height: 108%;text-align: left;background: transparent;"><br>&nbsp;</p>
+      <p style="text-align: center;background: transparent;line-height: 108%;">To promote the culture of e-learning and blended learning in the region</p>
+      <p style="line-height: 108%;text-align: left;background: transparent;"><br>&nbsp;</p>
 
     </div>
   </div>
