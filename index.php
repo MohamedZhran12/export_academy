@@ -70,7 +70,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
                   </div>
                   </a>
                 </div>
-                
+
                 <div class="col">
                   <?php
                   $isNewYear = 0;
@@ -99,7 +99,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
               <div class="bordering-1">
                 <a href="/courses/new_courses_layout.php?course=export_coaching" target="blank">
                   <div class="icon-width-80 mb-3">
-                    <i class="fas fa-sign-out-alt"></i>
+                    <i class="fas fa-sign-out-alt" style="transform: rotate(270deg);"></i>
                   </div>
                   <p>Export Coaching</p>
               </div>
@@ -109,7 +109,9 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
               <div class="bordering-1">
                 <a href="/courses/old_courses_layout.php?course=sys_trade_missions" target="blank">
                   <div class="icon-width-80 mb-3">
-                    <i class="fas fa-check"></i>
+                    <i class="fas fa-user" style='font-size:.8em'></i>
+                    <i class="fas fa-exchange-alt" style='font-size:.7em'></i>
+                    <i class="fas fa-user" style='font-size:.8em'></i>
                   </div>
                   <p>Trade Missions</p>
               </div>
@@ -119,7 +121,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
               <div class="bordering-1">
                 <a href="/courses/new_courses_layout.php?course=trade_shows" target="blank">
                   <div class="icon-width-80 mb-3">
-                    <i class="fas fa-tv"></i>
+                    <i class="fas fa-desktop"></i>
                   </div>
                   <p>Trade Shows</p>
               </div>
@@ -129,7 +131,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
               <div class="bordering-1">
                 <a href="/courses/new_courses_layout.php?course=products" target="blank">
                   <div class="icon-width-80 mb-3">
-                    <i class="fas fa-parking"></i>
+                    <i class="fas fa-list-alt"></i>
                   </div>
                   <p>Listing of Products</p>
               </div>
