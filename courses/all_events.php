@@ -1,6 +1,6 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
-
+$isNewYear = (isset($_GET['year'])) ? 1 : 0;
 $sectionName = 'All Events';
 $sections = ['sys_course', 'sys_seminars', 'sys_professional_cert', 'sys_special_programmes', 'sys_trade_missions'];
 $allCourses = [];
@@ -40,8 +40,9 @@ foreach ($sections as $section) {
     <div class="col-sm-3">
       <?php
       $isNewYear = 0;
+
       require($rootDir . 'components/all_events_calendar.php');
-      if (date('m') == 7 || date('m') == 12) {
+      if (date('m') >= 9 && date('m') <= 12) {
         $isNewYear = 1;
         require($rootDir . 'components/all_events_calendar.php');
       }
@@ -55,7 +56,7 @@ foreach ($sections as $section) {
             <?php
             echo isset($_GET['month']) ? DateTime::createFromFormat('!m', $_GET['month'])->format('F') : date("F", strtotime('m'));
             echo ' ';
-            echo date("Y") . ' ';
+            echo date("Y") + $isNewYear . ' ';
             echo $sectionName; ?> </h2>
         </div>
 

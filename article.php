@@ -91,10 +91,6 @@ if ($sql->rowCount() > 0) {
 
 
         <div class="col-sm-3">
-          <?php
-          // require_once($rootDir . 'components/calendar.php');
-          ?>
-
           <br><br>
 
           <p class="menu-topic">Recent Posts</p>

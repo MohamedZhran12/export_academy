@@ -2,6 +2,7 @@
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
 require_once($includes . 'sections_info.php');
 $month = $_GET['month'];
+$isNewYear = isset($_GET['year']) ? 1 : 0;
 
 $courseTypeHeader = str_replace('sys_', '', $table) . '_header';
 $courseTypeTerms = str_replace('sys_', '', $table) . '_terms';
@@ -9,10 +10,9 @@ $courseTypeTerms = str_replace('sys_', '', $table) . '_terms';
 $headerAndTermsStmt = $conn->prepare("select value from statics where name=? or name=?");
 $headerAndTermsStmt->execute([$courseTypeHeader, $courseTypeTerms]);
 $headerAndTerms = $headerAndTermsStmt->fetchAll();
-
 ?>
 
-<div class="header-in">
+<div class="header-in" style="background-image: url(../../images/header/<? echo str_replace(' ', '_', $sectionName) . '.webp'; ?>), url(../../images/header/about.jpg)">
   <div class="overlay-white">
     <div class="container">
       <div class="header-in-topic">
@@ -26,7 +26,6 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
                               $monthName = $dateObj->format('F');
                               echo $monthName;
                               ?>
-
             <?php echo date("Y"); ?>
 
             Courses</p>
@@ -61,14 +60,10 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
                 echo $monthName;
                 ?>
 
-                <?php echo date("Y"); ?>
+                <?php echo date("Y") + $isNewYear; ?>
 
                 Courses
               </h2>
-
-              <?php
-
-              ?>
             </div>
 
             <br><br>
@@ -76,14 +71,12 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
             <div class="row">
 
               <?php
-              $sql = $conn->prepare("SELECT * FROM $table WHERE sys_course_month = ?");
+              $sql = $conn->prepare("SELECT * FROM $table WHERE sys_course_year= YEAR(CURDATE())+ $isNewYear and sys_course_month = ? order by sys_course_date asc,sys_course_month, sys_course_year");
               $sql->execute([$month]);
               if ($sql->rowCount() > 0) {
                 foreach ($sql->fetchAll() as $row) {
 
               ?>
-
-
                   <div class="col-sm-4">
                     <div class="margin-30">
                       <div class="courses-det">
@@ -114,8 +107,11 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
 
                               <div class="courses-more-det">
                                 <p class="view"><i class="fas fa-eye"></i> <?php echo $row['sys_course_view']; ?></p>
-                                <p class="<?php echo $row['sys_course_session']; ?>"></p>
-
+                                <?php if ($courseInfo['cat_id'] == 2) { ?>
+                                  <i class="fas fa-map-marker-alt" style="font-size:11px;background-color: #ffbb58;  color:#fff ;padding:5px; border-radius:4px"></i>
+                                <? } else { ?>
+                                  <i class="fas fa-video" style="font-size:11px;background-color: #ab0f90;  color:#fff ;padding:5px; border-radius:3px"></i>
+                                <? } ?>
                               </div>
                             </div>
                           </div>

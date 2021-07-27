@@ -37,8 +37,6 @@ if ($_GET['course'] == 'sys_course') {
 } else if ($_GET['course'] == 'consulting_services') {
   $table = 'consulting_services';
   $sectionName = 'Consulting Services';
-  $details = 'Details';
-  $modules = 'Modules';
   $instructorType = 'Trainer(s)/Speaker(s)';
   $groupsTable = $table . '_groups';
   $isNewLayout = true;

@@ -1,7 +1,7 @@
 <?php
 $success_msg = 'Your Registration is submitted successfully.<br>
         Our team will get back to you as soon as possible.';
-require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
 
 require_once('registration_success.php');
 ?>
@@ -18,7 +18,7 @@ if (!empty($_POST["name"])) {
     VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)");
 
     $sql->execute([
-      $name, , $_POST['designation'][$key], $_POST['company'], $_POST['mobile'][$key], $_POST['nature'], $_POST['person'], $_POST['email'], $_POST['personmobile'], $_POST['address'], $_POST['tel'], $_POST['hrdf'], $_POST['sme'], $_POST['coursename'], $_POST['price'], $_POST['date'], $_POST['month'], $_POST['year']
+      $name, $_POST['designation'][$key], $_POST['company'], $_POST['mobile'][$key], $_POST['nature'], $_POST['person'], $_POST['email'], $_POST['personmobile'], $_POST['address'], $_POST['tel'], $_POST['hrdf'], $_POST['sme'], $_POST['coursename'], $_POST['price'], $_POST['date'], $_POST['month'], $_POST['year']
     ]);
   }
   require_once('public_training_mail_body.php');
@@ -27,5 +27,5 @@ if (!empty($_POST["name"])) {
 ?>
 
 <?php
-  require_once($includes . 'footer.php');
+require_once($includes . 'footer.php');
 ?>

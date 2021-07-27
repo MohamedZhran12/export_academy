@@ -10,7 +10,8 @@
           $index = $i < 10 ? '0' . $i : $i;
         ?>
           <div class="col-6 p-0">
-            <a href="/courses/course_month.php?course=<? echo $table; ?>&month=<? echo $index; ?>">
+            <a href="/courses/course_month.php?course=<? echo $table; ?>&month=<? echo $index;
+                                                                                echo ($isNewYear == 1) ? '&year=1' : ''; ?>">
               <p class="calendar"><? echo DateTime::createFromFormat('!m', $index)->format('F'); ?></p>
               <span class="total-r">
                 <?php

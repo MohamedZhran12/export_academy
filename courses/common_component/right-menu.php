@@ -68,7 +68,7 @@
                   <? } ?>
                   <? if ($row['is_hrdf']) { ?>
                     <div class="more-det-text">
-                      <p class="more-det">HRDF SBL Claimable</p>
+                      <p class="more-det">HRDcorp Claimable</p>
                     </div>
                   <? } ?>
                   <? if ($row['is_lunch']) { ?>

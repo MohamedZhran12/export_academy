@@ -60,7 +60,6 @@
 
         <li id='all-csr-events-btn' style='cursor:pointer'><a class='side-menu-link'>All CSR Events</a></li>
         <div id='all-csr-events' class='d-none ml-4'>
-          <li><a href="admin-edit-csr-text.php" class="side-menu-link">Edit CSR Page Header</a></li>
           <li><a href="/admin/control_info_pages/edit-category.php?page=csr" class="side-menu-link">Edit CSR Event</a></li>
           <li><a href="/admin/control_info_pages/delete-category.php?page=csr" class="side-menu-link">Delete CSR Event</a></li>
           <li><a href="/admin/control_info_pages/delete-images.php?page=csr" class="side-menu-link">Delete CSR Image</a></li>
@@ -241,9 +240,6 @@
 
         <li>
           <a href="/admin/upload-article.php" class="side-menu-link">Upload Articles</a>
-        </li>
-        <li>
-          <a href="/admin/admin-upload-album.php" class="side-menu-link">Upload Galleries</a>
         </li>
       </ul>
     </div>

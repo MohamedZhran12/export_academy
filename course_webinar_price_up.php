@@ -118,7 +118,7 @@ $month = $_GET['month'];
 
                               <div class="courses-more-det">
                                 <p class="view"><i class="fas fa-eye"></i> <?php echo $row['sys_course_view']; ?></p>
-                                <p class="<?php echo $row['sys_course_session']; ?>"></p>
+
 
                               </div>
                             </div>

@@ -23,6 +23,7 @@ require_once($includes . 'sections_info.php');
               <div class="row">
                 <div class="col-sm-3">
                   <?php
+                  $isNewYear = 0;
                   require_once($rootDir . 'components/calendar.php');
                   ?>
                   <a class='btn btn-info mt-3' href="/admin-edit-header_and_terms_text.php?course=<? echo $table; ?>" class="side-menu-link">Edit
@@ -73,7 +74,7 @@ require_once($includes . 'sections_info.php');
 
                                           <div class="courses-more-det">
                                             <p class="view"><i class="fas fa-eye"></i> <?php echo $row['sys_course_view']; ?></p>
-                                            <p class="<?php echo $row['sys_course_session']; ?>"></p>
+
 
                                           </div>
                                         </div>

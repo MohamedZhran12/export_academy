@@ -51,17 +51,6 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
 
                 <div class="col">
                   <div class="bordering">
-                    <a href="/courses/old_courses_layout.php?course=sys_professional_cert">
-                      <div class="icon-width-80">
-                        <i class="fas fa-user-tie"></i>
-                      </div>
-                      <p class='mt-3'>Professional <br>Certification</p>
-                  </div>
-                  </a>
-                </div>
-
-                <div class="col">
-                  <div class="bordering">
                     <a href="/courses/old_courses_layout.php?course=sys_seminars">
                       <div class="icon-width-80">
                         <i class="fas fa-chalkboard-teacher"></i>
@@ -72,8 +61,19 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
                 </div>
 
                 <div class="col">
+                  <div class="bordering">
+                    <a href="/courses/old_courses_layout.php?course=sys_professional_cert">
+                      <div class="icon-width-80">
+                        <i class="fas fa-user-tie"></i>
+                      </div>
+                      <p class='mt-3'>Professional <br>Certification</p>
+                  </div>
+                  </a>
+                </div>
+                
+                <div class="col">
                   <?php
-                  $isNewYear=0;
+                  $isNewYear = 0;
                   require_once($rootDir . 'components/all_events_calendar.php');
                   ?>
                 </div>
