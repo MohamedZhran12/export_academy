@@ -1,10 +1,6 @@
 <?php
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
-
 ?>
-
-
-
 <div class="header-in-about">
   <div class="overlay-white">
     <div class="container">

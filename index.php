@@ -73,6 +73,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
 
                 <div class="col">
                   <?php
+                  $isNewYear=0;
                   require_once($rootDir . 'components/all_events_calendar.php');
                   ?>
                 </div>
