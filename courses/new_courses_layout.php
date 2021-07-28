@@ -164,7 +164,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
                             <p class="mb-3 font-weight-bold"><?php echo $courseInfo['sys_course_topic']; ?></p>
                             <? if ($isThereTrainer) { ?>
                               <p class="mb-4">
-                                <? echo ($table == 'consulting_services') ? '' : 'Trainer(s)/Speaker(s)/Consultant(s)' ?>: <?php echo ($table != 'consulting_services') ? $courseInfo['sys_course_trainer'] : ''; ?></p>
+                                <? echo ($table == 'consulting_services') ? '' : 'Trainer(s)/Speaker(s)/Consultant(s):' ?> <?php echo ($table != 'consulting_services') ? $courseInfo['sys_course_trainer'] : ''; ?></p>
                             <? } ?>
                           </div>
 
