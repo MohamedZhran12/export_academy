@@ -4,10 +4,11 @@ require_once($includes . 'sections_info.php');
 $id = $_GET['id'];
 $sql = $conn->prepare("SELECT * FROM $table WHERE sys_course_id = ?");
 $sql->execute([$id]);
-if ($sql->rowCount() > 0) {
-  foreach ($sql->fetchAll() as $row) {
+$count = $sql->rowCount();
+$result = $sql->fetchAll();
+if ($count > 0) {
+  foreach ($result as $row) {
 ?>
-
     <div class="header-in-course">
       <div class="overlay-white">
         <div class="container">
@@ -198,8 +199,8 @@ if ($sql->rowCount() > 0) {
                   </div>
 
                   <?php
-                  if ($sql->rowCount() > 0) {
-                    foreach ($sql->fetchAll() as $row) {
+                  if ($count > 0) {
+                    foreach ($result as $row) {
                   ?>
                       <input type="hidden" class="form" name="coursename" value="<?php echo $row['sys_course_topic']; ?>" />
                       <input type="hidden" class="form" name="price" value="<?php echo $row['sys_course_price']; ?>" />
@@ -209,9 +210,7 @@ if ($sql->rowCount() > 0) {
                   <?php }
                   } ?>
 
-
                   <div class="col-sm-8">
-                    <input type='hidden' name='section' value='<? echo $sectionNameUrl ?>'>
                     <?php include($rootDir . '/components/captcha.php'); ?>
                     <input type="submit" name="submit" id="submit" class="btn btn-info" value="Submit" disabled />
                   </div>
