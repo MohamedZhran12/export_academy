@@ -90,7 +90,7 @@ if ($count > 0) {
 
             <p class="form-text-topic"><? echo $sectionName; ?> Registration</p>
             <div class="border-box">
-              <form action="/addmore.php" method="post">
+              <form action="addmore.php" method="post">
 
                 <div class="row">
                   <div class="col-sm-4">
@@ -101,7 +101,7 @@ if ($count > 0) {
                   <div id="dynamic-field" class="col-sm-8">
                     <input type="text" name="name[]" placeholder="Enter Name" class="form-control name_list" required />
 
-                    <input type="text" name="participant_email[]" placeholder="Enter Email" class="form-control name_list" required />
+                    <input type="text" name="designation[]" placeholder="Enter Designation" class="form-control name_list" required />
 
                     <input type="number" name="mobile[]" placeholder="Enter Mobile" class="form-control name_list" required />
 
@@ -129,7 +129,7 @@ if ($count > 0) {
                   </div>
 
                   <div class="col-sm-8">
-                    <input type="text" name="tel" placeholder="EG: 0312345678" class="form-control name_list" required />
+                    <input type="number" name="tel" placeholder="EG: 0312345678" class="form-control name_list" required />
                   </div>
 
 
@@ -169,7 +169,7 @@ if ($count > 0) {
 
                   <? if ($table != 'sys_trade_missions') { ?>
                     <div class="col-sm-4">
-                      <p>HRDF Registered Company</p>
+                      <p>HRDcorp Registered Company</p>
                     </div>
 
                     <div class="col-sm-8">
@@ -251,22 +251,5 @@ if ($count > 0) {
           var button_id = $(this).attr("id");
           $('#participant-' + button_id).remove();
         });
-
-        // if it doesn't make difference i will remove it
-
-        // $('#submit').on('click', function() {
-        //   $.ajax({
-        //     url: postURL,
-        //     method: "POST",
-        //     data: $('#add_name').serialize(),
-        //     type: 'json',
-        //     success: function(data) {
-        //       i = 1;
-        //       $('.dynamic-added').remove();
-        //       $('#add_name')[0].reset();
-        //       alert('Record Inserted Successfully.');
-        //     }
-        //   });
-        // });
       });
     </script>

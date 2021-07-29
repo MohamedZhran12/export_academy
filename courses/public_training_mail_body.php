@@ -2,7 +2,7 @@
 $body = '';
 for ($i = 0; $i < count($_POST['name']); $i++) {
   $body .= '<b>Participant Name #' . ($i + 1) . ': </b>' . $_POST['name'][$i] . '<br><br>';
-  $body .= '<b>Participant Email #' . ($i + 1) . ': </b>' . $_POST['participant_email'][$i] . '<br><br>';
+  $body .= '<b>Participant Email #' . ($i + 1) . ': </b>' . $_POST['designation'][$i] . '<br><br>';
   $body .= '<b>Participant Mobile #' . ($i + 1) . ': </b>' . $_POST['mobile'][$i] . '<br><br>';
 }
 
@@ -13,7 +13,7 @@ $body .= '<b>Nature of Business: </b>' . $_POST['nature'] . '<br><br>';
 $body .= '<b>Contact Person: </b>' . $_POST['person'] . '<br><br>';
 $body .= '<b>Contact Person\'s Email: </b>' . $_POST['email'] . '<br><br>';
 $body .= '<b>Contact Person\'s Mobile: </b>' . $_POST['personmobile'] . '<br><br>';
-$body .= '<b>HRDF Registered Company: </b>' . $_POST['hrdf'] . '<br><br>';
+$body .= '<b>HRDcorp Registered Company: </b>' . $_POST['hrdf'] . '<br><br>';
 $body .= '<b>SME Company: </b>' . $_POST['sme'] . '<br><br>';
 
 $body .= '<b>Course Name: </b>' . $_POST['coursename'] . '<br><br>';

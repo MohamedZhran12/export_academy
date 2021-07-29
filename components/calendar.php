@@ -8,10 +8,16 @@
         <?php
         for ($i = 1; $i <= 12; $i++) {
           $index = $i < 10 ? '0' . $i : $i;
+          $oldUrl = "/courses/course_month.php?course=$table&month=$index";
+          $newUrl = "/courses/new_courses_layout.php?course=trade_shows&month=$index";
+          if ($isNewYear == 1) {
+            $oldUrl .= '&year=1';
+            $newUrl .= '&year=1';
+          }
+          $url = $isNewLayout ? $newUrl : $oldUrl;
         ?>
           <div class="col-6 p-0">
-            <a href="/courses/course_month.php?course=<? echo $table; ?>&month=<? echo $index;
-                                                                                echo ($isNewYear == 1) ? '&year=1' : ''; ?>">
+            <a href="<? echo $url; ?>">
               <p class="calendar"><? echo DateTime::createFromFormat('!m', $index)->format('F'); ?></p>
               <span class="total-r">
                 <?php

@@ -108,7 +108,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
             <div class="col-md-3">
               <div class="bordering-1">
                 <a href="/courses/old_courses_layout.php?course=sys_trade_missions" target="blank">
-                  <div class="icon-width-80 mb-3">
+                  <div class="icon-width-80" style="margin-top: -18px; margin-bottom: 6px;">
                     <i class="fas fa-user" style='font-size:.8em'></i>
                     <i class="fas fa-exchange-alt" style='font-size:.7em'></i>
                     <i class="fas fa-user" style='font-size:.8em'></i>

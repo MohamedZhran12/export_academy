@@ -26,8 +26,11 @@
               <p class="view"><i class="fas fa-eye"></i> <?php echo $row['sys_course_view']; ?></p>
             </div>
             <div class="right-align">
-              <p class="<?php echo $row['sys_course_session']; ?>"></p>
-
+              <?php if ($courseInfo['cat_id'] == 2) { ?>
+                <i class="fas fa-map-marker-alt" style="font-size:11px;background-color: #ffbb58;  color:#fff ;padding:5px; border-radius:4px"></i>
+              <? } else { ?>
+                <i class="fas fa-video" style="font-size:11px;background-color: #ab0f90;  color:#fff ;padding:5px; border-radius:3px"></i>
+              <? } ?>
             </div>
           </div>
 

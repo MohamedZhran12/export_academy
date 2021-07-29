@@ -2,19 +2,20 @@
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
 
 require_once($includes . 'sections_info.php');
-
+$month = $_GET['month'] ?? date('m');
 //WHERE $table.sys_course_year = YEAR(CURDATE()) AND $table.sys_course_month = MONTH(CURDATE())
 $sql = $conn->prepare("
 select $groupsTable.name, $table.*, $groupsTable.group_order from $table
 join $groupsTable
 on $table.group_id=$groupsTable.ID
+where sys_course_month =?
 order by $groupsTable.group_order desc ,sys_course_date,sys_course_month, sys_course_year");
-$sql->execute();
+$sql->execute([$month]);
 $courses = $sql->fetchAll(PDO::FETCH_GROUP);
 
 //AND sys_course_year = YEAR(CURDATE()) AND sys_course_month = MONTH(CURDATE())
-$coursesWithoutGroupsSql = $conn->prepare("SELECT * FROM $table WHERE group_id= 0 or group_id is null order by sys_course_date desc,sys_course_month, sys_course_year");
-$coursesWithoutGroupsSql->execute();
+$coursesWithoutGroupsSql = $conn->prepare("SELECT * FROM $table WHERE group_id= 0 or group_id is null and sys_course_month =?  order by sys_course_date desc,sys_course_month, sys_course_year");
+$coursesWithoutGroupsSql->execute([$month]);
 $coursesWithoutGroups = $coursesWithoutGroupsSql->fetchAll();
 
 $allCourses = array_merge($courses, $coursesWithoutGroups);
@@ -89,10 +90,13 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
     <?php
     if ($isThereCalendar) { ?>
       <div class="col-md-3 my-5 mb-md-0 ">
-
         <?
         $isNewYear = 0;
-        require_once($rootDir . 'components/calendar.php');
+        require($rootDir . 'components/calendar.php');
+        if (date('m') >= 7 && date('m') <= 12) {
+          $isNewYear = 1;
+          require($rootDir . 'components/calendar.php');
+        }
         ?>
       </div>
     <? }
