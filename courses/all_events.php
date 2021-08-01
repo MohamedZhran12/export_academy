@@ -41,7 +41,7 @@ foreach ($sections as $section) {
       $isNewYear = 0;
 
       require($rootDir . 'components/all_events_calendar.php');
-      if (date('m') >= 9 && date('m') <= 12) {
+      if (date('m') >= 7 && date('m') <= 12) {
         $isNewYear = 1;
         require($rootDir . 'components/all_events_calendar.php');
       }
