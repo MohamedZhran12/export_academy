@@ -142,7 +142,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
               <br>
               <div class="col-sm-8">
                 <?php include($rootDir . '/components/captcha.php'); ?>
-                <input type="submit" name="submit" id="submit" class="btn btn-info" value="Send Message" />
+                <input type="submit" name="submit" id="submit" class="btn btn-info" value="Send Message" disabled/>
               </div>
             </div>
           </div>
