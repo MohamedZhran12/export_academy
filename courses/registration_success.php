@@ -1,5 +1,5 @@
 <?
-require_once($rootDir . 'verifyCaptcha.php');
+// require_once($rootDir . 'verifyCaptcha.php');
 ?>
 
 <div class="header-in-course">

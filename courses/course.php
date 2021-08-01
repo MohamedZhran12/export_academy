@@ -89,7 +89,7 @@ $courseDetails = $courseDetailsStmt->fetchAll();
                     <span><?php echo date('h:i a', strtotime($courseDetails[0]['sys_course_time'])) . ' - '  . date('h:i a', strtotime($courseDetails[0]['sys_course_timeout'])) ?></span>
                   </div>
                   <div class="col-12 mb-2">
-                    <strong>Mode of program :</strong>
+                    <strong>Mode of programme :</strong>
                     <span><? echo $courseDetails[0]['cat_id'] == 1 ? 'Virtual Programme' : 'Public Programme'; ?></span>
                   </div>
                   <div class="col-12 mb-4">

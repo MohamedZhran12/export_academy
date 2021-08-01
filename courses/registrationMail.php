@@ -15,12 +15,12 @@ try {
   $mail->Host = 'mail.exportacademy.net';
   $mail->SMTPAuth = true;
   $mail->Username = 'admin@exportacademy.net';
-  $mail->Password = 'M=Z$kZfxC_MO';
+  $mail->Password = '=Bn{DMvb[0D0';
   $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
   $mail->Port = 465;
   $mail->setFrom('admin@exportacademy.net', $_POST['email']);
 
-  $mail->addAddress('zaheer.ahsan85@gmail.com');
+  $mail->addAddress('info.mexasb@gmail.com');
   // $mail->addAddress('mohamedzhran12@hotmail.com');
   $mail->isHTML(true);
 

@@ -107,7 +107,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
 
                               <div class="courses-more-det">
                                 <p class="view"><i class="fas fa-eye"></i> <?php echo $row['sys_course_view']; ?></p>
-                                <?php if ($courseInfo['cat_id'] == 2) { ?>
+                                <?php if ($row['cat_id'] == 2) { ?>
                                   <i class="fas fa-map-marker-alt" style="font-size:11px;background-color: #ffbb58;  color:#fff ;padding:5px; border-radius:4px"></i>
                                 <? } else { ?>
                                   <i class="fas fa-video" style="font-size:11px;background-color: #ab0f90;  color:#fff ;padding:5px; border-radius:3px"></i>

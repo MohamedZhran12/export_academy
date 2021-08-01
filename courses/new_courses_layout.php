@@ -2,19 +2,20 @@
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
 
 require_once($includes . 'sections_info.php');
-$month = $_GET['month'] ?? date('m');
+$month = isset($_GET['month']) ? $_GET['month'] : 1;
+$monthColumn = isset($_GET['month']) ? 'sys_course_month' : 1;
 //WHERE $table.sys_course_year = YEAR(CURDATE()) AND $table.sys_course_month = MONTH(CURDATE())
 $sql = $conn->prepare("
 select $groupsTable.name, $table.*, $groupsTable.group_order from $table
 join $groupsTable
 on $table.group_id=$groupsTable.ID
-where sys_course_month =?
+where $monthColumn = ?
 order by $groupsTable.group_order desc ,sys_course_date,sys_course_month, sys_course_year");
 $sql->execute([$month]);
 $courses = $sql->fetchAll(PDO::FETCH_GROUP);
 
 //AND sys_course_year = YEAR(CURDATE()) AND sys_course_month = MONTH(CURDATE())
-$coursesWithoutGroupsSql = $conn->prepare("SELECT * FROM $table WHERE group_id= 0 or group_id is null and sys_course_month =?  order by sys_course_date desc,sys_course_month, sys_course_year");
+$coursesWithoutGroupsSql = $conn->prepare("SELECT * FROM $table WHERE group_id= 0 or group_id is null and $monthColumn =?  order by sys_course_date desc,sys_course_month, sys_course_year");
 $coursesWithoutGroupsSql->execute([$month]);
 $coursesWithoutGroups = $coursesWithoutGroupsSql->fetchAll();
 
@@ -110,8 +111,9 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
           <div class="col-12 mb-3">
             <h2 class="font-weight-bold">
               <?php
-              echo date("F", strtotime('m')) . ' ';
-              echo date("Y");
+              $isNewYear = (isset($_GET['year'])) ? 1 : 0;
+              echo date("F", strtotime("2000-$month-1")) . ' ';
+              echo date("Y") + $isNewYear . ' ';
               echo ' ' . $sectionName; ?>
             </h2>
           </div>
