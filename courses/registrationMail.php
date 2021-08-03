@@ -14,14 +14,15 @@ try {
   $mail->IsSMTP();
   $mail->Host = 'mail.exportacademy.net';
   $mail->SMTPAuth = true;
-  $mail->Username = 'admin@exportacademy.net';
-  $mail->Password = '=Bn{DMvb[0D0';
+  $mail->Username = 'enquiries@exportacademy.net';
+  $mail->Password = 'kFrPQ_KQYYnw';
   $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
   $mail->Port = 465;
-  $mail->setFrom('admin@exportacademy.net', $_POST['email']);
+  $mail->setFrom('enquiries@exportacademy.net', $_POST['email']);
 
   $mail->addAddress('info.mexasb@gmail.com');
-  // $mail->addAddress('mohamedzhran12@hotmail.com');
+//   $mail->addAddress('mohamedzhranfive@gmail.com');
+//   $mail->addAddress('jumpingjoytechsolutions@gmail.com');
   $mail->isHTML(true);
 
   $mail->Body = $body;

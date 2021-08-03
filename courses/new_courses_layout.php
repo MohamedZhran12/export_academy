@@ -10,7 +10,7 @@ select $groupsTable.name, $table.*, $groupsTable.group_order from $table
 join $groupsTable
 on $table.group_id=$groupsTable.ID
 where $monthColumn = ?
-order by $groupsTable.group_order desc ,sys_course_date,sys_course_month, sys_course_year");
+order by sys_course_date desc,sys_course_month, sys_course_year,$groupsTable.group_order asc");
 $sql->execute([$month]);
 $courses = $sql->fetchAll(PDO::FETCH_GROUP);
 

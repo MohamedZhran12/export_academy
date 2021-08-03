@@ -74,40 +74,27 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
               $sql = $conn->prepare("SELECT * FROM $table WHERE sys_course_year= YEAR(CURDATE())+ $isNewYear and sys_course_month = ? order by sys_course_date asc,sys_course_month, sys_course_year");
               $sql->execute([$month]);
               if ($sql->rowCount() > 0) {
-                foreach ($sql->fetchAll() as $row) {
+                foreach ($sql->fetchAll() as $courseInfo) {
 
               ?>
                   <div class="col-sm-4">
                     <div class="margin-30">
                       <div class="courses-det">
-                        <a class="button-1" href="/courses/course.php?id=<?php echo $row['sys_course_id']; ?>&cat_id=<?php echo $row['cat_id']; ?> &course=<? echo $table; ?>">
+                        <a class="button-1" href="/courses/course.php?id=<?php echo $courseInfo['sys_course_id']; ?>&cat_id=<?php echo $courseInfo['cat_id']; ?> &course=<? echo $table; ?>">
                           <div class="courses-image">
-                            <p class="date"><i class="fas fa-calendar-alt"></i> <?php echo $row['sys_course_date']; ?>
-                              - <?php echo $row['sys_course_month']; ?> - <?php echo $row['sys_course_year']; ?></p>
-                            <img alt='image' src="/images/courses/<?php echo $row['sys_course_image']; ?>">
+                            <p class="date"><i class="fas fa-calendar-alt"></i> <?php echo $courseInfo['sys_course_date']; ?>
+                              - <?php echo $courseInfo['sys_course_month']; ?> - <?php echo $courseInfo['sys_course_year']; ?></p>
+                            <img alt='image' src="/images/courses/<?php echo $courseInfo['sys_course_image']; ?>">
                           </div>
                           <div class="courses-desc1">
-                            <p class="course-topic-1-2"><?php echo $row['sys_course_topic']; ?></p>
-                            <p class="place"><i class="fas fa-map-marker-alt"></i> <?php echo $row['sys_course_venue']; ?></p>
+                            <p class="course-topic-1-2"><?php echo $courseInfo['sys_course_topic']; ?></p>
+                            <p class="place"><i class="fas fa-map-marker-alt"></i> <?php echo $courseInfo['sys_course_venue']; ?></p>
 
                             <div class="course-set-pp">
-                              <div class="courses-pricing">
-                                <?php
-                                $amount = $row['sys_course_price_before'];
-                                if ($amount >= 1.00) {
-                                  echo '<span class="cutoff">';
-                                  echo "RM" . $row["sys_course_price_before"] . "";
-                                  echo '</span>';
-                                } else {
-                                  echo '<br>';
-                                }
-                                ?>
-                                <p>RM <?php echo $row['sys_course_price']; ?></p>
-                              </div>
-
+                              <? require $rootDir . 'courses/common_component/price.php'; ?>
                               <div class="courses-more-det">
-                                <p class="view"><i class="fas fa-eye"></i> <?php echo $row['sys_course_view']; ?></p>
-                                <?php if ($row['cat_id'] == 2) { ?>
+                                <p class="view"><i class="fas fa-eye"></i> <?php echo $courseInfo['sys_course_view']; ?></p>
+                                <?php if ($courseInfo['cat_id'] == 2) { ?>
                                   <i class="fas fa-map-marker-alt" style="font-size:11px;background-color: #ffbb58;  color:#fff ;padding:5px; border-radius:4px"></i>
                                 <? } else { ?>
                                   <i class="fas fa-video" style="font-size:11px;background-color: #ab0f90;  color:#fff ;padding:5px; border-radius:3px"></i>
@@ -130,7 +117,7 @@ $headerAndTerms = $headerAndTermsStmt->fetchAll();
 
   </div>
 </div>
-
+<script src='/courses/common_component/js/price_switch.js'></script>
 
 <?php
 require_once($includes . 'footer.php');
