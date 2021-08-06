@@ -15,7 +15,7 @@ try {
   $mail->Host = 'mail.exportacademy.net';
   $mail->SMTPAuth = true;
   $mail->Username = 'enquiries@exportacademy.net';
-  $mail->Password = 'kFrPQ_KQYYnw';
+  $mail->Password = '1N1stUzPN3[U';
   $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
   $mail->Port = 465;
   $mail->setFrom('enquiries@exportacademy.net', $_POST['email']);
