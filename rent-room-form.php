@@ -1,94 +1,25 @@
 <?php
-require_once($_SERVER['DOCUMENT_ROOT'] ."/includes/init.php");
+require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init.php");
 
-
-
-?>
-
-<?php
 // Checks if form has been submitted
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-  function post_captcha($user_response)
-  {
-    $fields_string = '';
-    $fields = array(
-      'secret' => '6LehlekZAAAAAFhOhpF8bD3ZiCS0CGdtR-9SPWnR',
-      'response' => $user_response
-    );
-    foreach ($fields as $key => $value)
-      $fields_string .= $key . '=' . $value . '&';
-    $fields_string = rtrim($fields_string, '&');
+  $success_msg = 'Your Enquiry Form is submitted successfully.<br>
+  Our team will get back to you as soon as possible.';
 
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, 'https://www.google.com/recaptcha/api/siteverify');
-    curl_setopt($ch, CURLOPT_POST, count($fields));
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $fields_string);
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, True);
+  $body = '';
+  $body = 'Rent Room Enquiry' . '<br><br>';
+  $body .= '<b>Name: </b>' . $_POST['name'] . '<br><br>';
+  $body .= '<b>Email: </b>' . $_POST['email'] . '<br><br>';
+  $body .= '<b>Mobile: </b>' . $_POST['mobile'] . '<br><br>';
+  $body .= '<b>Board Room: </b>' . $_POST['room'] . '<br><br>';
+  $body .= '<b>Message: </b>' . $_POST['message'] . '<br><br>';
 
-    $result = curl_exec($ch);
-    curl_close($ch);
+  require_once($rootDir . 'courses/registration_success.php');
+  require_once($rootDir . 'courses/registrationMail.php');
+}
 
-    return json_decode($result, true);
-  }
-
-  // Call the function post_captcha
-  $res = post_captcha($_POST['g-recaptcha-response']);
-
-  if (!$res['success']) {
-    // What happens when the CAPTCHA wasn't checked
-    echo '<p>Please go back and make sure you check the security CAPTCHA box.</p><br>';
-  } else {
-    // If CAPTCHA is successfully completed...
-
-    $result = "";
-    if (isset($_POST['submit'])) {
-      require 'phpmailer/PHPMailerAutoload.php';
-      $mail = new PHPMailer;
-
-      $mail->Host = 'smtp.gmail.com';
-      $mail->Port = 587;
-      $mail->SMTPAuth = true;
-      $mail->SMTPSecure = 'tls';
-      $mail->Username = 'shafarook06@gmail.com';
-
-
-      $mail->setFrom($_POST['email'], $_POST['name']);
-      $mail->addaddress('shafarook06@gmail.com');
-      $mail->addReplyTo($_POST['email'], $_POST['name']);
-
-      $mail->isHTML(true);
-      $mail->Subject = '' . $_POST['subject'];
-      $mail->Body =
-        '<p>
-	                <b>Name:</b></br> ' . $_POST['name'] . '
-	                <br>
-	                <b>Email:</b> ' . $_POST['email'] . '
-	                <br>
-	                <b>Mobile:</b> ' . $_POST['phone'] . '
-                    <br>
-	                <b>Room:</b> ' . $_POST['room'] . '
-                    <br>
-	                <b>Message:</b> ' . $_POST['msg'] . '
-                </p>';
-      if (!$mail->send()) {
-        echo "Message could not sent!";
-      } else {
-        echo "<script>
-             alert('We received your message! We will reply to your message as soon as possible.');
-             window.history.go(-1);
-     </script>";
-      }
-    }
-  }
-} else { ?>
-
-  <!-- FORM GOES HERE -->
-  <form></form>
-
-<?php } ?>
-
-
-
+?>
+<? if ($_SERVER['REQUEST_METHOD'] == 'GET') { ?>
 
   <div class="header-in-room">
     <div class="overlay-white">
@@ -161,11 +92,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <hr class="topic">
             <br>
 
-            <form action="" method="post" id="form-box">
+            <form method="post" id="form-box">
               <input name="subject" type="hidden" value="Room Booking Form">
               <input name="name" class="form-1" placeholder="Your Name" required>
               <input name="email" class="form-1" placeholder="Email Address" required>
-              <input name="phone" class="form-1" placeholder="Mobile" required>
+              <input name="mobile" class="form-1" placeholder="Mobile" required>
 
               <select id="cars" name="room">
                 <option value="Big Room">Big Room</option>
@@ -174,31 +105,24 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <option value="Computer Lab">Computer Lab</option>
               </select>
 
-              <textarea name="msg" class="form-1" placeholder="Message (Optional)">
+              <textarea name="message" class="form-1" placeholder="Message (Optional)">
 </textarea>
 
-              <!--<button type="submit" form="nameform" value="Submit" class="button1 right1" data-text="Hover" value="Submit">REQUEST QUOTE</button>-->
-
-              <div class="g-recaptcha" data-sitekey="6LehlekZAAAAAATkbl5lKz156LPq_2b5MjGVVrp1"></div>
               <br>
-
-              <input type="submit" name="submit" id="submit" value="SEND ENQUIRY" class="button">
+              <?php include($rootDir . '/components/captcha.php'); ?>
+              <input type="submit" name="submit" id="submit" class="btn btn-info" value="Send Enquiry" disabled />
 
             </form>
 
           </div>
         </div>
-        </form>
       </div>
     </div>
   </div>
 
 
-  </div>
-  </div>
-  </div>
-
 
 <?php
-  require_once($includes . 'footer.php');
+}
+require_once($includes . 'footer.php');
 ?>

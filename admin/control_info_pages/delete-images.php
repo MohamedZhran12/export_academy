@@ -2,7 +2,7 @@
 require_once($_SERVER['DOCUMENT_ROOT'] . "/includes/init_admin.php");
 
 require_once($includes . 'about_us_pages_info.php');
-
+$page = $_GET['page'];
 $stmt = $conn->prepare("select name,path,id from $mediaTable");
 $stmt->execute();
 $result = $stmt->fetchAll();
@@ -13,9 +13,9 @@ if ($_SESSION['user']['level_id'] == 1 && isset($_GET['delete']) && $_GET['delet
   $isSuccess = $stmt->execute([$_GET['image_id']]);
   unlink($rootDir . $_GET['full_path']);
   if ($isSuccess) {
-    echo '
+    echo `
 	<script>alert("Image is Successfully Deleted");
-</script>';
+</script>`;
   }
 }
 ?>

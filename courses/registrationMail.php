@@ -10,18 +10,18 @@ require $rootDir . 'phpMailer/SMTP.php';
 
 $mail = new PHPMailer(true);
 try {
-  $mail->SMTPDebug = SMTP::DEBUG_OFF;
+  $mail->SMTPDebug = SMTP::DEBUG_SERVER;
   $mail->IsSMTP();
   $mail->Host = 'mail.exportacademy.net';
   $mail->SMTPAuth = true;
-  $mail->Username = 'enquiries@exportacademy.net';
-  $mail->Password = '1N1stUzPN3[U';
+  $mail->Username = 'admin@exportacademy.net';
+  $mail->Password = 'enquiries14z';
   $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;
   $mail->Port = 465;
-  $mail->setFrom('enquiries@exportacademy.net', $_POST['email']);
+  $mail->setFrom('admin@exportacademy.net', $_POST['email']);
 
-  $mail->addAddress('info.mexasb@gmail.com');
-//   $mail->addAddress('mohamedzhranfive@gmail.com');
+  // $mail->addAddress('info.mexasb@gmail.com');
+  $mail->addAddress('mohamedzhranfive@gmail.com');
 //   $mail->addAddress('jumpingjoytechsolutions@gmail.com');
   $mail->isHTML(true);
 

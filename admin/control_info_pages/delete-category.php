@@ -9,10 +9,8 @@ $result = $stmt->fetchAll();
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
-  $stmt = $conn->prepare("DELETE FROM $categoryTable WHERE id=?");
-  $isSuccess = $stmt->execute([$_POST['category_id']]);
-
-  function deleteDir($dirPath) {
+  function deleteDir($dirPath)
+  {
     if (!is_dir($dirPath)) {
       throw new InvalidArgumentException("$dirPath must be a directory");
     }
@@ -29,8 +27,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
     rmdir($dirPath);
   }
-
-  deleteDir('csr_/images/' . $_POST['category_id']);
+  deleteDir($rootDir . "images/$mediaTable/" . $_POST['category_id']);
+  $stmt = $conn->prepare("DELETE FROM $categoryTable WHERE id=?");
+  $isSuccess = $stmt->execute([$_POST['category_id']]);
   if ($isSuccess) {
     echo '
 	<script>alert("Category is deleted successfully");
@@ -46,7 +45,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
       <div class="breadcrumb-main">
         <p class="current-link">Admin Dashboard</p>
         <i class="fas fa-chevron-right"></i>
-        <p class="current-link">Delete <? echo $name;?> Category</p>
+        <p class="current-link">Delete <? echo $name; ?> Category</p>
       </div>
       <form class='mt-5 shadow-sm p-4 mb-5 bg-white rounded' method='post'>
         <div class='form-group'>

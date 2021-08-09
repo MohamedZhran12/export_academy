@@ -298,7 +298,7 @@ $logosImages = $stmt->fetchAll(PDO::FETCH_GROUP);
             <div class="col-sm-4">
               <div class="border-right-1">
                 <div class="text-center">
-                  <h2 class="topic">Accrediation</h2>
+                  <h2 class="topic">Accreditation</h2>
                   <hr class="topic-white">
                 </div>
 
